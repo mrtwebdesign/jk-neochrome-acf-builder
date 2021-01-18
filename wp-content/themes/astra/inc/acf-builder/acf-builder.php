@@ -95,15 +95,148 @@ final class ACF_Builder
                         'required' => 0,
                         'conditional_logic' => 0,
                         'choices' => array(
-                            'section-test' => esc_html__('Test Section 1'),
-                            'section-test2' => esc_html__('Test Section 2'),
-                            'section-test3' => esc_html__('Test Section 3'),
-                            'section-test4' => esc_html__('Test Section 4'),
+                            'hero-section' => esc_html__('Hero Section'),
+                            'buy-now-get-more-info-section' => esc_html__('Buy Now / Get More Info'),
+                            'gallery-section' => esc_html__('Gallery'),
+                            'faqs-section' => esc_html__('FAQs'),
+                            'rich-text-row-section' => esc_html__('Rich Text Row'),
+                            'footer-section' => esc_html__('Footer'),
                         ),
-                        'default_value' => 'section-test',
+                        'default_value' => 'rich-text-row-section',
                         'layout' => 'horizontal',
                         'return_format' => 'value',
                     ),
+
+                    /* HERO SECTION START */
+
+                    array(
+                        'key' => 'field_builder_section_hero_',
+                        'label' => esc_html__('Hero Section Field', 'neochrome'),
+                        'name' => 'option_builder_section_hero_',
+                        'type' => 'text',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+
+                    /* HERO SECTION END */
+
+                    /* **************************************** */
+
+                    /* BUY NOW / GET MORE INFO SECTION START */
+
+                    array(
+                        'key' => 'field_builder_section_buy_now_',
+                        'label' => esc_html__('Buy Now / Get More Info Section Field', 'neochrome'),
+                        'name' => 'option_builder_section_buy_now_',
+                        'type' => 'text',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+
+                    /* BUY NOW / GET MORE INFO SECTION END */
+
+                    /* **************************************** */
+
+                    /* GALLERY SECTION START */
+
+                    array(
+                        'key' => 'field_builder_section_gallery_',
+                        'label' => esc_html__('Gallery Section Field', 'neochrome'),
+                        'name' => 'option_builder_section_gallery_',
+                        'type' => 'text',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+
+                    /* GALLERY SECTION END */
+
+                    /* **************************************** */
+
+                    /* FAQS SECTION START */
+
+                    array(
+                        'key' => 'field_builder_section_faqs_',
+                        'label' => esc_html__('FAQs Section Field', 'neochrome'),
+                        'name' => 'option_builder_section_faqs_',
+                        'type' => 'text',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                    ),
+
+                    /* FAQS SECTION END */
+
+                    /* **************************************** */
+
+                    /* RICH TEXT ROW SECTION START */
+
+                    array(
+                        'key' => 'field_builder_section_rich_text_row_',
+                        'label' => esc_html__('Rich Text Row Section Field', 'neochrome'),
+                        'name' => 'option_builder_section_rich_text_row_',
+                        'type' => 'text',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+
+                    /* RICH TEXT ROW SECTION END */
+
+                    /* **************************************** */
+
+                    /* FOOTER SECTION START */
+
+                    array(
+                        'key' => 'field_builder_section_footer_',
+                        'label' => esc_html__('Footer Section Field', 'neochrome'),
+                        'name' => 'option_builder_section_footer_',
+                        'type' => 'text',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'footer-section',
+                                ),
+                            ),
+                        ),
+                    ),
+
+                    /* FOOTER SECTION END */
+
                 ),
             ));
 
