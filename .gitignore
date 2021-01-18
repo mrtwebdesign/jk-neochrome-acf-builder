@@ -1,0 +1,8 @@
+wp-config.php
+.htaccess
+.idea/
+node_modules/
+.git/
+wp-content/uploads
+wp-content/upgrade
+wp-content/uploads-webpc
