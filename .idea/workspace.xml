@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bdb71f5-d54d-41e6-8b6f-1368d23aad71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/astra/inc/assets/css/acf_repeater_builder.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/astra/inc/assets/css/acf_repeater_builder.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,15 +35,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="214" column="71" selection-start-line="214" selection-start-column="71" selection-end-line="214" selection-end-column="71" />
+            <state relative-caret-position="204">
+              <caret line="253" column="34" selection-start-line="253" selection-start-column="34" selection-end-line="253" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -66,6 +72,7 @@
       <find>'type' =&gt; 'true</find>
       <find>esc_html__</find>
       <find>, 'neochrome')</find>
+      <find>admin_head</find>
     </findStrings>
     <replaceStrings>
       <replace>'neochrome'</replace>
@@ -230,19 +237,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610993794217</updated>
-      <workItem from="1610993795492" duration="12007000" />
+      <workItem from="1610993795492" duration="13904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12007000" />
+    <option name="totallyTimeSpent" value="13904000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15594463" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15594463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -309,17 +316,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/admin-functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/functions.php">
@@ -329,10 +326,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/assets/css/acf_repeater_builder.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/admin-functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="214" column="71" selection-start-line="214" selection-start-column="71" selection-end-line="214" selection-end-column="71" />
+        <state relative-caret-position="204">
+          <caret line="253" column="34" selection-start-line="253" selection-start-column="34" selection-end-line="253" selection-end-column="34" />
         </state>
       </provider>
     </entry>

@@ -19,7 +19,7 @@ final class ACF_Builder
 
         if (!wp_style_is('acf-repeater-builder-css')):
 
-            wp_enqueue_style('acf-repeater-builder-css', ASTRA_THEME_DIR . 'inc/assets/css/acf_repeater_builder.css');
+            wp_enqueue_style('acf-repeater-builder-css', get_template_directory_uri() . '/inc/assets/css/acf_repeater_builder.css');
 
         endif;
 
@@ -45,7 +45,7 @@ final class ACF_Builder
 
             acf_add_local_field_group(array(
                 'key' => 'group_repeater_builder_settings',
-                'title' => __('Repeater Builder', 'glekk'),
+                'title' => __('Landing Page Builder', 'glekk'),
                 'location' => array(
                     array(
                         array(
@@ -84,7 +84,7 @@ final class ACF_Builder
                 'label_placement' => 'top',
                 'instructions' => esc_html('Build your own landing page'),
                 'required' => 0,
-                'min' => 0,
+                'min' => 1,
                 'max' => 0,
                 'layout' => 'block',
                 'button_label' => esc_html('Add new Section'),
@@ -198,6 +198,24 @@ final class ACF_Builder
                         'name' => 'option_builder_section_hero_headline',
                         'instructions' => esc_html('Input the Hero Main Headline'),
                         'type' => 'text',
+                        'placeholder' => esc_html('Main Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_sub_headline',
+                        'label' => esc_html('Sub-Headline'),
+                        'name' => 'option_builder_section_hero_sub_headline',
+                        'instructions' => esc_html('Input the Sub-Headline'),
+                        'type' => 'text',
+                        'placeholder' => esc_html('Sub-Headline'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -212,8 +230,9 @@ final class ACF_Builder
                         'key' => 'field_builder_section_hero_secondary_headline',
                         'label' => esc_html('Secondary Headline'),
                         'name' => 'option_builder_section_hero_secondary_headline',
-                        'instructions' => esc_html('Input the Secondarymmi Headline'),
+                        'instructions' => esc_html('Input the Secondary Headline'),
                         'type' => 'text',
+                        'placeholder' => esc_html('Secondary Headline'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -225,10 +244,17 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_hero_',
-                        'label' => esc_html('Hero Section Field'),
-                        'name' => 'option_builder_section_hero_',
-                        'type' => 'text',
+                        'key' => 'field_builder_section_hero_propositions',
+                        'label' => esc_html('Propositions'),
+                        'name' => 'option_builder_section_hero_propositions',
+                        'type' => 'repeater',
+                        'label_placement' => 'top',
+                        'instructions' => esc_html('Add Propositions'),
+                        'required' => 0,
+                        'min' => 1,
+                        'max' => 0,
+                        'layout' => 'row',
+                        'button_label' => esc_html('Add new Proposition'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -238,51 +264,16 @@ final class ACF_Builder
                                 ),
                             ),
                         ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_hero_',
-                        'label' => esc_html('Hero Section Field'),
-                        'name' => 'option_builder_section_hero_',
-                        'type' => 'text',
-                        'conditional_logic' => array(
+                        'sub_fields' => array(
                             array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
+                                'key' => 'field_builder_section_hero_proposition_title',
+                                'label' => esc_html('Proposition Title'),
+                                'name' => 'option_builder_section_hero_proposition_title',
+                                'instructions' => esc_html('Input the Proposition Title'),
+                                'placeholder' => esc_html('Proposition Title'),
+                                'type' => 'text',
                             ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_hero_',
-                        'label' => esc_html('Hero Section Field'),
-                        'name' => 'option_builder_section_hero_',
-                        'type' => 'text',
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_hero_',
-                        'label' => esc_html('Hero Section Field'),
-                        'name' => 'option_builder_section_hero_',
-                        'type' => 'text',
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                            ),
-                        ),
+                        )
                     ),
 
                     /* HERO SECTION END */
