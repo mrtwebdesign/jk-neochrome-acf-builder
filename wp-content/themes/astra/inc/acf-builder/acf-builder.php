@@ -104,7 +104,7 @@ final class ACF_Builder
                         'label' => esc_html('Section Type'),
                         'name' => 'option_builder_section_type',
                         'type' => 'select',
-                        'instructions' => esc_html('Select section type'),
+                        'instructions' => esc_html('Select the section type'),
                         'required' => 0,
                         'conditional_logic' => 0,
                         'choices' => array(
@@ -126,13 +126,12 @@ final class ACF_Builder
                         'key' => 'field_builder_section_hero_type_of_bg',
                         'label' => esc_html('Type of Background'),
                         'name' => 'option_builder_section_hero_type_of_bg',
-                        'instructions' => '',
+                        'instructions' => esc_html('Select the type of Hero Header'),
                         'type' => 'button_group',
                         'required' => 0,
                         'choices' => array(
                             'color' => esc_html('Color'),
                             'image' => esc_html('Image'),
-                            'video' => esc_html('Video'),
                         ),
                         'default_value' => 'image',
                         'layout' => 'horizontal',
@@ -151,7 +150,9 @@ final class ACF_Builder
                         'key' => 'field_builder_section_hero_bg_color',
                         'label' => esc_html('Background Color'),
                         'name' => 'option_builder_section_hero_bg_color',
-                        'type' => 'text',
+                        'instructions' => esc_html('Select the Hero Header Background Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -171,7 +172,11 @@ final class ACF_Builder
                         'key' => 'field_builder_section_hero_bg_image',
                         'label' => esc_html('Background Image'),
                         'name' => 'option_builder_section_hero_bg_image',
-                        'type' => 'text',
+                        'instructions' => esc_html('Select the Hero Header Background Image'),
+                        'type' => 'image',
+                        'return_format' => 'id',
+                        'preview_size' => 'medium',
+                        'library' => 'all',
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -188,29 +193,10 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_hero_bg_video',
-                        'label' => esc_html('Background Video'),
-                        'name' => 'option_builder_section_hero_bg_video',
-                        'type' => 'text',
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_hero_type_of_bg',
-                                    'operator' => '==',
-                                    'value' => 'video',
-                                ),
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_hero_',
-                        'label' => esc_html('Hero Section Field'),
-                        'name' => 'option_builder_section_hero_',
+                        'key' => 'field_builder_section_hero_main_headline',
+                        'label' => esc_html('Main Headline'),
+                        'name' => 'option_builder_section_hero_headline',
+                        'instructions' => esc_html('Input the Hero Main Headline'),
                         'type' => 'text',
                         'conditional_logic' => array(
                             array(
@@ -223,9 +209,10 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_hero_',
-                        'label' => esc_html('Hero Section Field'),
-                        'name' => 'option_builder_section_hero_',
+                        'key' => 'field_builder_section_hero_secondary_headline',
+                        'label' => esc_html('Secondary Headline'),
+                        'name' => 'option_builder_section_hero_secondary_headline',
+                        'instructions' => esc_html('Input the Secondarymmi Headline'),
                         'type' => 'text',
                         'conditional_logic' => array(
                             array(
