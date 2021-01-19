@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bdb71f5-d54d-41e6-8b6f-1368d23aad71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/astra/inc/assets/css/acf_repeater_builder.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/astra/inc/assets/css/acf_repeater_builder.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="651" column="34" selection-start-line="651" selection-start-column="34" selection-end-line="651" selection-end-column="34" />
+            <state relative-caret-position="562">
+              <caret line="653" column="57" lean-forward="true" selection-start-line="653" selection-start-column="57" selection-end-line="653" selection-end-column="57" />
               <folding>
                 <element signature="e#2931#26039#1#PHP" />
                 <element signature="e#4115#5254#1#PHP" />
@@ -49,15 +48,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="e#203#238#0" />
-                <element signature="e#251#881#0" />
-              </folding>
+            <state relative-caret-position="372">
+              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -102,8 +99,8 @@
         <option value="$PROJECT_DIR$/node_modules/text.txt" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" />
         <option value="$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php" />
+        <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" />
       </list>
     </option>
   </component>
@@ -249,12 +246,12 @@
       <updated>1610993794217</updated>
       <workItem from="1610993795492" duration="15978000" />
       <workItem from="1611066822796" duration="943000" />
-      <workItem from="1611069463252" duration="6627000" />
+      <workItem from="1611069463252" duration="7993000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23548000" />
+    <option name="totallyTimeSpent" value="24914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
@@ -340,21 +337,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#203#238#0" />
-            <element signature="e#251#881#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="651" column="34" selection-start-line="651" selection-start-column="34" selection-end-line="651" selection-end-column="34" />
+        <state relative-caret-position="562">
+          <caret line="653" column="57" lean-forward="true" selection-start-line="653" selection-start-column="57" selection-end-line="653" selection-end-column="57" />
           <folding>
             <element signature="e#2931#26039#1#PHP" />
             <element signature="e#4115#5254#1#PHP" />
@@ -381,6 +367,15 @@
             <element signature="e#31502#32727#1#PHP" />
             <element signature="e#32749#33187#1#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
         </state>
       </provider>
     </entry>
