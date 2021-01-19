@@ -67,7 +67,7 @@ final class ACF_Builder
                 'label' => esc_html('Enable/Disable Landing Page Builder'),
                 'name' => 'option_repeater_builder_toggle',
                 'type' => 'true_false',
-                'required' => 0,
+
                 'conditional_logic' => 0,
                 'default_value' => 0,
                 'ui' => 1,
@@ -83,7 +83,7 @@ final class ACF_Builder
                 'type' => 'repeater',
                 'label_placement' => 'top',
                 'instructions' => esc_html('Build your own landing page'),
-                'required' => 0,
+
                 'min' => 1,
                 'max' => 0,
                 'layout' => 'block',
@@ -105,7 +105,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_type',
                         'type' => 'select',
                         'instructions' => esc_html('Select the section type'),
-                        'required' => 0,
+
                         'conditional_logic' => 0,
                         'choices' => array(
                             'hero-section' => esc_html('Hero Section'),
@@ -128,7 +128,6 @@ final class ACF_Builder
                         'name' => 'option_builder_section_hero_type_of_bg',
                         'instructions' => esc_html('Select the type of Hero Header'),
                         'type' => 'button_group',
-                        'required' => 0,
                         'choices' => array(
                             'color' => esc_html('Color'),
                             'image' => esc_html('Image'),
@@ -250,7 +249,7 @@ final class ACF_Builder
                         'type' => 'repeater',
                         'label_placement' => 'top',
                         'instructions' => esc_html('Add Propositions'),
-                        'required' => 0,
+
                         'min' => 1,
                         'max' => 0,
                         'layout' => 'row',
@@ -275,7 +274,113 @@ final class ACF_Builder
                             ),
                         )
                     ),
+                    array(
+                        'key' => 'field_builder_section_hero_more_info_box_toggle',
+                        'label' => esc_html('More Info Box'),
+                        'name' => 'option_builder_section_hero_more_info_box_toggle',
+                        'instructions' => esc_html('Enable/Disable More Info Box'),
+                        'type' => 'true_false',
 
+                        'default_value' => 0,
+                        'ui' => 1,
+                        'ui_on_text' => esc_html('Enable'),
+                        'ui_off_text' => esc_html('Disable'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_more_info_headline',
+                        'label' => esc_html('More Info Headline'),
+                        'name' => 'option_builder_section_hero_more_info_headline',
+                        'instructions' => esc_html('Input the More Info Headline'),
+                        'type' => 'text',
+                        'placeholder' => esc_html('Main Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_more_info_box_phone_toggle',
+                        'label' => esc_html('Phone Field'),
+                        'name' => 'option_builder_section_hero_more_info_box_phone_toggle',
+                        'instructions' => esc_html('Enable/Disable More Info Phone Field'),
+                        'type' => 'true_false',
+                        'default_value' => 1,
+                        'ui' => 1,
+                        'ui_on_text' => esc_html('Enable'),
+                        'ui_off_text' => esc_html('Disable'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_more_info_button_label',
+                        'label' => esc_html('Button Label'),
+                        'name' => 'option_builder_section_hero_more_info_button_label',
+                        'instructions' => esc_html('Input the More Info Button Label'),
+                        'type' => 'text',
+                        'placeholder' => esc_html('Button Label'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_more_info_button_bg',
+                        'label' => esc_html('Button Background Color'),
+                        'name' => 'field_builder_section_hero_more_info_button_bg',
+                        'instructions' => esc_html('Select the More Info Button Background Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#333333',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
                     /* HERO SECTION END */
 
                     /* **************************************** */
