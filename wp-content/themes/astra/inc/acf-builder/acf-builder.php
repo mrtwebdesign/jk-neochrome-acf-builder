@@ -51,7 +51,7 @@ final class ACF_Builder
                         array(
                             'param' => 'post_type',
                             'operator' => '==',
-                            'value' => 'page',
+                            'value' => 'post',
                         ),
                     ),
                 ),
@@ -478,10 +478,17 @@ final class ACF_Builder
                     /* GALLERY SECTION START */
 
                     array(
-                        'key' => 'field_builder_section_gallery_',
-                        'label' => esc_html('Gallery Section Field'),
-                        'name' => 'option_builder_section_gallery_',
-                        'type' => 'text',
+                        'key' => 'field_builder_section_gallery_gallery',
+                        'label' => esc_html('Gallery'),
+                        'name' => 'option_builder_section_gallery_gallery',
+                        'type' => 'gallery',
+                        'instructions' => esc_html('Add Gallery Items'),
+                        'return_format' => 'url',
+                        'preview_size' => 'medium',
+                        'insert' => 'append',
+                        'library' => 'all',
+                        'min' => 1,
+                        'max' => '',
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -500,10 +507,29 @@ final class ACF_Builder
                     /* FAQS SECTION START */
 
                     array(
-                        'key' => 'field_builder_section_faqs_',
-                        'label' => esc_html('FAQs Section Field'),
-                        'name' => 'option_builder_section_faqs_',
+                        'key' => 'field_builder_section_faqs_main_headline',
+                        'label' => esc_html('Main Headline'),
+                        'name' => 'option_builder_section_faqs_main_headline',
+                        'instructions' => esc_html('Input the Main Headline'),
                         'type' => 'text',
+                        'placeholder' => esc_html('Main Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_faqs_secondary_headline',
+                        'label' => esc_html('Secondary Headline'),
+                        'name' => 'option_builder_section_faqs_secondary_headline',
+                        'instructions' => esc_html('Input the Secondary Headline'),
+                        'type' => 'text',
+                        'placeholder' => esc_html('Secondary Headline'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -522,10 +548,67 @@ final class ACF_Builder
                     /* RICH TEXT ROW SECTION START */
 
                     array(
-                        'key' => 'field_builder_section_rich_text_row_',
+                        'key' => 'field_builder_section_rich_text_row_wsw',
                         'label' => esc_html('Rich Text Row Section Field'),
-                        'name' => 'option_builder_section_rich_text_row_',
+                        'name' => 'option_builder_section_rich_text_row_wsw',
+                        'type' => 'wysiwyg',
+                        'instructions' => esc_html('Text Content'),
+                        'tabs' => 'all',
+                        'toolbar' => 'full',
+                        'media_upload' => 1,
+                        'default_value' => '',
+                        'delay' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_rich_text_row_button_label',
+                        'label' => esc_html('Button Label'),
+                        'name' => 'option_builder_section_rich_text_row_button_label',
+                        'instructions' => esc_html('Input the Button Label'),
+                        'placeholder' => esc_html('Button Label'),
                         'type' => 'text',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_rich_text_row_button_url',
+                        'label' => esc_html('Button URL'),
+                        'name' => 'option_builder_section_rich_text_row_button_url',
+                        'instructions' => esc_html('Input the Button URL'),
+                        'placeholder' => esc_html('Button URL'),
+                        'type' => 'url',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_rich_text_row_button_bg',
+                        'label' => esc_html('Button Background Color'),
+                        'name' => 'option_builder_section_rich_text_row_button_bg',
+                        'instructions' => esc_html('Select the Button Background Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#333333',
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -544,10 +627,16 @@ final class ACF_Builder
                     /* FOOTER SECTION START */
 
                     array(
-                        'key' => 'field_builder_section_footer_',
-                        'label' => esc_html('Footer Section Field'),
-                        'name' => 'option_builder_section_footer_',
-                        'type' => 'text',
+                        'key' => 'field_builder_section_footer_social_list',
+                        'label' => esc_html('Social List'),
+                        'name' => 'option_builder_section_footer_social_list',
+                        'type' => 'repeater',
+                        'label_placement' => 'top',
+                        'instructions' => esc_html('Add Social Media'),
+                        'min' => 1,
+                        'max' => 0,
+                        'layout' => 'row',
+                        'button_label' => esc_html('Add new Social'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -557,6 +646,44 @@ final class ACF_Builder
                                 ),
                             ),
                         ),
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_builder_section_footer_social_list_icon',
+                                'label' => esc_html('Social Icon'),
+                                'name' => 'option_builder_section_footer_social_list_icon',
+                                'type' => 'font-awesome',
+                                'instructions' => '',
+                                'required' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'icon_sets' => array(
+                                    0 => 'fas',
+                                    1 => 'far',
+                                    2 => 'fab',
+                                ),
+                                'custom_icon_set' => '',
+                                'default_label' => '',
+                                'default_value' => '',
+                                'save_format' => 'class',
+                                'allow_null' => 0,
+                                'show_preview' => 1,
+                                'enqueue_fa' => 0,
+                                'fa_live_preview' => '',
+                                'choices' => array(
+                                ),
+                            ),
+                            array(
+                                'key' => 'field_builder_section_footer_social_list_url',
+                                'label' => esc_html('Social URL'),
+                                'name' => 'option_builder_section_footer_social_list_url',
+                                'instructions' => esc_html('Input the Social Icon URL'),
+                                'placeholder' => esc_html('Social URL'),
+                                'type' => 'url',
+                            ),
+                        )
                     ),
 
                     /* FOOTER SECTION END */
