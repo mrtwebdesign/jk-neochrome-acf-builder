@@ -58,6 +58,21 @@ final class ACF_Builder
                 'position' => 'normal',
             ));
 
+            acf_add_local_field_group(array(
+                'key' => 'group_footer_post_settings',
+                'title' => __('Footer Settings', 'glekk'),
+                'location' => array(
+                    array(
+                        array(
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'post',
+                        ),
+                    ),
+                ),
+                'position' => 'side',
+            ));
+
         endif;
 
         if (function_exists('acf_add_local_field')):
@@ -67,7 +82,6 @@ final class ACF_Builder
                 'label' => esc_html('Enable/Disable Landing Page Builder'),
                 'name' => 'option_repeater_builder_toggle',
                 'type' => 'true_false',
-
                 'conditional_logic' => 0,
                 'default_value' => 0,
                 'ui' => 1,
@@ -112,7 +126,6 @@ final class ACF_Builder
                             'gallery-section' => esc_html('Gallery'),
                             'faqs-section' => esc_html('FAQs'),
                             'rich-text-row-section' => esc_html('Rich Text Row'),
-                            'footer-section' => esc_html('Footer'),
                         ),
                         'default_value' => 'rich-text-row-section',
                         'layout' => 'horizontal',
@@ -624,70 +637,58 @@ final class ACF_Builder
 
                     /* **************************************** */
 
-                    /* FOOTER SECTION START */
+                ),
+            ));
 
+            acf_add_local_field(array(
+                'key' => 'field_footer_social_list',
+                'label' => esc_html('Social List'),
+                'name' => 'option_footer_social_list',
+                'type' => 'repeater',
+                'label_placement' => 'top',
+                'instructions' => esc_html('Add Social Media Items'),
+                'min' => 1,
+                'max' => 0,
+                'layout' => 'block',
+                'button_label' => esc_html('Add new Social'),
+                'parent' => 'group_footer_post_settings',
+                'conditional_logic' => array(),
+                'sub_fields' => array(
                     array(
-                        'key' => 'field_builder_section_footer_social_list',
-                        'label' => esc_html('Social List'),
-                        'name' => 'option_builder_section_footer_social_list',
-                        'type' => 'repeater',
-                        'label_placement' => 'top',
-                        'instructions' => esc_html('Add Social Media'),
-                        'min' => 1,
-                        'max' => 0,
-                        'layout' => 'row',
-                        'button_label' => esc_html('Add new Social'),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'footer-section',
-                                ),
-                            ),
+                        'key' => 'field_builder_section_footer_social_list_icon',
+                        'label' => esc_html('Social Icon'),
+                        'name' => 'option_builder_section_footer_social_list_icon',
+                        'type' => 'font-awesome',
+                        'instructions' => '',
+                        'required' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
                         ),
-                        'sub_fields' => array(
-                            array(
-                                'key' => 'field_builder_section_footer_social_list_icon',
-                                'label' => esc_html('Social Icon'),
-                                'name' => 'option_builder_section_footer_social_list_icon',
-                                'type' => 'font-awesome',
-                                'instructions' => '',
-                                'required' => 0,
-                                'wrapper' => array(
-                                    'width' => '',
-                                    'class' => '',
-                                    'id' => '',
-                                ),
-                                'icon_sets' => array(
-                                    0 => 'fas',
-                                    1 => 'far',
-                                    2 => 'fab',
-                                ),
-                                'custom_icon_set' => '',
-                                'default_label' => '',
-                                'default_value' => '',
-                                'save_format' => 'class',
-                                'allow_null' => 0,
-                                'show_preview' => 1,
-                                'enqueue_fa' => 0,
-                                'fa_live_preview' => '',
-                                'choices' => array(
-                                ),
-                            ),
-                            array(
-                                'key' => 'field_builder_section_footer_social_list_url',
-                                'label' => esc_html('Social URL'),
-                                'name' => 'option_builder_section_footer_social_list_url',
-                                'instructions' => esc_html('Input the Social Icon URL'),
-                                'placeholder' => esc_html('Social URL'),
-                                'type' => 'url',
-                            ),
-                        )
+                        'icon_sets' => array(
+                            0 => 'fas',
+                            1 => 'far',
+                            2 => 'fab',
+                        ),
+                        'custom_icon_set' => '',
+                        'default_label' => '',
+                        'default_value' => '',
+                        'save_format' => 'class',
+                        'allow_null' => 0,
+                        'show_preview' => 1,
+                        'enqueue_fa' => 0,
+                        'fa_live_preview' => '',
+                        'choices' => array(),
                     ),
-
-                    /* FOOTER SECTION END */
-
+                    array(
+                        'key' => 'field_builder_section_footer_social_list_url',
+                        'label' => esc_html('Social URL'),
+                        'name' => 'option_builder_section_footer_social_list_url',
+                        'instructions' => esc_html('Input the Social Icon URL'),
+                        'placeholder' => esc_html('Social URL'),
+                        'type' => 'url',
+                    ),
                 ),
             ));
 
