@@ -83,7 +83,6 @@ final class ACF_Builder
                 'type' => 'repeater',
                 'label_placement' => 'top',
                 'instructions' => esc_html('Build your own landing page'),
-
                 'min' => 1,
                 'max' => 0,
                 'layout' => 'block',
@@ -249,7 +248,6 @@ final class ACF_Builder
                         'type' => 'repeater',
                         'label_placement' => 'top',
                         'instructions' => esc_html('Add Propositions'),
-
                         'min' => 1,
                         'max' => 0,
                         'layout' => 'row',
@@ -280,7 +278,6 @@ final class ACF_Builder
                         'name' => 'option_builder_section_hero_more_info_box_toggle',
                         'instructions' => esc_html('Enable/Disable More Info Box'),
                         'type' => 'true_false',
-
                         'default_value' => 0,
                         'ui' => 1,
                         'ui_on_text' => esc_html('Enable'),
@@ -378,9 +375,15 @@ final class ACF_Builder
                                     'operator' => '==',
                                     'value' => 'hero-section',
                                 ),
+                                array(
+                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
                             ),
                         ),
                     ),
+
                     /* HERO SECTION END */
 
                     /* **************************************** */
@@ -388,10 +391,12 @@ final class ACF_Builder
                     /* BUY NOW / GET MORE INFO SECTION START */
 
                     array(
-                        'key' => 'field_builder_section_buy_now_',
-                        'label' => esc_html('Buy Now / Get More Info Section Field'),
-                        'name' => 'option_builder_section_buy_now_',
+                        'key' => 'field_builder_section_buy_now_main_headline',
+                        'label' => esc_html('Main Headline'),
+                        'name' => 'option_builder_section_buy_now_main_headline',
+                        'instructions' => esc_html('Input the Main Headline'),
                         'type' => 'text',
+                        'placeholder' => esc_html('Main Headline'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -401,6 +406,69 @@ final class ACF_Builder
                                 ),
                             ),
                         ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_product_boxes',
+                        'label' => esc_html('Product Boxes'),
+                        'name' => 'option_builder_section_buy_now_product_boxes',
+                        'type' => 'repeater',
+                        'label_placement' => 'top',
+                        'instructions' => esc_html('Add Box'),
+                        'min' => 1,
+                        'max' => 0,
+                        'layout' => 'row',
+                        'button_label' => esc_html('Add new Product Box'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_builder_section_buy_now_product_boxes_title',
+                                'label' => esc_html('Title'),
+                                'name' => 'option_builder_section_buy_now_product_boxes_title',
+                                'instructions' => esc_html('Input the Box Title'),
+                                'placeholder' => esc_html('Box Title'),
+                                'type' => 'text',
+                            ),
+                            array(
+                                'key' => 'field_builder_section_buy_now_product_boxes_content',
+                                'label' => esc_html('Content'),
+                                'name' => 'option_builder_section_buy_now_product_boxes_content',
+                                'instructions' => esc_html('Input the Box Content'),
+                                'placeholder' => esc_html('Box Content'),
+                                'type' => 'textarea',
+                            ),
+                            array(
+                                'key' => 'field_builder_section_buy_now_product_boxes_button_label',
+                                'label' => esc_html('Button Label'),
+                                'name' => 'option_builder_section_buy_now_product_boxes_button_label',
+                                'instructions' => esc_html('Input the Button Label'),
+                                'placeholder' => esc_html('Button Label'),
+                                'type' => 'text',
+                            ),
+                            array(
+                                'key' => 'field_builder_section_buy_now_product_boxes_button_url',
+                                'label' => esc_html('Button URL'),
+                                'name' => 'option_builder_section_buy_now_product_boxes_button_url',
+                                'instructions' => esc_html('Input the Button URL'),
+                                'placeholder' => esc_html('Button URL'),
+                                'type' => 'url',
+                            ),
+                            array(
+                                'key' => 'field_builder_section_buy_now_product_boxes_button_bg',
+                                'label' => esc_html('Button Background Color'),
+                                'name' => 'option_builder_section_buy_now_product_boxes_button_bg',
+                                'instructions' => esc_html('Select the Button Background Color'),
+                                'type' => 'color_picker',
+                                'default_value' => '#333333',
+                            ),
+                        )
                     ),
 
                     /* BUY NOW / GET MORE INFO SECTION END */
