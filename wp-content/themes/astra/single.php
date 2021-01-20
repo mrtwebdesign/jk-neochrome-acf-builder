@@ -38,6 +38,10 @@ get_header(); ?>
 
     <?php endif ?>
 
+<?php else: ?>
+
+    <?php ACF_Builder::single_landing_template(); ?>
+
 <?php endif ?>
 
 <?php get_footer(); ?>

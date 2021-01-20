@@ -9,8 +9,8 @@ const path = require('path');
 let conf_primary_theme = {
 
     entry: {
-      //  main: ['./src/js/index.js', './src/scss/main.scss'],
         acf_repeater_builder: ['./src/scss/acf-repeater-builder.scss'],
+        acf_repeater_builder_frontend: ['./src/js/index.js','./src/scss/acf-repeater-builder-frontend.scss'],
     },
 
     output: {
