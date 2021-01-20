@@ -118,7 +118,10 @@ final class ACF_Builder
                         'name' => 'option_builder_section_type',
                         'type' => 'select',
                         'instructions' => esc_html('Select the section type'),
-
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => 0,
                         'choices' => array(
                             'hero-section' => esc_html('Hero Section'),
@@ -136,9 +139,9 @@ final class ACF_Builder
 
                     array(
                         'key' => 'field_builder_section_hero_type_of_bg',
-                        'label' => esc_html('Type of Background'),
+                        'label' => esc_html('Section Background Style'),
                         'name' => 'option_builder_section_hero_type_of_bg',
-                        'instructions' => esc_html('Select the type of Hero Header'),
+                        'instructions' => esc_html('Select the type of Section Background Style'),
                         'type' => 'button_group',
                         'choices' => array(
                             'color' => esc_html('Color'),
@@ -147,6 +150,10 @@ final class ACF_Builder
                         'default_value' => 'image',
                         'layout' => 'horizontal',
                         'return_format' => 'value',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -161,9 +168,13 @@ final class ACF_Builder
                         'key' => 'field_builder_section_hero_bg_color',
                         'label' => esc_html('Background Color'),
                         'name' => 'option_builder_section_hero_bg_color',
-                        'instructions' => esc_html('Select the Hero Header Background Color'),
+                        'instructions' => esc_html('Select the Section Background Color'),
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -183,11 +194,15 @@ final class ACF_Builder
                         'key' => 'field_builder_section_hero_bg_image',
                         'label' => esc_html('Background Image'),
                         'name' => 'option_builder_section_hero_bg_image',
-                        'instructions' => esc_html('Select the Hero Header Background Image'),
+                        'instructions' => esc_html('Select the Section Background Image'),
                         'type' => 'image',
                         'return_format' => 'id',
                         'preview_size' => 'medium',
                         'library' => 'all',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -553,7 +568,67 @@ final class ACF_Builder
                             ),
                         ),
                     ),
-
+                    array(
+                        'key' => 'field_builder_section_faqs_builder',
+                        'label' => esc_html('FAQs Builder'),
+                        'name' => 'option_builder_section_faqs_builder',
+                        'type' => 'repeater',
+                        'label_placement' => 'top',
+                        'instructions' => esc_html('Create your own FAQ'),
+                        'min' => 1,
+                        'max' => 0,
+                        'layout' => 'block',
+                        'button_label' => esc_html('Add new Category'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_builder_section_faqs_builder_category_name',
+                                'label' => esc_html('Category Name'),
+                                'name' => 'option_builder_section_faqs_builder_category_name',
+                                'instructions' => esc_html('Input the Category Name'),
+                                'placeholder' => esc_html('Category Name'),
+                                'type' => 'text',
+                            ),
+                            array(
+                                'key' => 'field_builder_section_faqs_builder_category_questions_answers',
+                                'label' => esc_html('Questions & Answers'),
+                                'name' => 'option_builder_section_faqs_builder_category_questions_answers',
+                                'type' => 'repeater',
+                                'label_placement' => 'top',
+                                'instructions' => esc_html('Create List of Questions & Answers'),
+                                'min' => 1,
+                                'max' => 0,
+                                'layout' => 'table',
+                                'button_label' => esc_html('Add new Question / Answer'),
+                                'sub_fields' => array(
+                                    array(
+                                        'key' => 'field_builder_section_faqs_builder_category_question',
+                                        'label' => esc_html('Question'),
+                                        'name' => 'option_builder_section_faqs_builder_category_question',
+                                        'instructions' => esc_html('Input the Question'),
+                                        'placeholder' => esc_html('Question'),
+                                        'type' => 'text',
+                                    ),
+                                    array(
+                                        'key' => 'field_builder_section_faqs_builder_category_answer',
+                                        'label' => esc_html('Answer'),
+                                        'name' => 'option_builder_section_faqs_builder_category_answer',
+                                        'instructions' => esc_html('Input the Answer'),
+                                        'placeholder' => esc_html('Answer'),
+                                        'type' => 'textarea',
+                                    ),
+                                )
+                            ),
+                        )
+                    ),
                     /* FAQS SECTION END */
 
                     /* **************************************** */
@@ -661,11 +736,6 @@ final class ACF_Builder
                         'type' => 'font-awesome',
                         'instructions' => '',
                         'required' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
                         'icon_sets' => array(
                             0 => 'fas',
                             1 => 'far',
