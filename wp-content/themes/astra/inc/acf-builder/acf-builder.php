@@ -665,6 +665,87 @@ final class ACF_Builder
                     /* GALLERY SECTION START */
 
                     array(
+                        'key' => 'field_builder_section_gallery_type_of_bg',
+                        'label' => esc_html('Section Background Style'),
+                        'name' => 'option_builder_section_gallery_type_of_bg',
+                        'instructions' => esc_html('Select the type of Section Background Style'),
+                        'type' => 'button_group',
+                        'choices' => array(
+                            'color' => esc_html('Color'),
+                            'image' => esc_html('Image'),
+                        ),
+                        'default_value' => 'image',
+                        'layout' => 'horizontal',
+                        'return_format' => 'value',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_gallery_bg_color',
+                        'label' => esc_html('Background Color'),
+                        'name' => 'option_builder_section_gallery_bg_color',
+                        'instructions' => esc_html('Select the Section Background Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_gallery_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'color',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_gallery_bg_image',
+                        'label' => esc_html('Background Image'),
+                        'name' => 'option_builder_section_gallery_bg_image',
+                        'instructions' => esc_html('Select the Section Background Image'),
+                        'type' => 'image',
+                        'return_format' => 'id',
+                        'preview_size' => 'medium',
+                        'library' => 'all',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_gallery_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
                         'key' => 'field_builder_section_gallery_gallery',
                         'label' => esc_html('Gallery'),
                         'name' => 'option_builder_section_gallery_gallery',
