@@ -8,31 +8,35 @@
  * @since 1.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
 get_header(); ?>
 
-<?php if ( astra_page_layout() == 'left-sidebar' ) : ?>
+<?php if (!ACF_Builder::get_field('field_repeater_builder_toggle')): ?>
 
-	<?php get_sidebar(); ?>
+    <?php if (astra_page_layout() == 'left-sidebar') : ?>
 
-<?php endif ?>
+        <?php get_sidebar(); ?>
 
-	<div id="primary" <?php astra_primary_class(); ?>>
+    <?php endif ?>
 
-		<?php astra_primary_content_top(); ?>
+    <div id="primary" <?php astra_primary_class(); ?>>
 
-		<?php astra_content_loop(); ?>
+        <?php astra_primary_content_top(); ?>
 
-		<?php astra_primary_content_bottom(); ?>
+        <?php astra_content_loop(); ?>
 
-	</div><!-- #primary -->
+        <?php astra_primary_content_bottom(); ?>
 
-<?php if ( astra_page_layout() == 'right-sidebar' ) : ?>
+    </div><!-- #primary -->
 
-	<?php get_sidebar(); ?>
+    <?php if (astra_page_layout() == 'right-sidebar') : ?>
+
+        <?php get_sidebar(); ?>
+
+    <?php endif ?>
 
 <?php endif ?>
 

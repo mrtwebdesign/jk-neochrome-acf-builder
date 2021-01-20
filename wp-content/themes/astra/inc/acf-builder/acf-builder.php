@@ -14,6 +14,84 @@ final class ACF_Builder
 
     }
 
+    public static function the_option($param)
+    {
+
+        if (function_exists('the_field')) :
+
+            return the_field($param, 'option');
+
+        endif;
+
+    }
+
+    public static function get_option($param)
+    {
+
+        if (function_exists('get_field')) :
+
+            return get_field($param, 'option');
+
+        endif;
+
+    }
+
+    public static function the_field($param, $id = null)
+    {
+
+        if ($id == null) :
+
+            $id = get_the_ID();
+
+        endif;
+
+        if (function_exists('the_field')) :
+
+            return the_field($param, $id);
+
+        endif;
+
+    }
+
+    public static function get_field($param, $id = null)
+    {
+
+        if ($id == null) :
+
+            $id = get_the_ID();
+
+        endif;
+
+        if (function_exists('get_field')) :
+
+            return get_field($param, $id);
+
+        endif;
+
+    }
+
+    public static function the_sub_field($param)
+    {
+
+        if (function_exists('the_sub_field')) :
+
+            return the_sub_field($param);
+
+        endif;
+
+    }
+
+    public static function get_sub_field($param)
+    {
+
+        if (function_exists('get_sub_field')) :
+
+            return get_sub_field($param);
+
+        endif;
+
+    }
+
     public function enqueue_admin_styles()
     {
 
@@ -418,6 +496,87 @@ final class ACF_Builder
 
                     /* BUY NOW / GET MORE INFO SECTION START */
 
+                    array(
+                        'key' => 'field_builder_section_buy_now_type_of_bg',
+                        'label' => esc_html('Section Background Style'),
+                        'name' => 'option_builder_section_buy_now_type_of_bg',
+                        'instructions' => esc_html('Select the type of Section Background Style'),
+                        'type' => 'button_group',
+                        'choices' => array(
+                            'color' => esc_html('Color'),
+                            'image' => esc_html('Image'),
+                        ),
+                        'default_value' => 'image',
+                        'layout' => 'horizontal',
+                        'return_format' => 'value',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_bg_color',
+                        'label' => esc_html('Background Color'),
+                        'name' => 'option_builder_section_buy_now_bg_color',
+                        'instructions' => esc_html('Select the Section Background Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_buy_now_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'color',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_bg_image',
+                        'label' => esc_html('Background Image'),
+                        'name' => 'option_builder_section_buy_now_bg_image',
+                        'instructions' => esc_html('Select the Section Background Image'),
+                        'type' => 'image',
+                        'return_format' => 'id',
+                        'preview_size' => 'medium',
+                        'library' => 'all',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_buy_now_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
                     array(
                         'key' => 'field_builder_section_buy_now_main_headline',
                         'label' => esc_html('Main Headline'),
