@@ -15,20 +15,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10571">
-              <caret line="341" column="59" selection-start-line="341" selection-start-column="59" selection-end-line="341" selection-end-column="59" />
+            <state relative-caret-position="421">
+              <caret line="1523" lean-forward="true" selection-start-line="1523" selection-end-line="1523" />
+              <folding>
+                <element signature="e#4510#8804#0#HTML" />
+                <element signature="e#9592#9960#0#HTML" expanded="true" />
+                <element signature="e#15044#16904#0#HTML" />
+                <element signature="e#14392#14760#0#HTML" expanded="true" />
+                <element signature="e#16431#16463#0#HTML" expanded="true" />
+                <element signature="e#17917#18285#0#HTML" expanded="true" />
+                <element signature="e#23942#24298#0#HTML" expanded="true" />
+                <element signature="e#25202#25307#0#HTML" expanded="true" />
+                <element signature="e#16812#17342#1#PHP" />
+                <element signature="e#17965#18261#1#PHP" />
+                <element signature="e#18322#19507#1#PHP" />
+                <element signature="e#19576#20900#1#PHP" />
+                <element signature="e#20922#22213#1#PHP" />
+                <element signature="e#22235#23610#1#PHP" />
+                <element signature="e#23632#24484#1#PHP" />
+                <element signature="e#24506#25353#1#PHP" />
+                <element signature="e#25375#26252#1#PHP" />
+                <element signature="e#26274#27908#1#PHP" />
+                <element signature="e#27930#28942#1#PHP" />
+                <element signature="e#28964#30121#1#PHP" />
+                <element signature="e#30143#31340#1#PHP" />
+                <element signature="e#31362#32672#1#PHP" />
+                <element signature="e#32694#33851#1#PHP" />
+                <element signature="e#33873#35041#1#PHP" />
+                <element signature="e#35241#36588#1#PHP" />
+                <element signature="e#36610#37927#1#PHP" />
+                <element signature="e#37949#39350#1#PHP" />
+                <element signature="e#39372#40247#1#PHP" />
+                <element signature="e#40269#44090#1#PHP" />
+                <element signature="e#44293#45626#1#PHP" />
+                <element signature="e#45648#46951#1#PHP" />
+                <element signature="e#46973#48360#1#PHP" />
+                <element signature="e#50448#51323#1#PHP" />
+                <element signature="e#48382#49419#1#PHP" />
+                <element signature="e#49603#50927#1#PHP" />
+                <element signature="e#50949#52240#1#PHP" />
+                <element signature="e#52262#53637#1#PHP" />
+                <element signature="e#53659#54511#1#PHP" />
+                <element signature="e#54533#55410#1#PHP" />
+                <element signature="e#61266#64957#1#PHP" />
+                <element signature="e#59312#60663#1#PHP" />
+                <element signature="e#60685#62012#1#PHP" />
+                <element signature="e#62034#63445#1#PHP" />
+                <element signature="e#63467#64480#1#PHP" />
+                <element signature="e#64502#65376#1#PHP" />
+                <element signature="e#65398#66261#1#PHP" />
+                <element signature="e#66283#67169#1#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="397">
+              <caret line="171" column="35" selection-start-line="171" selection-start-column="35" selection-end-line="171" selection-end-column="35" />
+              <folding>
+                <element signature="e#1231#1316#0" />
+                <element signature="e#1337#1628#0" />
+                <element signature="e#2088#2909#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,19 +91,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>'coach-core'</find>
-      <find>'type' =&gt; 'true</find>
-      <find>esc_html__</find>
-      <find>, 'neochrome')</find>
-      <find>admin_head</find>
-      <find>true_</find>
-      <find>quotes-icon</find>
-      <find>toggl</find>
       <find>'required' =&gt; 0,</find>
       <find>color</find>
       <find>Buy Now / Get More Info Section Field</find>
       <find>coach-social-widget</find>
-      <find>button</find>
       <find>url</find>
       <find>repea</find>
       <find>group_footer_post_settings</find>
@@ -64,6 +109,18 @@
       <find>field_builder_section_hero_type_of_bg</find>
       <find>field_builder_section_hero_more_info_headline</find>
       <find>field_builder_section_buy_now_main_headline</find>
+      <find>$field_builder_section_gallery_gallery</find>
+      <find>field_builder_section_gallery_gallery</find>
+      <find>fore</find>
+      <find>while</find>
+      <find>field_builder_section_faqs_secondary_headline</find>
+      <find>field_builder_section_faqs_builder</find>
+      <find>field_builder_section_faqs_builder_category_name</find>
+      <find>field_builder_section_faqs_builder_category_questions_answers</find>
+      <find>field_builder_section_rich_text_row_type_of_bg</find>
+      <find>button</find>
+      <find>section-title</find>
+      <find>neo-button</find>
     </findStrings>
     <replaceStrings>
       <replace>'neochrome'</replace>
@@ -91,8 +148,8 @@
         <option value="$PROJECT_DIR$/wp-content/themes/astra/single.php" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/js/index.js" />
-        <option value="$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php" />
         <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php" />
       </list>
     </option>
   </component>
@@ -222,12 +279,12 @@
       <workItem from="1611069463252" duration="7993000" />
       <workItem from="1611097129675" duration="2550000" />
       <workItem from="1611157312634" duration="13789000" />
-      <workItem from="1611236061827" duration="184000" />
+      <workItem from="1611236061827" duration="6615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41437000" />
+    <option name="totallyTimeSpent" value="47868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
@@ -245,7 +302,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="File Transfer" order="9" sideWeight="0.49959284" visible="true" weight="0.3299293" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49959284" visible="true" weight="0.3299293" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49959284" weight="0.3299293" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50040716" side_tool="true" weight="0.3299293" />
@@ -361,17 +418,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php">
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10571">
-          <caret line="341" column="59" selection-start-line="341" selection-start-column="59" selection-end-line="341" selection-end-column="59" />
+        <state relative-caret-position="397">
+          <caret line="171" column="35" selection-start-line="171" selection-start-column="35" selection-end-line="171" selection-end-column="35" />
+          <folding>
+            <element signature="e#1231#1316#0" />
+            <element signature="e#1337#1628#0" />
+            <element signature="e#2088#2909#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="421">
+          <caret line="1523" lean-forward="true" selection-start-line="1523" selection-end-line="1523" />
+          <folding>
+            <element signature="e#4510#8804#0#HTML" />
+            <element signature="e#9592#9960#0#HTML" expanded="true" />
+            <element signature="e#15044#16904#0#HTML" />
+            <element signature="e#14392#14760#0#HTML" expanded="true" />
+            <element signature="e#16431#16463#0#HTML" expanded="true" />
+            <element signature="e#17917#18285#0#HTML" expanded="true" />
+            <element signature="e#23942#24298#0#HTML" expanded="true" />
+            <element signature="e#25202#25307#0#HTML" expanded="true" />
+            <element signature="e#16812#17342#1#PHP" />
+            <element signature="e#17965#18261#1#PHP" />
+            <element signature="e#18322#19507#1#PHP" />
+            <element signature="e#19576#20900#1#PHP" />
+            <element signature="e#20922#22213#1#PHP" />
+            <element signature="e#22235#23610#1#PHP" />
+            <element signature="e#23632#24484#1#PHP" />
+            <element signature="e#24506#25353#1#PHP" />
+            <element signature="e#25375#26252#1#PHP" />
+            <element signature="e#26274#27908#1#PHP" />
+            <element signature="e#27930#28942#1#PHP" />
+            <element signature="e#28964#30121#1#PHP" />
+            <element signature="e#30143#31340#1#PHP" />
+            <element signature="e#31362#32672#1#PHP" />
+            <element signature="e#32694#33851#1#PHP" />
+            <element signature="e#33873#35041#1#PHP" />
+            <element signature="e#35241#36588#1#PHP" />
+            <element signature="e#36610#37927#1#PHP" />
+            <element signature="e#37949#39350#1#PHP" />
+            <element signature="e#39372#40247#1#PHP" />
+            <element signature="e#40269#44090#1#PHP" />
+            <element signature="e#44293#45626#1#PHP" />
+            <element signature="e#45648#46951#1#PHP" />
+            <element signature="e#46973#48360#1#PHP" />
+            <element signature="e#50448#51323#1#PHP" />
+            <element signature="e#48382#49419#1#PHP" />
+            <element signature="e#49603#50927#1#PHP" />
+            <element signature="e#50949#52240#1#PHP" />
+            <element signature="e#52262#53637#1#PHP" />
+            <element signature="e#53659#54511#1#PHP" />
+            <element signature="e#54533#55410#1#PHP" />
+            <element signature="e#61266#64957#1#PHP" />
+            <element signature="e#59312#60663#1#PHP" />
+            <element signature="e#60685#62012#1#PHP" />
+            <element signature="e#62034#63445#1#PHP" />
+            <element signature="e#63467#64480#1#PHP" />
+            <element signature="e#64502#65376#1#PHP" />
+            <element signature="e#65398#66261#1#PHP" />
+            <element signature="e#66283#67169#1#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>

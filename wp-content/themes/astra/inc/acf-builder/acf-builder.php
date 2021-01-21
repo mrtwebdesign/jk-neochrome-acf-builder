@@ -361,13 +361,13 @@ final class ACF_Builder
 
                                                         <div class="button-wrapper">
 
-                                                            <button class="neo-button"
-                                                                    href="<?php echo esc_url($field_builder_section_buy_now_product_boxes_button_url); ?>"
-                                                                    style="background-color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_bg); ?>">
+                                                            <a class="neo-button"
+                                                               href="<?php echo esc_url($field_builder_section_buy_now_product_boxes_button_url); ?>"
+                                                               style="background-color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_bg); ?>">
 
                                                                 <?php echo esc_html($field_builder_section_buy_now_product_boxes_button_label); ?>
 
-                                                            </button>
+                                                            </a>
 
                                                         </div>
 
@@ -397,12 +397,57 @@ final class ACF_Builder
 
                     elseif ($section_type === 'gallery-section'):
 
+                        $field_builder_section_gallery_main_headline = ACF_Builder::get_sub_field('field_builder_section_gallery_main_headline');
+
+                        $field_builder_section_gallery_type_of_bg = ACF_Builder::get_sub_field('field_builder_section_gallery_type_of_bg');
+
+                        $field_builder_section_gallery_bg_color = ACF_Builder::get_sub_field('field_builder_section_gallery_bg_color');
+
+                        $field_builder_section_gallery_bg_image = ACF_Builder::get_sub_field('field_builder_section_gallery_bg_image');
+
+                        $field_builder_section_gallery_gallery = ACF_Builder::get_sub_field('field_builder_section_gallery_gallery');
+
                         ?>
 
-                        <section class="neo-section gallery-section">
+                        <section class="neo-section gallery-section"
+                                 style="<?php if ($field_builder_section_gallery_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_gallery_bg_color); ?><?php elseif ($field_builder_section_gallery_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_gallery_bg_image,'full')); ?>);<?php endif; ?>">
 
                             <div class="neo-container inner-wrapper">
 
+                                <?php if (!empty($field_builder_section_gallery_main_headline)): ?>
+
+                                    <h2 class="section-title">
+
+                                        <?php echo esc_html($field_builder_section_gallery_main_headline); ?>
+
+                                    </h2>
+
+                                <?php endif; ?>
+
+                                <?php if (!empty($field_builder_section_gallery_gallery)): ?>
+
+                                    <div class="gallery-wrapper">
+
+                                        <?php foreach ($field_builder_section_gallery_gallery as $gallery): ?>
+
+                                            <div class="gallery-item">
+
+                                                <div class="inner-item">
+
+                                                    <div class="image-wrapper"
+                                                         style="background-image: url('<?php echo esc_url($gallery); ?>')">
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        <?php endforeach; ?>
+
+                                    </div>
+
+                                <?php endif; ?>
 
                             </div>
 
@@ -412,12 +457,114 @@ final class ACF_Builder
 
                     elseif ($section_type === 'faqs-section'):
 
+                        $field_builder_section_faqs_type_of_bg = ACF_Builder::get_sub_field('field_builder_section_faqs_type_of_bg');
+
+                        $field_builder_section_faqs_bg_color = ACF_Builder::get_sub_field('field_builder_section_faqs_bg_color');
+
+                        $field_builder_section_faqs_bg_image = ACF_Builder::get_sub_field('field_builder_section_faqs_bg_image');
+
+                        $field_builder_section_faqs_main_headline = ACF_Builder::get_sub_field('field_builder_section_faqs_main_headline');
+
+                        $field_builder_section_faqs_secondary_headline = ACF_Builder::get_sub_field('field_builder_section_faqs_secondary_headline');
+
                         ?>
 
-                        <section class="neo-section faqs-section">
+                        <section class="neo-section faqs-section"
+                                 style="<?php if ($field_builder_section_faqs_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_faqs_bg_color); ?><?php elseif ($field_builder_section_faqs_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_faqs_bg_image,'full')); ?>);<?php endif; ?>">
 
                             <div class="neo-container inner-wrapper">
 
+                                <?php if (!empty($field_builder_section_faqs_main_headline)): ?>
+
+                                    <h2 class="section-title">
+
+                                        <?php echo esc_html($field_builder_section_faqs_main_headline); ?>
+
+                                    </h2>
+
+                                <?php endif; ?>
+
+                                <?php if (!empty($field_builder_section_faqs_secondary_headline)): ?>
+
+                                    <p class="section-subtitle">
+
+                                        <?php echo esc_html($field_builder_section_faqs_secondary_headline); ?>
+
+                                    </p>
+
+                                <?php endif; ?>
+
+                                <?php if (have_rows('field_builder_section_faqs_builder')): ?>
+
+                                    <div class="faqs-wrapper">
+
+                                        <?php while (have_rows('field_builder_section_faqs_builder')) : the_row(); ?>
+
+                                            <?php
+
+                                            $field_builder_section_faqs_builder_category_name = ACF_Builder::get_sub_field('field_builder_section_faqs_builder_category_name');
+
+                                            ?>
+
+                                            <div class="faq-category">
+
+                                                <h5 class="category-name">
+
+                                                    <?php echo esc_html($field_builder_section_faqs_builder_category_name); ?>
+
+                                                </h5>
+
+                                                <?php if (have_rows('field_builder_section_faqs_builder_category_questions_answers')): ?>
+
+                                                    <div class="questions-wrapper">
+
+                                                        <?php while (have_rows('field_builder_section_faqs_builder_category_questions_answers')) : the_row(); ?>
+
+                                                            <?php
+
+                                                            $field_builder_section_faqs_builder_category_question = ACF_Builder::get_sub_field('field_builder_section_faqs_builder_category_question');
+
+                                                            $field_builder_section_faqs_builder_category_answer = ACF_Builder::get_sub_field('field_builder_section_faqs_builder_category_answer');
+
+                                                            ?>
+
+                                                            <div class="question-wrapper">
+
+                                                                <?php if (!empty($field_builder_section_faqs_builder_category_question)): ?>
+
+                                                                    <h6 class="question-title">
+
+                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_question); ?>
+
+                                                                    </h6>
+
+                                                                <?php endif; ?>
+
+                                                                <?php if (!empty($field_builder_section_faqs_builder_category_answer)): ?>
+
+                                                                    <p class="answer-text">
+
+                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_answer); ?>
+
+                                                                    </p>
+
+                                                                <?php endif; ?>
+
+                                                            </div>
+
+                                                        <?php endwhile; ?>
+
+                                                    </div>
+
+                                                <?php endif; ?>
+
+                                            </div>
+
+                                        <?php endwhile; ?>
+
+                                    </div>
+
+                                <?php endif; ?>
 
                             </div>
 
@@ -427,15 +574,52 @@ final class ACF_Builder
 
                     elseif ($section_type === 'rich-text-row-section'):
 
+                        $field_builder_section_rich_text_row_type_of_bg = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_type_of_bg');
+
+                        $field_builder_section_rich_text_row_bg_color = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_bg_color');
+
+                        $field_builder_section_rich_text_row_bg_image = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_bg_image');
+
+                        $field_builder_section_rich_text_row_wsw = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_wsw');
+
+                        $field_builder_section_rich_text_row_button_label = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_button_label');
+
+                        $field_builder_section_rich_text_row_button_url = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_button_url');
+
+                        $field_builder_section_rich_text_row_button_bg = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_button_bg');
+
                         ?>
 
-                        <section class="neo-section rich-text-row-section">
+                        <section class="neo-section rich-text-row-section"
+                                 style="<?php if ($field_builder_section_rich_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_rich_text_row_bg_color); ?><?php elseif ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_rich_text_row_bg_image,'full')); ?>);<?php endif; ?>">
 
                             <div class="neo-container inner-wrapper">
 
-                                <div class="rich-text-">
+                                <?php if (!empty($field_builder_section_rich_text_row_wsw)): ?>
 
-                                </div>
+                                    <div class="rich-text">
+
+                                        <?php echo esc_html($field_builder_section_rich_text_row_wsw); ?>
+
+                                    </div>
+
+                                <?php endif; ?>
+
+                                <?php if (!empty($field_builder_section_rich_text_row_button_label)): ?>
+
+                                    <div class="button-wrapper">
+
+                                        <a class="neo-button"
+                                           href="<?php echo esc_url($field_builder_section_rich_text_row_button_url); ?>"
+                                           style="background-color: <?php echo esc_attr($field_builder_section_rich_text_row_button_bg); ?>">
+
+                                            <?php echo esc_html($field_builder_section_rich_text_row_button_label); ?>
+
+                                        </a>
+
+                                    </div>
+
+                                <?php endif; ?>
 
                             </div>
 
@@ -1116,6 +1300,23 @@ final class ACF_Builder
                         ),
                     ),
                     array(
+                        'key' => 'field_builder_section_gallery_main_headline',
+                        'label' => esc_html('Main Headline'),
+                        'name' => 'option_builder_section_gallery_main_headline',
+                        'instructions' => esc_html('Input the Main Headline'),
+                        'type' => 'text',
+                        'placeholder' => esc_html('Main Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
                         'key' => 'field_builder_section_gallery_gallery',
                         'label' => esc_html('Gallery'),
                         'name' => 'option_builder_section_gallery_gallery',
@@ -1320,6 +1521,7 @@ final class ACF_Builder
                             ),
                         )
                     ),
+
                     /* FAQS SECTION END */
 
                     /* **************************************** */
