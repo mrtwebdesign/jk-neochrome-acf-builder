@@ -32,6 +32,23 @@ final class ACF_Builder
 
         add_action('wp_enqueue_scripts', [$this, 'enqueue_styles']);
 
+        add_filter('the_content', [$this, 'insert_in_post']);
+
+    }
+
+    public function insert_in_post($content)
+    {
+
+        if (ACF_Builder::get_field('field_repeater_builder_toggle')):
+
+            ACF_Builder::single_landing_template();
+
+        else:
+
+            return $content;
+
+        endif;
+
     }
 
     public static function the_option($param)
@@ -117,7 +134,7 @@ final class ACF_Builder
 
         if (!wp_style_is('acf-repeater-builder-frontend-css')):
 
-            wp_enqueue_style('acf-repeater-builder-frontend-css', CORE_PLUGIN_URL. '/inc/assets/css/acf_repeater_builder_frontend.css');
+            wp_enqueue_style('acf-repeater-builder-frontend-css', CORE_PLUGIN_URL . '/inc/assets/css/acf_repeater_builder_frontend.css');
 
         endif;
 
@@ -172,21 +189,35 @@ final class ACF_Builder
 
                         $field_builder_section_hero_main_headline = ACF_Builder::get_sub_field('field_builder_section_hero_main_headline');
 
+                        $field_builder_section_hero_main_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_main_headline_color');
+
                         $field_builder_section_hero_sub_headline = ACF_Builder::get_sub_field('field_builder_section_hero_sub_headline');
 
+                        $field_builder_section_hero_sub_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_sub_headline_color');
+
                         $field_builder_section_hero_secondary_headline = ACF_Builder::get_sub_field('field_builder_section_hero_secondary_headline');
+
+                        $field_builder_section_hero_secondary_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_secondary_headline_color');
 
                         $field_builder_section_hero_more_info_box_toggle = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_box_toggle');
 
                         $field_builder_section_hero_more_info_headline = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_headline');
 
+                        $field_builder_section_hero_more_info_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_headline_color');
+
+                        $field_builder_section_hero_propositions_color = ACF_Builder::get_sub_field('field_builder_section_hero_propositions_color');
+
                         $field_builder_section_hero_more_info_secondary_headline = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_secondary_headline');
+
+                        $field_builder_section_hero_more_info_secondary_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_secondary_headline_color');
 
                         $field_builder_section_hero_more_info_box_phone_toggle = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_box_phone_toggle');
 
                         $field_builder_section_hero_more_info_button_label = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_button_label');
 
                         $field_builder_section_hero_more_info_button_bg = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_button_bg');
+
+                        $field_builder_section_hero_more_info_button_color = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_button_color');
 
                         ?>
 
@@ -199,7 +230,8 @@ final class ACF_Builder
 
                                     <?php if (!empty($field_builder_section_hero_sub_headline)): ?>
 
-                                        <p class="sub-headline">
+                                        <p class="sub-headline"
+                                           style="color: <?php echo esc_attr($field_builder_section_hero_sub_headline_color); ?>;">
 
                                             <?php echo esc_html($field_builder_section_hero_sub_headline); ?>
 
@@ -209,7 +241,8 @@ final class ACF_Builder
 
                                     <?php if (!empty($field_builder_section_hero_main_headline)): ?>
 
-                                        <h1 class="hero-main-heading">
+                                        <h1 class="hero-main-heading"
+                                            style="color: <?php echo esc_attr($field_builder_section_hero_main_headline_color); ?>;">
 
                                             <?php echo esc_html($field_builder_section_hero_main_headline); ?>
 
@@ -235,7 +268,8 @@ final class ACF_Builder
 
                                                     <li>
 
-                                                        <p class="proposition-title">
+                                                        <p class="proposition-title"
+                                                           style="color: <?php echo esc_attr($field_builder_section_hero_propositions_color); ?>;">
 
                                                             <?php echo esc_html($field_builder_section_hero_proposition_title); ?>
 
@@ -259,7 +293,7 @@ final class ACF_Builder
 
                                     <?php if (!empty($field_builder_section_hero_secondary_headline)): ?>
 
-                                        <p class="secondary-headline">
+                                        <p class="secondary-headline" style="color: <?php echo esc_attr($field_builder_section_hero_secondary_headline_color); ?>;">
 
                                             <?php echo esc_html($field_builder_section_hero_secondary_headline); ?>
 
@@ -275,13 +309,13 @@ final class ACF_Builder
 
                                         <div class="info-box-wrapper">
 
-                                            <h2 class="info-box-title">
+                                            <h2 class="info-box-title" style="color: <?php echo esc_attr($field_builder_section_hero_more_info_headline_color); ?>;">
 
                                                 <?php echo esc_html($field_builder_section_hero_more_info_headline); ?>
 
                                             </h2>
 
-                                            <p class="info-box-secondary-headline">
+                                            <p class="info-box-secondary-headline" style="color: <?php echo esc_attr($field_builder_section_hero_more_info_secondary_headline_color); ?>;">
 
                                                 <?php echo esc_html($field_builder_section_hero_more_info_secondary_headline); ?>
 
@@ -873,7 +907,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_hero_main_headline_color',
                         'instructions' => esc_html('Select the Main Headline Color'),
                         'type' => 'color_picker',
-                        'default_value' => '#333333',
+                        'default_value' => '#161616',
                         'wrapper' => array(
                             'width' => '33.33333%',
                             'class' => '',
@@ -973,6 +1007,23 @@ final class ACF_Builder
                         ),
                     ),
                     array(
+                        'key' => 'field_builder_section_hero_propositions_color',
+                        'label' => esc_html('Propositions Color'),
+                        'name' => 'option_builder_section_hero_propositions_color',
+                        'instructions' => esc_html('Select the Propositions Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#565656',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
                         'key' => 'field_builder_section_hero_propositions',
                         'label' => esc_html('Propositions'),
                         'name' => 'option_builder_section_hero_propositions',
@@ -1004,12 +1055,19 @@ final class ACF_Builder
                         )
                     ),
                     array(
-                        'key' => 'field_builder_section_hero_propositions_color',
-                        'label' => esc_html('Propositions Color'),
-                        'name' => 'option_builder_section_hero_propositions_color',
-                        'instructions' => esc_html('Select the Propositions Color'),
-                        'type' => 'color_picker',
-                        'default_value' => '#333333',
+                        'key' => 'field_builder_section_hero_more_info_box_toggle',
+                        'label' => esc_html('More Info Box'),
+                        'name' => 'option_builder_section_hero_more_info_box_toggle',
+                        'instructions' => esc_html('Enable/Disable More Info Box'),
+                        'type' => 'true_false',
+                        'default_value' => 0,
+                        'ui' => 1,
+                        'ui_on_text' => esc_html('Enable'),
+                        'ui_off_text' => esc_html('Disable'),
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -1021,21 +1079,30 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_hero_more_info_box_toggle',
-                        'label' => esc_html('More Info Box'),
-                        'name' => 'option_builder_section_hero_more_info_box_toggle',
-                        'instructions' => esc_html('Enable/Disable More Info Box'),
+                        'key' => 'field_builder_section_hero_more_info_box_phone_toggle',
+                        'label' => esc_html('Phone Field'),
+                        'name' => 'option_builder_section_hero_more_info_box_phone_toggle',
+                        'instructions' => esc_html('Enable/Disable More Info Phone Field'),
                         'type' => 'true_false',
-                        'default_value' => 0,
+                        'default_value' => 1,
                         'ui' => 1,
                         'ui_on_text' => esc_html('Enable'),
                         'ui_off_text' => esc_html('Disable'),
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
                                     'field' => 'field_builder_section_type',
                                     'operator' => '==',
                                     'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
                                 ),
                             ),
                         ),
@@ -1072,7 +1139,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_hero_more_info_headline_color',
                         'instructions' => esc_html('Select the More Info Main Headline Color'),
                         'type' => 'color_picker',
-                        'default_value' => '#333333',
+                        'default_value' => '#161616',
                         'wrapper' => array(
                             'width' => '33.33333%',
                             'class' => '',
@@ -1124,36 +1191,11 @@ final class ACF_Builder
                         'name' => 'option_builder_section_hero_more_info_secondary_headline_color',
                         'instructions' => esc_html('Select the More Info Secondary Headline Color'),
                         'type' => 'color_picker',
-                        'default_value' => '#333333',
+                        'default_value' => '#565656',
                         'wrapper' => array(
                             'width' => '33.33333%',
                             'class' => '',
                         ),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                                array(
-                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
-                                    'operator' => '==',
-                                    'value' => '1',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_hero_more_info_box_phone_toggle',
-                        'label' => esc_html('Phone Field'),
-                        'name' => 'option_builder_section_hero_more_info_box_phone_toggle',
-                        'instructions' => esc_html('Enable/Disable More Info Phone Field'),
-                        'type' => 'true_false',
-                        'default_value' => 1,
-                        'ui' => 1,
-                        'ui_on_text' => esc_html('Enable'),
-                        'ui_off_text' => esc_html('Disable'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -1176,6 +1218,10 @@ final class ACF_Builder
                         'instructions' => esc_html('Input the More Info Button Label'),
                         'type' => 'text',
                         'placeholder' => esc_html('Button Label'),
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -1197,7 +1243,37 @@ final class ACF_Builder
                         'name' => 'field_builder_section_hero_more_info_button_bg',
                         'instructions' => esc_html('Select the More Info Button Background Color'),
                         'type' => 'color_picker',
-                        'default_value' => '#333333',
+                        'default_value' => '#147aff',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_more_info_button_color',
+                        'label' => esc_html('Button Color'),
+                        'name' => 'field_builder_section_hero_more_info_button_color',
+                        'instructions' => esc_html('Select the More Info Button Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -1328,7 +1404,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_buy_now_main_headline_color',
                         'instructions' => esc_html('Select the Main Headline Color'),
                         'type' => 'color_picker',
-                        'default_value' => '#333333',
+                        'default_value' => '#161616',
                         'wrapper' => array(
                             'width' => '33.33333%',
                             'class' => '',
@@ -1338,7 +1414,49 @@ final class ACF_Builder
                                 array(
                                     'field' => 'field_builder_section_type',
                                     'operator' => '==',
-                                    'value' => 'hero-section',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_product_boxes_title_color',
+                        'label' => esc_html('Product Boxes Title Color'),
+                        'name' => 'option_builder_section_buy_now_product_boxes_title_color',
+                        'instructions' => esc_html('Select the Product Boxes Title Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#161616',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_product_boxes_content_color',
+                        'label' => esc_html('Product Boxes Content Color'),
+                        'name' => 'option_builder_section_buy_now_product_boxes_content_color',
+                        'instructions' => esc_html('Select the Product Boxes Content Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#565656',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
                                 ),
                             ),
                         ),
@@ -1352,7 +1470,7 @@ final class ACF_Builder
                         'instructions' => esc_html('Add Box'),
                         'min' => 1,
                         'max' => 0,
-                        'layout' => 'row',
+                        'layout' => 'block',
                         'button_label' => esc_html('Add new Product Box'),
                         'conditional_logic' => array(
                             array(
@@ -1371,6 +1489,10 @@ final class ACF_Builder
                                 'instructions' => esc_html('Input the Box Title'),
                                 'placeholder' => esc_html('Box Title'),
                                 'type' => 'text',
+                                'wrapper' => array(
+                                    'width' => '50%',
+                                    'class' => '',
+                                ),
                             ),
                             array(
                                 'key' => 'field_builder_section_buy_now_product_boxes_content',
@@ -1379,6 +1501,10 @@ final class ACF_Builder
                                 'instructions' => esc_html('Input the Box Content'),
                                 'placeholder' => esc_html('Box Content'),
                                 'type' => 'textarea',
+                                'wrapper' => array(
+                                    'width' => '50%',
+                                    'class' => '',
+                                ),
                             ),
                             array(
                                 'key' => 'field_builder_section_buy_now_product_boxes_button_label',
@@ -1387,6 +1513,10 @@ final class ACF_Builder
                                 'instructions' => esc_html('Input the Button Label'),
                                 'placeholder' => esc_html('Button Label'),
                                 'type' => 'text',
+                                'wrapper' => array(
+                                    'width' => '33.33333%',
+                                    'class' => '',
+                                ),
                             ),
                             array(
                                 'key' => 'field_builder_section_buy_now_product_boxes_button_url',
@@ -1395,6 +1525,10 @@ final class ACF_Builder
                                 'instructions' => esc_html('Input the Button URL'),
                                 'placeholder' => esc_html('Button URL'),
                                 'type' => 'url',
+                                'wrapper' => array(
+                                    'width' => '33.33333%',
+                                    'class' => '',
+                                ),
                             ),
                             array(
                                 'key' => 'field_builder_section_buy_now_product_boxes_button_bg',
@@ -1402,51 +1536,13 @@ final class ACF_Builder
                                 'name' => 'option_builder_section_buy_now_product_boxes_button_bg',
                                 'instructions' => esc_html('Select the Button Background Color'),
                                 'type' => 'color_picker',
-                                'default_value' => '#333333',
+                                'default_value' => '#147aff',
+                                'wrapper' => array(
+                                    'width' => '33.33333%',
+                                    'class' => '',
+                                ),
                             ),
                         )
-                    ),
-                    array(
-                        'key' => 'field_builder_section_buy_now_product_boxes_title_color',
-                        'label' => esc_html('Boxes Title Color'),
-                        'name' => 'option_builder_section_buy_now_product_boxes_title_color',
-                        'instructions' => esc_html('Select the Main Headline Color'),
-                        'type' => 'color_picker',
-                        'default_value' => '#333333',
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
-                        ),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_buy_now_product_boxes_content_color',
-                        'label' => esc_html('Boxes Content Color'),
-                        'name' => 'option_builder_section_buy_now_product_boxes_content_color',
-                        'instructions' => esc_html('Select the Boxes Content Color'),
-                        'type' => 'color_picker',
-                        'default_value' => '#565656',
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
-                        ),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                            ),
-                        ),
                     ),
 
                     /* BUY NOW / GET MORE INFO SECTION END */
@@ -1907,7 +2003,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_rich_text_row_button_bg',
                         'instructions' => esc_html('Select the Button Background Color'),
                         'type' => 'color_picker',
-                        'default_value' => '#333333',
+                        'default_value' => '#161616',
                         'conditional_logic' => array(
                             array(
                                 array(

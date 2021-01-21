@@ -12,8 +12,8 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-get_header(); ?>
+the_content();
 
-<?php ACF_Builder::single_landing_template(); ?>
+get_header(); ?>
 
 <?php get_footer(); ?>
