@@ -335,37 +335,45 @@ final class ACF_Builder
 
                                             <div class="box">
 
-                                                <?php if (!empty($field_builder_section_buy_now_product_boxes_title)): ?>
+                                                <div class="box-inner">
 
-                                                    <h3 class="box-title">
+                                                    <?php if (!empty($field_builder_section_buy_now_product_boxes_title)): ?>
 
-                                                        <?php echo esc_html($field_builder_section_buy_now_product_boxes_title); ?>
+                                                        <h4 class="box-title">
 
-                                                    </h3>
+                                                            <?php echo esc_html($field_builder_section_buy_now_product_boxes_title); ?>
 
-                                                <?php endif; ?>
+                                                        </h4>
 
-                                                <?php if (!empty($field_builder_section_buy_now_product_boxes_content)): ?>
+                                                    <?php endif; ?>
 
-                                                    <p class="box-content">
+                                                    <?php if (!empty($field_builder_section_buy_now_product_boxes_content)): ?>
 
-                                                        <?php echo esc_html($field_builder_section_buy_now_product_boxes_content); ?>
+                                                        <p class="box-content">
 
-                                                    </p>
+                                                            <?php echo esc_html($field_builder_section_buy_now_product_boxes_content); ?>
 
-                                                <?php endif; ?>
+                                                        </p>
 
-                                                <?php if (!empty($field_builder_section_buy_now_product_boxes_button_label)): ?>
+                                                    <?php endif; ?>
 
-                                                    <button class="neo-button"
-                                                            href="<?php echo esc_url($field_builder_section_buy_now_product_boxes_button_url); ?>"
-                                                            style="background-color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_bg); ?>">
+                                                    <?php if (!empty($field_builder_section_buy_now_product_boxes_button_label)): ?>
 
-                                                        <?php echo esc_html($field_builder_section_buy_now_product_boxes_button_label); ?>
+                                                        <div class="button-wrapper">
 
-                                                    </button>
+                                                            <button class="neo-button"
+                                                                    href="<?php echo esc_url($field_builder_section_buy_now_product_boxes_button_url); ?>"
+                                                                    style="background-color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_bg); ?>">
 
-                                                <?php endif;. ?>
+                                                                <?php echo esc_html($field_builder_section_buy_now_product_boxes_button_label); ?>
+
+                                                            </button>
+
+                                                        </div>
+
+                                                    <?php endif; ?>
+
+                                                </div>
 
                                             </div>
 
