@@ -1,5 +1,3 @@
-const __themename = 'astra';
-
 const publicPath = '/';
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -15,7 +13,7 @@ let conf_primary_theme = {
 
     output: {
         publicPath: publicPath,
-        path: path.resolve(__dirname, `./wp-content/themes/${__themename}`),
+        path: path.resolve(__dirname, `./wp-content/plugins/acf-landing-page-builder`),
         filename: 'inc/assets/js/[name].js'
     },
 
