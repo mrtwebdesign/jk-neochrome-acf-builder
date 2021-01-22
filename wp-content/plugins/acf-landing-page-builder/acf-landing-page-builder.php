@@ -189,6 +189,8 @@ final class ACF_Builder
 
                         $field_builder_section_hero_bg_image = self::get_sub_field('field_builder_section_hero_bg_image');
 
+                        $field_builder_section_hero_bg_image_overlay = self::get_sub_field('field_builder_section_hero_bg_image_overlay');
+
                         $field_builder_section_hero_main_headline = self::get_sub_field('field_builder_section_hero_main_headline');
 
                         $field_builder_section_hero_main_headline_color = self::get_sub_field('field_builder_section_hero_main_headline_color');
@@ -225,6 +227,13 @@ final class ACF_Builder
 
                         <section class="neo-section hero-section"
                                  style="<?php if ($field_builder_section_hero_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_hero_bg_color); ?><?php elseif ($field_builder_section_hero_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_hero_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_hero_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_hero_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
 
                             <div class="neo-container inner-wrapper">
 
@@ -268,7 +277,7 @@ final class ACF_Builder
 
                                                     ?>
 
-                                                    <li>
+                                                    <li style="color: <?php echo esc_attr($field_builder_section_hero_propositions_color); ?>;">
 
                                                         <p class="proposition-title"
                                                            style="color: <?php echo esc_attr($field_builder_section_hero_propositions_color); ?>;">
@@ -336,7 +345,7 @@ final class ACF_Builder
                                                     <input type="email" class="input-field" name="email-field"
                                                            placeholder="<?php echo esc_html('Email'); ?>">
 
-                                                    <?php if (!$field_builder_section_hero_more_info_box_phone_toggle): ?>
+                                                    <?php if ($field_builder_section_hero_more_info_box_phone_toggle): ?>
 
                                                         <input type="text" class="input-field" name="phone-field"
                                                                placeholder="<?php echo esc_html('Phone'); ?>">
@@ -374,6 +383,8 @@ final class ACF_Builder
 
                         $field_builder_section_buy_now_bg_image = self::get_sub_field('field_builder_section_buy_now_bg_image');
 
+                        $field_builder_section_buy_now_bg_image_overlay = self::get_sub_field('field_builder_section_buy_now_bg_image_overlay');
+
                         $field_builder_section_buy_now_main_headline = self::get_sub_field('field_builder_section_buy_now_main_headline');
 
                         $field_builder_section_buy_now_main_headline_color = self::get_sub_field('field_builder_section_buy_now_main_headline_color');
@@ -386,6 +397,13 @@ final class ACF_Builder
 
                         <section class="neo-section buy-now-get-more-info-section"
                                  style="<?php if ($field_builder_section_buy_now_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_buy_now_bg_color); ?><?php elseif ($field_builder_section_buy_now_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_buy_now_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_buy_now_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_buy_now_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
 
                             <div class="neo-container inner-wrapper">
 
@@ -487,6 +505,8 @@ final class ACF_Builder
 
                         $field_builder_section_gallery_type_of_bg = self::get_sub_field('field_builder_section_gallery_type_of_bg');
 
+                        $field_builder_section_gallery_bg_image_overlay = self::get_sub_field('field_builder_section_gallery_bg_image_overlay');
+
                         $field_builder_section_gallery_bg_color = self::get_sub_field('field_builder_section_gallery_bg_color');
 
                         $field_builder_section_gallery_bg_image = self::get_sub_field('field_builder_section_gallery_bg_image');
@@ -497,6 +517,13 @@ final class ACF_Builder
 
                         <section class="neo-section gallery-section"
                                  style="<?php if ($field_builder_section_gallery_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_gallery_bg_color); ?><?php elseif ($field_builder_section_gallery_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_gallery_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_gallery_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_gallery_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
 
                             <div class="neo-container inner-wrapper">
 
@@ -549,6 +576,8 @@ final class ACF_Builder
 
                         $field_builder_section_faqs_bg_image = self::get_sub_field('field_builder_section_faqs_bg_image');
 
+                        $field_builder_section_faqs_bg_image_overlay = self::get_sub_field('field_builder_section_faqs_bg_image_overlay');
+
                         $field_builder_section_faqs_main_headline = self::get_sub_field('field_builder_section_faqs_main_headline');
 
                         $field_builder_section_faqs_secondary_headline = self::get_sub_field('field_builder_section_faqs_secondary_headline');
@@ -557,6 +586,13 @@ final class ACF_Builder
 
                         <section class="neo-section faqs-section"
                                  style="<?php if ($field_builder_section_faqs_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_faqs_bg_color); ?><?php elseif ($field_builder_section_faqs_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_faqs_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_faqs_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_faqs_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
 
                             <div class="neo-container inner-wrapper">
 
@@ -666,6 +702,8 @@ final class ACF_Builder
 
                         $field_builder_section_rich_text_row_bg_image = self::get_sub_field('field_builder_section_rich_text_row_bg_image');
 
+                        $field_builder_section_rich_text_row_bg_image_overlay = self::get_sub_field('field_builder_section_rich_text_row_bg_image_overlay');
+
                         $field_builder_section_rich_text_row_wsw = self::get_sub_field('field_builder_section_rich_text_row_wsw');
 
                         $field_builder_section_rich_text_row_button_label = self::get_sub_field('field_builder_section_rich_text_row_button_label');
@@ -676,6 +714,13 @@ final class ACF_Builder
 
                         <section class="neo-section rich-text-row-section"
                                  style="<?php if ($field_builder_section_rich_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_rich_text_row_bg_color); ?><?php elseif ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_rich_text_row_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_rich_text_row_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
 
                             <div class="neo-container inner-wrapper">
 
@@ -694,8 +739,7 @@ final class ACF_Builder
                                     <div class="button-wrapper">
 
                                         <a class="neo-button"
-                                           href="<?php echo esc_url($field_builder_section_rich_text_row_button_url); ?>"
-                                           style="background-color: <?php echo esc_attr($field_builder_section_rich_text_row_button_bg); ?>; color:<?php echo esc_attr($field_builder_section_rich_text_row_button_color); ?>">
+                                           href="<?php echo esc_url($field_builder_section_rich_text_row_button_url); ?>">
 
                                             <?php echo esc_html($field_builder_section_rich_text_row_button_label); ?>
 
@@ -2151,7 +2195,7 @@ final class ACF_Builder
                         'layout' => 'horizontal',
                         'return_format' => 'value',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2172,7 +2216,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2200,7 +2244,31 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_hero_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_bg_image_overlay',
+                        'label' => esc_html('Background Image Overlay'),
+                        'name' => 'option_builder_section_hero_bg_image_overlay',
+                        'instructions' => esc_html('Select the depth of Background Image Overlay'),
+                        'wrapper' => array(
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2592,7 +2660,7 @@ final class ACF_Builder
                         'layout' => 'horizontal',
                         'return_format' => 'value',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2613,7 +2681,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2641,7 +2709,31 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_buy_now_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_bg_image_overlay',
+                        'label' => esc_html('Background Image Overlay'),
+                        'name' => 'option_builder_section_buy_now_bg_image_overlay',
+                        'instructions' => esc_html('Select the depth of Background Image Overlay'),
+                        'wrapper' => array(
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2835,7 +2927,7 @@ final class ACF_Builder
                         'layout' => 'horizontal',
                         'return_format' => 'value',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2856,7 +2948,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2884,7 +2976,31 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_gallery_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_gallery_bg_image_overlay',
+                        'label' => esc_html('Background Image Overlay'),
+                        'name' => 'option_builder_section_gallery_bg_image_overlay',
+                        'instructions' => esc_html('Select the depth of Background Image Overlay'),
+                        'wrapper' => array(
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2962,7 +3078,7 @@ final class ACF_Builder
                         'layout' => 'horizontal',
                         'return_format' => 'value',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2983,7 +3099,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3011,7 +3127,31 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_faqs_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_faqs_bg_image_overlay',
+                        'label' => esc_html('Background Image Overlay'),
+                        'name' => 'option_builder_section_faqs_bg_image_overlay',
+                        'instructions' => esc_html('Select the depth of Background Image Overlay'),
+                        'wrapper' => array(
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3195,6 +3335,30 @@ final class ACF_Builder
                         'library' => 'all',
                         'wrapper' => array(
                             'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_rich_text_row_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_rich_text_row_bg_image_overlay',
+                        'label' => esc_html('Background Image Overlay'),
+                        'name' => 'option_builder_section_rich_text_row_bg_image_overlay',
+                        'instructions' => esc_html('Select the depth of Background Image Overlay'),
+                        'wrapper' => array(
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
