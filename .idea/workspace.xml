@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bdb71f5-d54d-41e6-8b6f-1368d23aad71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/js/acf_repeater_builder_frontend.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/js/acf_repeater_builder_frontend.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="407">
-              <caret line="681" column="103" lean-forward="true" selection-start-line="681" selection-start-column="90" selection-end-line="681" selection-end-column="103" />
+              <caret line="681" column="45" selection-start-line="681" selection-start-column="45" selection-end-line="681" selection-end-column="45" />
               <folding>
                 <element signature="n#insert_in_post#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#the_option#0;n#ACF_Builder#0;n#!!top" />
@@ -52,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="633" column="30" lean-forward="true" selection-start-line="633" selection-start-column="30" selection-end-line="633" selection-end-column="30" />
+            <state relative-caret-position="304">
+              <caret line="598" lean-forward="true" selection-start-line="598" selection-end-line="598" />
               <folding>
                 <element signature="e#9197#10196#0" />
                 <element signature="e#8098#8425#0" />
@@ -66,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="403">
@@ -107,8 +104,8 @@
       <find>wp_enqueue_scripts</find>
       <find>enqueue_styles</find>
       <find>priva</find>
-      <find>right-side</find>
       <find>category-</find>
+      <find>right-side</find>
     </findStrings>
     <replaceStrings>
       <replace>'neochrome'</replace>
@@ -290,18 +287,18 @@
       <workItem from="1611097129675" duration="2550000" />
       <workItem from="1611157312634" duration="13789000" />
       <workItem from="1611236061827" duration="23774000" />
-      <workItem from="1611323857735" duration="17794000" />
+      <workItem from="1611323857735" duration="18521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82821000" />
+    <option name="totallyTimeSpent" value="83548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16327362" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16327362" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -444,7 +441,7 @@
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
-          <caret line="681" column="103" lean-forward="true" selection-start-line="681" selection-start-column="90" selection-end-line="681" selection-end-column="103" />
+          <caret line="681" column="45" selection-start-line="681" selection-start-column="45" selection-end-line="681" selection-end-column="45" />
           <folding>
             <element signature="n#insert_in_post#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#the_option#0;n#ACF_Builder#0;n#!!top" />
@@ -475,22 +472,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="633" column="30" lean-forward="true" selection-start-line="633" selection-start-column="30" selection-end-line="633" selection-end-column="30" />
+        <state relative-caret-position="304">
+          <caret line="598" lean-forward="true" selection-start-line="598" selection-end-line="598" />
           <folding>
             <element signature="e#9197#10196#0" />
             <element signature="e#8098#8425#0" />
             <element signature="e#3808#3816#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
         </state>
       </provider>
     </entry>
