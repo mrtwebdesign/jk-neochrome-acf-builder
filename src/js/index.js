@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
 
     $('body').imagesLoaded({}, function () {
 
-        $('.faqs-accordion .toggle').click(function(e) {
+        $('.faqs-accordion .toggle').click(function (e) {
 
             e.preventDefault();
 
@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
 
             if ($this.next().hasClass('show')) {
 
-                $this.next().find('.active').removeClass('active');
+                $('.category-toggle').closest('.inner').find('.toggle').removeClass('active');
 
                 $this.removeClass('active');
 

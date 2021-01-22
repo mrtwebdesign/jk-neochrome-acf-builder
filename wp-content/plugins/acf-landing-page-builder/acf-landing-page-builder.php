@@ -662,7 +662,6 @@ final class ACF_Builder
 
                                                 <?php if (have_rows('field_builder_section_faqs_builder_category_questions_answers')): ?>
 
-                                                    p if
                                                     <ul class="inner">
 
                                                         <?php while (have_rows('field_builder_section_faqs_builder_category_questions_answers')) : the_row(); ?>
@@ -798,7 +797,7 @@ final class ACF_Builder
 
                 <div class="neo-container">
 
-                    <div class="left-side">it a
+                    <div class="left-side">
 
                     </div>
 
