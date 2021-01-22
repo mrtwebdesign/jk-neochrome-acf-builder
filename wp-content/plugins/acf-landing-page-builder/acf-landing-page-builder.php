@@ -639,159 +639,79 @@ final class ACF_Builder
 
                                 <?php if (have_rows('field_builder_section_faqs_builder')): ?>
 
-                                    <div class="faqs-wrapper">
-
+                                    <ul class="faqs-accordion">
                                         <?php while (have_rows('field_builder_section_faqs_builder')) : the_row(); ?>
-
                                             <?php
 
                                             $field_builder_section_faqs_builder_category_name = self::get_sub_field('field_builder_section_faqs_builder_category_name');
 
                                             ?>
 
-                                            <div class="faq-category">
+                                            <li class="faq-item">
 
-                                                <h5 class="category-name">
+                                                <a class="toggle"
+                                                   href="#">
 
-                                                    <?php echo esc_html($field_builder_section_faqs_builder_category_name); ?>
+                                                    <h5 class="category-name">
 
-                                                </h5>
+                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_name); ?>
+
+                                                    </h5>
+
+                                                </a>
 
                                                 <?php if (have_rows('field_builder_section_faqs_builder_category_questions_answers')): ?>
 
-                                                    <div class="questions-wrapper">
+                                                    <ul class="inner">
 
                                                         <?php while (have_rows('field_builder_section_faqs_builder_category_questions_answers')) : the_row(); ?>
 
-                                                            <?php
+                                                            <li class="inner-faq-item">
 
-                                                            $field_builder_section_faqs_builder_category_question = self::get_sub_field('field_builder_section_faqs_builder_category_question');
+                                                                <?php
 
-                                                            $field_builder_section_faqs_builder_category_answer = self::get_sub_field('field_builder_section_faqs_builder_category_answer');
+                                                                $field_builder_section_faqs_builder_category_question = self::get_sub_field('field_builder_section_faqs_builder_category_question');
 
-                                                            ?>
+                                                                $field_builder_section_faqs_builder_category_answer = self::get_sub_field('field_builder_section_faqs_builder_category_answer');
 
-                                                            <div class="question-wrapper">
+                                                                ?>
 
-                                                                <?php if (!empty($field_builder_section_faqs_builder_category_question)): ?>
 
-                                                                    <h6 class="question-title">
+                                                                <a href="#" class="toggle">
 
-                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_question); ?>
+                                                                    <h6 class="question">
+
+                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_question);?>
 
                                                                     </h6>
 
-                                                                <?php endif; ?>
+                                                                </a>
 
-                                                                <?php if (!empty($field_builder_section_faqs_builder_category_answer)): ?>
+                                                                <div class="inner">
 
-                                                                    <p class="answer-text">
+                                                                    <p class="answer">
 
-                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_answer); ?>
+                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_answer);?>
 
                                                                     </p>
 
-                                                                <?php endif; ?>
+                                                                </div>
 
-                                                            </div>
+                                                            </li>
 
                                                         <?php endwhile; ?>
 
-                                                    </div>
+                                                    </ul>
 
                                                 <?php endif; ?>
 
-                                            </div>
+                                            </li>
 
                                         <?php endwhile; ?>
 
-                                    </div>
+                                    </ul>
 
                                 <?php endif; ?>
-
-                                <ul class="faqs-accordion">
-                                    <li>
-                                        <a class="toggle" href="javascript:void(0);">Item 1</a>
-                                        <ul class="inner">
-                                            <li>Option 1</li>
-                                            <li>Option 2</li>
-                                            <li>Option 3</li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a class="toggle" href="javascript:void(0);">Item 2</a>
-                                        <ul class="inner">
-                                            <li>Option 1</li>
-                                            <li>Option 2</li>
-                                            <li>Option 3</li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a class="toggle" href="javascript:void(0);">Item 3</a>
-                                        <ul class="inner">
-                                            <li>
-                                                <a href="#" class="toggle">Open Inner</a>
-                                                <div class="inner">
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                        Maecenas tempus placerat fringilla. Duis a elit et dolor laoreet
-                                                        volutpat. Aliquam ultrices mauris id mattis imperdiet. Aenean
-                                                        cursus ultrices justo et varius. Suspendisse aliquam orci id dui
-                                                        dapibus
-                                                        blandit. In hac habitasse platea dictumst. Sed risus velit,
-                                                        pellentesque eu enim ac, ultricies pretium felis.
-                                                    </p>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <a href="#" class="toggle">Open Inner #2</a>
-                                                <div class="inner">
-                                                    <p>
-                                                        Children will automatically close upon closing its parent.
-                                                    </p>
-                                                </div>
-                                            </li>
-
-                                            <li>Option 3</li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a class="toggle" href="javascript:void(0);">Item 4</a>
-                                        <ul class="inner">
-                                            <li>
-                                                <a href="#" class="toggle">Technically any number of nested elements</a>
-                                                <ul class="inner">
-                                                    <li>
-                                                        <a href="#" class="toggle">Another nested element</a>
-                                                        <div class="inner">
-                                                            <p>
-                                                                As long as the inner element has inner as one of its
-                                                                classes then it will be toggled.
-                                                            </p>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                Maecenas tempus placerat fringilla. Duis a elit et dolor
-                                                                laoreet volutpat. Aliquam ultrices mauris id mattis
-                                                                imperdiet. Aenean cursus ultrices justo et varius.
-                                                                Suspendisse aliquam orci id dui dapibus
-                                                                blandit. In hac habitasse platea dictumst. Sed risus
-                                                                velit, pellentesque eu enim ac, ultricies pretium felis.
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-                                            <li>Option 2</li>
-
-                                            <li>Option 3</li>
-                                        </ul>
-                                    </li>
-                                </ul>
 
                             </div>
 
@@ -835,7 +755,7 @@ final class ACF_Builder
 
                                     <div class="rich-text">
 
-                                        <?php echo esc_html($field_builder_section_rich_text_row_wsw); ?>
+                                        <?php echo $field_builder_section_rich_text_row_wsw; ?>
 
                                     </div>
 
