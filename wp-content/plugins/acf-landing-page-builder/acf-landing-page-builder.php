@@ -145,6 +145,8 @@ final class ACF_Builder
 
         wp_enqueue_style('fancybox-css', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css');
 
+        wp_enqueue_style('fa', CORE_PLUGIN_URL . '/inc/assets/css/all.min.css');
+
     }
 
     public function enqueue_scripts()
@@ -677,7 +679,7 @@ final class ACF_Builder
                                                                 ?>
 
 
-                                                                <a href="#" class="toggle">
+                                                                <a href="#" class="toggle answer-toggle">
 
                                                                     <h6 class="question">
 
@@ -799,9 +801,123 @@ final class ACF_Builder
 
                     <div class="left-side">
 
+                        <?php
+
+                        if (have_rows('field_footer_social_list')):
+
+                            ?>
+
+                            <ul class="social-list">
+
+                                <?php
+
+                                while (have_rows('field_footer_social_list')) : the_row();
+
+                                    $field_builder_section_footer_social_list_icon = self::get_sub_field('field_builder_section_footer_social_list_icon');
+
+                                    $field_builder_section_footer_social_list_url = self::get_sub_field('field_builder_section_footer_social_list_url');
+
+                                    ?>
+
+                                    <li>
+
+                                        <a href="<?php echo esc_url($field_builder_section_footer_social_list_url); ?>">
+
+                                            <i class="<?php echo esc_attr($field_builder_section_footer_social_list_icon); ?>"></i>
+
+                                        </a>
+
+                                    </li>
+
+                                <?php
+
+                                endwhile;
+
+                                ?>
+
+                            </ul>
+
+                        <?php
+
+                        endif;
+
+                        ?>
+
+                        <div class="terms">
+
+                            <p class="top-terms">
+
+                                LaunchPad powered by Groundswell.
+
+                            </p>
+
+                            <p class="terms-general">
+
+                                Terms of use: The products/services offered on this Landing page are through [Company
+                                name]. Groundswell assumes no liability or will provide customer service for this
+                                product/service.
+
+                            </p>
+
+                            <p class="copyright">
+
+                                Privacy Policy. Copyright @ [Company name]
+
+                            </p>
+
+                        </div>
+
                     </div>
 
                     <div class="right-side">
+
+                        <div class="contact-info">
+
+                            <h6 class="contact-title">
+
+                                <?php echo esc_html('Contact Us'); ?>
+
+                            </h6>
+
+                            <div class="contact-item">
+
+                                <p class="contact-item-name">
+
+                                    <?php echo esc_html('Contact'); ?>
+
+                                </p>
+
+                                <a href="#" class="contact-item-value">
+
+                                    <?php echo esc_html('email@company.com'); ?>
+
+                                </a>
+
+                            </div>
+
+                            <div class="contact-item">
+
+                                <p class="contact-item-name">
+
+                                    <?php echo esc_html('Phone'); ?>
+
+                                </p>
+
+                                <a href="#" class="contact-item-value">
+
+                                    <?php echo esc_html('123 123 123 123'); ?>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="logotype-wrapper">
+
+                            <img src="http://via.placeholder.com/350x350" alt="<?php echo esc_attr('Logotype'); ?>">
+
+                        </div>
 
                     </div>
 
@@ -3589,6 +3705,10 @@ final class ACF_Builder
                         'enqueue_fa' => 0,
                         'fa_live_preview' => '',
                         'choices' => array(),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
                     ),
                     array(
                         'key' => 'field_builder_section_footer_social_list_url',
@@ -3597,6 +3717,10 @@ final class ACF_Builder
                         'instructions' => esc_html('Input the Social Icon URL'),
                         'placeholder' => esc_html('Social URL'),
                         'type' => 'url',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
                     ),
                 ),
             ));

@@ -11,7 +11,11 @@ jQuery(document).ready(function ($) {
 
             if ($this.next().hasClass('show')) {
 
-                $('.category-toggle').closest('.inner').find('.toggle').removeClass('active');
+                console.log(1);
+
+                $('.inner').find('.toggle').removeClass('active');
+
+                $('.category-toggle').removeClass('active');
 
                 $this.removeClass('active');
 
@@ -20,6 +24,18 @@ jQuery(document).ready(function ($) {
                 $this.next().slideUp(350);
 
             } else {
+
+                $('.inner').find('.toggle').removeClass('active');
+
+                if ($this.hasClass('answer-toggle')) {
+
+                    $('.category-toggle').not($this.parent().parent().parent().find('.category-toggle')).removeClass('active');
+
+                } else {
+
+                    $('.category-toggle').removeClass('active');
+
+                }
 
                 $this.addClass('active');
 
