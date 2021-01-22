@@ -149,8 +149,13 @@ final class ACF_Builder
 
     public function enqueue_scripts()
     {
+        if (!wp_script_is('acf-repeater-builder-frontend-js')):
 
-        wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery'));
+            wp_enqueue_script('acf-repeater-builder-frontend-js', CORE_PLUGIN_URL . '/inc/assets/js/acf_repeater_builder_frontend.js', array('jquery', 'imagesloaded'));
+
+        endif;
+
+        wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery', 'imagesloaded'));
 
     }
 
@@ -558,7 +563,8 @@ final class ACF_Builder
 
                                         <?php foreach ($field_builder_section_gallery_gallery as $gallery): ?>
 
-                                            <div class="gallery-item">
+                                            <a class="gallery-item" data-fancybox="gallery"
+                                               href="<?php echo esc_url($gallery); ?>">
 
                                                 <div class="inner-item">
 
@@ -569,7 +575,7 @@ final class ACF_Builder
 
                                                 </div>
 
-                                            </div>
+                                            </a>
 
                                         <?php endforeach; ?>
 
@@ -703,6 +709,90 @@ final class ACF_Builder
 
                                 <?php endif; ?>
 
+                                <ul class="faqs-accordion">
+                                    <li>
+                                        <a class="toggle" href="javascript:void(0);">Item 1</a>
+                                        <ul class="inner">
+                                            <li>Option 1</li>
+                                            <li>Option 2</li>
+                                            <li>Option 3</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="toggle" href="javascript:void(0);">Item 2</a>
+                                        <ul class="inner">
+                                            <li>Option 1</li>
+                                            <li>Option 2</li>
+                                            <li>Option 3</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="toggle" href="javascript:void(0);">Item 3</a>
+                                        <ul class="inner">
+                                            <li>
+                                                <a href="#" class="toggle">Open Inner</a>
+                                                <div class="inner">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                        Maecenas tempus placerat fringilla. Duis a elit et dolor laoreet
+                                                        volutpat. Aliquam ultrices mauris id mattis imperdiet. Aenean
+                                                        cursus ultrices justo et varius. Suspendisse aliquam orci id dui
+                                                        dapibus
+                                                        blandit. In hac habitasse platea dictumst. Sed risus velit,
+                                                        pellentesque eu enim ac, ultricies pretium felis.
+                                                    </p>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" class="toggle">Open Inner #2</a>
+                                                <div class="inner">
+                                                    <p>
+                                                        Children will automatically close upon closing its parent.
+                                                    </p>
+                                                </div>
+                                            </li>
+
+                                            <li>Option 3</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="toggle" href="javascript:void(0);">Item 4</a>
+                                        <ul class="inner">
+                                            <li>
+                                                <a href="#" class="toggle">Technically any number of nested elements</a>
+                                                <ul class="inner">
+                                                    <li>
+                                                        <a href="#" class="toggle">Another nested element</a>
+                                                        <div class="inner">
+                                                            <p>
+                                                                As long as the inner element has inner as one of its
+                                                                classes then it will be toggled.
+                                                            </p>
+                                                            <p>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                                Maecenas tempus placerat fringilla. Duis a elit et dolor
+                                                                laoreet volutpat. Aliquam ultrices mauris id mattis
+                                                                imperdiet. Aenean cursus ultrices justo et varius.
+                                                                Suspendisse aliquam orci id dui dapibus
+                                                                blandit. In hac habitasse platea dictumst. Sed risus
+                                                                velit, pellentesque eu enim ac, ultricies pretium felis.
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li>Option 2</li>
+
+                                            <li>Option 3</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
                             </div>
 
                         </section>
@@ -724,6 +814,8 @@ final class ACF_Builder
                         $field_builder_section_rich_text_row_button_label = self::get_sub_field('field_builder_section_rich_text_row_button_label');
 
                         $field_builder_section_rich_text_row_button_url = self::get_sub_field('field_builder_section_rich_text_row_button_url');
+
+                        $field_builder_section_rich_text_row_button_target = self::get_sub_field('field_builder_section_rich_text_row_button_target');
 
                         ?>
 
@@ -754,7 +846,8 @@ final class ACF_Builder
                                     <div class="button-wrapper">
 
                                         <a class="neo-button"
-                                           href="<?php echo esc_url($field_builder_section_rich_text_row_button_url); ?>">
+                                           href="<?php echo esc_url($field_builder_section_rich_text_row_button_url); ?>"
+                                           target="<?php echo esc_attr($field_builder_section_rich_text_row_button_target); ?>">
 
                                             <?php echo esc_html($field_builder_section_rich_text_row_button_label); ?>
 
@@ -3454,6 +3547,10 @@ final class ACF_Builder
                         'instructions' => esc_html('Input the Button Label'),
                         'placeholder' => esc_html('Button Label'),
                         'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -3471,6 +3568,10 @@ final class ACF_Builder
                         'instructions' => esc_html('Input the Button URL'),
                         'placeholder' => esc_html('Button URL'),
                         'type' => 'url',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -3481,7 +3582,32 @@ final class ACF_Builder
                             ),
                         ),
                     ),
-
+                    array(
+                        'key' => 'field_builder_section_rich_text_row_button_target',
+                        'label' => esc_html('Button Target'),
+                        'name' => 'option_builder_section_rich_text_row_button_target',
+                        'instructions' => esc_html('Select the Button Target'),
+                        'type' => 'select',
+                        'choices' => array(
+                            '_blank' => esc_html('_blank'),
+                            '_self' => esc_html('_self'),
+                            '_parent' => esc_html('_parent'),
+                            '_top' => esc_html('_top'),
+                        ),
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
                     /* RICH TEXT ROW SECTION END */
 
                     /* **************************************** */

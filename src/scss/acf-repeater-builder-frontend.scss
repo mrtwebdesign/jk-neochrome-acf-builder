@@ -232,7 +232,7 @@ $xxxl: 1601px;
                 flex-direction: column;
                 margin-top: 20px !important;
                 align-items: flex-start;
-                margin-bottom: 0!important;
+                margin-bottom: 0 !important;
 
                 input {
                   margin-bottom: 20px !important;
@@ -339,6 +339,39 @@ $xxxl: 1601px;
     }
 
     &.faqs-section {
+
+      .faqs-accordion {
+        list-style: none;
+        padding: 0;
+
+        .inner {
+          padding-left: 1em;
+          overflow: hidden;
+          display: none;
+
+          &.show {
+
+          }
+        }
+
+        li {
+          margin: .5em 0;
+
+          a.toggle {
+            width: 100%;
+            display: block;
+            background: rgba(0, 0, 0, 0.78);
+            color: #fefefe;
+            padding: .75em;
+            border-radius: 0.15em;
+            transition: background .3s ease;
+
+            &:hover {
+              background: rgba(0, 0, 0, 0.9);
+            }
+          }
+        }
+      }
 
     }
 
