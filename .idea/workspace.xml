@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bdb71f5-d54d-41e6-8b6f-1368d23aad71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1506">
-              <caret line="876" lean-forward="true" selection-start-line="876" selection-end-line="876" />
+            <state relative-caret-position="285">
+              <caret line="804" lean-forward="true" selection-start-line="804" selection-end-line="804" />
               <folding>
                 <element signature="n#insert_in_post#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#the_option#0;n#ACF_Builder#0;n#!!top" />
@@ -30,6 +29,8 @@
                 <element signature="n#enqueue_admin_styles#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#instance#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#single_landing_template#0;n#ACF_Builder#0;n#!!top" />
+                <element signature="e#36192#36786#0#PHP" />
+                <element signature="e#36796#167669#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -48,10 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>seco</find>
-      <find>333333</find>
-      <find>propo</find>
-      <find>phone</find>
       <find>Boxes Title Color</find>
       <find>'222'</find>
       <find>222</find>
@@ -78,6 +75,10 @@
       <find>field_builder_section_buy_now_product_boxes_content_color</find>
       <find>Heading Line Height</find>
       <find>Podkova</find>
+      <find>field_builder_default_headings_color</find>
+      <find>theme_options</find>
+      <find>__construct</find>
+      <find>init</find>
     </findStrings>
     <replaceStrings>
       <replace>'neochrome'</replace>
@@ -274,18 +275,18 @@
       <workItem from="1611097129675" duration="2550000" />
       <workItem from="1611157312634" duration="13789000" />
       <workItem from="1611236061827" duration="23774000" />
-      <workItem from="1611323857735" duration="2450000" />
+      <workItem from="1611323857735" duration="3428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67477000" />
+    <option name="totallyTimeSpent" value="68455000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16327362" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16327362" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -441,8 +442,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1506">
-          <caret line="876" lean-forward="true" selection-start-line="876" selection-end-line="876" />
+        <state relative-caret-position="285">
+          <caret line="804" lean-forward="true" selection-start-line="804" selection-end-line="804" />
           <folding>
             <element signature="n#insert_in_post#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#the_option#0;n#ACF_Builder#0;n#!!top" />
@@ -455,6 +456,8 @@
             <element signature="n#enqueue_admin_styles#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#instance#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#single_landing_template#0;n#ACF_Builder#0;n#!!top" />
+            <element signature="e#36192#36786#0#PHP" />
+            <element signature="e#36796#167669#0#PHP" />
           </folding>
         </state>
       </provider>
