@@ -649,19 +649,20 @@ final class ACF_Builder
 
                                             <li class="faq-item">
 
-                                                <a class="toggle"
+                                                <a class="toggle category-toggle"
                                                    href="#">
 
-                                                    <h5 class="category-name">
+                                                    <h6 class="category-name">
 
                                                         <?php echo esc_html($field_builder_section_faqs_builder_category_name); ?>
 
-                                                    </h5>
+                                                    </h6>
 
                                                 </a>
 
                                                 <?php if (have_rows('field_builder_section_faqs_builder_category_questions_answers')): ?>
 
+                                                    p if
                                                     <ul class="inner">
 
                                                         <?php while (have_rows('field_builder_section_faqs_builder_category_questions_answers')) : the_row(); ?>
@@ -681,7 +682,7 @@ final class ACF_Builder
 
                                                                     <h6 class="question">
 
-                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_question);?>
+                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_question); ?>
 
                                                                     </h6>
 
@@ -691,7 +692,7 @@ final class ACF_Builder
 
                                                                     <p class="answer">
 
-                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_answer);?>
+                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_answer); ?>
 
                                                                     </p>
 
@@ -785,11 +786,6 @@ final class ACF_Builder
 
                     else:
 
-                        ?>
-
-
-                    <?php
-
                     endif;
 
                 endwhile;
@@ -797,6 +793,22 @@ final class ACF_Builder
             endif;
 
             ?>
+
+            <footer class="neo-footer">
+
+                <div class="neo-container">
+
+                    <div class="left-side">it a
+
+                    </div>
+
+                    <div class="right-side">
+
+                    </div>
+
+                </div>
+
+            </footer>
 
         </div>
 
@@ -3233,6 +3245,10 @@ final class ACF_Builder
                         'name' => 'option_builder_section_faqs_main_headline',
                         'instructions' => esc_html('Input the Main Headline'),
                         'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
                         'placeholder' => esc_html('Main Headline'),
                         'conditional_logic' => array(
                             array(
@@ -3250,6 +3266,10 @@ final class ACF_Builder
                         'name' => 'option_builder_section_faqs_secondary_headline',
                         'instructions' => esc_html('Input the Secondary Headline'),
                         'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
                         'placeholder' => esc_html('Secondary Headline'),
                         'conditional_logic' => array(
                             array(
@@ -3537,7 +3557,7 @@ final class ACF_Builder
 
             acf_add_local_field(array(
                 'key' => 'field_footer_social_list',
-                'label' => esc_html('Social List'),
+                'label' => esc_html('Footer Social List'),
                 'name' => 'option_footer_social_list',
                 'type' => 'repeater',
                 'label_placement' => 'top',
