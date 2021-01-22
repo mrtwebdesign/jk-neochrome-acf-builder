@@ -4,6 +4,7 @@
     <list default="true" id="3bdb71f5-d54d-41e6-8b6f-1368d23aad71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +14,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="1035" column="45" lean-forward="true" selection-start-line="1035" selection-start-column="45" selection-end-line="1035" selection-end-column="45" />
+            <state relative-caret-position="345">
+              <caret line="809" column="63" selection-start-line="809" selection-start-column="63" selection-end-line="809" selection-end-column="63" />
+              <caret line="810" column="65" selection-start-line="810" selection-start-column="65" selection-end-line="810" selection-end-column="65" />
+              <caret line="811" column="63" selection-start-line="811" selection-start-column="63" selection-end-line="811" selection-end-column="63" />
               <folding>
                 <element signature="n#insert_in_post#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#the_option#0;n#ACF_Builder#0;n#!!top" />
@@ -31,16 +34,17 @@
                 <element signature="n#instance#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#single_landing_template#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="e#36192#36786#0#PHP" />
+                <element signature="e#54520#55799#1#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+            <state relative-caret-position="926">
+              <caret line="142" column="40" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -49,20 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>field_builder_section_buy_now_main_headline</find>
-      <find>ACF_Builder::get_sub_field</find>
-      <find>group_footer_post_settings</find>
-      <find>xl</find>
-      <find>lg</find>
-      <find>md</find>
-      <find>, 'glekk')</find>
-      <find>esc_html__</find>
-      <find>33.3</find>
-      <find>LG</find>
-      <find>weig</find>
-      <find>heading</find>
-      <find>text li</find>
-      <find>field_repeater_builder_toggle</find>
       <find>'conditional_logic' =&gt; 0,</find>
       <find>buy-no</find>
       <find>field_builder_section_buy_now_product_boxes_button_bg</find>
@@ -70,7 +60,6 @@
       <find>field_builder_section_buy_now_product_boxes_content_color</find>
       <find>Heading Line Height</find>
       <find>Podkova</find>
-      <find>field_builder_default_headings_color</find>
       <find>theme_options</find>
       <find>__construct</find>
       <find>init</find>
@@ -79,6 +68,21 @@
       <find>button_color</find>
       <find>bg</find>
       <find>button bac</find>
+      <find>--p</find>
+      <find>$field_content_font</find>
+      <find>field_content_font</find>
+      <find>content_f</find>
+      <find>headin</find>
+      <find>print</find>
+      <find>--f</find>
+      <find>strto</find>
+      <find>--</find>
+      <find>contain</find>
+      <find>default</find>
+      <find>number</find>
+      <find>field_builder_default_headings_color</find>
+      <find>$field_builder_default_headings_color</find>
+      <find>sectio</find>
     </findStrings>
     <replaceStrings>
       <replace>'neochrome'</replace>
@@ -110,8 +114,8 @@
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/astra/single.php" />
         <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" />
-        <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" />
         <option value="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" />
+        <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" />
       </list>
     </option>
   </component>
@@ -275,12 +279,12 @@
       <workItem from="1611097129675" duration="2550000" />
       <workItem from="1611157312634" duration="13789000" />
       <workItem from="1611236061827" duration="23774000" />
-      <workItem from="1611323857735" duration="4461000" />
+      <workItem from="1611323857735" duration="5492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69488000" />
+    <option name="totallyTimeSpent" value="70519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
@@ -433,17 +437,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="1035" column="45" lean-forward="true" selection-start-line="1035" selection-start-column="45" selection-end-line="1035" selection-end-column="45" />
+        <state relative-caret-position="345">
+          <caret line="809" column="63" selection-start-line="809" selection-start-column="63" selection-end-line="809" selection-end-column="63" />
+          <caret line="810" column="65" selection-start-line="810" selection-start-column="65" selection-end-line="810" selection-end-column="65" />
+          <caret line="811" column="63" selection-start-line="811" selection-start-column="63" selection-end-line="811" selection-end-column="63" />
           <folding>
             <element signature="n#insert_in_post#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#the_option#0;n#ACF_Builder#0;n#!!top" />
@@ -457,7 +456,15 @@
             <element signature="n#instance#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#single_landing_template#0;n#ACF_Builder#0;n#!!top" />
             <element signature="e#36192#36786#0#PHP" />
+            <element signature="e#54520#55799#1#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="926">
+          <caret line="142" column="40" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
         </state>
       </provider>
     </entry>

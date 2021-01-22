@@ -1,88 +1,95 @@
+$xs: 375px;
+$sm: 576px;
+$md: 768px;
+$lg: 1025px;
+$xl: 1201px;
+$xxl: 1441px;
+$xxxl: 1601px;
+
 .neo-landing-wrapper {
-  color: var(--field-builder-default-text-color)!important;
-  font-size: var(--field-text-font-size)!important;
-  line-height: var(--field-text-font-line-height)!important;
-  font-weight: var(--field-text-font-weight)!important;
-  font-family: var(--field-content-font)!important;
+  color: var(--field-builder-default-text-color) !important;
+  font-size: var(--field-text-font-size) !important;
+  line-height: var(--field-text-font-line-height) !important;
+  font-weight: var(--field-text-font-weight) !important;
+  font-family: var(--field-content-font) !important;
   @media(max-width: $lg) {
-    font-size: var(--field-text-font-size-lg)!important;
+    font-size: var(--field-text-font-size-lg) !important;
   }
   @media(max-width: $sm) {
-    font-size: var(--field-text-font-size-sm)!important;
+    font-size: var(--field-text-font-size-sm) !important;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color: var(--field-builder-default-headings-color)!important;
-    font-weight: var(--field-heading-font-weight)!important;
-    line-height: var(--field-heading-font-line-height)!important;
-  !important;
+    color: var(--field-builder-default-headings-color) !important;
+    font-weight: var(--field-heading-font-weight) !important;
+    line-height: var(--field-heading-font-line-height) !important;
     margin: 0;
-    font-family: var(--field-heading-font)!important;
+    font-family: var(--field-heading-font) !important;
   }
 
   h1 {
-    font-size: var(--field-h1-size)!important;
-    letter-spacing: -1.5px!important;
+    font-size: var(--field-h1-size) !important;
+    letter-spacing: -1.5px !important;
     @media(max-width: $lg) {
-      font-size: var(--field-h1-size-lg)!important;
+      font-size: var(--field-h1-size-lg) !important;
     }
     @media(max-width: $sm) {
-      font-size: var(--field-h1-size-sm)!important;
+      font-size: var(--field-h1-size-sm) !important;
     }
   }
 
   h2 {
-    font-size: var(--field-h2-size)!important;
-    letter-spacing: -1.2px!important;
+    font-size: var(--field-h2-size) !important;
+    letter-spacing: -1.2px !important;
     @media(max-width: $lg) {
-      font-size: var(--field-h2-size-lg)!important;
+      font-size: var(--field-h2-size-lg) !important;
     }
     @media(max-width: $sm) {
-      font-size: var(--field-h2-size-sm)!important;
+      font-size: var(--field-h2-size-sm) !important;
     }
   }
 
   h3 {
-    letter-spacing: -1px!important;
-    font-size: var(--field-h3-size)!important;
+    letter-spacing: -1px !important;
+    font-size: var(--field-h3-size) !important;
     @media(max-width: $lg) {
-      font-size: var(--field-h3-size-lg)!important;
+      font-size: var(--field-h3-size-lg) !important;
     }
     @media(max-width: $sm) {
-      font-size: var(--field-h3-size-sm)!important;
+      font-size: var(--field-h3-size-sm) !important;
     }
   }
 
   h4 {
-    font-size: var(--field-h4-size)!important;
-    letter-spacing: -0.7px!important;
+    font-size: var(--field-h4-size) !important;
+    letter-spacing: -0.7px !important;
     @media(max-width: $lg) {
-      font-size: var(--field-h4-size-lg)!important;
+      font-size: var(--field-h4-size-lg) !important;
     }
     @media(max-width: $sm) {
-      font-size: var(--field-h4-size-sm)!important;
+      font-size: var(--field-h4-size-sm) !important;
     }
   }
 
   h5 {
-    font-size: var(--field-h5-size)!important;
-    letter-spacing: -0.5px!important;
+    font-size: var(--field-h5-size) !important;
+    letter-spacing: -0.5px !important;
     @media(max-width: $lg) {
-      font-size: var(--field-h5-size-lg)!important;
+      font-size: var(--field-h5-size-lg) !important;
     }
     @media(max-width: $sm) {
-      font-size: var(--field-h5-size-sm)!important;
+      font-size: var(--field-h5-size-sm) !important;
     }
   }
 
   h6 {
-    font-size: var(--field-h6-size)!important;
-    letter-spacing: 0!important;
+    font-size: var(--field-h6-size) !important;
+    letter-spacing: 0 !important;
     @media(max-width: $lg) {
-      font-size: var(--field-h6-size-lg)!important;
+      font-size: var(--field-h6-size-lg) !important;
     }
     @media(max-width: $sm) {
-      font-size: var(--field-h6-size-sm)!important;
+      font-size: var(--field-h6-size-sm) !important;
     }
   }
 
@@ -108,12 +115,12 @@
     padding: 0 25px;
     display: flex;
     justify-content: center;
-    color: var(--field-builder-default-button-color)!important;
+    color: var(--field-builder-default-button-color) !important;
     align-items: center;
     border-radius: 5px;
     transition: all .2s ease-in-out;
     border: none !important;
-    background-color: var(--field-builder-default-button-bg-color)!important;
+    background-color: var(--field-builder-default-button-bg-color) !important;
 
     &:hover {
       opacity: 0.8;
@@ -121,9 +128,9 @@
   }
 
   .neo-container {
-    max-width: 1470px;
-    padding-left: 15px;
-    padding-right: 15px;
+    max-width: var(--field-container-width);
+    padding-left: var(--field-container-offset);
+    padding-right: var(--field-container-offset);
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -133,7 +140,7 @@
   }
 
   .neo-section {
-    padding: 75px 0;
+    padding: var(--field-sections-offset) 0;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
