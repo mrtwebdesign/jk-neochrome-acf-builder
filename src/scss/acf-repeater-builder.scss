@@ -10,15 +10,21 @@
   }
 
   .acf-label {
-    display: flex!important;
-    flex-direction: column!important;
-    align-items: flex-start!important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
     position: relative;
 
     label {
       position: relative;
       display: flex;
       align-items: center;
+
+      &:hover {
+        &:after {
+          opacity: 1 !important;
+        }
+      }
 
       &:after {
         content: '?';
@@ -29,12 +35,13 @@
         border-radius: 100%;
         color: #000000;
         line-height: 1 !important;
-        font-size: 11px;
+        font-size: 12px;
         transition: all .1s ease-in-out;
         border: 1px solid rgba(152, 152, 152, 0.15);
-        font-weight: 700;
+        font-weight: 800;
         position: absolute;
-        right: -23px;
+        right: -20px;
+        opacity: 0.7 !important;
         top: -8px;
         align-items: center;
         justify-content: center;

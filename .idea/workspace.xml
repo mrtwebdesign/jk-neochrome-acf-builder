@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bdb71f5-d54d-41e6-8b6f-1368d23aad71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/astra/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/astra/single.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,15 +17,27 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="213" column="139" selection-start-line="213" selection-start-column="139" selection-end-line="213" selection-end-column="139" />
+            <state relative-caret-position="463">
+              <caret line="703" lean-forward="true" selection-start-line="703" selection-end-line="703" />
               <folding>
-                <element signature="e#6719#6806#0#HTML" expanded="true" />
-                <element signature="e#7103#7190#0#HTML" expanded="true" />
-                <element signature="e#8350#8436#0#HTML" expanded="true" />
-                <element signature="e#9512#9599#0#HTML" expanded="true" />
-                <element signature="e#10166#10259#0#HTML" expanded="true" />
-                <element signature="e#10517#10610#0#HTML" expanded="true" />
+                <element signature="e#6162#12812#0#HTML" />
+                <element signature="e#6237#6593#0#HTML" expanded="true" />
+                <element signature="e#6932#7019#0#HTML" expanded="true" />
+                <element signature="e#7448#7536#0#HTML" expanded="true" />
+                <element signature="e#8668#8755#0#HTML" expanded="true" />
+                <element signature="e#9574#9667#0#HTML" expanded="true" />
+                <element signature="e#10276#10369#0#HTML" expanded="true" />
+                <element signature="e#10674#10777#0#HTML" expanded="true" />
+                <element signature="e#12111#12293#0#HTML" expanded="true" />
+                <element signature="e#14028#14396#0#HTML" expanded="true" />
+                <element signature="e#14713#14801#0#HTML" expanded="true" />
+                <element signature="e#16642#16665#0#HTML" expanded="true" />
+                <element signature="e#17216#17312#0#HTML" expanded="true" />
+                <element signature="e#17722#17827#0#HTML" expanded="true" />
+                <element signature="e#19503#19871#0#HTML" expanded="true" />
+                <element signature="e#20869#20934#0#HTML" expanded="true" />
+                <element signature="e#22204#22560#0#HTML" expanded="true" />
+                <element signature="e#30039#30175#0#HTML" expanded="true" />
                 <element signature="e#28506#28802#1#PHP" />
                 <element signature="e#28863#30048#1#PHP" />
                 <element signature="e#30117#31441#1#PHP" />
@@ -54,10 +67,42 @@
                 <element signature="e#58999#60042#1#PHP" />
                 <element signature="e#60747#61811#1#PHP" />
                 <element signature="e#61833#62903#1#PHP" />
+                <element signature="e#68373#69459#1#PHP" />
+                <element signature="e#69493#70591#1#PHP" />
                 <element signature="e#60064#63885#1#PHP" />
                 <element signature="e#66232#67565#1#PHP" />
                 <element signature="e#67587#68890#1#PHP" />
+                <element signature="e#68912#70299#1#PHP" />
+                <element signature="e#70321#71182#1#PHP" />
+                <element signature="e#71204#72241#1#PHP" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2139">
+              <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-93">
+              <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -71,10 +116,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>so far</find>
       <find>enqu</find>
       <find>field_builder_section_hero_more_info_headline</find>
-      <find>field_builder_section_buy_now_main_headline</find>
       <find>$field_builder_section_gallery_gallery</find>
       <find>field_builder_section_gallery_gallery</find>
       <find>fore</find>
@@ -101,6 +144,8 @@
       <find>222</find>
       <find>propos</find>
       <find>field_builder_section_hero_more_info_button_bg</find>
+      <find>field_builder_section_buy_now_main_headline</find>
+      <find>ACF_Builder::get_sub_field</find>
     </findStrings>
     <replaceStrings>
       <replace>'neochrome'</replace>
@@ -108,6 +153,8 @@
       <replace>)</replace>
       <replace />
       <replace>161616</replace>
+      <replace>self::</replace>
+      <replace>self::get_sub_field</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -121,7 +168,6 @@
         <option value="$PROJECT_DIR$/wp-content/themes/astra/functions.php" />
         <option value="$PROJECT_DIR$/node_modules/text.txt" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" />
         <option value="$USER_HOME$/Downloads/jk-wp-acf-landing-pages-builder-main/README.md" />
         <option value="$PROJECT_DIR$/../../__wordpress_public_repo/wp-content/plugins/jk-wp-elementor-native-parallax/README.md" />
         <option value="$PROJECT_DIR$/src/js/index.js" />
@@ -131,6 +177,7 @@
         <option value="$PROJECT_DIR$/wp-content/themes/astra/inc/acf-builder/acf-builder.php" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/astra/single.php" />
+        <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" />
         <option value="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" />
       </list>
     </option>
@@ -294,15 +341,16 @@
       <workItem from="1611069463252" duration="7993000" />
       <workItem from="1611097129675" duration="2550000" />
       <workItem from="1611157312634" duration="13789000" />
-      <workItem from="1611236061827" duration="16734000" />
+      <workItem from="1611236061827" duration="18794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57987000" />
+    <option name="totallyTimeSpent" value="60047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16205211" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -382,32 +430,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
-          <folding>
-            <element signature="e#1231#1316#0" />
-            <element signature="e#1337#1628#0" />
-            <element signature="e#2088#2909#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -462,17 +484,50 @@
     <entry file="file://$PROJECT_DIR$/wp-content/themes/astra/sidebar.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2139">
+          <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="213" column="139" selection-start-line="213" selection-start-column="139" selection-end-line="213" selection-end-column="139" />
+        <state relative-caret-position="463">
+          <caret line="703" lean-forward="true" selection-start-line="703" selection-end-line="703" />
           <folding>
-            <element signature="e#6719#6806#0#HTML" expanded="true" />
-            <element signature="e#7103#7190#0#HTML" expanded="true" />
-            <element signature="e#8350#8436#0#HTML" expanded="true" />
-            <element signature="e#9512#9599#0#HTML" expanded="true" />
-            <element signature="e#10166#10259#0#HTML" expanded="true" />
-            <element signature="e#10517#10610#0#HTML" expanded="true" />
+            <element signature="e#6162#12812#0#HTML" />
+            <element signature="e#6237#6593#0#HTML" expanded="true" />
+            <element signature="e#6932#7019#0#HTML" expanded="true" />
+            <element signature="e#7448#7536#0#HTML" expanded="true" />
+            <element signature="e#8668#8755#0#HTML" expanded="true" />
+            <element signature="e#9574#9667#0#HTML" expanded="true" />
+            <element signature="e#10276#10369#0#HTML" expanded="true" />
+            <element signature="e#10674#10777#0#HTML" expanded="true" />
+            <element signature="e#12111#12293#0#HTML" expanded="true" />
+            <element signature="e#14028#14396#0#HTML" expanded="true" />
+            <element signature="e#14713#14801#0#HTML" expanded="true" />
+            <element signature="e#16642#16665#0#HTML" expanded="true" />
+            <element signature="e#17216#17312#0#HTML" expanded="true" />
+            <element signature="e#17722#17827#0#HTML" expanded="true" />
+            <element signature="e#19503#19871#0#HTML" expanded="true" />
+            <element signature="e#20869#20934#0#HTML" expanded="true" />
+            <element signature="e#22204#22560#0#HTML" expanded="true" />
+            <element signature="e#30039#30175#0#HTML" expanded="true" />
             <element signature="e#28506#28802#1#PHP" />
             <element signature="e#28863#30048#1#PHP" />
             <element signature="e#30117#31441#1#PHP" />
@@ -502,9 +557,14 @@
             <element signature="e#58999#60042#1#PHP" />
             <element signature="e#60747#61811#1#PHP" />
             <element signature="e#61833#62903#1#PHP" />
+            <element signature="e#68373#69459#1#PHP" />
+            <element signature="e#69493#70591#1#PHP" />
             <element signature="e#60064#63885#1#PHP" />
             <element signature="e#66232#67565#1#PHP" />
             <element signature="e#67587#68890#1#PHP" />
+            <element signature="e#68912#70299#1#PHP" />
+            <element signature="e#70321#71182#1#PHP" />
+            <element signature="e#71204#72241#1#PHP" />
           </folding>
         </state>
       </provider>

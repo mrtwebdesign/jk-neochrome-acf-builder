@@ -177,47 +177,47 @@ final class ACF_Builder
 
                 while (have_rows('field_repeater_builder')) : the_row();
 
-                    $section_type = ACF_Builder::get_sub_field('field_builder_section_type');
+                    $section_type = self::get_sub_field('field_builder_section_type');
 
                     if ($section_type === 'hero-section'):
 
-                        $field_builder_section_hero_type_of_bg = ACF_Builder::get_sub_field('field_builder_section_hero_type_of_bg');
+                        $field_builder_section_hero_type_of_bg = self::get_sub_field('field_builder_section_hero_type_of_bg');
 
-                        $field_builder_section_hero_bg_color = ACF_Builder::get_sub_field('field_builder_section_hero_bg_color');
+                        $field_builder_section_hero_bg_color = self::get_sub_field('field_builder_section_hero_bg_color');
 
-                        $field_builder_section_hero_bg_image = ACF_Builder::get_sub_field('field_builder_section_hero_bg_image');
+                        $field_builder_section_hero_bg_image = self::get_sub_field('field_builder_section_hero_bg_image');
 
-                        $field_builder_section_hero_main_headline = ACF_Builder::get_sub_field('field_builder_section_hero_main_headline');
+                        $field_builder_section_hero_main_headline = self::get_sub_field('field_builder_section_hero_main_headline');
 
-                        $field_builder_section_hero_main_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_main_headline_color');
+                        $field_builder_section_hero_main_headline_color = self::get_sub_field('field_builder_section_hero_main_headline_color');
 
-                        $field_builder_section_hero_sub_headline = ACF_Builder::get_sub_field('field_builder_section_hero_sub_headline');
+                        $field_builder_section_hero_sub_headline = self::get_sub_field('field_builder_section_hero_sub_headline');
 
-                        $field_builder_section_hero_sub_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_sub_headline_color');
+                        $field_builder_section_hero_sub_headline_color = self::get_sub_field('field_builder_section_hero_sub_headline_color');
 
-                        $field_builder_section_hero_secondary_headline = ACF_Builder::get_sub_field('field_builder_section_hero_secondary_headline');
+                        $field_builder_section_hero_secondary_headline = self::get_sub_field('field_builder_section_hero_secondary_headline');
 
-                        $field_builder_section_hero_secondary_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_secondary_headline_color');
+                        $field_builder_section_hero_secondary_headline_color = self::get_sub_field('field_builder_section_hero_secondary_headline_color');
 
-                        $field_builder_section_hero_more_info_box_toggle = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_box_toggle');
+                        $field_builder_section_hero_more_info_box_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_toggle');
 
-                        $field_builder_section_hero_more_info_headline = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_headline');
+                        $field_builder_section_hero_more_info_headline = self::get_sub_field('field_builder_section_hero_more_info_headline');
 
-                        $field_builder_section_hero_more_info_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_headline_color');
+                        $field_builder_section_hero_more_info_headline_color = self::get_sub_field('field_builder_section_hero_more_info_headline_color');
 
-                        $field_builder_section_hero_propositions_color = ACF_Builder::get_sub_field('field_builder_section_hero_propositions_color');
+                        $field_builder_section_hero_propositions_color = self::get_sub_field('field_builder_section_hero_propositions_color');
 
-                        $field_builder_section_hero_more_info_secondary_headline = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_secondary_headline');
+                        $field_builder_section_hero_more_info_secondary_headline = self::get_sub_field('field_builder_section_hero_more_info_secondary_headline');
 
-                        $field_builder_section_hero_more_info_secondary_headline_color = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_secondary_headline_color');
+                        $field_builder_section_hero_more_info_secondary_headline_color = self::get_sub_field('field_builder_section_hero_more_info_secondary_headline_color');
 
-                        $field_builder_section_hero_more_info_box_phone_toggle = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_box_phone_toggle');
+                        $field_builder_section_hero_more_info_box_phone_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_phone_toggle');
 
-                        $field_builder_section_hero_more_info_button_label = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_button_label');
+                        $field_builder_section_hero_more_info_button_label = self::get_sub_field('field_builder_section_hero_more_info_button_label');
 
-                        $field_builder_section_hero_more_info_button_bg = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_button_bg');
+                        $field_builder_section_hero_more_info_button_bg = self::get_sub_field('field_builder_section_hero_more_info_button_bg');
 
-                        $field_builder_section_hero_more_info_button_color = ACF_Builder::get_sub_field('field_builder_section_hero_more_info_button_color');
+                        $field_builder_section_hero_more_info_button_color = self::get_sub_field('field_builder_section_hero_more_info_button_color');
 
                         ?>
 
@@ -293,7 +293,8 @@ final class ACF_Builder
 
                                     <?php if (!empty($field_builder_section_hero_secondary_headline)): ?>
 
-                                        <p class="secondary-headline" style="color: <?php echo esc_attr($field_builder_section_hero_secondary_headline_color); ?>;">
+                                        <p class="secondary-headline"
+                                           style="color: <?php echo esc_attr($field_builder_section_hero_secondary_headline_color); ?>;">
 
                                             <?php echo esc_html($field_builder_section_hero_secondary_headline); ?>
 
@@ -309,13 +310,15 @@ final class ACF_Builder
 
                                         <div class="info-box-wrapper">
 
-                                            <h2 class="info-box-title" style="color: <?php echo esc_attr($field_builder_section_hero_more_info_headline_color); ?>;">
+                                            <h2 class="info-box-title"
+                                                style="color: <?php echo esc_attr($field_builder_section_hero_more_info_headline_color); ?>;">
 
                                                 <?php echo esc_html($field_builder_section_hero_more_info_headline); ?>
 
                                             </h2>
 
-                                            <p class="info-box-secondary-headline" style="color: <?php echo esc_attr($field_builder_section_hero_more_info_secondary_headline_color); ?>;">
+                                            <p class="info-box-secondary-headline"
+                                               style="color: <?php echo esc_attr($field_builder_section_hero_more_info_secondary_headline_color); ?>;">
 
                                                 <?php echo esc_html($field_builder_section_hero_more_info_secondary_headline); ?>
 
@@ -323,6 +326,29 @@ final class ACF_Builder
 
                                             <div class="form-wrapper">
 
+                                                <form class="hero-contact-form">
+
+                                                    <input type="name" class="input-field" name="name-field"
+                                                           placeholder="<?php echo esc_html('Name'); ?>">
+
+                                                    <input type="email" class="input-field" name="email-field"
+                                                           placeholder="<?php echo esc_html('Email'); ?>">
+
+                                                    <?php if (!$field_builder_section_hero_more_info_box_phone_toggle): ?>
+
+                                                        <input type="text" class="input-field" name="phone-field"
+                                                               placeholder="<?php echo esc_html('Phone'); ?>">
+
+                                                    <?php endif; ?>
+
+                                                    <button class="submit-button"
+                                                            style="background-color: <?php echo esc_attr($field_builder_section_hero_more_info_button_bg); ?>; color: <?php echo esc_attr($field_builder_section_hero_more_info_button_color) ?>;">
+
+                                                        <?php echo esc_html($field_builder_section_hero_more_info_button_label); ?>
+
+                                                    </button>
+
+                                                </form>
 
                                             </div>
 
@@ -348,6 +374,12 @@ final class ACF_Builder
 
                         $field_builder_section_buy_now_main_headline = self::get_sub_field('field_builder_section_buy_now_main_headline');
 
+                        $field_builder_section_buy_now_main_headline_color = self::get_sub_field('field_builder_section_buy_now_main_headline_color');
+
+                        $field_builder_section_buy_now_product_boxes_title_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_title_color');
+
+                        $field_builder_section_buy_now_product_boxes_content_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_content_color');
+
                         ?>
 
                         <section class="neo-section buy-now-get-more-info-section"
@@ -357,7 +389,8 @@ final class ACF_Builder
 
                                 <?php if (!empty($field_builder_section_buy_now_main_headline)): ?>
 
-                                    <h2 class="section-title">
+                                    <h2 class="section-title"
+                                        style="color:<?php echo esc_attr($field_builder_section_buy_now_main_headline_color); ?>">
 
                                         <?php echo esc_html($field_builder_section_buy_now_main_headline); ?>
 
@@ -391,7 +424,8 @@ final class ACF_Builder
 
                                                     <?php if (!empty($field_builder_section_buy_now_product_boxes_title)): ?>
 
-                                                        <h4 class="box-title">
+                                                        <h4 class="box-title"
+                                                            style="color:<?php echo esc_attr($field_builder_section_buy_now_product_boxes_title_color); ?>">
 
                                                             <?php echo esc_html($field_builder_section_buy_now_product_boxes_title); ?>
 
@@ -401,7 +435,8 @@ final class ACF_Builder
 
                                                     <?php if (!empty($field_builder_section_buy_now_product_boxes_content)): ?>
 
-                                                        <p class="box-content">
+                                                        <p class="box-content"
+                                                           style="color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_content_color); ?>">
 
                                                             <?php echo esc_html($field_builder_section_buy_now_product_boxes_content); ?>
 
@@ -449,15 +484,15 @@ final class ACF_Builder
 
                     elseif ($section_type === 'gallery-section'):
 
-                        $field_builder_section_gallery_main_headline = ACF_Builder::get_sub_field('field_builder_section_gallery_main_headline');
+                        $field_builder_section_gallery_main_headline = self::get_sub_field('field_builder_section_gallery_main_headline');
 
-                        $field_builder_section_gallery_type_of_bg = ACF_Builder::get_sub_field('field_builder_section_gallery_type_of_bg');
+                        $field_builder_section_gallery_type_of_bg = self::get_sub_field('field_builder_section_gallery_type_of_bg');
 
-                        $field_builder_section_gallery_bg_color = ACF_Builder::get_sub_field('field_builder_section_gallery_bg_color');
+                        $field_builder_section_gallery_bg_color = self::get_sub_field('field_builder_section_gallery_bg_color');
 
-                        $field_builder_section_gallery_bg_image = ACF_Builder::get_sub_field('field_builder_section_gallery_bg_image');
+                        $field_builder_section_gallery_bg_image = self::get_sub_field('field_builder_section_gallery_bg_image');
 
-                        $field_builder_section_gallery_gallery = ACF_Builder::get_sub_field('field_builder_section_gallery_gallery');
+                        $field_builder_section_gallery_gallery = self::get_sub_field('field_builder_section_gallery_gallery');
 
                         ?>
 
@@ -509,15 +544,15 @@ final class ACF_Builder
 
                     elseif ($section_type === 'faqs-section'):
 
-                        $field_builder_section_faqs_type_of_bg = ACF_Builder::get_sub_field('field_builder_section_faqs_type_of_bg');
+                        $field_builder_section_faqs_type_of_bg = self::get_sub_field('field_builder_section_faqs_type_of_bg');
 
-                        $field_builder_section_faqs_bg_color = ACF_Builder::get_sub_field('field_builder_section_faqs_bg_color');
+                        $field_builder_section_faqs_bg_color = self::get_sub_field('field_builder_section_faqs_bg_color');
 
-                        $field_builder_section_faqs_bg_image = ACF_Builder::get_sub_field('field_builder_section_faqs_bg_image');
+                        $field_builder_section_faqs_bg_image = self::get_sub_field('field_builder_section_faqs_bg_image');
 
-                        $field_builder_section_faqs_main_headline = ACF_Builder::get_sub_field('field_builder_section_faqs_main_headline');
+                        $field_builder_section_faqs_main_headline = self::get_sub_field('field_builder_section_faqs_main_headline');
 
-                        $field_builder_section_faqs_secondary_headline = ACF_Builder::get_sub_field('field_builder_section_faqs_secondary_headline');
+                        $field_builder_section_faqs_secondary_headline = self::get_sub_field('field_builder_section_faqs_secondary_headline');
 
                         ?>
 
@@ -554,7 +589,7 @@ final class ACF_Builder
 
                                             <?php
 
-                                            $field_builder_section_faqs_builder_category_name = ACF_Builder::get_sub_field('field_builder_section_faqs_builder_category_name');
+                                            $field_builder_section_faqs_builder_category_name = self::get_sub_field('field_builder_section_faqs_builder_category_name');
 
                                             ?>
 
@@ -574,9 +609,9 @@ final class ACF_Builder
 
                                                             <?php
 
-                                                            $field_builder_section_faqs_builder_category_question = ACF_Builder::get_sub_field('field_builder_section_faqs_builder_category_question');
+                                                            $field_builder_section_faqs_builder_category_question = self::get_sub_field('field_builder_section_faqs_builder_category_question');
 
-                                                            $field_builder_section_faqs_builder_category_answer = ACF_Builder::get_sub_field('field_builder_section_faqs_builder_category_answer');
+                                                            $field_builder_section_faqs_builder_category_answer = self::get_sub_field('field_builder_section_faqs_builder_category_answer');
 
                                                             ?>
 
@@ -626,19 +661,21 @@ final class ACF_Builder
 
                     elseif ($section_type === 'rich-text-row-section'):
 
-                        $field_builder_section_rich_text_row_type_of_bg = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_type_of_bg');
+                        $field_builder_section_rich_text_row_type_of_bg = self::get_sub_field('field_builder_section_rich_text_row_type_of_bg');
 
-                        $field_builder_section_rich_text_row_bg_color = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_bg_color');
+                        $field_builder_section_rich_text_row_bg_color = self::get_sub_field('field_builder_section_rich_text_row_bg_color');
 
-                        $field_builder_section_rich_text_row_bg_image = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_bg_image');
+                        $field_builder_section_rich_text_row_bg_image = self::get_sub_field('field_builder_section_rich_text_row_bg_image');
 
-                        $field_builder_section_rich_text_row_wsw = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_wsw');
+                        $field_builder_section_rich_text_row_wsw = self::get_sub_field('field_builder_section_rich_text_row_wsw');
 
-                        $field_builder_section_rich_text_row_button_label = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_button_label');
+                        $field_builder_section_rich_text_row_button_label = self::get_sub_field('field_builder_section_rich_text_row_button_label');
 
-                        $field_builder_section_rich_text_row_button_url = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_button_url');
+                        $field_builder_section_rich_text_row_button_url = self::get_sub_field('field_builder_section_rich_text_row_button_url');
 
-                        $field_builder_section_rich_text_row_button_bg = ACF_Builder::get_sub_field('field_builder_section_rich_text_row_button_bg');
+                        $field_builder_section_buy_now_product_boxes_button_bg = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_bg');
+
+                        $field_builder_section_buy_now_product_boxes_button_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_color');
 
                         ?>
 
@@ -663,7 +700,7 @@ final class ACF_Builder
 
                                         <a class="neo-button"
                                            href="<?php echo esc_url($field_builder_section_rich_text_row_button_url); ?>"
-                                           style="background-color: <?php echo esc_attr($field_builder_section_rich_text_row_button_bg); ?>">
+                                           style="background-color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_bg); ?>; color:<?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_color); ?>">
 
                                             <?php echo esc_html($field_builder_section_rich_text_row_button_label); ?>
 
@@ -1421,13 +1458,13 @@ final class ACF_Builder
                     ),
                     array(
                         'key' => 'field_builder_section_buy_now_product_boxes_title_color',
-                        'label' => esc_html('Product Boxes Title Color'),
+                        'label' => esc_html('Boxes Title Color'),
                         'name' => 'option_builder_section_buy_now_product_boxes_title_color',
-                        'instructions' => esc_html('Select the Product Boxes Title Color'),
+                        'instructions' => esc_html('Select the Boxes Title Color'),
                         'type' => 'color_picker',
                         'default_value' => '#161616',
                         'wrapper' => array(
-                            'width' => '50%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1442,13 +1479,55 @@ final class ACF_Builder
                     ),
                     array(
                         'key' => 'field_builder_section_buy_now_product_boxes_content_color',
-                        'label' => esc_html('Product Boxes Content Color'),
+                        'label' => esc_html('Boxes Content Color'),
                         'name' => 'option_builder_section_buy_now_product_boxes_content_color',
-                        'instructions' => esc_html('Select the Product Boxes Content Color'),
+                        'instructions' => esc_html('Select the Boxes Content Color'),
                         'type' => 'color_picker',
                         'default_value' => '#565656',
                         'wrapper' => array(
-                            'width' => '50%',
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_product_boxes_button_bg',
+                        'label' => esc_html('Boxes Button Background Color'),
+                        'name' => 'option_builder_section_buy_now_product_boxes_button_bg',
+                        'instructions' => esc_html('Select the Boxes Button Background Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#147aff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_product_boxes_button_color',
+                        'label' => esc_html('Boxes Button Color'),
+                        'name' => 'option_builder_section_buy_now_product_boxes_button_color',
+                        'instructions' => esc_html('Select the Boxes Button Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1514,7 +1593,7 @@ final class ACF_Builder
                                 'placeholder' => esc_html('Button Label'),
                                 'type' => 'text',
                                 'wrapper' => array(
-                                    'width' => '33.33333%',
+                                    'width' => '50%',
                                     'class' => '',
                                 ),
                             ),
@@ -1526,19 +1605,7 @@ final class ACF_Builder
                                 'placeholder' => esc_html('Button URL'),
                                 'type' => 'url',
                                 'wrapper' => array(
-                                    'width' => '33.33333%',
-                                    'class' => '',
-                                ),
-                            ),
-                            array(
-                                'key' => 'field_builder_section_buy_now_product_boxes_button_bg',
-                                'label' => esc_html('Button Background Color'),
-                                'name' => 'option_builder_section_buy_now_product_boxes_button_bg',
-                                'instructions' => esc_html('Select the Button Background Color'),
-                                'type' => 'color_picker',
-                                'default_value' => '#147aff',
-                                'wrapper' => array(
-                                    'width' => '33.33333%',
+                                    'width' => '50%',
                                     'class' => '',
                                 ),
                             ),
