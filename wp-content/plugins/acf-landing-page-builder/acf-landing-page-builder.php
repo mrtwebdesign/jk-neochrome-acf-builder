@@ -380,6 +380,10 @@ final class ACF_Builder
 
                         $field_builder_section_buy_now_product_boxes_content_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_content_color');
 
+                        $field_builder_section_buy_now_product_boxes_button_bg = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_bg');
+
+                        $field_builder_section_buy_now_product_boxes_button_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_color');
+
                         ?>
 
                         <section class="neo-section buy-now-get-more-info-section"
@@ -413,8 +417,6 @@ final class ACF_Builder
                                             $field_builder_section_buy_now_product_boxes_button_label = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_label');
 
                                             $field_builder_section_buy_now_product_boxes_button_url = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_url');
-
-                                            $field_builder_section_buy_now_product_boxes_button_bg = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_bg');
 
                                             ?>
 
@@ -450,7 +452,8 @@ final class ACF_Builder
 
                                                             <a class="neo-button"
                                                                href="<?php echo esc_url($field_builder_section_buy_now_product_boxes_button_url); ?>"
-                                                               style="background-color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_bg); ?>">
+                                                               style="background-color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_bg); ?>;
+                                                                       color:<?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_color); ?>">
 
                                                                 <?php echo esc_html($field_builder_section_buy_now_product_boxes_button_label); ?>
 
@@ -673,10 +676,6 @@ final class ACF_Builder
 
                         $field_builder_section_rich_text_row_button_url = self::get_sub_field('field_builder_section_rich_text_row_button_url');
 
-                        $field_builder_section_buy_now_product_boxes_button_bg = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_bg');
-
-                        $field_builder_section_buy_now_product_boxes_button_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_color');
-
                         ?>
 
                         <section class="neo-section rich-text-row-section"
@@ -700,7 +699,7 @@ final class ACF_Builder
 
                                         <a class="neo-button"
                                            href="<?php echo esc_url($field_builder_section_rich_text_row_button_url); ?>"
-                                           style="background-color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_bg); ?>; color:<?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_color); ?>">
+                                           style="background-color: <?php echo esc_attr($field_builder_section_rich_text_row_button_bg); ?>; color:<?php echo esc_attr($field_builder_section_rich_text_row_button_color); ?>">
 
                                             <?php echo esc_html($field_builder_section_rich_text_row_button_label); ?>
 
@@ -766,12 +765,153 @@ final class ACF_Builder
                 'label' => esc_html('Enable/Disable Landing Page Builder'),
                 'name' => 'option_repeater_builder_toggle',
                 'type' => 'true_false',
-                'conditional_logic' => 0,
+
                 'default_value' => 0,
                 'ui' => 1,
                 'ui_on_text' => esc_html('Enable'),
                 'ui_off_text' => esc_html('Disable'),
                 'parent' => 'group_repeater_builder_settings',
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_custom_settings_toggle',
+                'label' => esc_html('Enable/Disable Custom Settings'),
+                'name' => 'option_repeater_builder_custom_settings_toggle',
+                'type' => 'true_false',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => esc_html('Enable'),
+                'ui_off_text' => esc_html('Disable'),
+                'parent' => 'group_repeater_builder_settings',
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
+                ),
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_builder_default_headings_color',
+                'label' => esc_html('Default Headings Color'),
+                'name' => 'option_builder_default_headings_color',
+                'instructions' => esc_html('Select the Default Headings Color'),
+                'type' => 'color_picker',
+                'default_value' => '#161616',
+                'wrapper' => array(
+                    'width' => '25%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_builder_default_text_color',
+                'label' => esc_html('Default Text Color'),
+                'name' => 'option_builder_default_text_color',
+                'instructions' => esc_html('Select the Default Text Color'),
+                'type' => 'color_picker',
+                'default_value' => '#565656',
+                'wrapper' => array(
+                    'width' => '25%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_builder_default_button_color',
+                'label' => esc_html('Default Button Color'),
+                'name' => 'option_builder_default_button_color',
+                'instructions' => esc_html('Select the Default Button Color'),
+                'type' => 'color_picker',
+                'default_value' => '#ffffff',
+                'wrapper' => array(
+                    'width' => '25%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_builder_default_button_bg_color',
+                'label' => esc_html('Default Button Background Color'),
+                'name' => 'option_builder_default_button_bg_color',
+                'instructions' => esc_html('Select the Default Button Background Color'),
+                'type' => 'color_picker',
+                'default_value' => '#147aff',
+                'wrapper' => array(
+                    'width' => '25%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -782,7 +922,7 @@ final class ACF_Builder
                 'type' => 'select',
                 'default' => 'Roboto',
                 'required' => 0,
-                'conditional_logic' => 0,
+
                 'choices' => array('ABeeZee', 'Abel', 'Abril Fatface', 'Aclonica', 'Acme', 'Actor', 'Adamina', 'Advent Pro', 'Aguafina Script', 'Akronim', 'Aladin', 'Aldrich', 'Alef', 'Alegreya', 'Alegreya SC', 'Alex Brush', 'Alfa Slab One', 'Alice', 'Alike', 'Alike Angular', 'Allan', 'Allerta', 'Allerta Stencil', 'Allura', 'Almendra', 'Almendra Display', 'Almendra SC', 'Amarante', 'Amaranth', 'Amatic SC', 'Amethysta', 'Anaheim', 'Andada', 'Andika', 'Angkor', 'Annie Use Your Telescope', 'Anonymous Pro', 'Antic', 'Antic Didone', 'Antic Slab', 'Anton', 'Arapey', 'Arbutus', 'Arbutus Slab', 'Architects Daughter', 'Archivo Black', 'Archivo Narrow', 'Arial Black', 'Arial Narrow', 'Arimo', 'Arizonia', 'Armata', 'Artifika', 'Arvo', 'Asap', 'Asset', 'Astloch', 'Asul', 'Atomic Age', 'Aubrey', 'Audiowide', 'Autour One', 'Average', 'Average Sans', 'Averia Gruesa Libre', 'Averia Libre', 'Averia Sans Libre', 'Averia Serif Libre', 'Bad Script', 'Balthazar', 'Bangers', 'Basic', 'Battambang', 'Baumans', 'Bayon', 'Belgrano', 'Bell MT', 'Bell MT Alt', 'Belleza', 'BenchNine', 'Bentham', 'Berkshire Swash', 'Bevan', 'Bigelow Rules', 'Bigshot One', 'Bilbo', 'Bilbo Swash Caps', 'Bitter', 'Black Ops One', 'Bodoni', 'Bokor', 'Bonbon', 'Boogaloo', 'Bowlby One', 'Bowlby One SC', 'Brawler', 'Bree Serif', 'Bubblegum Sans', 'Bubbler One', 'Buenard', 'Butcherman', 'Butcherman Caps', 'Butterfly Kids', 'Cabin', 'Cabin Condensed', 'Cabin Sketch', 'Caesar Dressing', 'Cagliostro', 'Calibri', 'Calligraffitti', 'Cambo', 'Cambria', 'Candal', 'Cantarell', 'Cantata One', 'Cantora One', 'Capriola', 'Cardo', 'Carme', 'Carrois Gothic', 'Carrois Gothic SC', 'Carter One', 'Caudex', 'Cedarville Cursive', 'Ceviche One', 'Changa One', 'Chango', 'Chau Philomene One', 'Chela One', 'Chelsea Market', 'Chenla', 'Cherry Cream Soda', 'Cherry Swash', 'Chewy', 'Chicle', 'Chivo', 'Cinzel', 'Cinzel Decorative', 'Clara', 'Clicker Script', 'Coda', 'Codystar', 'Combo', 'Comfortaa', 'Coming Soon', 'Concert One', 'Condiment', 'Consolas', 'Content', 'Contrail One', 'Convergence', 'Cookie', 'Copse', 'Corben', 'Corsiva', 'Courgette', 'Courier New', 'Cousine', 'Coustard', 'Covered By Your Grace', 'Crafty Girls', 'Creepster', 'Creepster Caps', 'Crete Round', 'Crimson Text', 'Croissant One', 'Crushed', 'Cuprum', 'Cutive', 'Cutive Mono', 'Damion', 'Dancing Script', 'Dangrek', 'Dawning of a New Day', 'Days One', 'Delius', 'Delius Swash Caps', 'Delius Unicase', 'Della Respira', 'Denk One', 'Devonshire', 'Dhyana', 'Didact Gothic', 'Diplomata', 'Diplomata SC', 'Domine', 'Donegal One', 'Doppio One', 'Dorsa', 'Dosis', 'Dr Sugiyama', 'Droid Arabic Kufi', 'Droid Arabic Naskh', 'Droid Sans', 'Droid Sans Mono', 'Droid Sans TV', 'Droid Serif', 'Duru Sans', 'Dynalight', 'EB Garamond', 'Eagle Lake', 'Eater', 'Eater Caps', 'Economica', 'Electrolize', 'Elsie', 'Elsie Swash Caps', 'Emblema One', 'Emilys Candy', 'Engagement', 'Englebert', 'Enriqueta', 'Erica One', 'Esteban', 'Euphoria Script', 'Ewert', 'Exo', 'Expletus Sans', 'Fanwood Text', 'Fascinate', 'Fascinate Inline', 'Faster One', 'Fasthand', 'Fauna One', 'Federant', 'Federo', 'Felipa', 'Fenix', 'Finger Paint', 'Fjalla One', 'Fjord One', 'Flamenco', 'Flavors', 'Fondamento', 'Fontdiner Swanky', 'Forum', 'Francois One', 'Freckle Face', 'Fredericka the Great', 'Fredoka One', 'Freehand', 'Fresca', 'Frijole', 'Fruktur', 'Fugaz One', 'GFS Didot', 'GFS Neohellenic', 'Gabriela', 'Gafata', 'Galdeano', 'Galindo', 'Garamond', 'Gentium Basic', 'Gentium Book Basic', 'Geo', 'Geostar', 'Geostar Fill', 'Germania One', 'Gilda Display', 'Give You Glory', 'Glass Antiqua', 'Glegoo', 'Gloria Hallelujah', 'Goblin One', 'Gochi Hand', 'Gorditas', 'Goudy Bookletter 1911', 'Graduate', 'Grand Hotel', 'Gravitas One', 'Great Vibes', 'Griffy', 'Gruppo', 'Gudea', 'Habibi', 'Hammersmith One', 'Hanalei', 'Hanalei Fill', 'Handlee', 'Hanuman', 'Happy Monkey', 'Headland One', 'Helvetica Neue', 'Henny Penny', 'Herr Von Muellerhoff', 'Holtwood One SC', 'Homemade Apple', 'Homenaje', 'IM Fell DW Pica', 'IM Fell DW Pica SC', 'IM Fell Double Pica', 'IM Fell Double Pica SC', 'IM Fell English', 'IM Fell English SC', 'IM Fell French Canon', 'IM Fell French Canon SC', 'IM Fell Great Primer', 'IM Fell Great Primer SC', 'Iceberg', 'Iceland', 'Imprima', 'Inconsolata', 'Inder', 'Indie Flower', 'Inika', 'Irish Grover', 'Irish Growler', 'Istok Web', 'Italiana', 'Italianno', 'Jacques Francois', 'Jacques Francois Shadow', 'Jim Nightshade', 'Jockey One', 'Jolly Lodger', 'Josefin Sans', 'Josefin Sans Std Light', 'Josefin Slab', 'Joti One', 'Judson', 'Julee', 'Julius Sans One', 'Junge', 'Jura', 'Just Another Hand', 'Just Me Again Down Here', 'Kameron', 'Karla', 'Kaushan Script', 'Kavoon', 'Keania One', 'Kelly Slab', 'Kenia', 'Khmer', 'Kite One', 'Knewave', 'Kotta One', 'Koulen', 'Kranky', 'Kreon', 'Kristi', 'Krona One', 'La Belle Aurore', 'Lancelot', 'Lateef', 'Lato', 'League Script', 'Leckerli One', 'Ledger', 'Lekton', 'Lemon', 'Lemon One', 'Libre Baskerville', 'Life Savers', 'Lilita One', 'Lily Script One', 'Limelight', 'Linden Hill', 'Lobster', 'Lobster Two', 'Lohit Bengali', 'Lohit Devanagari', 'Lohit Tamil', 'Londrina Outline', 'Londrina Shadow', 'Londrina Sketch', 'Londrina Solid', 'Lora', 'Love Ya Like A Sister', 'Loved by the King', 'Lovers Quarrel', 'Luckiest Guy', 'Lusitana', 'Lustria', 'Macondo', 'Macondo Swash Caps', 'Magra', 'Maiden Orange', 'Mako', 'Marcellus', 'Marcellus SC', 'Marck Script', 'Margarine', 'Marko One', 'Marmelad', 'Marvel', 'Mate', 'Mate SC', 'Maven Pro', 'McLaren', 'Meddon', 'MedievalSharp', 'Medula One', 'Megrim', 'Meie Script', 'Merienda', 'Merienda One', 'Merriweather', 'Merriweather Sans', 'Metal', 'Metal Mania', 'Metamorphous', 'Metrophobic', 'Michroma', 'Milonga', 'Miltonian', 'Miltonian Tattoo', 'Miniver', 'Miss Fajardose', 'Miss Saint Delafield', 'Modern Antiqua', 'Molengo', 'Monda', 'Monofett', 'Monoton', 'Monsieur La Doulaise', 'Montaga', 'Montez', 'Montserrat', 'Montserrat Alternates', 'Montserrat Subrayada', 'Moul', 'Moulpali', 'Mountains of Christmas', 'Mouse Memoirs', 'Mr Bedford', 'Mr Bedfort', 'Mr Dafoe', 'Mr De Haviland', 'Mrs Saint Delafield', 'Mrs Sheppards', 'Muli', 'Mystery Quest', 'Neucha', 'Neuton', 'New Rocker', 'News Cycle', 'Niconne', 'Nixie One', 'Nobile', 'Nokora', 'Norican', 'Nosifer', 'Nosifer Caps', 'Nothing You Could Do', 'Noticia Text', 'Noto Sans', 'Noto Sans UI', 'Noto Serif', 'Nova Cut', 'Nova Flat', 'Nova Mono', 'Nova Oval', 'Nova Round', 'Nova Script', 'Nova Slim', 'Nova Square', 'Numans', 'Nunito', 'OFL Sorts Mill Goudy TT', 'Odor Mean Chey', 'Offside', 'Old Standard TT', 'Oldenburg', 'Oleo Script', 'Oleo Script Swash Caps', 'Open Sans', 'Oranienbaum', 'Orbitron', 'Oregano', 'Orienta', 'Original Surfer', 'Oswald', 'Over the Rainbow', 'Overlock', 'Overlock SC', 'Ovo', 'Oxygen', 'Oxygen Mono', 'PT Mono', 'PT Sans', 'PT Sans Caption', 'PT Sans Narrow', 'PT Serif', 'PT Serif Caption', 'Pacifico', 'Paprika', 'Parisienne', 'Passero One', 'Passion One', 'Pathway Gothic One', 'Patrick Hand', 'Patrick Hand SC', 'Patua One', 'Paytone One', 'Peralta', 'Permanent Marker', 'Petit Formal Script', 'Petrona', 'Philosopher', 'Piedra', 'Pinyon Script', 'Pirata One', 'Plaster', 'Play', 'Playball', 'Playfair Display', 'Playfair Display SC', 'Podkova', 'Poiret One', 'Poller One', 'Poly', 'Pompiere', 'Pontano Sans', 'Port Lligat Sans', 'Port Lligat Slab', 'Prata', 'Preahvihear', 'Press Start 2P', 'Princess Sofia', 'Prociono', 'Prosto One', 'Proxima Nova', 'Proxima Nova Tabular Figures', 'Puritan', 'Purple Purse', 'Quando', 'Quantico', 'Quattrocento', 'Quattrocento Sans', 'Questrial', 'Quicksand', 'Quintessential', 'Qwigley', 'Racing Sans One', 'Radley', 'Raleway', 'Raleway Dots', 'Rambla', 'Rammetto One', 'Ranchers', 'Rancho', 'Rationale', 'Redressed', 'Reenie Beanie', 'Revalia', 'Ribeye', 'Ribeye Marrow', 'Righteous', 'Risque', 'Roboto', 'Roboto Condensed', 'Roboto Slab', 'Rochester', 'Rock Salt', 'Rokkitt', 'Romanesco', 'Ropa Sans', 'Rosario', 'Rosarivo', 'Rouge Script', 'Ruda', 'Rufina', 'Ruge Boogie', 'Ruluko', 'Rum Raisin', 'Ruslan Display', 'Russo One', 'Ruthie', 'Rye', 'Sacramento', 'Sail', 'Salsa', 'Sanchez', 'Sancreek', 'Sansita One', 'Sarina', 'Satisfy', 'Scada', 'Scheherazade', 'Schoolbell', 'Seaweed Script', 'Sevillana', 'Seymour One', 'Shadows Into Light', 'Shadows Into Light Two', 'Shanti', 'Share', 'Share Tech', 'Share Tech Mono', 'Shojumaru', 'Short Stack', 'Siamreap', 'Siemreap', 'Sigmar One', 'Signika', 'Signika Negative', 'Simonetta', 'Sintony', 'Sirin Stencil', 'Six Caps', 'Skranji', 'Slackey', 'Smokum', 'Smythe', 'Snippet', 'Snowburst One', 'Sofadi One', 'Sofia', 'Sonsie One', 'Sorts Mill Goudy', 'Source Code Pro', 'Source Sans Pro', 'Special Elite', 'Spicy Rice', 'Spinnaker', 'Spirax', 'Squada One', 'Stalemate', 'Stalin One', 'Stalinist One', 'Stardos Stencil', 'Stint Ultra Condensed', 'Stint Ultra Expanded', 'Stoke', 'Strait', 'Sue Ellen Francisco', 'Sunshiney', 'Supermercado One', 'Suwannaphum', 'Swanky and Moo Moo', 'Syncopate', 'Tahoma', 'Tangerine', 'Taprom', 'Tauri', 'Telex', 'Tenor Sans', 'Terminal Dosis', 'Terminal Dosis Light', 'Text Me One', 'Thabit', 'The Girl Next Door', 'Tienne', 'Tinos', 'Titan One', 'Titillium Web', 'Trade Winds', 'Trocchi', 'Trochut', 'Trykker', 'Tulpen One', 'Ubuntu', 'Ubuntu Condensed', 'Ubuntu Mono', 'Ultra', 'Uncial Antiqua', 'Underdog', 'Unica One', 'UnifrakturMaguntia', 'Unkempt', 'Unlock', 'Unna', 'VT323', 'Vampiro One', 'Varela', 'Varela Round', 'Vast Shadow', 'Vibur', 'Vidaloka', 'Viga', 'Voces', 'Volkhov', 'Vollkorn', 'Voltaire', 'Waiting for the Sunrise', 'Wallpoet', 'Walter Turncoat', 'Warnes', 'Wellfleet', 'Wendy One', 'Wire One', 'Yanone Kaffeesatz', 'Yellowtail', 'Yeseva One', 'Yesteryear', 'Zeyada', 'jsMath cmbx10', 'jsMath cmex10', 'jsMath cmmi10', 'jsMath cmr10', 'jsMath cmsy10', 'jsMath cmti10'),
                 'allow_null' => 0,
                 'other_choice' => 0,
@@ -796,6 +936,20 @@ final class ACF_Builder
                     'width' => '33.33333%',
                     'class' => '',
                 ),
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -803,7 +957,8 @@ final class ACF_Builder
                 'label' => esc_html('Text Font Size'),
                 'name' => 'option_text_font_size',
                 'type' => 'number',
-                'placeholder' => esc_html('Enter text font size'),
+                'placeholder' => esc_html('Font Size'),
+                'instructions' => esc_html('Input the text font size'),
                 'append' => 'px',
                 'min' => '10',
                 'max' => '24',
@@ -814,6 +969,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -821,7 +990,8 @@ final class ACF_Builder
                 'label' => esc_html('Text Font Size (LG)'),
                 'name' => 'option_text_font_size_lg',
                 'type' => 'number',
-                'placeholder' => esc_html('Enter text font size (LG)'),
+                'placeholder' => esc_html('Font Size (LG)'),
+                'instructions' => esc_html('Input the text font size (LG)'),
                 'append' => 'px',
                 'min' => '10',
                 'max' => '24',
@@ -832,6 +1002,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -839,7 +1023,8 @@ final class ACF_Builder
                 'label' => esc_html('Text Font Size (SM)'),
                 'name' => 'option_text_font_size_sm',
                 'type' => 'number',
-                'placeholder' => esc_html('Enter text font size (SM)'),
+                'placeholder' => esc_html('Font Size (SM)'),
+                'instructions' => esc_html('Input the text font size (SM)'),
                 'append' => 'px',
                 'min' => '10',
                 'max' => '24',
@@ -850,6 +1035,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -857,7 +1056,8 @@ final class ACF_Builder
                 'label' => esc_html('Text Font Weight'),
                 'name' => 'option_text_font_weight',
                 'type' => 'number',
-                'placeholder' => esc_html('Enter text font weight'),
+                'placeholder' => esc_html('Font weight'),
+                'instructions' => esc_html('Input the text font weight'),
                 'min' => '300',
                 'max' => '800',
                 'step' => '100',
@@ -867,6 +1067,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -874,16 +1088,31 @@ final class ACF_Builder
                 'label' => esc_html('Text Line Height'),
                 'name' => 'option_text_line_height',
                 'type' => 'number',
-                'placeholder' => esc_html('Enter text line height'),
+                'placeholder' => esc_html('Text Line Height'),
+                'instructions' => esc_html('Input the Text Line Height'),
                 'min' => '1',
                 'max' => '3',
                 'step' => '0.1',
-                'default_value' => '1.9',
+                'default_value' => '1.7',
                 'wrapper' => array(
                     'width' => '33.33333%',
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -894,7 +1123,7 @@ final class ACF_Builder
                 'type' => 'select',
                 'default' => 'Poppins',
                 'required' => 0,
-                'conditional_logic' => 0,
+
                 'choices' => array('ABeeZee', 'Abel', 'Abril Fatface', 'Aclonica', 'Acme', 'Actor', 'Adamina', 'Advent Pro', 'Aguafina Script', 'Akronim', 'Aladin', 'Aldrich', 'Alef', 'Alegreya', 'Alegreya SC', 'Alex Brush', 'Alfa Slab One', 'Alice', 'Alike', 'Alike Angular', 'Allan', 'Allerta', 'Allerta Stencil', 'Allura', 'Almendra', 'Almendra Display', 'Almendra SC', 'Amarante', 'Amaranth', 'Amatic SC', 'Amethysta', 'Anaheim', 'Andada', 'Andika', 'Angkor', 'Annie Use Your Telescope', 'Anonymous Pro', 'Antic', 'Antic Didone', 'Antic Slab', 'Anton', 'Arapey', 'Arbutus', 'Arbutus Slab', 'Architects Daughter', 'Archivo Black', 'Archivo Narrow', 'Arial Black', 'Arial Narrow', 'Arimo', 'Arizonia', 'Armata', 'Artifika', 'Arvo', 'Asap', 'Asset', 'Astloch', 'Asul', 'Atomic Age', 'Aubrey', 'Audiowide', 'Autour One', 'Average', 'Average Sans', 'Averia Gruesa Libre', 'Averia Libre', 'Averia Sans Libre', 'Averia Serif Libre', 'Bad Script', 'Balthazar', 'Bangers', 'Basic', 'Battambang', 'Baumans', 'Bayon', 'Belgrano', 'Bell MT', 'Bell MT Alt', 'Belleza', 'BenchNine', 'Bentham', 'Berkshire Swash', 'Bevan', 'Bigelow Rules', 'Bigshot One', 'Bilbo', 'Bilbo Swash Caps', 'Bitter', 'Black Ops One', 'Bodoni', 'Bokor', 'Bonbon', 'Boogaloo', 'Bowlby One', 'Bowlby One SC', 'Brawler', 'Bree Serif', 'Bubblegum Sans', 'Bubbler One', 'Buenard', 'Butcherman', 'Butcherman Caps', 'Butterfly Kids', 'Cabin', 'Cabin Condensed', 'Cabin Sketch', 'Caesar Dressing', 'Cagliostro', 'Calibri', 'Calligraffitti', 'Cambo', 'Cambria', 'Candal', 'Cantarell', 'Cantata One', 'Cantora One', 'Capriola', 'Cardo', 'Carme', 'Carrois Gothic', 'Carrois Gothic SC', 'Carter One', 'Caudex', 'Cedarville Cursive', 'Ceviche One', 'Changa One', 'Chango', 'Chau Philomene One', 'Chela One', 'Chelsea Market', 'Chenla', 'Cherry Cream Soda', 'Cherry Swash', 'Chewy', 'Chicle', 'Chivo', 'Cinzel', 'Cinzel Decorative', 'Clara', 'Clicker Script', 'Coda', 'Codystar', 'Combo', 'Comfortaa', 'Coming Soon', 'Concert One', 'Condiment', 'Consolas', 'Content', 'Contrail One', 'Convergence', 'Cookie', 'Copse', 'Corben', 'Corsiva', 'Courgette', 'Courier New', 'Cousine', 'Coustard', 'Covered By Your Grace', 'Crafty Girls', 'Creepster', 'Creepster Caps', 'Crete Round', 'Crimson Text', 'Croissant One', 'Crushed', 'Cuprum', 'Cutive', 'Cutive Mono', 'Damion', 'Dancing Script', 'Dangrek', 'Dawning of a New Day', 'Days One', 'Delius', 'Delius Swash Caps', 'Delius Unicase', 'Della Respira', 'Denk One', 'Devonshire', 'Dhyana', 'Didact Gothic', 'Diplomata', 'Diplomata SC', 'Domine', 'Donegal One', 'Doppio One', 'Dorsa', 'Dosis', 'Dr Sugiyama', 'Droid Arabic Kufi', 'Droid Arabic Naskh', 'Droid Sans', 'Droid Sans Mono', 'Droid Sans TV', 'Droid Serif', 'Duru Sans', 'Dynalight', 'EB Garamond', 'Eagle Lake', 'Eater', 'Eater Caps', 'Economica', 'Electrolize', 'Elsie', 'Elsie Swash Caps', 'Emblema One', 'Emilys Candy', 'Engagement', 'Englebert', 'Enriqueta', 'Erica One', 'Esteban', 'Euphoria Script', 'Ewert', 'Exo', 'Expletus Sans', 'Fanwood Text', 'Fascinate', 'Fascinate Inline', 'Faster One', 'Fasthand', 'Fauna One', 'Federant', 'Federo', 'Felipa', 'Fenix', 'Finger Paint', 'Fjalla One', 'Fjord One', 'Flamenco', 'Flavors', 'Fondamento', 'Fontdiner Swanky', 'Forum', 'Francois One', 'Freckle Face', 'Fredericka the Great', 'Fredoka One', 'Freehand', 'Fresca', 'Frijole', 'Fruktur', 'Fugaz One', 'GFS Didot', 'GFS Neohellenic', 'Gabriela', 'Gafata', 'Galdeano', 'Galindo', 'Garamond', 'Gentium Basic', 'Gentium Book Basic', 'Geo', 'Geostar', 'Geostar Fill', 'Germania One', 'Gilda Display', 'Give You Glory', 'Glass Antiqua', 'Glegoo', 'Gloria Hallelujah', 'Goblin One', 'Gochi Hand', 'Gorditas', 'Goudy Bookletter 1911', 'Graduate', 'Grand Hotel', 'Gravitas One', 'Great Vibes', 'Griffy', 'Gruppo', 'Gudea', 'Habibi', 'Hammersmith One', 'Hanalei', 'Hanalei Fill', 'Handlee', 'Hanuman', 'Happy Monkey', 'Headland One', 'Helvetica Neue', 'Henny Penny', 'Herr Von Muellerhoff', 'Holtwood One SC', 'Homemade Apple', 'Homenaje', 'IM Fell DW Pica', 'IM Fell DW Pica SC', 'IM Fell Double Pica', 'IM Fell Double Pica SC', 'IM Fell English', 'IM Fell English SC', 'IM Fell French Canon', 'IM Fell French Canon SC', 'IM Fell Great Primer', 'IM Fell Great Primer SC', 'Iceberg', 'Iceland', 'Imprima', 'Inconsolata', 'Inder', 'Indie Flower', 'Inika', 'Irish Grover', 'Irish Growler', 'Istok Web', 'Italiana', 'Italianno', 'Jacques Francois', 'Jacques Francois Shadow', 'Jim Nightshade', 'Jockey One', 'Jolly Lodger', 'Josefin Sans', 'Josefin Sans Std Light', 'Josefin Slab', 'Joti One', 'Judson', 'Julee', 'Julius Sans One', 'Junge', 'Jura', 'Just Another Hand', 'Just Me Again Down Here', 'Kameron', 'Karla', 'Kaushan Script', 'Kavoon', 'Keania One', 'Kelly Slab', 'Kenia', 'Khmer', 'Kite One', 'Knewave', 'Kotta One', 'Koulen', 'Kranky', 'Kreon', 'Kristi', 'Krona One', 'La Belle Aurore', 'Lancelot', 'Lateef', 'Lato', 'League Script', 'Leckerli One', 'Ledger', 'Lekton', 'Lemon', 'Lemon One', 'Libre Baskerville', 'Life Savers', 'Lilita One', 'Lily Script One', 'Limelight', 'Linden Hill', 'Lobster', 'Lobster Two', 'Lohit Bengali', 'Lohit Devanagari', 'Lohit Tamil', 'Londrina Outline', 'Londrina Shadow', 'Londrina Sketch', 'Londrina Solid', 'Lora', 'Love Ya Like A Sister', 'Loved by the King', 'Lovers Quarrel', 'Luckiest Guy', 'Lusitana', 'Lustria', 'Macondo', 'Macondo Swash Caps', 'Magra', 'Maiden Orange', 'Mako', 'Marcellus', 'Marcellus SC', 'Marck Script', 'Margarine', 'Marko One', 'Marmelad', 'Marvel', 'Mate', 'Mate SC', 'Maven Pro', 'McLaren', 'Meddon', 'MedievalSharp', 'Medula One', 'Megrim', 'Meie Script', 'Merienda', 'Merienda One', 'Merriweather', 'Merriweather Sans', 'Metal', 'Metal Mania', 'Metamorphous', 'Metrophobic', 'Michroma', 'Milonga', 'Miltonian', 'Miltonian Tattoo', 'Miniver', 'Miss Fajardose', 'Miss Saint Delafield', 'Modern Antiqua', 'Molengo', 'Monda', 'Monofett', 'Monoton', 'Monsieur La Doulaise', 'Montaga', 'Montez', 'Montserrat', 'Montserrat Alternates', 'Montserrat Subrayada', 'Moul', 'Moulpali', 'Mountains of Christmas', 'Mouse Memoirs', 'Mr Bedford', 'Mr Bedfort', 'Mr Dafoe', 'Mr De Haviland', 'Mrs Saint Delafield', 'Mrs Sheppards', 'Muli', 'Mystery Quest', 'Neucha', 'Neuton', 'New Rocker', 'News Cycle', 'Niconne', 'Nixie One', 'Nobile', 'Nokora', 'Norican', 'Nosifer', 'Nosifer Caps', 'Nothing You Could Do', 'Noticia Text', 'Noto Sans', 'Noto Sans UI', 'Noto Serif', 'Nova Cut', 'Nova Flat', 'Nova Mono', 'Nova Oval', 'Nova Round', 'Nova Script', 'Nova Slim', 'Nova Square', 'Numans', 'Nunito', 'OFL Sorts Mill Goudy TT', 'Odor Mean Chey', 'Offside', 'Old Standard TT', 'Oldenburg', 'Oleo Script', 'Oleo Script Swash Caps', 'Open Sans', 'Oranienbaum', 'Orbitron', 'Oregano', 'Orienta', 'Original Surfer', 'Oswald', 'Over the Rainbow', 'Overlock', 'Overlock SC', 'Ovo', 'Oxygen', 'Oxygen Mono', 'PT Mono', 'PT Sans', 'PT Sans Caption', 'PT Sans Narrow', 'PT Serif', 'PT Serif Caption', 'Pacifico', 'Paprika', 'Parisienne', 'Passero One', 'Passion One', 'Pathway Gothic One', 'Patrick Hand', 'Patrick Hand SC', 'Patua One', 'Paytone One', 'Peralta', 'Permanent Marker', 'Petit Formal Script', 'Petrona', 'Philosopher', 'Piedra', 'Pinyon Script', 'Pirata One', 'Plaster', 'Play', 'Playball', 'Playfair Display', 'Playfair Display SC', 'Podkova', 'Poiret One', 'Poller One', 'Poly', 'Pompiere', 'Pontano Sans', 'Port Lligat Sans', 'Port Lligat Slab', 'Prata', 'Preahvihear', 'Press Start 2P', 'Princess Sofia', 'Prociono', 'Prosto One', 'Proxima Nova', 'Proxima Nova Tabular Figures', 'Puritan', 'Purple Purse', 'Quando', 'Quantico', 'Quattrocento', 'Quattrocento Sans', 'Questrial', 'Quicksand', 'Quintessential', 'Qwigley', 'Racing Sans One', 'Radley', 'Raleway', 'Raleway Dots', 'Rambla', 'Rammetto One', 'Ranchers', 'Rancho', 'Rationale', 'Redressed', 'Reenie Beanie', 'Revalia', 'Ribeye', 'Ribeye Marrow', 'Righteous', 'Risque', 'Roboto', 'Roboto Condensed', 'Roboto Slab', 'Rochester', 'Rock Salt', 'Rokkitt', 'Romanesco', 'Ropa Sans', 'Rosario', 'Rosarivo', 'Rouge Script', 'Ruda', 'Rufina', 'Ruge Boogie', 'Ruluko', 'Rum Raisin', 'Ruslan Display', 'Russo One', 'Ruthie', 'Rye', 'Sacramento', 'Sail', 'Salsa', 'Sanchez', 'Sancreek', 'Sansita One', 'Sarina', 'Satisfy', 'Scada', 'Scheherazade', 'Schoolbell', 'Seaweed Script', 'Sevillana', 'Seymour One', 'Shadows Into Light', 'Shadows Into Light Two', 'Shanti', 'Share', 'Share Tech', 'Share Tech Mono', 'Shojumaru', 'Short Stack', 'Siamreap', 'Siemreap', 'Sigmar One', 'Signika', 'Signika Negative', 'Simonetta', 'Sintony', 'Sirin Stencil', 'Six Caps', 'Skranji', 'Slackey', 'Smokum', 'Smythe', 'Snippet', 'Snowburst One', 'Sofadi One', 'Sofia', 'Sonsie One', 'Sorts Mill Goudy', 'Source Code Pro', 'Source Sans Pro', 'Special Elite', 'Spicy Rice', 'Spinnaker', 'Spirax', 'Squada One', 'Stalemate', 'Stalin One', 'Stalinist One', 'Stardos Stencil', 'Stint Ultra Condensed', 'Stint Ultra Expanded', 'Stoke', 'Strait', 'Sue Ellen Francisco', 'Sunshiney', 'Supermercado One', 'Suwannaphum', 'Swanky and Moo Moo', 'Syncopate', 'Tahoma', 'Tangerine', 'Taprom', 'Tauri', 'Telex', 'Tenor Sans', 'Terminal Dosis', 'Terminal Dosis Light', 'Text Me One', 'Thabit', 'The Girl Next Door', 'Tienne', 'Tinos', 'Titan One', 'Titillium Web', 'Trade Winds', 'Trocchi', 'Trochut', 'Trykker', 'Tulpen One', 'Ubuntu', 'Ubuntu Condensed', 'Ubuntu Mono', 'Ultra', 'Uncial Antiqua', 'Underdog', 'Unica One', 'UnifrakturMaguntia', 'Unkempt', 'Unlock', 'Unna', 'VT323', 'Vampiro One', 'Varela', 'Varela Round', 'Vast Shadow', 'Vibur', 'Vidaloka', 'Viga', 'Voces', 'Volkhov', 'Vollkorn', 'Voltaire', 'Waiting for the Sunrise', 'Wallpoet', 'Walter Turncoat', 'Warnes', 'Wellfleet', 'Wendy One', 'Wire One', 'Yanone Kaffeesatz', 'Yellowtail', 'Yeseva One', 'Yesteryear', 'Zeyada', 'jsMath cmbx10', 'jsMath cmex10', 'jsMath cmmi10', 'jsMath cmr10', 'jsMath cmsy10', 'jsMath cmti10'),
                 'allow_null' => 0,
                 'other_choice' => 0,
@@ -904,6 +1133,20 @@ final class ACF_Builder
                 'ajax' => 1,
                 'save_other_choice' => 0,
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
                 'wrapper' => array(
                     'width' => '33.33333%',
                     'class' => '',
@@ -915,7 +1158,8 @@ final class ACF_Builder
                 'label' => esc_html('Heading Font Weight'),
                 'name' => 'option_heading_font_weight',
                 'type' => 'number',
-                'placeholder' => esc_html('Enter heading font weight'),
+                'placeholder' => esc_html('Heading Font Weight'),
+                'instructions' => esc_html('Input the Heading Font Weight'),
                 'min' => '300',
                 'max' => '800',
                 'step' => '100',
@@ -925,6 +1169,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -932,7 +1190,8 @@ final class ACF_Builder
                 'label' => esc_html('Heading Line Height'),
                 'name' => 'option_heading_line_height',
                 'type' => 'number',
-                'placeholder' => esc_html('Enter heading line height'),
+                'placeholder' => esc_html('Heading Line Height'),
+                'instructions' => esc_html('Input the Heading Line Height'),
                 'min' => '1',
                 'max' => '3',
                 'step' => '0.1',
@@ -942,6 +1201,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -950,7 +1223,7 @@ final class ACF_Builder
                 'name' => 'option_h1_size',
                 'type' => 'number',
                 'placeholder' => esc_html('H1'),
-                'instructions'=>esc_html('Input the size of H1'),
+                'instructions' => esc_html('Input the size of H1'),
                 'prepend' => 'H1',
                 'append' => 'rem',
                 'min' => '1',
@@ -962,6 +1235,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -970,7 +1257,7 @@ final class ACF_Builder
                 'name' => 'option_h1_size_lg',
                 'type' => 'number',
                 'placeholder' => esc_html('H1 (LG)'),
-                'instructions'=>esc_html('Input the size of H1 (LG)'),
+                'instructions' => esc_html('Input the size of H1 (LG)'),
                 'prepend' => 'H1',
                 'append' => 'rem',
                 'min' => '1',
@@ -982,6 +1269,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -990,7 +1291,7 @@ final class ACF_Builder
                 'name' => 'option_h1_size_sm',
                 'type' => 'number',
                 'placeholder' => esc_html('H1 (SM)'),
-                'instructions'=>esc_html('Input the size of H1 (SM)'),
+                'instructions' => esc_html('Input the size of H1 (SM)'),
                 'prepend' => 'H1',
                 'append' => 'rem',
                 'min' => '1',
@@ -1002,6 +1303,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1010,7 +1325,7 @@ final class ACF_Builder
                 'name' => 'option_h2_size',
                 'type' => 'number',
                 'placeholder' => esc_html('H2'),
-                'instructions'=>esc_html('Input the size of H2'),
+                'instructions' => esc_html('Input the size of H2'),
                 'prepend' => 'H2',
                 'append' => 'rem',
                 'min' => '1',
@@ -1022,6 +1337,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1030,7 +1359,7 @@ final class ACF_Builder
                 'name' => 'option_h2_size_lg',
                 'type' => 'number',
                 'placeholder' => esc_html('H2 (LG)'),
-                'instructions'=>esc_html('Input the size of H2 (LG)'),
+                'instructions' => esc_html('Input the size of H2 (LG)'),
                 'prepend' => 'H2',
                 'append' => 'rem',
                 'min' => '1',
@@ -1042,6 +1371,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1050,7 +1393,7 @@ final class ACF_Builder
                 'name' => 'option_h2_size_sm',
                 'type' => 'number',
                 'placeholder' => esc_html('H2 (SM)'),
-                'instructions'=>esc_html('Input the size of H2 (SM)'),
+                'instructions' => esc_html('Input the size of H2 (SM)'),
                 'prepend' => 'H2',
                 'append' => 'rem',
                 'min' => '1',
@@ -1062,6 +1405,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1070,7 +1427,7 @@ final class ACF_Builder
                 'name' => 'option_h3_size',
                 'type' => 'number',
                 'placeholder' => esc_html('H3'),
-                'instructions'=>esc_html('Input the size of H3'),
+                'instructions' => esc_html('Input the size of H3'),
                 'prepend' => 'H3',
                 'append' => 'rem',
                 'min' => '1',
@@ -1082,6 +1439,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1090,7 +1461,7 @@ final class ACF_Builder
                 'name' => 'option_h3_size_lg',
                 'type' => 'number',
                 'placeholder' => esc_html('H3 (LG)'),
-                'instructions'=>esc_html('Input the size of H3 (LG)'),
+                'instructions' => esc_html('Input the size of H3 (LG)'),
                 'prepend' => 'H3',
                 'append' => 'rem',
                 'min' => '1',
@@ -1102,6 +1473,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1110,7 +1495,7 @@ final class ACF_Builder
                 'name' => 'option_h3_size_sm',
                 'type' => 'number',
                 'placeholder' => esc_html('H3 (SM)'),
-                'instructions'=>esc_html('Input the size of H3 (SM)'),
+                'instructions' => esc_html('Input the size of H3 (SM)'),
                 'prepend' => 'H3',
                 'append' => 'rem',
                 'min' => '1',
@@ -1122,6 +1507,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1130,7 +1529,7 @@ final class ACF_Builder
                 'name' => 'option_h4_size',
                 'type' => 'number',
                 'placeholder' => esc_html('H4'),
-                'instructions'=>esc_html('Input the size of H4'),
+                'instructions' => esc_html('Input the size of H4'),
                 'prepend' => 'H4',
                 'append' => 'rem',
                 'min' => '1',
@@ -1142,6 +1541,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1150,7 +1563,7 @@ final class ACF_Builder
                 'name' => 'option_h4_size_lg',
                 'type' => 'number',
                 'placeholder' => esc_html('H4 (LG)'),
-                'instructions'=>esc_html('Input the size of H4 (LG)'),
+                'instructions' => esc_html('Input the size of H4 (LG)'),
                 'prepend' => 'H4',
                 'append' => 'rem',
                 'min' => '1',
@@ -1162,6 +1575,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1170,7 +1597,7 @@ final class ACF_Builder
                 'name' => 'option_h4_size_sm',
                 'type' => 'number',
                 'placeholder' => esc_html('H4 (SM)'),
-                'instructions'=>esc_html('Input the size of H4 (SM)'),
+                'instructions' => esc_html('Input the size of H4 (SM)'),
                 'prepend' => 'H4',
                 'append' => 'rem',
                 'min' => '1',
@@ -1182,6 +1609,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1190,7 +1631,7 @@ final class ACF_Builder
                 'name' => 'option_h5_size',
                 'type' => 'number',
                 'placeholder' => esc_html('H5'),
-                'instructions'=>esc_html('Input the size of H5'),
+                'instructions' => esc_html('Input the size of H5'),
                 'prepend' => 'H5',
                 'append' => 'rem',
                 'min' => '1',
@@ -1202,6 +1643,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1210,7 +1665,7 @@ final class ACF_Builder
                 'name' => 'option_h5_size_lg',
                 'type' => 'number',
                 'placeholder' => esc_html('H5 (LG)'),
-                'instructions'=>esc_html('Input the size of H5 (LG)'),
+                'instructions' => esc_html('Input the size of H5 (LG)'),
                 'prepend' => 'H5',
                 'append' => 'rem',
                 'min' => '1',
@@ -1222,6 +1677,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1230,7 +1699,7 @@ final class ACF_Builder
                 'name' => 'option_h5_size_sm',
                 'type' => 'number',
                 'placeholder' => esc_html('H5 (SM)'),
-                'instructions'=>esc_html('Input the size of H5 (SM)'),
+                'instructions' => esc_html('Input the size of H5 (SM)'),
                 'prepend' => 'H5',
                 'append' => 'rem',
                 'min' => '1',
@@ -1242,6 +1711,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1250,7 +1733,7 @@ final class ACF_Builder
                 'name' => 'option_h6_size',
                 'type' => 'number',
                 'placeholder' => esc_html('H6'),
-                'instructions'=>esc_html('Input the size of H6'),
+                'instructions' => esc_html('Input the size of H6'),
                 'prepend' => 'H6',
                 'append' => 'rem',
                 'min' => '1',
@@ -1262,6 +1745,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1270,7 +1767,7 @@ final class ACF_Builder
                 'name' => 'option_h6_size_lg',
                 'type' => 'number',
                 'placeholder' => esc_html('H6 (LG)'),
-                'instructions'=>esc_html('Input the size of H6 (LG)'),
+                'instructions' => esc_html('Input the size of H6 (LG)'),
                 'prepend' => 'H6',
                 'append' => 'rem',
                 'min' => '1',
@@ -1282,6 +1779,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1290,7 +1801,7 @@ final class ACF_Builder
                 'name' => 'option_h6_size_sm',
                 'type' => 'number',
                 'placeholder' => esc_html('H6 (SM)'),
-                'instructions'=>esc_html('Input the size of H6 (SM)'),
+                'instructions' => esc_html('Input the size of H6 (SM)'),
                 'prepend' => 'H6',
                 'append' => 'rem',
                 'min' => '1',
@@ -1302,6 +1813,20 @@ final class ACF_Builder
                     'class' => '',
                 ),
                 'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
             ));
 
             acf_add_local_field(array(
@@ -1336,7 +1861,7 @@ final class ACF_Builder
                             'width' => '33.33333%',
                             'class' => '',
                         ),
-                        'conditional_logic' => 0,
+
                         'choices' => array(
                             'hero-section' => esc_html('Hero Section'),
                             'buy-now-get-more-info-section' => esc_html('Buy Now / Get More Info'),

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bdb71f5-d54d-41e6-8b6f-1368d23aad71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="1293" column="34" lean-forward="true" selection-start-line="1293" selection-start-column="34" selection-end-line="1293" selection-end-column="34" />
+            <state relative-caret-position="330">
+              <caret line="832" column="26" selection-start-line="832" selection-start-column="26" selection-end-line="832" selection-end-column="26" />
               <folding>
                 <element signature="e#6162#12812#0#HTML" />
                 <element signature="e#6237#6593#0#HTML" expanded="true" />
@@ -33,13 +31,19 @@
                 <element signature="e#14713#14801#0#HTML" expanded="true" />
                 <element signature="e#16642#16665#0#HTML" expanded="true" />
                 <element signature="e#17216#17312#0#HTML" expanded="true" />
-                <element signature="e#17722#17827#0#HTML" expanded="true" />
+                <element signature="e#18408#18543#0#HTML" expanded="true" />
                 <element signature="e#19503#19871#0#HTML" expanded="true" />
                 <element signature="e#20869#20934#0#HTML" expanded="true" />
+                <element signature="e#21379#26897#0#PHP" />
                 <element signature="e#22204#22560#0#HTML" expanded="true" />
+                <element signature="e#26919#29789#0#PHP" />
                 <element signature="e#30039#30175#0#HTML" expanded="true" />
-                <element signature="e#45328#45937#1#PHP" />
-                <element signature="e#28506#28802#1#PHP" />
+                <element signature="e#33153#34303#1#PHP" />
+                <element signature="e#34326#35476#1#PHP" />
+                <element signature="e#35523#36657#1#PHP" />
+                <element signature="e#36686#37828#1#PHP" />
+                <element signature="e#33192#44162#1#PHP" />
+                <element signature="e#44198#44902#1#PHP" />
                 <element signature="e#30117#31441#1#PHP" />
                 <element signature="e#31463#32754#1#PHP" />
                 <element signature="e#32776#34151#1#PHP" />
@@ -60,7 +64,6 @@
                 <element signature="e#51258#52415#1#PHP" />
                 <element signature="e#52437#53605#1#PHP" />
                 <element signature="e#55911#57245#1#PHP" />
-                <element signature="e#53805#55152#1#PHP" />
                 <element signature="e#55174#56491#1#PHP" />
                 <element signature="e#56513#57914#1#PHP" />
                 <element signature="e#57936#58977#1#PHP" />
@@ -68,8 +71,6 @@
                 <element signature="e#60747#61811#1#PHP" />
                 <element signature="e#61833#62903#1#PHP" />
                 <element signature="e#68373#69459#1#PHP" />
-                <element signature="e#69493#70591#1#PHP" />
-                <element signature="e#60064#63885#1#PHP" />
                 <element signature="e#66232#67565#1#PHP" />
                 <element signature="e#67587#68890#1#PHP" />
                 <element signature="e#68912#70299#1#PHP" />
@@ -122,14 +123,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>field_builder_section_faqs_builder_category_questions_answers</find>
-      <find>field_builder_section_rich_text_row_type_of_bg</find>
-      <find>button</find>
-      <find>neo-button</find>
-      <find>color</find>
-      <find>section-title</find>
-      <find>enqueue_styles</find>
-      <find>toggl</find>
       <find>field_builder_section_hero_type_of_bg</find>
       <find>sub_he</find>
       <find>seco</find>
@@ -150,8 +143,16 @@
       <find>, 'glekk')</find>
       <find>esc_html__</find>
       <find>33.3</find>
-      <find>weig</find>
       <find>LG</find>
+      <find>weig</find>
+      <find>heading</find>
+      <find>text li</find>
+      <find>field_repeater_builder_toggle</find>
+      <find>'conditional_logic' =&gt; 0,</find>
+      <find>buy-no</find>
+      <find>field_builder_section_buy_now_product_boxes_button_bg</find>
+      <find>color</find>
+      <find>field_builder_section_buy_now_product_boxes_content_color</find>
     </findStrings>
     <replaceStrings>
       <replace>'neochrome'</replace>
@@ -347,12 +348,12 @@
       <workItem from="1611069463252" duration="7993000" />
       <workItem from="1611097129675" duration="2550000" />
       <workItem from="1611157312634" duration="13789000" />
-      <workItem from="1611236061827" duration="21653000" />
+      <workItem from="1611236061827" duration="23180000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62906000" />
+    <option name="totallyTimeSpent" value="64433000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
@@ -370,7 +371,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="File Transfer" order="9" sideWeight="0.49959284" visible="true" weight="0.3299293" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49959284" visible="true" weight="0.3299293" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49959284" weight="0.3299293" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50040716" side_tool="true" weight="0.3299293" />
@@ -520,8 +521,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="1293" column="34" lean-forward="true" selection-start-line="1293" selection-start-column="34" selection-end-line="1293" selection-end-column="34" />
+        <state relative-caret-position="330">
+          <caret line="832" column="26" selection-start-line="832" selection-start-column="26" selection-end-line="832" selection-end-column="26" />
           <folding>
             <element signature="e#6162#12812#0#HTML" />
             <element signature="e#6237#6593#0#HTML" expanded="true" />
@@ -536,13 +537,19 @@
             <element signature="e#14713#14801#0#HTML" expanded="true" />
             <element signature="e#16642#16665#0#HTML" expanded="true" />
             <element signature="e#17216#17312#0#HTML" expanded="true" />
-            <element signature="e#17722#17827#0#HTML" expanded="true" />
+            <element signature="e#18408#18543#0#HTML" expanded="true" />
             <element signature="e#19503#19871#0#HTML" expanded="true" />
             <element signature="e#20869#20934#0#HTML" expanded="true" />
+            <element signature="e#21379#26897#0#PHP" />
             <element signature="e#22204#22560#0#HTML" expanded="true" />
+            <element signature="e#26919#29789#0#PHP" />
             <element signature="e#30039#30175#0#HTML" expanded="true" />
-            <element signature="e#45328#45937#1#PHP" />
-            <element signature="e#28506#28802#1#PHP" />
+            <element signature="e#33153#34303#1#PHP" />
+            <element signature="e#34326#35476#1#PHP" />
+            <element signature="e#35523#36657#1#PHP" />
+            <element signature="e#36686#37828#1#PHP" />
+            <element signature="e#33192#44162#1#PHP" />
+            <element signature="e#44198#44902#1#PHP" />
             <element signature="e#30117#31441#1#PHP" />
             <element signature="e#31463#32754#1#PHP" />
             <element signature="e#32776#34151#1#PHP" />
@@ -563,7 +570,6 @@
             <element signature="e#51258#52415#1#PHP" />
             <element signature="e#52437#53605#1#PHP" />
             <element signature="e#55911#57245#1#PHP" />
-            <element signature="e#53805#55152#1#PHP" />
             <element signature="e#55174#56491#1#PHP" />
             <element signature="e#56513#57914#1#PHP" />
             <element signature="e#57936#58977#1#PHP" />
@@ -571,8 +577,6 @@
             <element signature="e#60747#61811#1#PHP" />
             <element signature="e#61833#62903#1#PHP" />
             <element signature="e#68373#69459#1#PHP" />
-            <element signature="e#69493#70591#1#PHP" />
-            <element signature="e#60064#63885#1#PHP" />
             <element signature="e#66232#67565#1#PHP" />
             <element signature="e#67587#68890#1#PHP" />
             <element signature="e#68912#70299#1#PHP" />
