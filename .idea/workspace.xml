@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bdb71f5-d54d-41e6-8b6f-1368d23aad71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" afterDir="false" />
@@ -17,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="853" column="42" lean-forward="true" selection-start-line="853" selection-start-column="42" selection-end-line="853" selection-end-column="42" />
+            <state relative-caret-position="438">
+              <caret line="152" column="41" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="41" />
               <folding>
                 <element signature="n#insert_in_post#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#the_option#0;n#ACF_Builder#0;n#!!top" />
@@ -27,16 +28,13 @@
                 <element signature="n#get_field#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#the_sub_field#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#get_sub_field#0;n#ACF_Builder#0;n#!!top" />
-                <element signature="n#enqueue_styles#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#enqueue_admin_styles#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#instance#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="e#6352#13441#0#HTML" />
                 <element signature="e#6237#6593#0#HTML" expanded="true" />
                 <element signature="e#6864#6890#0#HTML" expanded="true" />
                 <element signature="e#8572#8659#0#HTML" expanded="true" />
-                <element signature="e#14318#19422#0#HTML" />
                 <element signature="e#15275#15361#0#HTML" expanded="true" />
-                <element signature="e#20232#22137#0#HTML" />
                 <element signature="e#20310#20678#0#HTML" expanded="true" />
                 <element signature="e#21184#21273#0#HTML" expanded="true" />
                 <element signature="e#22936#27677#0#HTML" />
@@ -46,9 +44,7 @@
                 <element signature="e#30363#30452#0#HTML" expanded="true" />
                 <element signature="e#36192#36786#0#PHP" />
                 <element signature="e#54520#55799#1#PHP" />
-                <element signature="e#101318#102642#1#PHP" />
-                <element signature="e#102664#103955#1#PHP" />
-                <element signature="e#101715#103139#1#PHP" />
+                <element signature="e#97975#99288#1#PHP" />
               </folding>
             </state>
           </provider>
@@ -57,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="163" column="20" selection-start-line="163" selection-start-column="20" selection-end-line="163" selection-end-column="20" />
+            <state relative-caret-position="213">
+              <caret line="227" column="27" selection-start-line="227" selection-start-column="27" selection-end-line="227" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -67,20 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>strto</find>
-      <find>--</find>
-      <find>contain</find>
-      <find>default</find>
-      <find>field_builder_default_headings_color</find>
-      <find>$field_builder_default_headings_color</find>
-      <find>sectio</find>
-      <find>form-wrapper</find>
-      <find>neo-b</find>
-      <find>submit-button</find>
-      <find>sub-headline</find>
-      <find>field_builder_section_hero_more_info_box_phone_toggle</find>
-      <find>input</find>
-      <find>propo</find>
       <find>$field_builder_section_hero_propositions_color</find>
       <find>bg</find>
       <find>field_builder_section_buy_now_bg_image</find>
@@ -97,6 +79,20 @@
       <find>'Section Type'</find>
       <find>overlay</find>
       <find>print</find>
+      <find>submit</find>
+      <find>Select the Section Background Image</find>
+      <find>Select the depth of Background Image Overlay</find>
+      <find>Select the type of Section Background Style</find>
+      <find>hero-contact-form</find>
+      <find>Main Headline Color</find>
+      <find>choises</find>
+      <find>choi</find>
+      <find>field_builder_section_buy_now_product_boxes_button_url</find>
+      <find>background</find>
+      <find>field_builder_section_gallery_type_of_bg</find>
+      <find>'default_value' =&gt; 'image',</find>
+      <find>enqueue_scripts</find>
+      <find>enqueue_styles</find>
     </findStrings>
     <replaceStrings>
       <replace>'neochrome'</replace>
@@ -106,7 +102,11 @@
       <replace>self::get_sub_field</replace>
       <replace>)</replace>
       <replace>esc_html</replace>
+      <replace>Select the Background Image</replace>
+      <replace>Select the depth of Overlay</replace>
       <replace>'range'</replace>
+      <replace>Select the style of Section Background</replace>
+      <replace>'default_value' =&gt; 'color',</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -196,54 +196,6 @@
               <item name="plugins" type="462c0819:PsiDirectoryNode" />
               <item name="acf-landing-page-builder" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Neochrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Neochrome" type="462c0819:PsiDirectoryNode" />
-              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="acf-landing-page-builder" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Neochrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Neochrome" type="462c0819:PsiDirectoryNode" />
-              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Neochrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Neochrome" type="462c0819:PsiDirectoryNode" />
-              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="astra" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Neochrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Neochrome" type="462c0819:PsiDirectoryNode" />
-              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="astra" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Neochrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Neochrome" type="462c0819:PsiDirectoryNode" />
-              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="astra" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Neochrome" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Neochrome" type="462c0819:PsiDirectoryNode" />
-              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="astra" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -294,18 +246,18 @@
       <workItem from="1611097129675" duration="2550000" />
       <workItem from="1611157312634" duration="13789000" />
       <workItem from="1611236061827" duration="23774000" />
-      <workItem from="1611323857735" duration="7777000" />
+      <workItem from="1611323857735" duration="10162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72804000" />
+    <option name="totallyTimeSpent" value="75189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16327362" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16327362" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -317,9 +269,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49959284" weight="0.3299293" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49959284" visible="true" weight="0.3299293" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49959284" visible="true" weight="0.3299293" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49959284" weight="0.3299293" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50040716" side_tool="true" weight="0.3299293" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -454,15 +406,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="163" column="20" selection-start-line="163" selection-start-column="20" selection-end-line="163" selection-end-column="20" />
+        <state relative-caret-position="213">
+          <caret line="227" column="27" selection-start-line="227" selection-start-column="27" selection-end-line="227" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="853" column="42" lean-forward="true" selection-start-line="853" selection-start-column="42" selection-end-line="853" selection-end-column="42" />
+        <state relative-caret-position="438">
+          <caret line="152" column="41" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="41" />
           <folding>
             <element signature="n#insert_in_post#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#the_option#0;n#ACF_Builder#0;n#!!top" />
@@ -471,16 +423,13 @@
             <element signature="n#get_field#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#the_sub_field#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#get_sub_field#0;n#ACF_Builder#0;n#!!top" />
-            <element signature="n#enqueue_styles#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#enqueue_admin_styles#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#instance#0;n#ACF_Builder#0;n#!!top" />
             <element signature="e#6352#13441#0#HTML" />
             <element signature="e#6237#6593#0#HTML" expanded="true" />
             <element signature="e#6864#6890#0#HTML" expanded="true" />
             <element signature="e#8572#8659#0#HTML" expanded="true" />
-            <element signature="e#14318#19422#0#HTML" />
             <element signature="e#15275#15361#0#HTML" expanded="true" />
-            <element signature="e#20232#22137#0#HTML" />
             <element signature="e#20310#20678#0#HTML" expanded="true" />
             <element signature="e#21184#21273#0#HTML" expanded="true" />
             <element signature="e#22936#27677#0#HTML" />
@@ -490,9 +439,7 @@
             <element signature="e#30363#30452#0#HTML" expanded="true" />
             <element signature="e#36192#36786#0#PHP" />
             <element signature="e#54520#55799#1#PHP" />
-            <element signature="e#101318#102642#1#PHP" />
-            <element signature="e#102664#103955#1#PHP" />
-            <element signature="e#101715#103139#1#PHP" />
+            <element signature="e#97975#99288#1#PHP" />
           </folding>
         </state>
       </provider>
