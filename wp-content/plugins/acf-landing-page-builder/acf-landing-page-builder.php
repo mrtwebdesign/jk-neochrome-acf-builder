@@ -382,10 +382,6 @@ final class ACF_Builder
 
                         $field_builder_section_buy_now_product_boxes_content_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_content_color');
 
-                        $field_builder_section_buy_now_product_boxes_button_bg = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_bg');
-
-                        $field_builder_section_buy_now_product_boxes_button_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_color');
-
                         ?>
 
                         <section class="neo-section buy-now-get-more-info-section"
@@ -453,9 +449,7 @@ final class ACF_Builder
                                                         <div class="button-wrapper">
 
                                                             <a class="neo-button"
-                                                               href="<?php echo esc_url($field_builder_section_buy_now_product_boxes_button_url); ?>"
-                                                               style="background-color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_bg); ?>;
-                                                                       color:<?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_color); ?>">
+                                                               href="<?php echo esc_url($field_builder_section_buy_now_product_boxes_button_url); ?>">
 
                                                                 <?php echo esc_html($field_builder_section_buy_now_product_boxes_button_label); ?>
 
@@ -2444,62 +2438,6 @@ final class ACF_Builder
                         'instructions' => esc_html('Input the More Info Button Label'),
                         'type' => 'text',
                         'placeholder' => esc_html('Button Label'),
-                        'wrapper' => array(
-                            'width' => '33.33333%',
-                            'class' => '',
-                        ),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                                array(
-                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
-                                    'operator' => '==',
-                                    'value' => '1',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_hero_more_info_button_bg',
-                        'label' => esc_html('Button Background Color'),
-                        'name' => 'field_builder_section_hero_more_info_button_bg',
-                        'instructions' => esc_html('Select the More Info Button Background Color'),
-                        'type' => 'color_picker',
-                        'default_value' => '#147aff',
-                        'wrapper' => array(
-                            'width' => '33.33333%',
-                            'class' => '',
-                        ),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                                array(
-                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
-                                    'operator' => '==',
-                                    'value' => '1',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_hero_more_info_button_color',
-                        'label' => esc_html('Button Color'),
-                        'name' => 'field_builder_section_hero_more_info_button_color',
-                        'instructions' => esc_html('Select the More Info Button Color'),
-                        'type' => 'color_picker',
-                        'default_value' => '#ffffff',
-                        'wrapper' => array(
-                            'width' => '33.33333%',
-                            'class' => '',
-                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -2673,48 +2611,6 @@ final class ACF_Builder
                         'instructions' => esc_html('Select the Boxes Content Color'),
                         'type' => 'color_picker',
                         'default_value' => '#565656',
-                        'wrapper' => array(
-                            'width' => '25%',
-                            'class' => '',
-                        ),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'buy-now-get-more-info-section',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_buy_now_product_boxes_button_bg',
-                        'label' => esc_html('Boxes Button Background Color'),
-                        'name' => 'option_builder_section_buy_now_product_boxes_button_bg',
-                        'instructions' => esc_html('Select the Boxes Button Background Color'),
-                        'type' => 'color_picker',
-                        'default_value' => '#147aff',
-                        'wrapper' => array(
-                            'width' => '25%',
-                            'class' => '',
-                        ),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'buy-now-get-more-info-section',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_buy_now_product_boxes_button_color',
-                        'label' => esc_html('Boxes Button Color'),
-                        'name' => 'option_builder_section_buy_now_product_boxes_button_color',
-                        'instructions' => esc_html('Select the Boxes Button Color'),
-                        'type' => 'color_picker',
-                        'default_value' => '#ffffff',
                         'wrapper' => array(
                             'width' => '25%',
                             'class' => '',
@@ -3243,23 +3139,6 @@ final class ACF_Builder
                         'instructions' => esc_html('Input the Button URL'),
                         'placeholder' => esc_html('Button URL'),
                         'type' => 'url',
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'rich-text-row-section',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_rich_text_row_button_bg',
-                        'label' => esc_html('Button Background Color'),
-                        'name' => 'option_builder_section_rich_text_row_button_bg',
-                        'instructions' => esc_html('Select the Button Background Color'),
-                        'type' => 'color_picker',
-                        'default_value' => '#161616',
                         'conditional_logic' => array(
                             array(
                                 array(
