@@ -847,8 +847,6 @@ final class ACF_Builder
 
         $field_h6_size_sm = self::get_field('field_h6_size_sm');
 
-        print_r($field_content_font);
-
         $variables = "
 		:root {
 			--field-container-width: {$field_container_width}px;
@@ -2163,10 +2161,9 @@ final class ACF_Builder
                         'type' => 'select',
                         'instructions' => esc_html('Select the section type'),
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
-
                         'choices' => array(
                             'hero-section' => esc_html('Hero Section'),
                             'buy-now-get-more-info-section' => esc_html('Buy Now / Get More Info'),
@@ -2271,6 +2268,11 @@ final class ACF_Builder
                             'width' => '25%',
                             'class' => '',
                         ),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '1',
+                        'step' => '0.1',
+                        'default_value' => '0.5',
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -2736,6 +2738,11 @@ final class ACF_Builder
                             'width' => '25%',
                             'class' => '',
                         ),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '1',
+                        'step' => '0.1',
+                        'default_value' => '0.5',
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -3003,6 +3010,11 @@ final class ACF_Builder
                             'width' => '25%',
                             'class' => '',
                         ),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '1',
+                        'step' => '0.1',
+                        'default_value' => '0.5',
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -3154,6 +3166,11 @@ final class ACF_Builder
                             'width' => '25%',
                             'class' => '',
                         ),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '1',
+                        'step' => '0.1',
+                        'default_value' => '0.5',
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -3357,6 +3374,11 @@ final class ACF_Builder
                         'label' => esc_html('Background Image Overlay'),
                         'name' => 'option_builder_section_rich_text_row_bg_image_overlay',
                         'instructions' => esc_html('Select the depth of Background Image Overlay'),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '1',
+                        'step' => '0.1',
+                        'default_value' => '0.5',
                         'wrapper' => array(
                             'width' => '25%',
                             'class' => '',
