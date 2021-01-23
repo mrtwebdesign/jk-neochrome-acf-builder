@@ -7,6 +7,8 @@ $xxl: 1441px;
 $xxxl: 1601px;
 
 .neo-landing-wrapper {
+  overflow: hidden;
+  position: relative;
   color: var(--field-builder-default-text-color);
   font-size: var(--field-text-font-size) !important;
   line-height: var(--field-text-font-line-height) !important;
@@ -154,6 +156,12 @@ $xxxl: 1601px;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    @media(max-width: $lg) {
+      padding: 50px 0;
+    }
+    @media(max-width: $sm) {
+      padding: 40px 0;
+    }
 
     .overlay {
       position: absolute;
@@ -176,6 +184,9 @@ $xxxl: 1601px;
       position: relative;
       z-index: 10;
       margin-bottom: 50px;
+      @media(max-width: $lg) {
+        margin-bottom: 30px;
+      }
     }
 
     .section-subtitle {
@@ -189,30 +200,75 @@ $xxxl: 1601px;
       height: 100vh;
       display: flex;
       align-items: center;
+      @media(max-width: $md) {
+        height: auto;
+        padding: 75px 0;
+      }
 
       .inner-wrapper {
         display: flex;
         flex-direction: row;
         width: 100%;
+        @media(max-width: $lg) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
 
         .left-side, .right-side {
           width: 50%;
           min-width: 50%;
           max-width: 50%;
+
+          @media(max-width: $lg) {
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+          }
         }
 
         .left-side {
+          @media(max-width: $lg) {
+            margin-bottom: 50px;
+          }
+          @media(max-width: $md) {
+            margin-bottom: 30px;
+          }
 
           .sub-headline {
             margin-bottom: 20px;
+            @media(max-width: $lg) {
+              text-align: center;
+            }
+          }
+
+          .secondary-headline {
+            @media(max-width: $lg) {
+              text-align: center;
+            }
           }
 
           .hero-main-heading {
             margin-bottom: 20px;
+            @media(max-width: $lg) {
+              text-align: center;
+            }
           }
 
           .propositions-list {
+            @media(max-width: $lg) {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              margin-left: 0 !important;
+            }
+
             li {
+              @media(max-width: $lg) {
+                text-align: center;
+              }
+
               &:not(:last-child) {
                 margin-bottom: 10px;
               }
@@ -223,6 +279,9 @@ $xxxl: 1601px;
         .right-side {
           display: flex;
           justify-content: flex-end;
+          @media(max-width: $lg) {
+            justify-content: center;
+          }
 
           .info-box-wrapper {
             max-width: 500px;
@@ -230,6 +289,13 @@ $xxxl: 1601px;
             width: 100%;
             padding: 50px;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.075);
+            @media(max-width: $lg) {
+              margin-left: auto;
+              margin-right: auto;
+            }
+            @media(max-width: $md) {
+              padding: 25px;
+            }
 
             .form-wrapper {
 
@@ -281,6 +347,9 @@ $xxxl: 1601px;
           .box {
             padding: 15px;
             width: 33.3333333%;
+            @media(max-width: $lg) {
+              width: 100%;
+            }
 
             .box-inner {
               padding: 30px;
@@ -322,6 +391,11 @@ $xxxl: 1601px;
           max-width: 33.33333%;
           min-width: 33.33333%;
           padding: 15px !important;
+          @media(max-width: $lg) {
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+          }
 
           .inner-item {
             position: relative;
@@ -359,6 +433,9 @@ $xxxl: 1601px;
         margin-left: auto !important;
         margin-right: auto !important;
         margin-top: 50px !important;
+        @media(max-width: $lg) {
+          margin-top: 30px;
+        }
 
         .inner {
           overflow: hidden;
@@ -513,9 +590,16 @@ $xxxl: 1601px;
 .neo-footer {
   background-color: #232323;
   padding: 75px 0;
+  @media(max-width: $lg) {
+    padding: 50px 0;
+  }
+  @media(max-width: $sm) {
+    padding: 30px 0;
+  }
 
   .neo-container {
     display: flex;
+    flex-wrap: wrap !important;
 
     .social-list {
       display: flex;
@@ -523,6 +607,9 @@ $xxxl: 1601px;
       margin: 0 !important;
       margin-bottom: 40px !important;
       margin-left: -10px !important;
+      @media(max-width: $lg) {
+        margin-bottom: 30px;
+      }
 
       li {
         list-style: none;
@@ -555,22 +642,35 @@ $xxxl: 1601px;
       display: flex;
       flex-direction: column;
       max-width: 500px;
+      @media(max-width: $lg) {
+        justify-content: center;
+        align-items: center;
+      }
 
       .top-terms {
         font-weight: 600;
         font-size: 16px;
         color: #ffffff;
         margin-bottom: 15px;
+        @media(max-width: $lg) {
+          text-align: center;
+        }
       }
 
       .terms-general {
         margin-bottom: 35px;
+        @media(max-width: $lg) {
+          text-align: center;
+        }
       }
 
       .terms-general, .copyright {
         color: #ffffff;
         opacity: 0.6;
         font-size: 16px;
+        @media(max-width: $lg) {
+          text-align: center;
+        }
       }
     }
 
@@ -579,6 +679,17 @@ $xxxl: 1601px;
       min-width: 60%;
       max-width: 60%;
       padding-right: 15px;
+      @media(max-width: $lg) {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        padding-right: 0;
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     .right-side {
@@ -588,9 +699,25 @@ $xxxl: 1601px;
       padding-left: 15px;
       display: flex;
       justify-content: flex-end;
+      @media(max-width: $lg) {
+        width: 100%;
+        min-width: 100%;
+        order: 1;
+        max-width: 100%;
+        padding-left: 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
 
       .logotype-wrapper {
         max-width: 200px;
+        @media(max-width: $lg) {
+          order: 1;
+          margin-left: 0;
+          margin-bottom: 30px;
+          max-width: 120px;
+        }
 
         img {
           width: 100%;
@@ -603,6 +730,10 @@ $xxxl: 1601px;
       .contact-info {
         display: flex;
         flex-direction: column;
+        @media(max-width: $lg) {
+          order: 2;
+          margin-bottom: 30px;
+        }
 
         .contact-title {
           font-size: 13px;
