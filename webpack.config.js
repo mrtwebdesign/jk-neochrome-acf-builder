@@ -13,7 +13,7 @@ let conf_primary_theme = {
 
     output: {
         publicPath: publicPath,
-        path: path.resolve(__dirname, `./wp-content/plugins/acf-landing-page-builder`),
+        path: path.resolve(__dirname, `./plugins/acf-landing-page-builder`),
         filename: 'inc/assets/js/[name].js'
     },
 

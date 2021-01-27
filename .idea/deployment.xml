@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="Neochrome" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.hprof;*.pyc;node_modules;src" filePermissions="493" folderPermissions="493" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="neochrome_new" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.hprof;*.pyc,node_modules,src" autoUploadExternalChanges="true">
     <serverData>
       <paths name="Neochrome">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -56,6 +56,39 @@
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
+        </serverdata>
+      </paths>
+      <paths name="neochrome_new">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/wp-content" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/wp-content/mu-plugins" />
+            <excludedPath path="/wp-content/plugins/advanced-custom-fields-font-awesome" />
+            <excludedPath path="/wp-content/plugins/advanced-custom-fields-pro" />
+            <excludedPath path="/wp-content/plugins/akismet" />
+            <excludedPath path="/wp-content/plugins/bb-plugin" />
+            <excludedPath path="/wp-content/plugins/classic-editor" />
+            <excludedPath path="/wp-content/plugins/duplicate-post" />
+            <excludedPath path="/wp-content/plugins/enable-media-replace" />
+            <excludedPath path="/wp-content/uploads" />
+            <excludedPath path="/wp-content/themes/twentynineteen" />
+            <excludedPath path="/wp-content/themes/twentyseventeen" />
+            <excludedPath path="/wp-content/themes/twentytwenty" />
+            <excludedPath local="true" path="$PROJECT_DIR$/mu-plugins" />
+            <excludedPath local="true" path="$PROJECT_DIR$/plugins/advanced-custom-fields-font-awesome" />
+            <excludedPath local="true" path="$PROJECT_DIR$/plugins/advanced-custom-fields-pro" />
+            <excludedPath local="true" path="$PROJECT_DIR$/plugins/akismet" />
+            <excludedPath local="true" path="$PROJECT_DIR$/plugins/bb-plugin" />
+            <excludedPath local="true" path="$PROJECT_DIR$/plugins/classic-editor" />
+            <excludedPath local="true" path="$PROJECT_DIR$/plugins/duplicate-post" />
+            <excludedPath local="true" path="$PROJECT_DIR$/plugins/enable-media-replace" />
+            <excludedPath local="true" path="$PROJECT_DIR$/uploads" />
+            <excludedPath local="true" path="$PROJECT_DIR$/themes/twentynineteen" />
+            <excludedPath local="true" path="$PROJECT_DIR$/themes/twentyseventeen" />
+            <excludedPath local="true" path="$PROJECT_DIR$/themes/twentytwenty" />
+          </excludedPaths>
         </serverdata>
       </paths>
       <paths name="test">
