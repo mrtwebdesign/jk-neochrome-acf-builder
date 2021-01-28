@@ -845,6 +845,12 @@ final class ACF_Builder
 
                         <div class="terms">
 
+                            <?php
+
+                            $company_name = self::get_field('field_footer_company_name');
+
+                            ?>
+
                             <p class="top-terms">
 
                                 LaunchPad powered by Groundswell.
@@ -853,15 +859,16 @@ final class ACF_Builder
 
                             <p class="terms-general">
 
-                                Terms of use: The products/services offered on this Landing page are through [Company
-                                name]. Groundswell assumes no liability or will provide customer service for this
+                                Terms of use: The products/services offered on this Landing page are
+                                through <?php echo esc_html($company_name); ?>. Groundswell assumes no liability or will
+                                provide customer service for this
                                 product/service.
 
                             </p>
 
                             <p class="copyright">
 
-                                Privacy Policy. Copyright @ [Company name]
+                                Privacy Policy. Copyright @ <?php echo esc_html($company_name); ?>
 
                             </p>
 
@@ -915,7 +922,13 @@ final class ACF_Builder
 
                         <div class="logotype-wrapper">
 
-                            <img src="http://via.placeholder.com/350x350" alt="<?php echo esc_attr('Logotype'); ?>">
+                            <?php
+
+                            $company_logo = self::get_field('field_footer_company_name') ? self::get_field('field_footer_company_name') : 'http://via.placeholder.com/350x350';
+
+                            ?>
+
+                            <img src="<?php echo esc_url($company_logo) ?>" alt="<?php echo esc_attr('Logotype'); ?>">
 
                         </div>
 
@@ -1197,6 +1210,7 @@ final class ACF_Builder
                     ),
                 ),
             ));
+
             acf_add_local_field(array(
                 'key' => 'field_container_offset',
                 'label' => esc_html('Container Offset'),
@@ -1229,6 +1243,7 @@ final class ACF_Builder
                     ),
                 ),
             ));
+
             acf_add_local_field(array(
                 'key' => 'field_sections_offset',
                 'label' => esc_html('Sections Offset'),
@@ -2284,6 +2299,92 @@ final class ACF_Builder
                             'value' => '1',
                         ),
                     ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_footer_social_list',
+                'label' => esc_html('Footer Social List'),
+                'name' => 'option_footer_social_list',
+                'type' => 'repeater',
+                'label_placement' => 'top',
+                'instructions' => esc_html('Add Social Media Items'),
+                'min' => 1,
+                'max' => 0,
+                'layout' => 'block',
+                'button_label' => esc_html('Add new Social'),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(),
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_builder_section_footer_social_list_icon',
+                        'label' => esc_html('Social Icon'),
+                        'name' => 'option_builder_section_footer_social_list_icon',
+                        'type' => 'font-awesome',
+                        'instructions' => '',
+                        'required' => 0,
+                        'icon_sets' => array(
+                            0 => 'fas',
+                            1 => 'far',
+                            2 => 'fab',
+                        ),
+                        'custom_icon_set' => '',
+                        'default_label' => '',
+                        'default_value' => '',
+                        'save_format' => 'class',
+                        'allow_null' => 0,
+                        'show_preview' => 1,
+                        'enqueue_fa' => 0,
+                        'fa_live_preview' => '',
+                        'choices' => array(),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_footer_social_list_url',
+                        'label' => esc_html('Social URL'),
+                        'name' => 'option_builder_section_footer_social_list_url',
+                        'instructions' => esc_html('Input the Social Icon URL'),
+                        'placeholder' => esc_html('Social URL'),
+                        'type' => 'url',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_footer_logotype_image',
+                'label' => esc_html('Logotype Image'),
+                'name' => 'option_footer_logotype_image',
+                'instructions' => esc_html('Select the Logotype Image'),
+                'type' => 'image',
+                'return_format' => 'id',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'parent' => 'group_repeater_builder_settings',
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_footer_company_name',
+                'label' => esc_html('Company Name'),
+                'name' => 'option_footer_company_name',
+                'instructions' => esc_html('Input the Company Name'),
+                'default' => esc_html('[company name]'),
+                'type' => 'text',
+                'placeholder' => esc_html('Company Name'),
+                'parent' => 'group_repeater_builder_settings',
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
                 ),
             ));
 
@@ -3667,61 +3768,6 @@ final class ACF_Builder
 
                     /* **************************************** */
 
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_footer_social_list',
-                'label' => esc_html('Footer Social List'),
-                'name' => 'option_footer_social_list',
-                'type' => 'repeater',
-                'label_placement' => 'top',
-                'instructions' => esc_html('Add Social Media Items'),
-                'min' => 1,
-                'max' => 0,
-                'layout' => 'block',
-                'button_label' => esc_html('Add new Social'),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(),
-                'sub_fields' => array(
-                    array(
-                        'key' => 'field_builder_section_footer_social_list_icon',
-                        'label' => esc_html('Social Icon'),
-                        'name' => 'option_builder_section_footer_social_list_icon',
-                        'type' => 'font-awesome',
-                        'instructions' => '',
-                        'required' => 0,
-                        'icon_sets' => array(
-                            0 => 'fas',
-                            1 => 'far',
-                            2 => 'fab',
-                        ),
-                        'custom_icon_set' => '',
-                        'default_label' => '',
-                        'default_value' => '',
-                        'save_format' => 'class',
-                        'allow_null' => 0,
-                        'show_preview' => 1,
-                        'enqueue_fa' => 0,
-                        'fa_live_preview' => '',
-                        'choices' => array(),
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_footer_social_list_url',
-                        'label' => esc_html('Social URL'),
-                        'name' => 'option_builder_section_footer_social_list_url',
-                        'instructions' => esc_html('Input the Social Icon URL'),
-                        'placeholder' => esc_html('Social URL'),
-                        'type' => 'url',
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
-                        ),
-                    ),
                 ),
             ));
 
