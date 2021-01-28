@@ -1178,337 +1178,18 @@ final class ACF_Builder
                 ),
             ));
 
-            acf_add_local_field(array(
-                'key' => 'field_container_width',
-                'label' => esc_html('Container Width'),
-                'name' => 'option_container_width',
-                'type' => 'number',
-                'placeholder' => esc_html('Container Width'),
-                'instructions' => esc_html('Input the Container Width'),
-                'append' => 'px',
-                'min' => '800',
-                'max' => '1920',
-                'step' => '1',
-                'default_value' => '1470',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
+            // Landing Builder Tab
 
             acf_add_local_field(array(
-                'key' => 'field_container_offset',
-                'label' => esc_html('Container Offset'),
-                'name' => 'option_container_offset',
-                'type' => 'number',
-                'placeholder' => esc_html('Container Offset'),
-                'instructions' => esc_html('Input the Container Offset'),
-                'append' => 'px',
-                'min' => '0',
-                'max' => '100',
-                'step' => '1',
-                'default_value' => '15',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_sections_offset',
-                'label' => esc_html('Sections Offset'),
-                'name' => 'option_sections_offset',
-                'type' => 'number',
-                'placeholder' => esc_html('Sections Offset'),
-                'instructions' => esc_html('Input the Sections Offset'),
-                'append' => 'px',
-                'min' => '0',
-                'max' => '250',
-                'step' => '1',
-                'default_value' => '75',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_builder_default_headings_color',
-                'label' => esc_html('Default Headings Color'),
-                'name' => 'option_builder_default_headings_color',
-                'instructions' => esc_html('Select the Default Headings Color'),
-                'type' => 'color_picker',
-                'default_value' => '#161616',
-                'wrapper' => array(
-                    'width' => '25%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_builder_default_text_color',
-                'label' => esc_html('Default Text Color'),
-                'name' => 'option_builder_default_text_color',
-                'instructions' => esc_html('Select the Default Text Color'),
-                'type' => 'color_picker',
-                'default_value' => '#565656',
-                'wrapper' => array(
-                    'width' => '25%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_builder_default_button_color',
-                'label' => esc_html('Default Button Color'),
-                'name' => 'option_builder_default_button_color',
-                'instructions' => esc_html('Select the Default Button Color'),
-                'type' => 'color_picker',
-                'default_value' => '#ffffff',
-                'wrapper' => array(
-                    'width' => '25%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_builder_default_button_bg_color',
-                'label' => esc_html('Default Button Background Color'),
-                'name' => 'option_builder_default_button_bg_color',
-                'instructions' => esc_html('Select the Default Button Background Color'),
-                'type' => 'color_picker',
-                'default_value' => '#147aff',
-                'wrapper' => array(
-                    'width' => '25%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_text_font_size',
-                'label' => esc_html('Text Font Size'),
-                'name' => 'option_text_font_size',
-                'type' => 'number',
-                'placeholder' => esc_html('Font Size'),
-                'instructions' => esc_html('Input the text font size'),
-                'append' => 'px',
-                'min' => '10',
-                'max' => '24',
-                'step' => '1',
-                'default_value' => '18',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_text_font_size_lg',
-                'label' => esc_html('Text Font Size (LG)'),
-                'name' => 'option_text_font_size_lg',
-                'type' => 'number',
-                'placeholder' => esc_html('Font Size (LG)'),
-                'instructions' => esc_html('Input the text font size (LG)'),
-                'append' => 'px',
-                'min' => '10',
-                'max' => '24',
-                'step' => '1',
-                'default_value' => '16',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_text_font_size_sm',
-                'label' => esc_html('Text Font Size (SM)'),
-                'name' => 'option_text_font_size_sm',
-                'type' => 'number',
-                'placeholder' => esc_html('Font Size (SM)'),
-                'instructions' => esc_html('Input the text font size (SM)'),
-                'append' => 'px',
-                'min' => '10',
-                'max' => '24',
-                'step' => '1',
-                'default_value' => '14',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_content_font',
-                'label' => esc_html('Content Font'),
-                'name' => 'option_content_font',
-                'instructions' => esc_html('Select the Content Font'),
-                'type' => 'select',
-                'default' => 'Roboto',
+                'key' => 'field_repeater_builder_custom_settings_landing_builder_tab',
+                'label' => esc_html('Landing Builder'),
+                'name' => 'option_repeater_builder_custom_settings_landing_builder_tab',
+                'type' => 'tab',
+                'instructions' => '',
                 'required' => 0,
-                'choices' => $fonts_parsed,
-                'allow_null' => 0,
-                'other_choice' => 0,
-                'layout' => 'vertical',
-                'return_format' => 'value',
-                'ui' => 1,
-                'ajax' => 1,
-                'save_other_choice' => 0,
                 'parent' => 'group_repeater_builder_settings',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
+                'placement' => 'top',
+                'endpoint' => 0,
                 'conditional_logic' => array(
                     array(
                         array(
@@ -1516,875 +1197,7 @@ final class ACF_Builder
                             'operator' => '==',
                             'value' => '1',
                         ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
                     ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_text_font_weight',
-                'label' => esc_html('Text Font Weight'),
-                'name' => 'option_text_font_weight',
-                'type' => 'number',
-                'placeholder' => esc_html('Font weight'),
-                'instructions' => esc_html('Input the text font weight'),
-                'min' => '300',
-                'max' => '800',
-                'step' => '100',
-                'default_value' => '400',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_text_font_line_height',
-                'label' => esc_html('Text Line Height'),
-                'name' => 'option_text_line_height',
-                'type' => 'number',
-                'placeholder' => esc_html('Text Line Height'),
-                'instructions' => esc_html('Input the Text Line Height'),
-                'min' => '1',
-                'max' => '3',
-                'step' => '0.1',
-                'default_value' => '1.7',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_heading_font',
-                'label' => esc_html('Heading Font'),
-                'name' => 'option_heading_font',
-                'instructions' => esc_html('Select the Heading Font'),
-                'type' => 'select',
-                'default' => 'Poppins',
-                'required' => 0,
-                'choices' => $fonts_parsed,
-                'allow_null' => 0,
-                'other_choice' => 0,
-                'layout' => 'vertical',
-                'return_format' => 'value',
-                'ui' => 1,
-                'ajax' => 1,
-                'save_other_choice' => 0,
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_heading_font_weight',
-                'label' => esc_html('Heading Font Weight'),
-                'name' => 'option_heading_font_weight',
-                'type' => 'number',
-                'placeholder' => esc_html('Heading Font Weight'),
-                'instructions' => esc_html('Input the Heading Font Weight'),
-                'min' => '300',
-                'max' => '800',
-                'step' => '100',
-                'default_value' => '600',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_heading_font_line_height',
-                'label' => esc_html('Heading Line Height'),
-                'name' => 'option_heading_line_height',
-                'type' => 'number',
-                'placeholder' => esc_html('Heading Line Height'),
-                'instructions' => esc_html('Input the Heading Line Height'),
-                'min' => '1',
-                'max' => '3',
-                'step' => '0.1',
-                'default_value' => '1.3',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h1_size',
-                'label' => esc_html('H1 Font Size'),
-                'name' => 'option_h1_size',
-                'type' => 'number',
-                'placeholder' => esc_html('H1'),
-                'instructions' => esc_html('Input the size of H1'),
-                'prepend' => 'H1',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '2.653',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h1_size_lg',
-                'label' => esc_html('H1 Font Size (LG)'),
-                'name' => 'option_h1_size_lg',
-                'type' => 'number',
-                'placeholder' => esc_html('H1 (LG)'),
-                'instructions' => esc_html('Input the size of H1 (LG)'),
-                'prepend' => 'H1',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '2.653',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h1_size_sm',
-                'label' => esc_html('H1 Font Size (SM)'),
-                'name' => 'option_h1_size_sm',
-                'type' => 'number',
-                'placeholder' => esc_html('H1 (SM)'),
-                'instructions' => esc_html('Input the size of H1 (SM)'),
-                'prepend' => 'H1',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '2.312',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h2_size',
-                'label' => esc_html('H2 Font Size'),
-                'name' => 'option_h2_size',
-                'type' => 'number',
-                'placeholder' => esc_html('H2'),
-                'instructions' => esc_html('Input the size of H2'),
-                'prepend' => 'H2',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '2.192',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h2_size_lg',
-                'label' => esc_html('H2 Font Size (LG)'),
-                'name' => 'option_h2_size_lg',
-                'type' => 'number',
-                'placeholder' => esc_html('H2 (LG)'),
-                'instructions' => esc_html('Input the size of H2 (LG)'),
-                'prepend' => 'H2',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '2.192',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h2_size_sm',
-                'label' => esc_html('H2 Font Size (SM)'),
-                'name' => 'option_h2_size_sm',
-                'type' => 'number',
-                'placeholder' => esc_html('H2 (SM)'),
-                'instructions' => esc_html('Input the size of H2 (SM)'),
-                'prepend' => 'H2',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.993',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h3_size',
-                'label' => esc_html('H3 Font Size'),
-                'name' => 'option_h3_size',
-                'type' => 'number',
-                'placeholder' => esc_html('H3'),
-                'instructions' => esc_html('Input the size of H3'),
-                'prepend' => 'H3',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '2.192',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h3_size_lg',
-                'label' => esc_html('H3 Font Size (LG)'),
-                'name' => 'option_h3_size_lg',
-                'type' => 'number',
-                'placeholder' => esc_html('H3 (LG)'),
-                'instructions' => esc_html('Input the size of H3 (LG)'),
-                'prepend' => 'H3',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.812',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h3_size_sm',
-                'label' => esc_html('H3 Font Size (SM)'),
-                'name' => 'option_h3_size_sm',
-                'type' => 'number',
-                'placeholder' => esc_html('H3 (SM)'),
-                'instructions' => esc_html('Input the size of H3 (SM)'),
-                'prepend' => 'H3',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.647',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h4_size',
-                'label' => esc_html('H4 Font Size'),
-                'name' => 'option_h4_size',
-                'type' => 'number',
-                'placeholder' => esc_html('H4'),
-                'instructions' => esc_html('Input the size of H4'),
-                'prepend' => 'H4',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.812',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h4_size_lg',
-                'label' => esc_html('H4 Font Size (LG)'),
-                'name' => 'option_h4_size_lg',
-                'type' => 'number',
-                'placeholder' => esc_html('H4 (LG)'),
-                'instructions' => esc_html('Input the size of H4 (LG)'),
-                'prepend' => 'H4',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.497',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h4_size_sm',
-                'label' => esc_html('H4 Font Size (SM)'),
-                'name' => 'option_h4_size_sm',
-                'type' => 'number',
-                'placeholder' => esc_html('H4 (SM)'),
-                'instructions' => esc_html('Input the size of H4 (SM)'),
-                'prepend' => 'H4',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.45',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h5_size',
-                'label' => esc_html('H5 Font Size'),
-                'name' => 'option_h5_size',
-                'type' => 'number',
-                'placeholder' => esc_html('H5'),
-                'instructions' => esc_html('Input the size of H5'),
-                'prepend' => 'H5',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.333',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h5_size_lg',
-                'label' => esc_html('H5 Font Size (LG)'),
-                'name' => 'option_h5_size_lg',
-                'type' => 'number',
-                'placeholder' => esc_html('H5 (LG)'),
-                'instructions' => esc_html('Input the size of H5 (LG)'),
-                'prepend' => 'H5',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.333',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h5_size_sm',
-                'label' => esc_html('H5 Font Size (SM)'),
-                'name' => 'option_h5_size_sm',
-                'type' => 'number',
-                'placeholder' => esc_html('H5 (SM)'),
-                'instructions' => esc_html('Input the size of H5 (SM)'),
-                'prepend' => 'H5',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.333',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h6_size',
-                'label' => esc_html('H6 Font Size'),
-                'name' => 'option_h6_size',
-                'type' => 'number',
-                'placeholder' => esc_html('H6'),
-                'instructions' => esc_html('Input the size of H6'),
-                'prepend' => 'H6',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.125',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h6_size_lg',
-                'label' => esc_html('H6 Font Size (LG)'),
-                'name' => 'option_h6_size_lg',
-                'type' => 'number',
-                'placeholder' => esc_html('H6 (LG)'),
-                'instructions' => esc_html('Input the size of H6 (LG)'),
-                'prepend' => 'H6',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.125',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_h6_size_sm',
-                'label' => esc_html('H6 Font Size (SM)'),
-                'name' => 'option_h6_size_sm',
-                'type' => 'number',
-                'placeholder' => esc_html('H6 (SM)'),
-                'instructions' => esc_html('Input the size of H6 (SM)'),
-                'prepend' => 'H6',
-                'append' => 'rem',
-                'min' => '1',
-                'max' => '10',
-                'step' => '0.001',
-                'default_value' => '1.125',
-                'wrapper' => array(
-                    'width' => '33.33333%',
-                    'class' => '',
-                ),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'field_repeater_builder_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                        array(
-                            'field' => 'field_repeater_builder_custom_settings_toggle',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_footer_social_list',
-                'label' => esc_html('Footer Social List'),
-                'name' => 'option_footer_social_list',
-                'type' => 'repeater',
-                'label_placement' => 'top',
-                'instructions' => esc_html('Add Social Media Items'),
-                'min' => 1,
-                'max' => 0,
-                'layout' => 'block',
-                'button_label' => esc_html('Add new Social'),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(),
-                'sub_fields' => array(
-                    array(
-                        'key' => 'field_builder_section_footer_social_list_icon',
-                        'label' => esc_html('Social Icon'),
-                        'name' => 'option_builder_section_footer_social_list_icon',
-                        'type' => 'font-awesome',
-                        'instructions' => '',
-                        'required' => 0,
-                        'icon_sets' => array(
-                            0 => 'fas',
-                            1 => 'far',
-                            2 => 'fab',
-                        ),
-                        'custom_icon_set' => '',
-                        'default_label' => '',
-                        'default_value' => '',
-                        'save_format' => 'class',
-                        'allow_null' => 0,
-                        'show_preview' => 1,
-                        'enqueue_fa' => 0,
-                        'fa_live_preview' => '',
-                        'choices' => array(),
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_footer_social_list_url',
-                        'label' => esc_html('Social URL'),
-                        'name' => 'option_builder_section_footer_social_list_url',
-                        'instructions' => esc_html('Input the Social Icon URL'),
-                        'placeholder' => esc_html('Social URL'),
-                        'type' => 'url',
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
-                        ),
-                    ),
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_footer_logotype_image',
-                'label' => esc_html('Logotype Image'),
-                'name' => 'option_footer_logotype_image',
-                'instructions' => esc_html('Select the Logotype Image'),
-                'type' => 'image',
-                'return_format' => 'id',
-                'preview_size' => 'medium',
-                'library' => 'all',
-                'parent' => 'group_repeater_builder_settings',
-                'wrapper' => array(
-                    'width' => '50%',
-                    'class' => '',
-                ),
-            ));
-
-            acf_add_local_field(array(
-                'key' => 'field_footer_company_name',
-                'label' => esc_html('Company Name'),
-                'name' => 'option_footer_company_name',
-                'instructions' => esc_html('Input the Company Name'),
-                'default' => esc_html('[company name]'),
-                'type' => 'text',
-                'placeholder' => esc_html('Company Name'),
-                'parent' => 'group_repeater_builder_settings',
-                'wrapper' => array(
-                    'width' => '50%',
-                    'class' => '',
                 ),
             ));
 
@@ -2434,6 +1247,25 @@ final class ACF_Builder
 
                     /* HERO SECTION START */
 
+                    array(
+                        'key' => 'field_builder_section_hero_bg_tab',
+                        'label' => esc_html('Background'),
+                        'name' => 'option_builder_section_hero_bg_tab',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 1,
+                    ),
                     array(
                         'key' => 'field_builder_section_hero_type_of_bg',
                         'label' => esc_html('Section Background Style'),
@@ -2543,6 +1375,25 @@ final class ACF_Builder
                                 ),
                             ),
                         ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_content_tab',
+                        'label' => esc_html('Content'),
+                        'name' => 'option_builder_section_hero_content_tab',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 0,
                     ),
                     array(
                         'key' => 'field_builder_section_hero_main_headline',
@@ -2717,6 +1568,25 @@ final class ACF_Builder
                                 'type' => 'text',
                             ),
                         )
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_info_box_tab',
+                        'label' => esc_html('Info Box'),
+                        'name' => 'option_builder_section_hero_info_box_tab',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 0,
                     ),
                     array(
                         'key' => 'field_builder_section_hero_more_info_box_toggle',
@@ -3764,10 +2634,1347 @@ final class ACF_Builder
                             ),
                         ),
                     ),
+
                     /* RICH TEXT ROW SECTION END */
 
                     /* **************************************** */
 
+                ),
+            ));
+
+            // Container Tab
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_custom_settings_container_tab',
+                'label' => esc_html('Container'),
+                'name' => 'option_repeater_builder_custom_settings_container_tab',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_container_width',
+                'label' => esc_html('Container Width'),
+                'name' => 'option_container_width',
+                'type' => 'number',
+                'placeholder' => esc_html('Container Width'),
+                'instructions' => esc_html('Input the Container Width'),
+                'append' => 'px',
+                'min' => '800',
+                'max' => '1920',
+                'step' => '1',
+                'default_value' => '1470',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_container_offset',
+                'label' => esc_html('Container Offset'),
+                'name' => 'option_container_offset',
+                'type' => 'number',
+                'placeholder' => esc_html('Container Offset'),
+                'instructions' => esc_html('Input the Container Offset'),
+                'append' => 'px',
+                'min' => '0',
+                'max' => '100',
+                'step' => '1',
+                'default_value' => '15',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_sections_offset',
+                'label' => esc_html('Sections Offset'),
+                'name' => 'option_sections_offset',
+                'type' => 'number',
+                'placeholder' => esc_html('Sections Offset'),
+                'instructions' => esc_html('Input the Sections Offset'),
+                'append' => 'px',
+                'min' => '0',
+                'max' => '250',
+                'step' => '1',
+                'default_value' => '75',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            // Colors Tab
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_custom_settings_colors_tab',
+                'label' => esc_html('Colors'),
+                'name' => 'option_repeater_builder_custom_settings_colors_tab',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_builder_default_headings_color',
+                'label' => esc_html('Default Headings Color'),
+                'name' => 'option_builder_default_headings_color',
+                'instructions' => esc_html('Select the Default Headings Color'),
+                'type' => 'color_picker',
+                'default_value' => '#161616',
+                'wrapper' => array(
+                    'width' => '25%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_builder_default_text_color',
+                'label' => esc_html('Default Text Color'),
+                'name' => 'option_builder_default_text_color',
+                'instructions' => esc_html('Select the Default Text Color'),
+                'type' => 'color_picker',
+                'default_value' => '#565656',
+                'wrapper' => array(
+                    'width' => '25%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_builder_default_button_color',
+                'label' => esc_html('Default Button Color'),
+                'name' => 'option_builder_default_button_color',
+                'instructions' => esc_html('Select the Default Button Color'),
+                'type' => 'color_picker',
+                'default_value' => '#ffffff',
+                'wrapper' => array(
+                    'width' => '25%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_builder_default_button_bg_color',
+                'label' => esc_html('Default Button Background Color'),
+                'name' => 'option_builder_default_button_bg_color',
+                'instructions' => esc_html('Select the Default Button Background Color'),
+                'type' => 'color_picker',
+                'default_value' => '#147aff',
+                'wrapper' => array(
+                    'width' => '25%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            // General Typography Tab
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_custom_settings_general_typography_tab',
+                'label' => esc_html('General Typography'),
+                'name' => 'option_repeater_builder_custom_settings_general_typography_tab',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_text_font_size',
+                'label' => esc_html('Text Font Size'),
+                'name' => 'option_text_font_size',
+                'type' => 'number',
+                'placeholder' => esc_html('Font Size'),
+                'instructions' => esc_html('Input the text font size'),
+                'append' => 'px',
+                'min' => '10',
+                'max' => '24',
+                'step' => '1',
+                'default_value' => '18',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_text_font_size_lg',
+                'label' => esc_html('Text Font Size (LG)'),
+                'name' => 'option_text_font_size_lg',
+                'type' => 'number',
+                'placeholder' => esc_html('Font Size (LG)'),
+                'instructions' => esc_html('Input the text font size (LG)'),
+                'append' => 'px',
+                'min' => '10',
+                'max' => '24',
+                'step' => '1',
+                'default_value' => '16',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_text_font_size_sm',
+                'label' => esc_html('Text Font Size (SM)'),
+                'name' => 'option_text_font_size_sm',
+                'type' => 'number',
+                'placeholder' => esc_html('Font Size (SM)'),
+                'instructions' => esc_html('Input the text font size (SM)'),
+                'append' => 'px',
+                'min' => '10',
+                'max' => '24',
+                'step' => '1',
+                'default_value' => '14',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_content_font',
+                'label' => esc_html('Content Font'),
+                'name' => 'option_content_font',
+                'instructions' => esc_html('Select the Content Font'),
+                'type' => 'select',
+                'default' => 'Roboto',
+                'required' => 0,
+                'choices' => $fonts_parsed,
+                'allow_null' => 0,
+                'other_choice' => 0,
+                'layout' => 'vertical',
+                'return_format' => 'value',
+                'ui' => 1,
+                'ajax' => 1,
+                'save_other_choice' => 0,
+                'parent' => 'group_repeater_builder_settings',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_text_font_weight',
+                'label' => esc_html('Text Font Weight'),
+                'name' => 'option_text_font_weight',
+                'type' => 'number',
+                'placeholder' => esc_html('Font weight'),
+                'instructions' => esc_html('Input the text font weight'),
+                'min' => '300',
+                'max' => '800',
+                'step' => '100',
+                'default_value' => '400',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_text_font_line_height',
+                'label' => esc_html('Text Line Height'),
+                'name' => 'option_text_line_height',
+                'type' => 'number',
+                'placeholder' => esc_html('Text Line Height'),
+                'instructions' => esc_html('Input the Text Line Height'),
+                'min' => '1',
+                'max' => '3',
+                'step' => '0.1',
+                'default_value' => '1.7',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_heading_font',
+                'label' => esc_html('Heading Font'),
+                'name' => 'option_heading_font',
+                'instructions' => esc_html('Select the Heading Font'),
+                'type' => 'select',
+                'default' => 'Poppins',
+                'required' => 0,
+                'choices' => $fonts_parsed,
+                'allow_null' => 0,
+                'other_choice' => 0,
+                'layout' => 'vertical',
+                'return_format' => 'value',
+                'ui' => 1,
+                'ajax' => 1,
+                'save_other_choice' => 0,
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_heading_font_weight',
+                'label' => esc_html('Heading Font Weight'),
+                'name' => 'option_heading_font_weight',
+                'type' => 'number',
+                'placeholder' => esc_html('Heading Font Weight'),
+                'instructions' => esc_html('Input the Heading Font Weight'),
+                'min' => '300',
+                'max' => '800',
+                'step' => '100',
+                'default_value' => '600',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_heading_font_line_height',
+                'label' => esc_html('Heading Line Height'),
+                'name' => 'option_heading_line_height',
+                'type' => 'number',
+                'placeholder' => esc_html('Heading Line Height'),
+                'instructions' => esc_html('Input the Heading Line Height'),
+                'min' => '1',
+                'max' => '3',
+                'step' => '0.1',
+                'default_value' => '1.3',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            // Headings Typography Tab
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_custom_settings_headings_typography_tab',
+                'label' => esc_html('Headings Typography'),
+                'name' => 'option_repeater_builder_custom_settings_headings_typography_tab',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h1_size',
+                'label' => esc_html('H1 Font Size'),
+                'name' => 'option_h1_size',
+                'type' => 'number',
+                'placeholder' => esc_html('H1'),
+                'instructions' => esc_html('Input the size of H1'),
+                'prepend' => 'H1',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '2.653',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h1_size_lg',
+                'label' => esc_html('H1 Font Size (LG)'),
+                'name' => 'option_h1_size_lg',
+                'type' => 'number',
+                'placeholder' => esc_html('H1 (LG)'),
+                'instructions' => esc_html('Input the size of H1 (LG)'),
+                'prepend' => 'H1',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '2.653',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h1_size_sm',
+                'label' => esc_html('H1 Font Size (SM)'),
+                'name' => 'option_h1_size_sm',
+                'type' => 'number',
+                'placeholder' => esc_html('H1 (SM)'),
+                'instructions' => esc_html('Input the size of H1 (SM)'),
+                'prepend' => 'H1',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '2.312',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h2_size',
+                'label' => esc_html('H2 Font Size'),
+                'name' => 'option_h2_size',
+                'type' => 'number',
+                'placeholder' => esc_html('H2'),
+                'instructions' => esc_html('Input the size of H2'),
+                'prepend' => 'H2',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '2.192',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h2_size_lg',
+                'label' => esc_html('H2 Font Size (LG)'),
+                'name' => 'option_h2_size_lg',
+                'type' => 'number',
+                'placeholder' => esc_html('H2 (LG)'),
+                'instructions' => esc_html('Input the size of H2 (LG)'),
+                'prepend' => 'H2',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '2.192',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h2_size_sm',
+                'label' => esc_html('H2 Font Size (SM)'),
+                'name' => 'option_h2_size_sm',
+                'type' => 'number',
+                'placeholder' => esc_html('H2 (SM)'),
+                'instructions' => esc_html('Input the size of H2 (SM)'),
+                'prepend' => 'H2',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.993',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h3_size',
+                'label' => esc_html('H3 Font Size'),
+                'name' => 'option_h3_size',
+                'type' => 'number',
+                'placeholder' => esc_html('H3'),
+                'instructions' => esc_html('Input the size of H3'),
+                'prepend' => 'H3',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '2.192',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h3_size_lg',
+                'label' => esc_html('H3 Font Size (LG)'),
+                'name' => 'option_h3_size_lg',
+                'type' => 'number',
+                'placeholder' => esc_html('H3 (LG)'),
+                'instructions' => esc_html('Input the size of H3 (LG)'),
+                'prepend' => 'H3',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.812',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h3_size_sm',
+                'label' => esc_html('H3 Font Size (SM)'),
+                'name' => 'option_h3_size_sm',
+                'type' => 'number',
+                'placeholder' => esc_html('H3 (SM)'),
+                'instructions' => esc_html('Input the size of H3 (SM)'),
+                'prepend' => 'H3',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.647',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h4_size',
+                'label' => esc_html('H4 Font Size'),
+                'name' => 'option_h4_size',
+                'type' => 'number',
+                'placeholder' => esc_html('H4'),
+                'instructions' => esc_html('Input the size of H4'),
+                'prepend' => 'H4',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.812',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h4_size_lg',
+                'label' => esc_html('H4 Font Size (LG)'),
+                'name' => 'option_h4_size_lg',
+                'type' => 'number',
+                'placeholder' => esc_html('H4 (LG)'),
+                'instructions' => esc_html('Input the size of H4 (LG)'),
+                'prepend' => 'H4',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.497',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h4_size_sm',
+                'label' => esc_html('H4 Font Size (SM)'),
+                'name' => 'option_h4_size_sm',
+                'type' => 'number',
+                'placeholder' => esc_html('H4 (SM)'),
+                'instructions' => esc_html('Input the size of H4 (SM)'),
+                'prepend' => 'H4',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.45',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h5_size',
+                'label' => esc_html('H5 Font Size'),
+                'name' => 'option_h5_size',
+                'type' => 'number',
+                'placeholder' => esc_html('H5'),
+                'instructions' => esc_html('Input the size of H5'),
+                'prepend' => 'H5',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.333',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h5_size_lg',
+                'label' => esc_html('H5 Font Size (LG)'),
+                'name' => 'option_h5_size_lg',
+                'type' => 'number',
+                'placeholder' => esc_html('H5 (LG)'),
+                'instructions' => esc_html('Input the size of H5 (LG)'),
+                'prepend' => 'H5',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.333',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h5_size_sm',
+                'label' => esc_html('H5 Font Size (SM)'),
+                'name' => 'option_h5_size_sm',
+                'type' => 'number',
+                'placeholder' => esc_html('H5 (SM)'),
+                'instructions' => esc_html('Input the size of H5 (SM)'),
+                'prepend' => 'H5',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.333',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h6_size',
+                'label' => esc_html('H6 Font Size'),
+                'name' => 'option_h6_size',
+                'type' => 'number',
+                'placeholder' => esc_html('H6'),
+                'instructions' => esc_html('Input the size of H6'),
+                'prepend' => 'H6',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.125',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h6_size_lg',
+                'label' => esc_html('H6 Font Size (LG)'),
+                'name' => 'option_h6_size_lg',
+                'type' => 'number',
+                'placeholder' => esc_html('H6 (LG)'),
+                'instructions' => esc_html('Input the size of H6 (LG)'),
+                'prepend' => 'H6',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.125',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_h6_size_sm',
+                'label' => esc_html('H6 Font Size (SM)'),
+                'name' => 'option_h6_size_sm',
+                'type' => 'number',
+                'placeholder' => esc_html('H6 (SM)'),
+                'instructions' => esc_html('Input the size of H6 (SM)'),
+                'prepend' => 'H6',
+                'append' => 'rem',
+                'min' => '1',
+                'max' => '10',
+                'step' => '0.001',
+                'default_value' => '1.125',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_custom_settings_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            // Footer Tab
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_custom_settings_footer_tab',
+                'label' => esc_html('Footer'),
+                'name' => 'option_repeater_builder_custom_settings_footer_tab',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'parent' => 'group_repeater_builder_settings',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_footer_social_list',
+                'label' => esc_html('Footer Social List'),
+                'name' => 'option_footer_social_list',
+                'type' => 'repeater',
+                'label_placement' => 'top',
+                'instructions' => esc_html('Add Social Media Items'),
+                'min' => 1,
+                'max' => 0,
+                'layout' => 'block',
+                'button_label' => esc_html('Add new Social'),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(),
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_builder_section_footer_social_list_icon',
+                        'label' => esc_html('Social Icon'),
+                        'name' => 'option_builder_section_footer_social_list_icon',
+                        'type' => 'font-awesome',
+                        'instructions' => '',
+                        'required' => 0,
+                        'icon_sets' => array(
+                            0 => 'fas',
+                            1 => 'far',
+                            2 => 'fab',
+                        ),
+                        'custom_icon_set' => '',
+                        'default_label' => '',
+                        'default_value' => '',
+                        'save_format' => 'class',
+                        'allow_null' => 0,
+                        'show_preview' => 1,
+                        'enqueue_fa' => 0,
+                        'fa_live_preview' => '',
+                        'choices' => array(),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_footer_social_list_url',
+                        'label' => esc_html('Social URL'),
+                        'name' => 'option_builder_section_footer_social_list_url',
+                        'instructions' => esc_html('Input the Social Icon URL'),
+                        'placeholder' => esc_html('Social URL'),
+                        'type' => 'url',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_footer_logotype_image',
+                'label' => esc_html('Logotype Image'),
+                'name' => 'option_footer_logotype_image',
+                'instructions' => esc_html('Select the Logotype Image'),
+                'type' => 'image',
+                'return_format' => 'id',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'parent' => 'group_repeater_builder_settings',
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_footer_company_name',
+                'label' => esc_html('Company Name'),
+                'name' => 'option_footer_company_name',
+                'instructions' => esc_html('Input the Company Name'),
+                'default' => esc_html('[company name]'),
+                'type' => 'text',
+                'placeholder' => esc_html('Company Name'),
+                'parent' => 'group_repeater_builder_settings',
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
                 ),
             ));
 
