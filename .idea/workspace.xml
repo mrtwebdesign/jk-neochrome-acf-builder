@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69add206-d0ac-4826-8990-4f0475965bd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder.css" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="1266" column="40" lean-forward="true" selection-start-line="1266" selection-start-column="40" selection-end-line="1266" selection-end-column="40" />
+            <state relative-caret-position="347">
+              <caret line="2320" column="45" selection-start-line="2320" selection-start-column="45" selection-end-line="2320" selection-end-column="45" />
               <folding>
                 <element signature="n#theme_options#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
@@ -60,6 +61,7 @@
                 <element signature="e#56721#57017#1#PHP" />
                 <element signature="e#57328#57624#1#PHP" />
                 <element signature="e#57685#58814#1#PHP" />
+                <element signature="e#59162#60401#1#PHP" />
                 <element signature="e#58883#60196#1#PHP" />
                 <element signature="e#60218#61503#1#PHP" />
                 <element signature="e#61525#62886#1#PHP" />
@@ -81,22 +83,26 @@
                 <element signature="e#78642#80005#1#PHP" />
                 <element signature="e#80027#81404#1#PHP" />
                 <element signature="e#81426#82583#1#PHP" />
+                <element signature="e#85730#86590#1#PHP" />
+                <element signature="e#86111#86496#1#PHP" />
                 <element signature="e#82783#84119#1#PHP" />
                 <element signature="e#84141#85452#1#PHP" />
                 <element signature="e#85474#86861#1#PHP" />
                 <element signature="e#86883#88316#1#PHP" />
+                <element signature="e#92191#93074#1#PHP" />
+                <element signature="e#92579#92964#1#PHP" />
                 <element signature="e#88338#89213#1#PHP" />
                 <element signature="e#89235#90295#1#PHP" />
                 <element signature="e#90317#91385#1#PHP" />
                 <element signature="e#91407#92483#1#PHP" />
                 <element signature="e#92505#97581#1#PHP" />
+                <element signature="e#102548#103431#1#PHP" />
                 <element signature="e#97784#99106#1#PHP" />
                 <element signature="e#99128#100425#1#PHP" />
                 <element signature="e#100447#101820#1#PHP" />
                 <element signature="e#101842#103261#1#PHP" />
                 <element signature="e#103283#104144#1#PHP" />
                 <element signature="e#104166#105203#1#PHP" />
-                <element signature="e#105387#106700#1#PHP" />
                 <element signature="e#106722#108007#1#PHP" />
                 <element signature="e#108029#109390#1#PHP" />
                 <element signature="e#109412#110819#1#PHP" />
@@ -107,6 +113,7 @@
                 <element signature="e#118183#119510#1#PHP" />
                 <element signature="e#119532#120935#1#PHP" />
                 <element signature="e#120957#122400#1#PHP" />
+                <element signature="e#131654#132549#1#PHP" />
                 <element signature="e#122422#123435#1#PHP" />
                 <element signature="e#123457#124497#1#PHP" />
                 <element signature="e#124519#125548#1#PHP" />
@@ -158,6 +165,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -188,6 +204,8 @@
       <find>field_footer_logotype_image</find>
       <find>width</find>
       <find>default he</find>
+      <find>wrao</find>
+      <find>background St</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -205,6 +223,7 @@
         <option value="$PROJECT_DIR$/themes/astra/modules/post-grid/includes/post-grid.php" />
         <option value="$PROJECT_DIR$/themes/astra/fl-builder/modules/post-grid/post-grid.php" />
         <option value="$PROJECT_DIR$/themes/astra/fl-builder/modules/post-grid/includes/post-grid.php" />
+        <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" />
         <option value="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" />
       </list>
     </option>
@@ -245,6 +264,41 @@
               <item name="neochrome_new" type="462c0819:PsiDirectoryNode" />
               <item name="plugins" type="462c0819:PsiDirectoryNode" />
               <item name="acf-landing-page-builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neochrome_new" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="acf-landing-page-builder" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neochrome_new" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="acf-landing-page-builder" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neochrome_new" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="acf-landing-page-builder" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neochrome_new" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neochrome_new" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="untitled" type="b2602c69:ProjectViewProjectNode" />
@@ -299,18 +353,18 @@
       <updated>1611767633909</updated>
       <workItem from="1611767635257" duration="2913000" />
       <workItem from="1611794538292" duration="4269000" />
-      <workItem from="1611865548788" duration="2368000" />
+      <workItem from="1611865548788" duration="6953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9550000" />
+    <option name="totallyTimeSpent" value="14135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26017916" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26017916" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -373,10 +427,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="1266" column="40" lean-forward="true" selection-start-line="1266" selection-start-column="40" selection-end-line="1266" selection-end-column="40" />
+        <state relative-caret-position="347">
+          <caret line="2320" column="45" selection-start-line="2320" selection-start-column="45" selection-end-line="2320" selection-end-column="45" />
           <folding>
             <element signature="n#theme_options#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
@@ -387,6 +454,7 @@
             <element signature="e#56721#57017#1#PHP" />
             <element signature="e#57328#57624#1#PHP" />
             <element signature="e#57685#58814#1#PHP" />
+            <element signature="e#59162#60401#1#PHP" />
             <element signature="e#58883#60196#1#PHP" />
             <element signature="e#60218#61503#1#PHP" />
             <element signature="e#61525#62886#1#PHP" />
@@ -408,22 +476,26 @@
             <element signature="e#78642#80005#1#PHP" />
             <element signature="e#80027#81404#1#PHP" />
             <element signature="e#81426#82583#1#PHP" />
+            <element signature="e#85730#86590#1#PHP" />
+            <element signature="e#86111#86496#1#PHP" />
             <element signature="e#82783#84119#1#PHP" />
             <element signature="e#84141#85452#1#PHP" />
             <element signature="e#85474#86861#1#PHP" />
             <element signature="e#86883#88316#1#PHP" />
+            <element signature="e#92191#93074#1#PHP" />
+            <element signature="e#92579#92964#1#PHP" />
             <element signature="e#88338#89213#1#PHP" />
             <element signature="e#89235#90295#1#PHP" />
             <element signature="e#90317#91385#1#PHP" />
             <element signature="e#91407#92483#1#PHP" />
             <element signature="e#92505#97581#1#PHP" />
+            <element signature="e#102548#103431#1#PHP" />
             <element signature="e#97784#99106#1#PHP" />
             <element signature="e#99128#100425#1#PHP" />
             <element signature="e#100447#101820#1#PHP" />
             <element signature="e#101842#103261#1#PHP" />
             <element signature="e#103283#104144#1#PHP" />
             <element signature="e#104166#105203#1#PHP" />
-            <element signature="e#105387#106700#1#PHP" />
             <element signature="e#106722#108007#1#PHP" />
             <element signature="e#108029#109390#1#PHP" />
             <element signature="e#109412#110819#1#PHP" />
@@ -434,6 +506,7 @@
             <element signature="e#118183#119510#1#PHP" />
             <element signature="e#119532#120935#1#PHP" />
             <element signature="e#120957#122400#1#PHP" />
+            <element signature="e#131654#132549#1#PHP" />
             <element signature="e#122422#123435#1#PHP" />
             <element signature="e#123457#124497#1#PHP" />
             <element signature="e#124519#125548#1#PHP" />

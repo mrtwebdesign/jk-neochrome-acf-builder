@@ -1275,6 +1275,7 @@ final class ACF_Builder
                         'choices' => array(
                             'color' => esc_html('Color'),
                             'image' => esc_html('Image'),
+                            'gradient' => esc_html('Gradient'),
                         ),
                         'default_value' => 'color',
                         'layout' => 'horizontal',
@@ -1775,6 +1776,25 @@ final class ACF_Builder
                     /* BUY NOW / GET MORE INFO SECTION START */
 
                     array(
+                        'key' => 'field_builder_section_buy_now_bg_tab',
+                        'label' => esc_html('Background'),
+                        'name' => 'field_builder_section_buy_now_bg_tab',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 1,
+                    ),
+                    array(
                         'key' => 'field_builder_section_buy_now_type_of_bg',
                         'label' => esc_html('Section Background Style'),
                         'name' => 'option_builder_section_buy_now_type_of_bg',
@@ -1783,6 +1803,7 @@ final class ACF_Builder
                         'choices' => array(
                             'color' => esc_html('Color'),
                             'image' => esc_html('Image'),
+                            'gradient' => esc_html('Gradient'),
                         ),
                         'default_value' => 'color',
                         'layout' => 'horizontal',
@@ -1885,6 +1906,25 @@ final class ACF_Builder
                         ),
                     ),
                     array(
+                        'key' => 'field_builder_section_buy_now_content_tab',
+                        'label' => esc_html('Content'),
+                        'name' => 'field_builder_section_buy_now_content_tab',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 0,
+                    ),
+                    array(
                         'key' => 'field_builder_section_buy_now_main_headline',
                         'label' => esc_html('Main Headline'),
                         'name' => 'option_builder_section_buy_now_main_headline',
@@ -1973,7 +2013,7 @@ final class ACF_Builder
                         'instructions' => esc_html('Add Box'),
                         'min' => 1,
                         'max' => 0,
-                        'layout' => 'block',
+                        'layout' => 'row',
                         'button_label' => esc_html('Add new Product Box'),
                         'conditional_logic' => array(
                             array(
@@ -2060,6 +2100,25 @@ final class ACF_Builder
                     /* GALLERY SECTION START */
 
                     array(
+                        'key' => 'field_builder_section_gallery_bg_tab',
+                        'label' => esc_html('Background'),
+                        'name' => 'field_builder_section_gallery_bg_tab',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 1,
+                    ),
+                    array(
                         'key' => 'field_builder_section_gallery_type_of_bg',
                         'label' => esc_html('Section Background Style'),
                         'name' => 'option_builder_section_gallery_type_of_bg',
@@ -2068,6 +2127,7 @@ final class ACF_Builder
                         'choices' => array(
                             'color' => esc_html('Color'),
                             'image' => esc_html('Image'),
+                            'gradient' => esc_html('Gradient'),
                         ),
                         'default_value' => 'color',
                         'layout' => 'horizontal',
@@ -2170,6 +2230,25 @@ final class ACF_Builder
                         ),
                     ),
                     array(
+                        'key' => 'field_builder_section_gallery_content_tab',
+                        'label' => esc_html('Content'),
+                        'name' => 'field_builder_section_gallery_content_tab',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 0,
+                    ),
+                    array(
                         'key' => 'field_builder_section_gallery_main_headline',
                         'label' => esc_html('Main Headline'),
                         'name' => 'option_builder_section_gallery_main_headline',
@@ -2216,6 +2295,25 @@ final class ACF_Builder
                     /* FAQS SECTION START */
 
                     array(
+                        'key' => 'field_builder_section_faqs_bg_tab',
+                        'label' => esc_html('Background'),
+                        'name' => 'field_builder_section_faqs_bg_tab',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 1,
+                    ),
+                    array(
                         'key' => 'field_builder_section_faqs_type_of_bg',
                         'label' => esc_html('Section Background Style'),
                         'name' => 'option_builder_section_faqs_type_of_bg',
@@ -2224,6 +2322,7 @@ final class ACF_Builder
                         'choices' => array(
                             'color' => esc_html('Color'),
                             'image' => esc_html('Image'),
+                            'gradient' => esc_html('Gradient'),
                         ),
                         'default_value' => 'color',
                         'layout' => 'horizontal',
@@ -2324,6 +2423,25 @@ final class ACF_Builder
                                 ),
                             ),
                         ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_faqs_content_tab',
+                        'label' => esc_html('Content'),
+                        'name' => 'field_builder_section_faqs_content_tab',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 0,
                     ),
                     array(
                         'key' => 'field_builder_section_faqs_main_headline',
@@ -2436,6 +2554,28 @@ final class ACF_Builder
                     /* RICH TEXT ROW SECTION START */
 
                     array(
+                        'key' => 'field_builder_section_rich_text_row_tab_bg',
+                        'label' => esc_html('Background'),
+                        'name' => 'option_builder_section_rich_text_row_tab_bg',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                        'wrapper' => array(
+                            'class' => 'text-row-tab',
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 1,
+                    ),
+                    array(
                         'key' => 'field_builder_section_rich_text_row_type_of_bg',
                         'label' => esc_html('Section Background Style'),
                         'name' => 'option_builder_section_rich_text_row_type_of_bg',
@@ -2444,6 +2584,7 @@ final class ACF_Builder
                         'choices' => array(
                             'color' => esc_html('Color'),
                             'image' => esc_html('Image'),
+                            'gradient' => esc_html('Gradient'),
                         ),
                         'default_value' => 'color',
                         'layout' => 'horizontal',
@@ -2544,6 +2685,25 @@ final class ACF_Builder
                                 ),
                             ),
                         ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_rich_text_row_tab_content',
+                        'label' => esc_html('Content'),
+                        'name' => 'option_builder_section_rich_text_row_tab_content',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 0,
                     ),
                     array(
                         'key' => 'field_builder_section_rich_text_row_wsw',
