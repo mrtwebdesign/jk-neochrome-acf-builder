@@ -256,6 +256,7 @@ $xxxl: 1601px;
           }
 
           .propositions-list {
+            width: 100%;
             @media(max-width: $lg) {
               display: flex;
               flex-direction: column;

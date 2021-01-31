@@ -230,6 +230,10 @@ final class ACF_Builder
 
                         $field_builder_section_hero_propositions_color = self::get_sub_field('field_builder_section_hero_propositions_color');
 
+                        $field_builder_section_hero_propositions_offset = self::get_sub_field('field_builder_section_hero_propositions_offset');
+
+                        $field_builder_section_hero_propositions_max_width = self::get_sub_field('field_builder_section_hero_propositions_max_width');
+
                         $field_builder_section_hero_more_info_secondary_headline = self::get_sub_field('field_builder_section_hero_more_info_secondary_headline');
 
                         $field_builder_section_hero_more_info_secondary_headline_color = self::get_sub_field('field_builder_section_hero_more_info_secondary_headline_color');
@@ -284,7 +288,9 @@ final class ACF_Builder
 
                                     if (have_rows('field_builder_section_hero_propositions')): ?>
 
-                                        <ul class="propositions-list">
+
+                                        <ul class="propositions-list"
+                                            style="margin-left: <?php echo esc_attr($field_builder_section_hero_propositions_offset); ?>px; max-width: <?php echo esc_attr($field_builder_section_hero_propositions_max_width); ?>%">
 
                                             <?php
 
@@ -1571,12 +1577,16 @@ final class ACF_Builder
                         )
                     ),
                     array(
-                        'key' => 'field_builder_section_hero_info_box_tab',
-                        'label' => esc_html('Info Box'),
-                        'name' => 'option_builder_section_hero_info_box_tab',
-                        'type' => 'tab',
-                        'instructions' => '',
-                        'required' => 0,
+                        'key' => 'field_builder_section_hero_propositions',
+                        'label' => esc_html('Propositions'),
+                        'name' => 'option_builder_section_hero_propositions',
+                        'type' => 'repeater',
+                        'label_placement' => 'top',
+                        'instructions' => esc_html('Add Propositions'),
+                        'min' => 1,
+                        'max' => 0,
+                        'layout' => 'row',
+                        'button_label' => esc_html('Add new Proposition'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -1586,8 +1596,54 @@ final class ACF_Builder
                                 ),
                             ),
                         ),
-                        'placement' => 'top',
-                        'endpoint' => 0,
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_propositions_offset',
+                        'label' => esc_html('Propositions Offset'),
+                        'name' => 'option_builder_section_hero_propositions_offset',
+                        'instructions' => esc_html('Select the offset of propositions list'),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '100',
+                        'step' => '1',
+                        'default_value' => '30',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_propositions_max_width',
+                        'label' => esc_html('Propositions Max Width'),
+                        'name' => 'option_builder_section_hero_propositions_max_width',
+                        'instructions' => esc_html('Select the max-width of propositions list'),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '100',
+                        'step' => '1',
+                        'default_value' => '100',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
                     ),
                     array(
                         'key' => 'field_builder_section_hero_more_info_box_toggle',
@@ -2706,16 +2762,54 @@ final class ACF_Builder
                         'endpoint' => 0,
                     ),
                     array(
-                        'key' => 'field_builder_section_rich_text_row_wsw',
-                        'label' => esc_html('Rich Text Row Section Field'),
-                        'name' => 'option_builder_section_rich_text_row_wsw',
-                        'type' => 'wysiwyg',
-                        'instructions' => esc_html('Text Content'),
-                        'tabs' => 'all',
-                        'toolbar' => 'full',
-                        'media_upload' => 1,
-                        'default_value' => '',
-                        'delay' => 0,
+                        'key' => 'field_builder_section_rich_text_row_columns',
+                        'label' => esc_html('Columns'),
+                        'name' => 'option_builder_section_rich_text_row_columns',
+                        'type' => 'repeater',
+                        'label_placement' => 'top',
+                        'instructions' => esc_html('Add Column'),
+                        'min' => 1,
+                        'max' => 0,
+                        'layout' => 'row',
+                        'button_label' => esc_html('Add new Column'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_builder_section_rich_text_row_wsw_column',
+                                'label' => esc_html('Column Content'),
+                                'name' => 'option_builder_section_rich_text_row_wsw_column',
+                                'type' => 'wysiwyg',
+                                'instructions' => esc_html('Type your column content'),
+                                'tabs' => 'all',
+                                'toolbar' => 'full',
+                                'media_upload' => 1,
+                                'default_value' => '',
+                                'delay' => 0,
+                            ),
+                        )
+                    ),
+                    array(
+                        'key' => 'field_builder_section_rich_text_row_max_width',
+                        'label' => esc_html('Rich Text Max Width'),
+                        'name' => 'option_builder_section_rich_text_row_max_width',
+                        'instructions' => esc_html('Select the offset of rich text row'),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '100',
+                        'step' => '1',
+                        'default_value' => '100',
                         'conditional_logic' => array(
                             array(
                                 array(
