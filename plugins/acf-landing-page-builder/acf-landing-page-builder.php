@@ -210,6 +210,10 @@ final class ACF_Builder
 
                         $field_builder_section_hero_bg_image_overlay = self::get_sub_field('field_builder_section_hero_bg_image_overlay');
 
+                        $field_builder_section_hero_bg_gradient_color_1 = self::get_sub_field('field_builder_section_hero_bg_gradient_color_1');
+
+                        $field_builder_section_hero_bg_gradient_color_2 = self::get_sub_field('field_builder_section_hero_bg_gradient_color_2');
+
                         $field_builder_section_hero_main_headline = self::get_sub_field('field_builder_section_hero_main_headline');
 
                         $field_builder_section_hero_main_headline_color = self::get_sub_field('field_builder_section_hero_main_headline_color');
@@ -255,6 +259,13 @@ final class ACF_Builder
 
                                 <span class="overlay"
                                       style="opacity: <?php echo esc_attr($field_builder_section_hero_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_hero_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_hero_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_hero_bg_gradient_color_2); ?>);"></span>
 
                             <?php endif; ?>
 
@@ -410,6 +421,10 @@ final class ACF_Builder
 
                         $field_builder_section_buy_now_bg_image_overlay = self::get_sub_field('field_builder_section_buy_now_bg_image_overlay');
 
+                        $field_builder_section_buy_now_bg_gradient_color_1 = self::get_sub_field('field_builder_section_buy_now_bg_gradient_color_1');
+
+                        $field_builder_section_buy_now_bg_gradient_color_2 = self::get_sub_field('field_builder_section_buy_now_bg_gradient_color_2');
+
                         $field_builder_section_buy_now_main_headline = self::get_sub_field('field_builder_section_buy_now_main_headline');
 
                         $field_builder_section_buy_now_main_headline_color = self::get_sub_field('field_builder_section_buy_now_main_headline_color');
@@ -427,6 +442,13 @@ final class ACF_Builder
 
                                 <span class="overlay"
                                       style="opacity: <?php echo esc_attr($field_builder_section_buy_now_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_buy_now_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_buy_now_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_buy_now_bg_gradient_color_2); ?>);"></span>
 
                             <?php endif; ?>
 
@@ -535,6 +557,10 @@ final class ACF_Builder
 
                         $field_builder_section_gallery_bg_image_overlay = self::get_sub_field('field_builder_section_gallery_bg_image_overlay');
 
+                        $field_builder_section_gallery_bg_gradient_color_1 = self::get_sub_field('field_builder_section_gallery_bg_gradient_color_1');
+
+                        $field_builder_section_gallery_bg_gradient_color_2 = self::get_sub_field('field_builder_section_gallery_bg_gradient_color_2');
+
                         $field_builder_section_gallery_bg_color = self::get_sub_field('field_builder_section_gallery_bg_color');
 
                         $field_builder_section_gallery_bg_image = self::get_sub_field('field_builder_section_gallery_bg_image');
@@ -550,6 +576,13 @@ final class ACF_Builder
 
                                 <span class="overlay"
                                       style="opacity: <?php echo esc_attr($field_builder_section_gallery_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_gallery_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_gallery_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_gallery_bg_gradient_color_2); ?>);"></span>
 
                             <?php endif; ?>
 
@@ -607,6 +640,10 @@ final class ACF_Builder
 
                         $field_builder_section_faqs_bg_image_overlay = self::get_sub_field('field_builder_section_faqs_bg_image_overlay');
 
+                        $field_builder_section_faqs_bg_gradient_color_1 = self::get_sub_field('field_builder_section_faqs_bg_gradient_color_1');
+
+                        $field_builder_section_faqs_bg_gradient_color_2 = self::get_sub_field('field_builder_section_faqs_bg_gradient_color_2');
+
                         $field_builder_section_faqs_main_headline = self::get_sub_field('field_builder_section_faqs_main_headline');
 
                         $field_builder_section_faqs_secondary_headline = self::get_sub_field('field_builder_section_faqs_secondary_headline');
@@ -620,6 +657,13 @@ final class ACF_Builder
 
                                 <span class="overlay"
                                       style="opacity: <?php echo esc_attr($field_builder_section_faqs_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_faqs_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_faqs_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_faqs_bg_gradient_color_2); ?>);"></span>
 
                             <?php endif; ?>
 
@@ -737,7 +781,11 @@ final class ACF_Builder
 
                         $field_builder_section_rich_text_row_bg_image_overlay = self::get_sub_field('field_builder_section_rich_text_row_bg_image_overlay');
 
-                        $field_builder_section_rich_text_row_wsw = self::get_sub_field('field_builder_section_rich_text_row_wsw');
+                        $field_builder_section_rich_text_row_bg_gradient_color_1 = self::get_sub_field('field_builder_section_rich_text_row_bg_gradient_color_1');
+
+                        $field_builder_section_rich_text_row_bg_gradient_color_2 = self::get_sub_field('field_builder_section_rich_text_row_bg_gradient_color_2');
+
+                        $field_builder_section_rich_text_row_max_width = self::get_sub_field('field_builder_section_rich_text_row_max_width');
 
                         $field_builder_section_rich_text_row_button_label = self::get_sub_field('field_builder_section_rich_text_row_button_label');
 
@@ -757,17 +805,46 @@ final class ACF_Builder
 
                             <?php endif; ?>
 
+                            <?php if ($field_builder_section_rich_text_row_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_rich_text_row_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_rich_text_row_bg_gradient_color_2); ?>);"></span>
+
+                            <?php endif; ?>
+
                             <div class="neo-container inner-wrapper">
 
-                                <?php if (!empty($field_builder_section_rich_text_row_wsw)): ?>
+                                <div class="rich-columns"
+                                     style="max-width: <?php echo esc_attr($field_builder_section_rich_text_row_max_width); ?>%;">
 
-                                    <div class="rich-text">
+                                    <?php
 
-                                        <?php echo $field_builder_section_rich_text_row_wsw; ?>
+                                    $count = count(self::get_sub_field('field_builder_section_rich_text_row_columns'));
 
-                                    </div>
+                                    if (have_rows('field_builder_section_rich_text_row_columns')):
 
-                                <?php endif; ?>
+                                        while (have_rows('field_builder_section_rich_text_row_columns')) : the_row();
+
+                                            ?>
+
+                                            <?php $column_content = self::get_sub_field('field_builder_section_rich_text_row_wsw_column'); ?>
+
+                                            <div class="column"
+                                                 style="max-width: <?php echo 100 / $count; ?>%;">
+
+                                                <?php echo $column_content; ?>
+
+                                            </div>
+
+                                        <?php
+
+                                        endwhile;
+
+                                    endif;
+
+                                    ?>
+
+                                </div>
 
                                 <?php if (!empty($field_builder_section_rich_text_row_button_label)): ?>
 
@@ -930,11 +1007,12 @@ final class ACF_Builder
 
                             <?php
 
-                            $company_logo = self::get_field('field_footer_company_name') ? self::get_field('field_footer_company_name') : 'http://via.placeholder.com/350x350';
+                            $company_logo = self::get_field('field_footer_logotype_image') ? self::get_field('field_footer_logotype_image') : 'http://via.placeholder.com/350x350';
 
                             ?>
 
-                            <img src="<?php echo esc_url($company_logo) ?>" alt="<?php echo esc_attr('Logotype'); ?>">
+                            <img src="<?php echo esc_url(wp_get_attachment_url($company_logo)) ?>"
+                                 alt="<?php echo esc_attr('Logotype'); ?>">
 
                         </div>
 
@@ -1374,6 +1452,58 @@ final class ACF_Builder
                                     'field' => 'field_builder_section_hero_type_of_bg',
                                     'operator' => '==',
                                     'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_bg_gradient_color_1',
+                        'label' => esc_html('Gradient Color 1'),
+                        'name' => 'option_builder_section_hero_bg_gradient_color_1',
+                        'instructions' => esc_html('Select the Section Gradient Color 1'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_hero_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'gradient',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_bg_gradient_color_2',
+                        'label' => esc_html('Gradient Color 2'),
+                        'name' => 'option_builder_section_hero_bg_gradient_color_2',
+                        'instructions' => esc_html('Select the Section Gradient Color 2'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_hero_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'gradient',
                                 ),
                                 array(
                                     'field' => 'field_builder_section_type',
@@ -1962,6 +2092,58 @@ final class ACF_Builder
                         ),
                     ),
                     array(
+                        'key' => 'field_builder_section_buy_now_gradient_color_1',
+                        'label' => esc_html('Gradient Color 1'),
+                        'name' => 'option_builder_section_buy_now_gradient_color_1',
+                        'instructions' => esc_html('Select the Section Gradient Color 1'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_buy_now_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'gradient',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_gradient_color_2',
+                        'label' => esc_html('Gradient Color 2'),
+                        'name' => 'option_builder_section_buy_now_gradient_color_2',
+                        'instructions' => esc_html('Select the Section Gradient Color 2'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_buy_now_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'gradient',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
                         'key' => 'field_builder_section_buy_now_content_tab',
                         'label' => esc_html('Content'),
                         'name' => 'field_builder_section_buy_now_content_tab',
@@ -2286,6 +2468,58 @@ final class ACF_Builder
                         ),
                     ),
                     array(
+                        'key' => 'field_builder_section_gallery_gradient_color_1',
+                        'label' => esc_html('Gradient Color 1'),
+                        'name' => 'option_builder_section_gallery_gradient_color_1',
+                        'instructions' => esc_html('Select the Section Gradient Color 1'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_gallery_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_gallery_gradient_color_2',
+                        'label' => esc_html('Gradient Color 2'),
+                        'name' => 'option_builder_section_gallery_gradient_color_2',
+                        'instructions' => esc_html('Select the Section Gradient Color 2'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_gallery_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
                         'key' => 'field_builder_section_gallery_content_tab',
                         'label' => esc_html('Content'),
                         'name' => 'field_builder_section_gallery_content_tab',
@@ -2465,6 +2699,58 @@ final class ACF_Builder
                         'max' => '1',
                         'step' => '0.1',
                         'default_value' => '0.5',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_faqs_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_faqs_gradient_color_1',
+                        'label' => esc_html('Gradient Color 1'),
+                        'name' => 'option_builder_section_faqs_gradient_color_1',
+                        'instructions' => esc_html('Select the Section Gradient Color 1'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_faqs_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_faqs_gradient_color_2',
+                        'label' => esc_html('Gradient Color 2'),
+                        'name' => 'option_builder_section_faqs_gradient_color_2',
+                        'instructions' => esc_html('Select the Section Gradient Color 2'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -2743,6 +3029,58 @@ final class ACF_Builder
                         ),
                     ),
                     array(
+                        'key' => 'field_builder_section_rich_text_row_gradient_color_1',
+                        'label' => esc_html('Gradient Color 1'),
+                        'name' => 'option_builder_section_rich_text_row_gradient_color_1',
+                        'instructions' => esc_html('Select the Section Gradient Color 1'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_rich_text_row_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_rich_text_row_gradient_color_2',
+                        'label' => esc_html('Gradient Color 2'),
+                        'name' => 'option_builder_section_rich_text_row_gradient_color_2',
+                        'instructions' => esc_html('Select the Section Gradient Color 2'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_rich_text_row_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'rich-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
                         'key' => 'field_builder_section_rich_text_row_tab_content',
                         'label' => esc_html('Content'),
                         'name' => 'option_builder_section_rich_text_row_tab_content',
@@ -2770,7 +3108,7 @@ final class ACF_Builder
                         'instructions' => esc_html('Add Column'),
                         'min' => 1,
                         'max' => 0,
-                        'layout' => 'row',
+                        'layout' => 'block',
                         'button_label' => esc_html('Add new Column'),
                         'conditional_logic' => array(
                             array(

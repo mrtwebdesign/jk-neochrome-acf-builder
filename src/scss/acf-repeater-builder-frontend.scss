@@ -578,14 +578,23 @@ $xxxl: 1601px;
         margin: 15px 0 !important;
       }
 
-      .rich-text {
-        ul, ol {
-          margin: 20px 0 20px 20px !important;;
+      .rich-columns {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: -15px;
+        margin-bottom: 30px !important;
+
+        .column {
+          padding: 15px;
+          width: 100%;
+
+          ul, ol {
+            margin: 20px 0 20px 20px !important;;
+          }
         }
       }
     }
   }
-
 }
 
 .neo-footer {
@@ -712,7 +721,8 @@ $xxxl: 1601px;
       }
 
       .logotype-wrapper {
-        max-width: 200px;
+        max-width: 150px;
+        max-height: 100px;
         @media(max-width: $lg) {
           order: 1;
           margin-left: 0;
@@ -723,6 +733,7 @@ $xxxl: 1601px;
         img {
           width: 100%;
           height: auto;
+          max-height: 100%;
         }
 
         margin-left: 60px;

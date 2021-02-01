@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69add206-d0ac-4826-8990-4f0475965bd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" afterDir="false" />
@@ -32,11 +31,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="2780" column="34" lean-forward="true" selection-start-line="2780" selection-start-column="34" selection-end-line="2780" selection-end-column="34" />
+            <state relative-caret-position="438">
+              <caret line="905" lean-forward="true" selection-start-line="905" selection-end-line="905" />
               <folding>
+                <element signature="e#7717#7803#0#HTML" expanded="true" />
+                <element signature="e#8638#8728#0#HTML" expanded="true" />
                 <element signature="e#9568#9752#0#HTML" expanded="true" />
                 <element signature="e#9784#9871#0#HTML" expanded="true" />
+                <element signature="e#17809#18086#0#HTML" expanded="true" />
+                <element signature="e#24600#24796#0#HTML" expanded="true" />
+                <element signature="e#28280#28476#0#HTML" expanded="true" />
+                <element signature="e#35312#35502#0#HTML" expanded="true" />
+                <element signature="e#33145#33165#0#HTML" expanded="true" />
+                <element signature="e#33688#33800#0#HTML" expanded="true" />
+                <element signature="e#32933#33635#0#PHP" />
                 <element signature="n#theme_options#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#init#0;n#ACF_Builder#0;n#!!top" />
@@ -48,7 +56,6 @@
                 <element signature="e#60047#61424#1#PHP" />
                 <element signature="e#61446#62731#1#PHP" />
                 <element signature="e#62753#64114#1#PHP" />
-                <element signature="e#64136#65543#1#PHP" />
                 <element signature="e#65565#66433#1#PHP" />
                 <element signature="e#66455#67478#1#PHP" />
                 <element signature="e#67500#68537#1#PHP" />
@@ -56,8 +63,11 @@
                 <element signature="e#69594#70627#1#PHP" />
                 <element signature="e#70649#71692#1#PHP" />
                 <element signature="e#71714#72771#1#PHP" />
+                <element signature="e#72793#73660#1#PHP" />
+                <element signature="e#73682#75316#1#PHP" />
                 <element signature="e#75340#76974#1#PHP" />
                 <element signature="e#75338#76209#1#PHP" />
+                <element signature="e#77548#78694#1#PHP" />
                 <element signature="e#76231#77409#1#PHP" />
                 <element signature="e#77431#78907#1#PHP" />
                 <element signature="e#78929#80262#1#PHP" />
@@ -70,6 +80,8 @@
                 <element signature="e#88121#89432#1#PHP" />
                 <element signature="e#89454#90841#1#PHP" />
                 <element signature="e#90863#92296#1#PHP" />
+                <element signature="e#98981#100291#1#PHP" />
+                <element signature="e#100313#101623#1#PHP" />
                 <element signature="e#92318#93208#1#PHP" />
                 <element signature="e#93230#94105#1#PHP" />
                 <element signature="e#94127#95187#1#PHP" />
@@ -81,6 +93,8 @@
                 <element signature="e#104973#106270#1#PHP" />
                 <element signature="e#106292#107665#1#PHP" />
                 <element signature="e#107687#109106#1#PHP" />
+                <element signature="e#118492#119822#1#PHP" />
+                <element signature="e#119844#121174#1#PHP" />
                 <element signature="e#109128#110004#1#PHP" />
                 <element signature="e#110026#110887#1#PHP" />
                 <element signature="e#110909#111946#1#PHP" />
@@ -88,8 +102,6 @@
                 <element signature="e#113012#114389#1#PHP" />
                 <element signature="e#114411#115696#1#PHP" />
                 <element signature="e#115718#117079#1#PHP" />
-                <element signature="e#117101#118508#1#PHP" />
-                <element signature="e#118530#119397#1#PHP" />
                 <element signature="e#119419#120431#1#PHP" />
                 <element signature="e#120453#121490#1#PHP" />
                 <element signature="e#121512#125203#1#PHP" />
@@ -97,7 +109,9 @@
                 <element signature="e#126429#127839#1#PHP" />
                 <element signature="e#127861#129188#1#PHP" />
                 <element signature="e#129210#130613#1#PHP" />
-                <element signature="e#130635#132078#1#PHP" />
+                <element signature="e#146777#148077#1#PHP" />
+                <element signature="e#148099#149399#1#PHP" />
+                <element signature="e#132100#132995#1#PHP" />
                 <element signature="e#135114#136143#1#PHP" />
                 <element signature="e#136165#137452#1#PHP" />
                 <element signature="e#137674#138721#1#PHP" />
@@ -132,19 +146,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="248" column="11" lean-forward="true" selection-start-line="248" selection-start-column="11" selection-end-line="248" selection-end-column="11" />
+            <state relative-caret-position="279">
+              <caret line="277" column="9" selection-start-line="277" selection-start-column="9" selection-end-line="277" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -153,18 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>image</find>
-      <find>upload</find>
-      <find>media</find>
-      <find>backgrpu</find>
-      <find>$field_builder_section_hero_bg_image</find>
-      <find>field_builder_section_hero_bg_image</find>
-      <find>footer_</find>
-      <find>text</find>
-      <find>'text'</find>
-      <find>copy</find>
-      <find>field_footer_logotype_image</find>
-      <find>width</find>
       <find>default he</find>
       <find>wrao</find>
       <find>background St</find>
@@ -183,6 +176,18 @@
       <find>sub_fields</find>
       <find>max_widt</find>
       <find>max_width</find>
+      <find>haver</find>
+      <find>field_builder_section_rich_text_row_bg_image_overlay</find>
+      <find>field_builder_section_rich_text_row_columns</find>
+      <find>max_wi</find>
+      <find>rich</find>
+      <find>logoty</find>
+      <find>field_footer_company_logo</find>
+      <find>field_footer_company_n</find>
+      <find>logotype-wrapper</find>
+      <find>overla</find>
+      <find>field_builder_section_hero_bg_image_overlay</find>
+      <find>image_overlay</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -302,18 +307,18 @@
       <workItem from="1611767635257" duration="2913000" />
       <workItem from="1611794538292" duration="4269000" />
       <workItem from="1611865548788" duration="7653000" />
-      <workItem from="1612106543421" duration="6412000" />
+      <workItem from="1612106543421" duration="12392000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21247000" />
+    <option name="totallyTimeSpent" value="27227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.262215" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.262215" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -326,7 +331,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31657502" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31736058" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" order="12" visible="true" weight="0.3299293" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -379,6 +384,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="277" column="9" selection-start-line="277" selection-start-column="9" selection-end-line="277" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -386,20 +398,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="248" column="11" lean-forward="true" selection-start-line="248" selection-start-column="11" selection-end-line="248" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="2780" column="34" lean-forward="true" selection-start-line="2780" selection-start-column="34" selection-end-line="2780" selection-end-column="34" />
+        <state relative-caret-position="438">
+          <caret line="905" lean-forward="true" selection-start-line="905" selection-end-line="905" />
           <folding>
+            <element signature="e#7717#7803#0#HTML" expanded="true" />
+            <element signature="e#8638#8728#0#HTML" expanded="true" />
             <element signature="e#9568#9752#0#HTML" expanded="true" />
             <element signature="e#9784#9871#0#HTML" expanded="true" />
+            <element signature="e#17809#18086#0#HTML" expanded="true" />
+            <element signature="e#24600#24796#0#HTML" expanded="true" />
+            <element signature="e#28280#28476#0#HTML" expanded="true" />
+            <element signature="e#35312#35502#0#HTML" expanded="true" />
+            <element signature="e#33145#33165#0#HTML" expanded="true" />
+            <element signature="e#33688#33800#0#HTML" expanded="true" />
+            <element signature="e#32933#33635#0#PHP" />
             <element signature="n#theme_options#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#init#0;n#ACF_Builder#0;n#!!top" />
@@ -411,7 +425,6 @@
             <element signature="e#60047#61424#1#PHP" />
             <element signature="e#61446#62731#1#PHP" />
             <element signature="e#62753#64114#1#PHP" />
-            <element signature="e#64136#65543#1#PHP" />
             <element signature="e#65565#66433#1#PHP" />
             <element signature="e#66455#67478#1#PHP" />
             <element signature="e#67500#68537#1#PHP" />
@@ -419,8 +432,11 @@
             <element signature="e#69594#70627#1#PHP" />
             <element signature="e#70649#71692#1#PHP" />
             <element signature="e#71714#72771#1#PHP" />
+            <element signature="e#72793#73660#1#PHP" />
+            <element signature="e#73682#75316#1#PHP" />
             <element signature="e#75340#76974#1#PHP" />
             <element signature="e#75338#76209#1#PHP" />
+            <element signature="e#77548#78694#1#PHP" />
             <element signature="e#76231#77409#1#PHP" />
             <element signature="e#77431#78907#1#PHP" />
             <element signature="e#78929#80262#1#PHP" />
@@ -433,6 +449,8 @@
             <element signature="e#88121#89432#1#PHP" />
             <element signature="e#89454#90841#1#PHP" />
             <element signature="e#90863#92296#1#PHP" />
+            <element signature="e#98981#100291#1#PHP" />
+            <element signature="e#100313#101623#1#PHP" />
             <element signature="e#92318#93208#1#PHP" />
             <element signature="e#93230#94105#1#PHP" />
             <element signature="e#94127#95187#1#PHP" />
@@ -444,6 +462,8 @@
             <element signature="e#104973#106270#1#PHP" />
             <element signature="e#106292#107665#1#PHP" />
             <element signature="e#107687#109106#1#PHP" />
+            <element signature="e#118492#119822#1#PHP" />
+            <element signature="e#119844#121174#1#PHP" />
             <element signature="e#109128#110004#1#PHP" />
             <element signature="e#110026#110887#1#PHP" />
             <element signature="e#110909#111946#1#PHP" />
@@ -451,8 +471,6 @@
             <element signature="e#113012#114389#1#PHP" />
             <element signature="e#114411#115696#1#PHP" />
             <element signature="e#115718#117079#1#PHP" />
-            <element signature="e#117101#118508#1#PHP" />
-            <element signature="e#118530#119397#1#PHP" />
             <element signature="e#119419#120431#1#PHP" />
             <element signature="e#120453#121490#1#PHP" />
             <element signature="e#121512#125203#1#PHP" />
@@ -460,7 +478,9 @@
             <element signature="e#126429#127839#1#PHP" />
             <element signature="e#127861#129188#1#PHP" />
             <element signature="e#129210#130613#1#PHP" />
-            <element signature="e#130635#132078#1#PHP" />
+            <element signature="e#146777#148077#1#PHP" />
+            <element signature="e#148099#149399#1#PHP" />
+            <element signature="e#132100#132995#1#PHP" />
             <element signature="e#135114#136143#1#PHP" />
             <element signature="e#136165#137452#1#PHP" />
             <element signature="e#137674#138721#1#PHP" />
