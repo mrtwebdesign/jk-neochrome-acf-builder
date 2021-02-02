@@ -5,9 +5,52 @@
   margin-top: 30px !important;
   margin-bottom: 30px !important;
 
+  .acf-row-handle {
+    .acf-icon {
+      display: flex !important;
+      width: 20px;
+      height: 20px;
+      align-items: center;
+      justify-content: center;
+      margin: -10px 0 0 -2px;
+      transition: all .3s ease-in-out;
+      opacity: 0.7;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.-plus {
+        background-color: #007cba !important;
+        color: white !important;
+        border: 1px solid #007cba !important;
+      }
+
+      &.-duplicate {
+        background-color: yellowgreen !important;
+        color: white !important;
+        border: 1px solid yellowgreen !important;
+        top: 23px;
+      }
+
+      &.-minus {
+        background-color: red !important;
+        color: white !important;
+        border: 1px solid red !important;
+        top: 46px !important;
+      }
+    }
+  }
+
   .acf-table > tbody > tr > td:not(.ui-sortable-handle) {
     border-bottom-width: 10px !important;
     border-color: #f4f4f4 !important;
+
+    .acf-table > tbody > tr > td:not(.ui-sortable-handle) {
+      border-bottom-width: 1px !important;
+      border-color: #ccd0d4 !important;
+    }
+
   }
 
   .acf-field-repeater-builder-toggle, .acf-field-repeater-builder-custom-settings-toggle {
@@ -97,5 +140,19 @@
 .interface-interface-skeleton__content {
   .postbox-container {
     background-color: #f6f6f6 !important;
+  }
+}
+
+.acf-tooltip {
+  a[data-event="cancel"] {
+    display: inline-flex;
+    color: #00a6ea;
+
+    &:before {
+      content: '|';
+      margin-right: 5px;
+      margin-left: 2px;
+      color: white;
+    }
   }
 }

@@ -216,6 +216,8 @@ final class ACF_Builder
 
                         $field_builder_section_hero_main_headline = self::get_sub_field('field_builder_section_hero_main_headline');
 
+                        $field_builder_section_hero_logotype_image = self::get_sub_field('field_builder_section_hero_logotype_image');
+
                         $field_builder_section_hero_main_headline_color = self::get_sub_field('field_builder_section_hero_main_headline_color');
 
                         $field_builder_section_hero_sub_headline = self::get_sub_field('field_builder_section_hero_sub_headline');
@@ -266,6 +268,17 @@ final class ACF_Builder
 
                                 <span class="overlay"
                                       style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_hero_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_hero_bg_gradient_color_2); ?>);"></span>
+
+                            <?php endif; ?>
+
+                            <?php if (!empty($field_builder_section_hero_logotype_image)): ?>
+
+                                <div class="hero-logotype neo-container">
+
+                                    <img src="<?php echo esc_url(wp_get_attachment_image_url($field_builder_section_hero_logotype_image)); ?>"
+                                         alt="<?php echo esc_attr('Logotype'); ?>">
+
+                                </div>
 
                             <?php endif; ?>
 
@@ -1365,7 +1378,7 @@ final class ACF_Builder
                         'layout' => 'horizontal',
                         'return_format' => 'value',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1386,7 +1399,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '66.6666%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1414,7 +1427,7 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1438,7 +1451,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_hero_bg_image_overlay',
                         'instructions' => esc_html('Select the depth of Overlay'),
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'type' => 'range',
@@ -1469,7 +1482,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1495,7 +1508,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1531,6 +1544,20 @@ final class ACF_Builder
                         ),
                         'placement' => 'top',
                         'endpoint' => 0,
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_logotype_image',
+                        'label' => esc_html('Logotype Image'),
+                        'name' => 'option_builder_section_hero_logotype_image',
+                        'instructions' => esc_html('Select the Logotype Image'),
+                        'type' => 'image',
+                        'return_format' => 'id',
+                        'preview_size' => 'medium',
+                        'library' => 'all',
+                        'wrapper' => array(
+                            'width' => '100%',
+                            'class' => '',
+                        ),
                     ),
                     array(
                         'key' => 'field_builder_section_hero_main_headline',
@@ -1684,7 +1711,7 @@ final class ACF_Builder
                         'instructions' => esc_html('Add Propositions'),
                         'min' => 1,
                         'max' => 0,
-                        'layout' => 'row',
+                        'layout' => 'block',
                         'button_label' => esc_html('Add new Proposition'),
                         'conditional_logic' => array(
                             array(
@@ -1995,7 +2022,7 @@ final class ACF_Builder
                         'layout' => 'horizontal',
                         'return_format' => 'value',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2016,7 +2043,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '66.6666%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2044,7 +2071,7 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2068,7 +2095,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_buy_now_bg_image_overlay',
                         'instructions' => esc_html('Select the depth of Overlay'),
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'type' => 'range',
@@ -2099,7 +2126,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2125,7 +2152,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2371,7 +2398,7 @@ final class ACF_Builder
                         'layout' => 'horizontal',
                         'return_format' => 'value',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2392,7 +2419,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '66.6666%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2420,7 +2447,7 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2444,7 +2471,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_gallery_bg_image_overlay',
                         'instructions' => esc_html('Select the depth of Overlay'),
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'type' => 'range',
@@ -2475,7 +2502,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2483,7 +2510,7 @@ final class ACF_Builder
                                 array(
                                     'field' => 'field_builder_section_gallery_type_of_bg',
                                     'operator' => '==',
-                                    'value' => 'image',
+                                    'value' => 'gradient',
                                 ),
                                 array(
                                     'field' => 'field_builder_section_type',
@@ -2501,7 +2528,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2618,7 +2645,7 @@ final class ACF_Builder
                         'layout' => 'horizontal',
                         'return_format' => 'value',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2639,7 +2666,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '66.6666%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2667,7 +2694,7 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2691,7 +2718,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_faqs_bg_image_overlay',
                         'instructions' => esc_html('Select the depth of Overlay'),
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'type' => 'range',
@@ -2722,7 +2749,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2730,7 +2757,7 @@ final class ACF_Builder
                                 array(
                                     'field' => 'field_builder_section_faqs_type_of_bg',
                                     'operator' => '==',
-                                    'value' => 'image',
+                                    'value' => 'gradient',
                                 ),
                                 array(
                                     'field' => 'field_builder_section_type',
@@ -2748,7 +2775,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -2953,7 +2980,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '66.66666%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3010,7 +3037,7 @@ final class ACF_Builder
                         'step' => '0.1',
                         'default_value' => '0.5',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3029,14 +3056,14 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_rich_text_row_gradient_color_1',
+                        'key' => 'field_builder_section_rich_text_row_bg_gradient_color_1',
                         'label' => esc_html('Gradient Color 1'),
-                        'name' => 'option_builder_section_rich_text_row_gradient_color_1',
+                        'name' => 'option_builder_section_rich_text_row_bg_gradient_color_1',
                         'instructions' => esc_html('Select the Section Gradient Color 1'),
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3044,7 +3071,7 @@ final class ACF_Builder
                                 array(
                                     'field' => 'field_builder_section_rich_text_row_type_of_bg',
                                     'operator' => '==',
-                                    'value' => 'image',
+                                    'value' => 'gradient',
                                 ),
                                 array(
                                     'field' => 'field_builder_section_type',
@@ -3055,14 +3082,14 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_rich_text_row_gradient_color_2',
+                        'key' => 'field_builder_section_rich_text_row_bg_gradient_color_2',
                         'label' => esc_html('Gradient Color 2'),
-                        'name' => 'option_builder_section_rich_text_row_gradient_color_2',
+                        'name' => 'option_builder_section_rich_text_row_bg_gradient_color_2',
                         'instructions' => esc_html('Select the Section Gradient Color 2'),
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '25%',
+                            'width' => '33.3333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3070,7 +3097,7 @@ final class ACF_Builder
                                 array(
                                     'field' => 'field_builder_section_rich_text_row_type_of_bg',
                                     'operator' => '==',
-                                    'value' => 'image',
+                                    'value' => 'gradient',
                                 ),
                                 array(
                                     'field' => 'field_builder_section_type',

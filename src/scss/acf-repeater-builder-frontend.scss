@@ -205,6 +205,19 @@ $xxxl: 1601px;
         padding: 75px 0;
       }
 
+      .hero-logotype {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        img {
+          max-width: 150px;
+          width: 100%;
+          height: auto;
+        }
+      }
+
       .inner-wrapper {
         display: flex;
         flex-direction: row;

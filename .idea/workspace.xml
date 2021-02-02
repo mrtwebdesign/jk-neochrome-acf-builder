@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69add206-d0ac-4826-8990-4f0475965bd3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder.css" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,128 +31,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="905" lean-forward="true" selection-start-line="905" selection-end-line="905" />
+            <state relative-caret-position="558">
+              <caret line="275" column="57" selection-start-line="275" selection-start-column="44" selection-end-line="275" selection-end-column="57" />
               <folding>
-                <element signature="e#7717#7803#0#HTML" expanded="true" />
-                <element signature="e#8638#8728#0#HTML" expanded="true" />
-                <element signature="e#9568#9752#0#HTML" expanded="true" />
-                <element signature="e#9784#9871#0#HTML" expanded="true" />
-                <element signature="e#17809#18086#0#HTML" expanded="true" />
-                <element signature="e#24600#24796#0#HTML" expanded="true" />
-                <element signature="e#28280#28476#0#HTML" expanded="true" />
-                <element signature="e#35312#35502#0#HTML" expanded="true" />
-                <element signature="e#33145#33165#0#HTML" expanded="true" />
-                <element signature="e#33688#33800#0#HTML" expanded="true" />
-                <element signature="e#32933#33635#0#PHP" />
+                <element signature="e#17138#17506#0#HTML" expanded="true" />
+                <element signature="e#36493#36701#0#HTML" expanded="true" />
                 <element signature="n#theme_options#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#init#0;n#ACF_Builder#0;n#!!top" />
-                <element signature="e#54455#55071#1#PHP" />
-                <element signature="e#55107#56087#1#PHP" />
-                <element signature="e#56159#56986#1#PHP" />
-                <element signature="e#57966#59095#1#PHP" />
-                <element signature="e#59164#60025#1#PHP" />
-                <element signature="e#60047#61424#1#PHP" />
-                <element signature="e#61446#62731#1#PHP" />
-                <element signature="e#62753#64114#1#PHP" />
-                <element signature="e#65565#66433#1#PHP" />
-                <element signature="e#66455#67478#1#PHP" />
-                <element signature="e#67500#68537#1#PHP" />
-                <element signature="e#68559#69572#1#PHP" />
-                <element signature="e#69594#70627#1#PHP" />
-                <element signature="e#70649#71692#1#PHP" />
-                <element signature="e#71714#72771#1#PHP" />
-                <element signature="e#72793#73660#1#PHP" />
-                <element signature="e#73682#75316#1#PHP" />
-                <element signature="e#75340#76974#1#PHP" />
-                <element signature="e#75338#76209#1#PHP" />
-                <element signature="e#77548#78694#1#PHP" />
-                <element signature="e#76231#77409#1#PHP" />
-                <element signature="e#77431#78907#1#PHP" />
-                <element signature="e#78929#80262#1#PHP" />
-                <element signature="e#80284#81631#1#PHP" />
-                <element signature="e#81653#83016#1#PHP" />
-                <element signature="e#83038#84415#1#PHP" />
-                <element signature="e#84437#85594#1#PHP" />
-                <element signature="e#85794#86677#1#PHP" />
-                <element signature="e#86699#88099#1#PHP" />
-                <element signature="e#88121#89432#1#PHP" />
-                <element signature="e#89454#90841#1#PHP" />
-                <element signature="e#90863#92296#1#PHP" />
-                <element signature="e#98981#100291#1#PHP" />
-                <element signature="e#100313#101623#1#PHP" />
-                <element signature="e#92318#93208#1#PHP" />
-                <element signature="e#93230#94105#1#PHP" />
-                <element signature="e#94127#95187#1#PHP" />
-                <element signature="e#95209#96277#1#PHP" />
-                <element signature="e#96299#97375#1#PHP" />
-                <element signature="e#97397#102471#1#PHP" />
-                <element signature="e#102674#103543#1#PHP" />
-                <element signature="e#103565#104951#1#PHP" />
-                <element signature="e#104973#106270#1#PHP" />
-                <element signature="e#106292#107665#1#PHP" />
-                <element signature="e#107687#109106#1#PHP" />
-                <element signature="e#118492#119822#1#PHP" />
-                <element signature="e#119844#121174#1#PHP" />
-                <element signature="e#109128#110004#1#PHP" />
-                <element signature="e#110026#110887#1#PHP" />
-                <element signature="e#110909#111946#1#PHP" />
-                <element signature="e#112130#112990#1#PHP" />
-                <element signature="e#113012#114389#1#PHP" />
-                <element signature="e#114411#115696#1#PHP" />
-                <element signature="e#115718#117079#1#PHP" />
-                <element signature="e#119419#120431#1#PHP" />
-                <element signature="e#120453#121490#1#PHP" />
-                <element signature="e#121512#125203#1#PHP" />
-                <element signature="e#125393#126407#1#PHP" />
-                <element signature="e#126429#127839#1#PHP" />
-                <element signature="e#127861#129188#1#PHP" />
-                <element signature="e#129210#130613#1#PHP" />
-                <element signature="e#146777#148077#1#PHP" />
-                <element signature="e#148099#149399#1#PHP" />
-                <element signature="e#132100#132995#1#PHP" />
-                <element signature="e#135114#136143#1#PHP" />
-                <element signature="e#136165#137452#1#PHP" />
-                <element signature="e#137674#138721#1#PHP" />
-                <element signature="e#138757#140051#1#PHP" />
-                <element signature="e#140087#141381#1#PHP" />
-                <element signature="e#141417#142706#1#PHP" />
-                <element signature="e#142769#143807#1#PHP" />
-                <element signature="e#143843#144993#1#PHP" />
-                <element signature="e#145029#146163#1#PHP" />
-                <element signature="e#146199#147341#1#PHP" />
-                <element signature="e#147377#148547#1#PHP" />
-                <element signature="e#148622#149696#1#PHP" />
-                <element signature="e#149732#151011#1#PHP" />
-                <element signature="e#151047#152347#1#PHP" />
-                <element signature="e#152383#153683#1#PHP" />
-                <element signature="e#153719#155137#1#PHP" />
-                <element signature="e#155173#156433#1#PHP" />
-                <element signature="e#156469#157735#1#PHP" />
-                <element signature="e#157771#159190#1#PHP" />
-                <element signature="e#159226#160506#1#PHP" />
-                <element signature="e#160542#161823#1#PHP" />
-                <element signature="e#161899#162976#1#PHP" />
-                <element signature="e#163012#164306#1#PHP" />
-                <element signature="e#164342#165657#1#PHP" />
-                <element signature="e#165693#167008#1#PHP" />
-                <element signature="e#167044#168338#1#PHP" />
-                <element signature="e#168374#169689#1#PHP" />
-                <element signature="e#169725#171040#1#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+              <folding>
+                <element signature="e#37#2915#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../tf_wp_quoter/wp-config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="93">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="277" column="9" selection-start-line="277" selection-start-column="9" selection-end-line="277" selection-end-column="9" />
+            <state relative-caret-position="364">
+              <caret line="214" column="27" lean-forward="true" selection-start-line="214" selection-start-column="27" selection-end-line="214" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -158,29 +81,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>default he</find>
-      <find>wrao</find>
-      <find>background St</find>
-      <find>field_builder_section_hero_propositions_offset</find>
-      <find>$field_builder_section_hero_propositions_color</find>
-      <find>propositions-list</find>
-      <find>max-w</find>
-      <find>field_builder_section_hero_propositions_max_width</find>
-      <find>$field_builder_section_hero_propositions_max_width</find>
-      <find>max_w</find>
-      <find>repea</find>
-      <find>propositions</find>
-      <find>END</find>
-      <find>END</find>
-      <find>field_builder_section_hero_propositions</find>
       <find>sub_fields</find>
       <find>max_widt</find>
       <find>max_width</find>
       <find>haver</find>
-      <find>field_builder_section_rich_text_row_bg_image_overlay</find>
       <find>field_builder_section_rich_text_row_columns</find>
       <find>max_wi</find>
-      <find>rich</find>
       <find>logoty</find>
       <find>field_footer_company_logo</find>
       <find>field_footer_company_n</find>
@@ -188,9 +94,27 @@
       <find>overla</find>
       <find>field_builder_section_hero_bg_image_overlay</find>
       <find>image_overlay</find>
+      <find>row</find>
+      <find>rich</find>
+      <find>gradient_color_1</find>
+      <find>bg_st</find>
+      <find>field_builder_section_buy_now_type_of_bg</find>
+      <find>type_of_bg</find>
+      <find>'66%'</find>
+      <find>acf-row-handle</find>
+      <find>propositions</find>
+      <find>rich-</find>
+      <find>field_builder_section_rich_text_row_bg_gradient_color_1</find>
+      <find>field_builder_section_rich_text_row_bg_image_overlay</find>
+      <find>image</find>
+      <find>hero</find>
+      <find>field_builder_section_hero_logotype_image</find>
+      <find>hero_logotype_image</find>
+      <find>wp_Ge</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>'66.6666%'</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -205,9 +129,10 @@
         <option value="$PROJECT_DIR$/themes/astra/modules/post-grid/includes/post-grid.php" />
         <option value="$PROJECT_DIR$/themes/astra/fl-builder/modules/post-grid/post-grid.php" />
         <option value="$PROJECT_DIR$/themes/astra/fl-builder/modules/post-grid/includes/post-grid.php" />
+        <option value="$PROJECT_DIR$/../../tf_wp_quoter/wp-config.php" />
         <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" />
-        <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" />
         <option value="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" />
+        <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" />
       </list>
     </option>
   </component>
@@ -307,18 +232,19 @@
       <workItem from="1611767635257" duration="2913000" />
       <workItem from="1611794538292" duration="4269000" />
       <workItem from="1611865548788" duration="7653000" />
-      <workItem from="1612106543421" duration="12392000" />
+      <workItem from="1612106543421" duration="12412000" />
+      <workItem from="1612214414222" duration="6271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27227000" />
+    <option name="totallyTimeSpent" value="33518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.262215" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21742672" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -384,132 +310,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
+    <entry file="file://$PROJECT_DIR$/../../tf_wp_quoter/wp-config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="277" column="9" selection-start-line="277" selection-start-column="9" selection-end-line="277" selection-end-column="9" />
+        <state relative-caret-position="93">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        <state relative-caret-position="310">
+          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+          <folding>
+            <element signature="e#37#2915#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="905" lean-forward="true" selection-start-line="905" selection-end-line="905" />
+        <state relative-caret-position="558">
+          <caret line="275" column="57" selection-start-line="275" selection-start-column="44" selection-end-line="275" selection-end-column="57" />
           <folding>
-            <element signature="e#7717#7803#0#HTML" expanded="true" />
-            <element signature="e#8638#8728#0#HTML" expanded="true" />
-            <element signature="e#9568#9752#0#HTML" expanded="true" />
-            <element signature="e#9784#9871#0#HTML" expanded="true" />
-            <element signature="e#17809#18086#0#HTML" expanded="true" />
-            <element signature="e#24600#24796#0#HTML" expanded="true" />
-            <element signature="e#28280#28476#0#HTML" expanded="true" />
-            <element signature="e#35312#35502#0#HTML" expanded="true" />
-            <element signature="e#33145#33165#0#HTML" expanded="true" />
-            <element signature="e#33688#33800#0#HTML" expanded="true" />
-            <element signature="e#32933#33635#0#PHP" />
+            <element signature="e#17138#17506#0#HTML" expanded="true" />
+            <element signature="e#36493#36701#0#HTML" expanded="true" />
             <element signature="n#theme_options#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#init#0;n#ACF_Builder#0;n#!!top" />
-            <element signature="e#54455#55071#1#PHP" />
-            <element signature="e#55107#56087#1#PHP" />
-            <element signature="e#56159#56986#1#PHP" />
-            <element signature="e#57966#59095#1#PHP" />
-            <element signature="e#59164#60025#1#PHP" />
-            <element signature="e#60047#61424#1#PHP" />
-            <element signature="e#61446#62731#1#PHP" />
-            <element signature="e#62753#64114#1#PHP" />
-            <element signature="e#65565#66433#1#PHP" />
-            <element signature="e#66455#67478#1#PHP" />
-            <element signature="e#67500#68537#1#PHP" />
-            <element signature="e#68559#69572#1#PHP" />
-            <element signature="e#69594#70627#1#PHP" />
-            <element signature="e#70649#71692#1#PHP" />
-            <element signature="e#71714#72771#1#PHP" />
-            <element signature="e#72793#73660#1#PHP" />
-            <element signature="e#73682#75316#1#PHP" />
-            <element signature="e#75340#76974#1#PHP" />
-            <element signature="e#75338#76209#1#PHP" />
-            <element signature="e#77548#78694#1#PHP" />
-            <element signature="e#76231#77409#1#PHP" />
-            <element signature="e#77431#78907#1#PHP" />
-            <element signature="e#78929#80262#1#PHP" />
-            <element signature="e#80284#81631#1#PHP" />
-            <element signature="e#81653#83016#1#PHP" />
-            <element signature="e#83038#84415#1#PHP" />
-            <element signature="e#84437#85594#1#PHP" />
-            <element signature="e#85794#86677#1#PHP" />
-            <element signature="e#86699#88099#1#PHP" />
-            <element signature="e#88121#89432#1#PHP" />
-            <element signature="e#89454#90841#1#PHP" />
-            <element signature="e#90863#92296#1#PHP" />
-            <element signature="e#98981#100291#1#PHP" />
-            <element signature="e#100313#101623#1#PHP" />
-            <element signature="e#92318#93208#1#PHP" />
-            <element signature="e#93230#94105#1#PHP" />
-            <element signature="e#94127#95187#1#PHP" />
-            <element signature="e#95209#96277#1#PHP" />
-            <element signature="e#96299#97375#1#PHP" />
-            <element signature="e#97397#102471#1#PHP" />
-            <element signature="e#102674#103543#1#PHP" />
-            <element signature="e#103565#104951#1#PHP" />
-            <element signature="e#104973#106270#1#PHP" />
-            <element signature="e#106292#107665#1#PHP" />
-            <element signature="e#107687#109106#1#PHP" />
-            <element signature="e#118492#119822#1#PHP" />
-            <element signature="e#119844#121174#1#PHP" />
-            <element signature="e#109128#110004#1#PHP" />
-            <element signature="e#110026#110887#1#PHP" />
-            <element signature="e#110909#111946#1#PHP" />
-            <element signature="e#112130#112990#1#PHP" />
-            <element signature="e#113012#114389#1#PHP" />
-            <element signature="e#114411#115696#1#PHP" />
-            <element signature="e#115718#117079#1#PHP" />
-            <element signature="e#119419#120431#1#PHP" />
-            <element signature="e#120453#121490#1#PHP" />
-            <element signature="e#121512#125203#1#PHP" />
-            <element signature="e#125393#126407#1#PHP" />
-            <element signature="e#126429#127839#1#PHP" />
-            <element signature="e#127861#129188#1#PHP" />
-            <element signature="e#129210#130613#1#PHP" />
-            <element signature="e#146777#148077#1#PHP" />
-            <element signature="e#148099#149399#1#PHP" />
-            <element signature="e#132100#132995#1#PHP" />
-            <element signature="e#135114#136143#1#PHP" />
-            <element signature="e#136165#137452#1#PHP" />
-            <element signature="e#137674#138721#1#PHP" />
-            <element signature="e#138757#140051#1#PHP" />
-            <element signature="e#140087#141381#1#PHP" />
-            <element signature="e#141417#142706#1#PHP" />
-            <element signature="e#142769#143807#1#PHP" />
-            <element signature="e#143843#144993#1#PHP" />
-            <element signature="e#145029#146163#1#PHP" />
-            <element signature="e#146199#147341#1#PHP" />
-            <element signature="e#147377#148547#1#PHP" />
-            <element signature="e#148622#149696#1#PHP" />
-            <element signature="e#149732#151011#1#PHP" />
-            <element signature="e#151047#152347#1#PHP" />
-            <element signature="e#152383#153683#1#PHP" />
-            <element signature="e#153719#155137#1#PHP" />
-            <element signature="e#155173#156433#1#PHP" />
-            <element signature="e#156469#157735#1#PHP" />
-            <element signature="e#157771#159190#1#PHP" />
-            <element signature="e#159226#160506#1#PHP" />
-            <element signature="e#160542#161823#1#PHP" />
-            <element signature="e#161899#162976#1#PHP" />
-            <element signature="e#163012#164306#1#PHP" />
-            <element signature="e#164342#165657#1#PHP" />
-            <element signature="e#165693#167008#1#PHP" />
-            <element signature="e#167044#168338#1#PHP" />
-            <element signature="e#168374#169689#1#PHP" />
-            <element signature="e#169725#171040#1#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="214" column="27" lean-forward="true" selection-start-line="214" selection-start-column="27" selection-end-line="214" selection-end-column="27" />
         </state>
       </provider>
     </entry>
