@@ -7,17 +7,17 @@
 
   .acf-row-handle {
     .acf-icon {
-      display: flex !important;
+      display: flex;
       width: 20px;
       height: 20px;
       align-items: center;
       justify-content: center;
       margin: -10px 0 0 -2px;
       transition: all .3s ease-in-out;
-      opacity: 0.7;
+      opacity: 1;
 
       &:hover {
-        opacity: 1;
+        opacity: 0.7;
       }
 
       &.-plus {
@@ -30,6 +30,7 @@
         background-color: yellowgreen !important;
         color: white !important;
         border: 1px solid yellowgreen !important;
+        display: none;
         top: 23px;
       }
 
@@ -37,7 +38,23 @@
         background-color: red !important;
         color: white !important;
         border: 1px solid red !important;
-        top: 46px !important;
+        top: 23px;
+      }
+    }
+  }
+
+  .acf-table {
+    .acf-table {
+      .acf-row-handle {
+        .acf-icon {
+          &.-duplicate {
+            display: flex !important;
+          }
+
+          &.-minus {
+            top: 46px!important;
+          }
+        }
       }
     }
   }
@@ -47,7 +64,7 @@
     border-color: #f4f4f4 !important;
 
     .acf-table > tbody > tr > td:not(.ui-sortable-handle) {
-      border-bottom-width: 1px !important;
+      border-bottom: unset !important;
       border-color: #ccd0d4 !important;
     }
 

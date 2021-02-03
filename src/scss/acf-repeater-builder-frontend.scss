@@ -329,9 +329,11 @@ $xxxl: 1601px;
                   border: 1px solid rgba(152, 152, 152, 0.3) !important;
                   background-color: transparent !important;
                   width: 100% !important;
+                  color: #666 !important;
 
                   &:focus {
                     outline: none !important;
+                    color: #666 !important;
                     border: 1px solid var(--field-builder-default-button-bg-color) !important;
                   }
                 }
@@ -366,24 +368,35 @@ $xxxl: 1601px;
             }
 
             .box-inner {
-              padding: 30px;
               background-color: #ffffff;
               box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
-              .box-title {
-                margin-bottom: 15px !important;
+              .box-header {
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 275px;
               }
 
-              .box-content {
-                margin-bottom: 25px !important;
-                font-size: 16px !important;
-              }
+              .box-body {
+                padding: 30px;
 
-              .button-wrapper {
-                display: flex;
+                .box-title {
+                  margin-bottom: 15px !important;
+                }
 
-                .neo-button {
+                .box-content {
+                  margin-bottom: 25px !important;
+                  font-size: 16px !important;
+                }
 
+                .button-wrapper {
+                  display: flex;
+
+                  .neo-button {
+
+                  }
                 }
               }
             }
@@ -399,6 +412,10 @@ $xxxl: 1601px;
         display: flex;
         margin: -15px;
         flex-wrap: wrap;
+
+        .gallery-item:last-child {
+          margin-bottom: 0 !important;
+        }
 
         .gallery-item {
           width: 33.33333%;
@@ -496,16 +513,18 @@ $xxxl: 1601px;
 
           .category-toggle {
             &:after {
-              content: '▴';
+              content: '\f106';
+              font-family: "Font Awesome 5 Free";
               display: flex;
               position: absolute;
               right: 25px;
               line-height: 1;
               top: 0;
-              font-size: 24px;
               height: 66px;
+              font-size: 16px;
+              color: #000;
               align-items: center;
-              color: #000000;
+              transition: all .3s ease-in-out;
               opacity: 0.8;
               font-weight: 900;
               z-index: 10;
@@ -596,10 +615,16 @@ $xxxl: 1601px;
         flex-wrap: nowrap;
         margin: -15px;
         margin-bottom: 30px !important;
+        @media(max-width: $lg) {
+          max-width: 100% !important;
+        }
 
         .column {
           padding: 15px;
           width: 100%;
+          @media(max-width: $lg) {
+            max-width: 100% !important;
+          }
 
           ul, ol {
             margin: 20px 0 20px 20px !important;;
