@@ -32,6 +32,8 @@ final class ACF_Builder
 
         add_action('admin_head', [$this, 'enqueue_admin_styles']);
 
+        add_action('admin_head', [$this, 'enqueue_admin_scripts']);
+
         add_action('wp_enqueue_scripts', [$this, 'enqueue_styles']);
 
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
@@ -172,6 +174,17 @@ final class ACF_Builder
 
     }
 
+    public function enqueue_admin_scripts()
+    {
+
+        if (!wp_script_is('acf-builder-admin-js')):
+
+            wp_enqueue_script('acf-builder-admin-js', CORE_PLUGIN_URL . '/inc/assets/js/acf_repeater_builder.js', array('jquery', 'imagesloaded'));
+
+        endif;
+
+    }
+
     public static function instance()
     {
 
@@ -182,882 +195,6 @@ final class ACF_Builder
         endif;
 
         return self::$_instance;
-
-    }
-
-    public static function single_landing_template()
-    {
-
-        ?>
-
-        <div class="neo-landing-wrapper">
-
-            <?php
-
-            if (have_rows('field_repeater_builder')):
-
-                while (have_rows('field_repeater_builder')) : the_row();
-
-                    $section_type = self::get_sub_field('field_builder_section_type');
-
-                    if ($section_type === 'hero-section'):
-
-                        $field_builder_section_hero_type_of_bg = self::get_sub_field('field_builder_section_hero_type_of_bg');
-
-                        $field_builder_section_hero_bg_color = self::get_sub_field('field_builder_section_hero_bg_color');
-
-                        $field_builder_section_hero_bg_image = self::get_sub_field('field_builder_section_hero_bg_image');
-
-                        $field_builder_section_hero_bg_image_overlay = self::get_sub_field('field_builder_section_hero_bg_image_overlay');
-
-                        $field_builder_section_hero_bg_gradient_color_1 = self::get_sub_field('field_builder_section_hero_bg_gradient_color_1');
-
-                        $field_builder_section_hero_bg_gradient_color_2 = self::get_sub_field('field_builder_section_hero_bg_gradient_color_2');
-
-                        $field_builder_section_hero_main_headline = self::get_sub_field('field_builder_section_hero_main_headline');
-
-                        $field_builder_section_hero_logotype_image = self::get_sub_field('field_builder_section_hero_logotype_image');
-
-                        $field_builder_section_hero_text_shadows = self::get_sub_field('field_builder_section_hero_text_shadows');
-
-                        $field_builder_section_hero_main_headline_color = self::get_sub_field('field_builder_section_hero_main_headline_color');
-
-                        $field_builder_section_hero_sub_headline = self::get_sub_field('field_builder_section_hero_sub_headline');
-
-                        $field_builder_section_hero_sub_headline_color = self::get_sub_field('field_builder_section_hero_sub_headline_color');
-
-                        $field_builder_section_hero_secondary_headline = self::get_sub_field('field_builder_section_hero_secondary_headline');
-
-                        $field_builder_section_hero_secondary_headline_color = self::get_sub_field('field_builder_section_hero_secondary_headline_color');
-
-                        $field_builder_section_hero_more_info_box_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_toggle');
-
-                        $field_builder_section_hero_more_info_box_bg_color = self::get_sub_field('field_builder_section_hero_more_info_box_bg_color');
-
-                        $field_builder_section_hero_more_info_headline = self::get_sub_field('field_builder_section_hero_more_info_headline');
-
-                        $field_builder_section_hero_more_info_headline_color = self::get_sub_field('field_builder_section_hero_more_info_headline_color');
-
-                        $field_builder_section_hero_propositions_color = self::get_sub_field('field_builder_section_hero_propositions_color');
-
-                        $field_builder_section_hero_propositions_offset = self::get_sub_field('field_builder_section_hero_propositions_offset');
-
-                        $field_builder_section_hero_propositions_max_width = self::get_sub_field('field_builder_section_hero_propositions_max_width');
-
-                        $field_builder_section_hero_more_info_secondary_headline = self::get_sub_field('field_builder_section_hero_more_info_secondary_headline');
-
-                        $field_builder_section_hero_more_info_secondary_headline_color = self::get_sub_field('field_builder_section_hero_more_info_secondary_headline_color');
-
-                        $field_builder_section_hero_more_info_box_phone_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_phone_toggle');
-
-                        $field_builder_section_hero_more_info_button_label = self::get_sub_field('field_builder_section_hero_more_info_button_label');
-
-                        $field_builder_section_hero_more_info_button_bg = self::get_sub_field('field_builder_section_hero_more_info_button_bg');
-
-                        $field_builder_section_hero_more_info_button_color = self::get_sub_field('field_builder_section_hero_more_info_button_color');
-
-                        ?>
-
-                        <section class="neo-section hero-section <?php if(!empty($field_builder_section_hero_text_shadows)): ?>text-shadows<?php endif; ?>"
-                                 style="<?php if ($field_builder_section_hero_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_hero_bg_color); ?><?php elseif ($field_builder_section_hero_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_hero_bg_image,'full')); ?>);<?php endif; ?>">
-
-                            <?php if ($field_builder_section_hero_type_of_bg === 'image'): ?>
-
-                                <span class="overlay"
-                                      style="opacity: <?php echo esc_attr($field_builder_section_hero_bg_image_overlay); ?>"></span>
-
-                            <?php endif; ?>
-
-                            <?php if ($field_builder_section_hero_type_of_bg === 'gradient'): ?>
-
-                                <span class="overlay"
-                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_hero_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_hero_bg_gradient_color_2); ?>);"></span>
-
-                            <?php endif; ?>
-
-                            <?php if (!empty($field_builder_section_hero_logotype_image)): ?>
-
-                                <div class="hero-logotype neo-container">
-
-                                    <img src="<?php echo esc_url(wp_get_attachment_image_url($field_builder_section_hero_logotype_image,'full')); ?>"
-                                         alt="<?php echo esc_attr('Logotype'); ?>">
-
-                                </div>
-
-                            <?php endif; ?>
-
-                            <div class="neo-container inner-wrapper">
-
-                                <div class="left-side">
-
-                                    <?php if (!empty($field_builder_section_hero_sub_headline)): ?>
-
-                                        <p class="sub-headline"
-                                           style="color: <?php echo esc_attr($field_builder_section_hero_sub_headline_color); ?>;">
-
-                                            <?php echo esc_html($field_builder_section_hero_sub_headline); ?>
-
-                                        </p>
-
-                                    <?php endif; ?>
-
-                                    <?php if (!empty($field_builder_section_hero_main_headline)): ?>
-
-                                        <h1 class="hero-main-heading"
-                                            style="color: <?php echo esc_attr($field_builder_section_hero_main_headline_color); ?>;">
-
-                                            <?php echo esc_html($field_builder_section_hero_main_headline); ?>
-
-                                        </h1>
-
-                                    <?php endif; ?>
-
-                                    <?php
-
-                                    if (have_rows('field_builder_section_hero_propositions')): ?>
-
-
-                                        <ul class="propositions-list"
-                                            style="margin-left: <?php echo esc_attr($field_builder_section_hero_propositions_offset); ?>px; max-width: <?php echo esc_attr($field_builder_section_hero_propositions_max_width); ?>%">
-
-                                            <?php
-
-                                            while (have_rows('field_builder_section_hero_propositions')) : the_row();
-
-                                                $field_builder_section_hero_proposition_title = self::get_sub_field('field_builder_section_hero_proposition_title');
-
-                                                if (!empty($field_builder_section_hero_proposition_title)):
-
-                                                    ?>
-
-                                                    <li style="color: <?php echo esc_attr($field_builder_section_hero_propositions_color); ?>;">
-
-                                                        <p class="proposition-title"
-                                                           style="color: <?php echo esc_attr($field_builder_section_hero_propositions_color); ?>;">
-
-                                                            <?php echo esc_html($field_builder_section_hero_proposition_title); ?>
-
-                                                        </p>
-
-                                                    </li>
-
-                                                <?php
-
-                                                endif;
-
-                                            endwhile; ?>
-
-                                        </ul>
-
-                                    <?php
-
-                                    endif;
-
-                                    ?>
-
-                                    <?php if (!empty($field_builder_section_hero_secondary_headline)): ?>
-
-                                        <p class="secondary-headline"
-                                           style="color: <?php echo esc_attr($field_builder_section_hero_secondary_headline_color); ?>;">
-
-                                            <?php echo esc_html($field_builder_section_hero_secondary_headline); ?>
-
-                                        </p>
-
-                                    <?php endif; ?>
-
-                                </div>
-
-                                <?php if ($field_builder_section_hero_more_info_box_toggle): ?>
-
-                                    <div class="right-side">
-
-                                        <div class="info-box-wrapper"
-                                             style="background-color:<?php echo esc_attr($field_builder_section_hero_more_info_box_bg_color); ?>">
-
-                                            <h2 class="info-box-title"
-                                                style="color: <?php echo esc_attr($field_builder_section_hero_more_info_headline_color); ?>;">
-
-                                                <?php echo esc_html($field_builder_section_hero_more_info_headline); ?>
-
-                                            </h2>
-
-                                            <p class="info-box-secondary-headline"
-                                               style="color: <?php echo esc_attr($field_builder_section_hero_more_info_secondary_headline_color); ?>;">
-
-                                                <?php echo esc_html($field_builder_section_hero_more_info_secondary_headline); ?>
-
-                                            </p>
-
-                                            <div class="form-wrapper">
-
-                                                <form class="hero-contact-form">
-
-                                                    <input type="name" class="input-field" name="name-field"
-                                                           placeholder="<?php echo esc_html('Name'); ?>">
-
-                                                    <input type="email" class="input-field" name="email-field"
-                                                           placeholder="<?php echo esc_html('Email'); ?>">
-
-                                                    <?php if ($field_builder_section_hero_more_info_box_phone_toggle): ?>
-
-                                                        <input type="text" class="input-field" name="phone-field"
-                                                               placeholder="<?php echo esc_html('Phone'); ?>">
-
-                                                    <?php endif; ?>
-
-                                                    <button class="submit-button"
-                                                            style="background-color: <?php echo esc_attr($field_builder_section_hero_more_info_button_bg); ?>; color: <?php echo esc_attr($field_builder_section_hero_more_info_button_color) ?>;">
-
-                                                        <?php echo esc_html($field_builder_section_hero_more_info_button_label); ?>
-
-                                                    </button>
-
-                                                </form>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                <?php endif; ?>
-
-                            </div>
-
-                        </section>
-
-                    <?php
-
-                    elseif ($section_type === 'buy-now-get-more-info-section'):
-
-                        $field_builder_section_buy_now_type_of_bg = self::get_sub_field('field_builder_section_buy_now_type_of_bg');
-
-                        $field_builder_section_buy_now_bg_color = self::get_sub_field('field_builder_section_buy_now_bg_color');
-
-                        $field_builder_section_buy_now_bg_image = self::get_sub_field('field_builder_section_buy_now_bg_image');
-
-                        $field_builder_section_buy_now_bg_image_overlay = self::get_sub_field('field_builder_section_buy_now_bg_image_overlay');
-
-                        $field_builder_section_buy_now_bg_gradient_color_1 = self::get_sub_field('field_builder_section_buy_now_gradient_color_1');
-
-                        $field_builder_section_buy_now_bg_gradient_color_2 = self::get_sub_field('field_builder_section_buy_now_gradient_color_2');
-
-                        $field_builder_section_buy_now_main_headline = self::get_sub_field('field_builder_section_buy_now_main_headline');
-
-                        $field_builder_section_buy_now_main_headline_color = self::get_sub_field('field_builder_section_buy_now_main_headline_color');
-
-                        $field_builder_section_buy_now_product_boxes_title_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_title_color');
-
-                        $field_builder_section_buy_now_product_boxes_content_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_content_color');
-
-                        ?>
-
-                        <section class="neo-section buy-now-get-more-info-section"
-                                 style="<?php if ($field_builder_section_buy_now_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_buy_now_bg_color); ?><?php elseif ($field_builder_section_buy_now_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_buy_now_bg_image,'full')); ?>);<?php endif; ?>">
-
-                            <?php if ($field_builder_section_buy_now_type_of_bg === 'image'): ?>
-
-                                <span class="overlay"
-                                      style="opacity: <?php echo esc_attr($field_builder_section_buy_now_bg_image_overlay); ?>"></span>
-
-                            <?php endif; ?>
-
-                            <?php if ($field_builder_section_buy_now_type_of_bg === 'gradient'): ?>
-
-                                <span class="overlay"
-                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_buy_now_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_buy_now_bg_gradient_color_2); ?>);"></span>
-
-                            <?php endif; ?>
-
-                            <div class="neo-container inner-wrapper">
-
-                                <?php if (!empty($field_builder_section_buy_now_main_headline)): ?>
-
-                                    <h2 class="section-title"
-                                        style="color:<?php echo esc_attr($field_builder_section_buy_now_main_headline_color); ?>">
-
-                                        <?php echo esc_html($field_builder_section_buy_now_main_headline); ?>
-
-                                    </h2>
-
-                                <?php endif; ?>
-
-                                <?php if (have_rows('field_builder_section_buy_now_product_boxes')): ?>
-
-                                    <div class="boxes-list">
-
-                                        <?php
-
-                                        while (have_rows('field_builder_section_buy_now_product_boxes')) : the_row();
-
-                                            $field_builder_section_buy_now_product_boxes_title = self::get_sub_field('field_builder_section_buy_now_product_boxes_title');
-
-                                            $field_builder_section_buy_now_product_boxes_image = self::get_sub_field('field_builder_section_buy_now_product_boxes_image');
-
-                                            $field_builder_section_buy_now_product_boxes_content = self::get_sub_field('field_builder_section_buy_now_product_boxes_content');
-
-                                            $field_builder_section_buy_now_product_boxes_button_label = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_label');
-
-                                            $field_builder_section_buy_now_product_boxes_button_url = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_url');
-
-                                            $field_builder_section_buy_now_product_boxes_button_target = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_target');
-
-                                            ?>
-
-                                            <div class="box">
-
-                                                <div class="box-inner">
-
-                                                    <?php if (!empty($field_builder_section_buy_now_product_boxes_image)): ?>
-
-                                                        <div class="box-header"
-                                                             style="background-image: url(<?php echo esc_url(wp_get_attachment_image_url($field_builder_section_buy_now_product_boxes_image, 'full')); ?>)">
-
-                                                        </div>
-
-                                                    <?php endif; ?>
-
-                                                    <div class="box-body">
-
-                                                        <?php if (!empty($field_builder_section_buy_now_product_boxes_title)): ?>
-
-                                                            <h4 class="box-title"
-                                                                style="color:<?php echo esc_attr($field_builder_section_buy_now_product_boxes_title_color); ?>">
-
-                                                                <?php echo esc_html($field_builder_section_buy_now_product_boxes_title); ?>
-
-                                                            </h4>
-
-                                                        <?php endif; ?>
-
-                                                        <?php if (!empty($field_builder_section_buy_now_product_boxes_content)): ?>
-
-                                                            <p class="box-content"
-                                                               style="color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_content_color); ?>">
-
-                                                                <?php echo esc_html($field_builder_section_buy_now_product_boxes_content); ?>
-
-                                                            </p>
-
-                                                        <?php endif; ?>
-
-                                                        <?php if (!empty($field_builder_section_buy_now_product_boxes_button_label)): ?>
-
-                                                            <div class="button-wrapper">
-
-                                                                <a class="neo-button"
-                                                                   href="<?php echo esc_url($field_builder_section_buy_now_product_boxes_button_url); ?>"
-                                                                   target="<?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_target); ?>">
-
-                                                                    <?php echo esc_html($field_builder_section_buy_now_product_boxes_button_label); ?>
-
-                                                                </a>
-
-                                                            </div>
-
-                                                        <?php endif; ?>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        <?php
-
-                                        endwhile; ?>
-
-                                    </div>
-
-                                <?php
-
-                                endif;
-
-                                ?>
-
-                            </div>
-
-                        </section>
-
-                    <?php
-
-                    elseif ($section_type === 'gallery-section'):
-
-                        $field_builder_section_gallery_main_headline = self::get_sub_field('field_builder_section_gallery_main_headline');
-
-                        $field_builder_section_gallery_type_of_bg = self::get_sub_field('field_builder_section_gallery_type_of_bg');
-
-                        $field_builder_section_gallery_bg_image_overlay = self::get_sub_field('field_builder_section_gallery_bg_image_overlay');
-
-                        $field_builder_section_gallery_bg_gradient_color_1 = self::get_sub_field('field_builder_section_gallery_gradient_color_1');
-
-                        $field_builder_section_gallery_bg_gradient_color_2 = self::get_sub_field('field_builder_section_gallery_gradient_color_2');
-
-                        $field_builder_section_gallery_bg_color = self::get_sub_field('field_builder_section_gallery_bg_color');
-
-                        $field_builder_section_gallery_bg_image = self::get_sub_field('field_builder_section_gallery_bg_image');
-
-                        $field_builder_section_gallery_gallery = self::get_sub_field('field_builder_section_gallery_gallery');
-
-                        ?>
-
-                        <section class="neo-section gallery-section"
-                                 style="<?php if ($field_builder_section_gallery_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_gallery_bg_color); ?><?php elseif ($field_builder_section_gallery_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_gallery_bg_image,'full')); ?>);<?php endif; ?>">
-
-                            <?php if ($field_builder_section_gallery_type_of_bg === 'image'): ?>
-
-                                <span class="overlay"
-                                      style="opacity: <?php echo esc_attr($field_builder_section_gallery_bg_image_overlay); ?>"></span>
-
-                            <?php endif; ?>
-
-                            <?php if ($field_builder_section_gallery_type_of_bg === 'gradient'): ?>
-
-                                <span class="overlay"
-                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_gallery_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_gallery_bg_gradient_color_2); ?>);"></span>
-
-                            <?php endif; ?>
-
-                            <div class="neo-container inner-wrapper">
-
-                                <?php if (!empty($field_builder_section_gallery_main_headline)): ?>
-
-                                    <h2 class="section-title">
-
-                                        <?php echo esc_html($field_builder_section_gallery_main_headline); ?>
-
-                                    </h2>
-
-                                <?php endif; ?>
-
-                                <?php if (!empty($field_builder_section_gallery_gallery)): ?>
-
-                                    <div class="gallery-wrapper">
-
-                                        <?php foreach ($field_builder_section_gallery_gallery as $gallery): ?>
-
-                                            <a class="gallery-item" data-fancybox="gallery"
-                                               href="<?php echo esc_url($gallery); ?>">
-
-                                                <div class="inner-item">
-
-                                                    <div class="image-wrapper"
-                                                         style="background-image: url('<?php echo esc_url($gallery); ?>')">
-
-                                                    </div>
-
-                                                </div>
-
-                                            </a>
-
-                                        <?php endforeach; ?>
-
-                                    </div>
-
-                                <?php endif; ?>
-
-                            </div>
-
-                        </section>
-
-                    <?php
-
-                    elseif ($section_type === 'faqs-section'):
-
-                        $field_builder_section_faqs_type_of_bg = self::get_sub_field('field_builder_section_faqs_type_of_bg');
-
-                        $field_builder_section_faqs_bg_color = self::get_sub_field('field_builder_section_faqs_bg_color');
-
-                        $field_builder_section_faqs_bg_image = self::get_sub_field('field_builder_section_faqs_bg_image');
-
-                        $field_builder_section_faqs_bg_image_overlay = self::get_sub_field('field_builder_section_faqs_bg_image_overlay');
-
-                        $field_builder_section_faqs_bg_gradient_color_1 = self::get_sub_field('field_builder_section_faqs_gradient_color_1');
-
-                        $field_builder_section_faqs_bg_gradient_color_2 = self::get_sub_field('field_builder_section_faqs_gradient_color_2');
-
-                        $field_builder_section_faqs_main_headline = self::get_sub_field('field_builder_section_faqs_main_headline');
-
-                        $field_builder_section_faqs_secondary_headline = self::get_sub_field('field_builder_section_faqs_secondary_headline');
-
-                        ?>
-
-                        <section class="neo-section faqs-section"
-                                 style="<?php if ($field_builder_section_faqs_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_faqs_bg_color); ?><?php elseif ($field_builder_section_faqs_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_faqs_bg_image,'full')); ?>);<?php endif; ?>">
-
-                            <?php if ($field_builder_section_faqs_type_of_bg === 'image'): ?>
-
-                                <span class="overlay"
-                                      style="opacity: <?php echo esc_attr($field_builder_section_faqs_bg_image_overlay); ?>"></span>
-
-                            <?php endif; ?>
-
-                            <?php if ($field_builder_section_faqs_type_of_bg === 'gradient'): ?>
-
-                                <span class="overlay"
-                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_faqs_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_faqs_bg_gradient_color_2); ?>);"></span>
-
-                            <?php endif; ?>
-
-                            <div class="neo-container inner-wrapper">
-
-                                <?php if (!empty($field_builder_section_faqs_main_headline)): ?>
-
-                                    <h2 class="section-title">
-
-                                        <?php echo esc_html($field_builder_section_faqs_main_headline); ?>
-
-                                    </h2>
-
-                                <?php endif; ?>
-
-                                <?php if (!empty($field_builder_section_faqs_secondary_headline)): ?>
-
-                                    <p class="section-subtitle">
-
-                                        <?php echo esc_html($field_builder_section_faqs_secondary_headline); ?>
-
-                                    </p>
-
-                                <?php endif; ?>
-
-                                <?php if (have_rows('field_builder_section_faqs_builder')): ?>
-
-                                    <ul class="faqs-accordion">
-                                        <?php while (have_rows('field_builder_section_faqs_builder')) : the_row(); ?>
-                                            <?php
-
-                                            $field_builder_section_faqs_builder_category_name = self::get_sub_field('field_builder_section_faqs_builder_category_name');
-
-                                            ?>
-
-                                            <li class="faq-item">
-
-                                                <a class="toggle category-toggle"
-                                                   href="#">
-
-                                                    <h6 class="category-name">
-
-                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_name); ?>
-
-                                                    </h6>
-
-                                                </a>
-
-                                                <?php if (have_rows('field_builder_section_faqs_builder_category_questions_answers')): ?>
-
-                                                    <ul class="inner">
-
-                                                        <?php while (have_rows('field_builder_section_faqs_builder_category_questions_answers')) : the_row(); ?>
-
-                                                            <li class="inner-faq-item">
-
-                                                                <?php
-
-                                                                $field_builder_section_faqs_builder_category_question = self::get_sub_field('field_builder_section_faqs_builder_category_question');
-
-                                                                $field_builder_section_faqs_builder_category_answer = self::get_sub_field('field_builder_section_faqs_builder_category_answer');
-
-                                                                ?>
-
-
-                                                                <a href="#" class="toggle answer-toggle">
-
-                                                                    <h6 class="question">
-
-                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_question); ?>
-
-                                                                    </h6>
-
-                                                                </a>
-
-                                                                <div class="inner">
-
-                                                                    <p class="answer">
-
-                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_answer); ?>
-
-                                                                    </p>
-
-                                                                </div>
-
-                                                            </li>
-
-                                                        <?php endwhile; ?>
-
-                                                    </ul>
-
-                                                <?php endif; ?>
-
-                                            </li>
-
-                                        <?php endwhile; ?>
-
-                                    </ul>
-
-                                <?php endif; ?>
-
-                            </div>
-
-                        </section>
-
-                    <?php
-
-                    elseif ($section_type === 'rich-text-row-section'):
-
-                        $field_builder_section_rich_text_row_type_of_bg = self::get_sub_field('field_builder_section_rich_text_row_type_of_bg');
-
-                        $field_builder_section_rich_text_row_bg_color = self::get_sub_field('field_builder_section_rich_text_row_bg_color');
-
-                        $field_builder_section_rich_text_row_bg_image = self::get_sub_field('field_builder_section_rich_text_row_bg_image');
-
-                        $field_builder_section_rich_text_row_bg_image_overlay = self::get_sub_field('field_builder_section_rich_text_row_bg_image_overlay');
-
-                        $field_builder_section_rich_text_row_bg_gradient_color_1 = self::get_sub_field('field_builder_section_rich_text_row_bg_gradient_color_1');
-
-                        $field_builder_section_rich_text_row_bg_gradient_color_2 = self::get_sub_field('field_builder_section_rich_text_row_bg_gradient_color_2');
-
-                        $field_builder_section_rich_text_row_max_width = self::get_sub_field('field_builder_section_rich_text_row_max_width');
-
-                        $field_builder_section_rich_text_row_button_label = self::get_sub_field('field_builder_section_rich_text_row_button_label');
-
-                        $field_builder_section_rich_text_row_button_url = self::get_sub_field('field_builder_section_rich_text_row_button_url');
-
-                        $field_builder_section_rich_text_row_button_target = self::get_sub_field('field_builder_section_rich_text_row_button_target');
-
-                        ?>
-
-                        <section class="neo-section rich-text-row-section"
-                                 style="<?php if ($field_builder_section_rich_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_rich_text_row_bg_color); ?><?php elseif ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_rich_text_row_bg_image,'full')); ?>);<?php endif; ?>">
-
-                            <?php if ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>
-
-                                <span class="overlay"
-                                      style="opacity: <?php echo esc_attr($field_builder_section_rich_text_row_bg_image_overlay); ?>"></span>
-
-                            <?php endif; ?>
-
-                            <?php if ($field_builder_section_rich_text_row_type_of_bg === 'gradient'): ?>
-
-                                <span class="overlay"
-                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_rich_text_row_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_rich_text_row_bg_gradient_color_2); ?>);"></span>
-
-                            <?php endif; ?>
-
-                            <div class="neo-container inner-wrapper">
-
-                                <div class="rich-columns"
-                                     style="max-width: <?php echo esc_attr($field_builder_section_rich_text_row_max_width); ?>%;">
-
-                                    <?php
-
-                                    $count = count(self::get_sub_field('field_builder_section_rich_text_row_columns'));
-
-                                    if (have_rows('field_builder_section_rich_text_row_columns')):
-
-                                        while (have_rows('field_builder_section_rich_text_row_columns')) : the_row();
-
-                                            ?>
-
-                                            <?php $column_content = self::get_sub_field('field_builder_section_rich_text_row_wsw_column'); ?>
-
-                                            <div class="column"
-                                                 style="max-width: <?php echo 100 / $count; ?>%;">
-
-                                                <?php echo $column_content; ?>
-
-                                            </div>
-
-                                        <?php
-
-                                        endwhile;
-
-                                    endif;
-
-                                    ?>
-
-                                </div>
-
-                                <?php if (!empty($field_builder_section_rich_text_row_button_label)): ?>
-
-                                    <div class="button-wrapper">
-
-                                        <a class="neo-button"
-                                           href="<?php echo esc_url($field_builder_section_rich_text_row_button_url); ?>"
-                                           target="<?php echo esc_attr($field_builder_section_rich_text_row_button_target); ?>">
-
-                                            <?php echo esc_html($field_builder_section_rich_text_row_button_label); ?>
-
-                                        </a>
-
-                                    </div>
-
-                                <?php endif; ?>
-
-                            </div>
-
-                        </section>
-
-                    <?php
-
-                    else:
-
-                    endif;
-
-                endwhile;
-
-            endif;
-
-            ?>
-
-            <footer class="neo-footer">
-
-                <div class="neo-container">
-
-                    <div class="left-side">
-
-                        <?php
-
-                        if (have_rows('field_footer_social_list')):
-
-                            ?>
-
-                            <ul class="social-list">
-
-                                <?php
-
-                                while (have_rows('field_footer_social_list')) : the_row();
-
-                                    $field_builder_section_footer_social_list_icon = self::get_sub_field('field_builder_section_footer_social_list_icon');
-
-                                    $field_builder_section_footer_social_list_url = self::get_sub_field('field_builder_section_footer_social_list_url');
-
-                                    ?>
-
-                                    <li>
-
-                                        <a href="<?php echo esc_url($field_builder_section_footer_social_list_url); ?>">
-
-                                            <i class="<?php echo esc_attr($field_builder_section_footer_social_list_icon); ?>"></i>
-
-                                        </a>
-
-                                    </li>
-
-                                <?php
-
-                                endwhile;
-
-                                ?>
-
-                            </ul>
-
-                        <?php
-
-                        endif;
-
-                        ?>
-
-                        <div class="terms">
-
-                            <?php
-
-                            $company_name = self::get_field('field_footer_company_name');
-
-                            ?>
-
-                            <p class="top-terms">
-
-                                <a href="https://swellstartups.com/"> LaunchPad powered by Groundswell.</a>
-
-                            </p>
-
-                            <p class="terms-general">
-
-                                Terms of use: The products/services offered on this Landing page are
-                                through <?php echo esc_html($company_name); ?>. Groundswell assumes no liability or will
-                                provide customer service for this
-                                product/service.
-
-                            </p>
-
-                            <p class="copyright">
-
-                                Privacy Policy. Copyright @ <?php echo esc_html($company_name); ?>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="right-side">
-
-                        <div class="contact-info">
-
-                            <h6 class="contact-title">
-
-                                <?php echo esc_html('Contact Us'); ?>
-
-                            </h6>
-
-                            <div class="contact-item">
-
-                                <p class="contact-item-name">
-
-                                    <?php echo esc_html('Contact'); ?>
-
-                                </p>
-
-                                <a href="#" class="contact-item-value">
-
-                                    <?php echo esc_html('email@company.com'); ?>
-
-                                </a>
-
-                            </div>
-
-                            <div class="contact-item">
-
-                                <p class="contact-item-name">
-
-                                    <?php echo esc_html('Phone'); ?>
-
-                                </p>
-
-                                <a href="#" class="contact-item-value">
-
-                                    <?php echo esc_html('123 123 123 123'); ?>
-
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                        <div class="logotype-wrapper">
-
-                            <?php
-
-                            $company_logo = self::get_field('field_footer_logotype_image') ? self::get_field('field_footer_logotype_image') : 'http://via.placeholder.com/350x350';
-
-                            ?>
-
-                            <img src="<?php echo esc_url(wp_get_attachment_url($company_logo)) ?>"
-                                 alt="<?php echo esc_attr('Logotype'); ?>">
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </footer>
-
-        </div>
-
-        <?php
 
     }
 
@@ -1566,6 +703,30 @@ final class ACF_Builder
                         'endpoint' => 0,
                     ),
                     array(
+                        'key' => 'field_builder_section_hero_logotype_image_toggle',
+                        'label' => esc_html('Enable/Disable Logotype'),
+                        'name' => 'option_builder_section_hero_logotype_image_toggle',
+                        'instructions' => esc_html('Enable/Disable Logotype Image'),
+                        'type' => 'true_false',
+                        'default_value' => 0,
+                        'ui' => 1,
+                        'ui_on_text' => esc_html('Enable'),
+                        'ui_off_text' => esc_html('Disable'),
+                        'wrapper' => array(
+                            'width' => '33.33333333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
                         'key' => 'field_builder_section_hero_logotype_image',
                         'label' => esc_html('Logotype Image'),
                         'name' => 'option_builder_section_hero_logotype_image',
@@ -1575,8 +736,22 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '50%',
+                            'width' => '33.333333%',
                             'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_logotype_image_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
                         ),
                     ),
                     array(
@@ -1590,7 +765,7 @@ final class ACF_Builder
                         'ui_on_text' => esc_html('Enable'),
                         'ui_off_text' => esc_html('Disable'),
                         'wrapper' => array(
-                            'width' => '50%',
+                            'width' => '33.333333%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1730,18 +905,109 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_hero_propositions_color',
-                        'label' => esc_html('Propositions Color'),
-                        'name' => 'option_builder_section_hero_propositions_color',
-                        'instructions' => esc_html('Select the Propositions Color'),
-                        'type' => 'color_picker',
-                        'default_value' => '#565656',
+                        'key' => 'field_builder_section_hero_propositions_toggle',
+                        'label' => esc_html('Enable/Disable Propositions'),
+                        'name' => 'option_builder_section_hero_propositions_toggle',
+                        'instructions' => esc_html('Enable/Disable Propositions List'),
+                        'type' => 'true_false',
+                        'default_value' => 0,
+                        'ui' => 1,
+                        'ui_on_text' => esc_html('Enable'),
+                        'ui_off_text' => esc_html('Disable'),
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
                                     'field' => 'field_builder_section_type',
                                     'operator' => '==',
                                     'value' => 'hero-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_propositions_color',
+                        'label' => esc_html('Propositions Color'),
+                        'name' => 'option_builder_section_hero_propositions_color',
+                        'instructions' => esc_html('Select the Propositions Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#565656',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_propositions_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_propositions_offset',
+                        'label' => esc_html('Propositions Offset'),
+                        'name' => 'option_builder_section_hero_propositions_offset',
+                        'instructions' => esc_html('Select the offset of propositions list'),
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '100',
+                        'step' => '1',
+                        'default_value' => '30',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_propositions_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_propositions_max_width',
+                        'label' => esc_html('Propositions Max Width'),
+                        'name' => 'option_builder_section_hero_propositions_max_width',
+                        'instructions' => esc_html('Select the max-width of propositions list'),
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '100',
+                        'step' => '1',
+                        'default_value' => '100',
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_propositions_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
                                 ),
                             ),
                         ),
@@ -1757,15 +1023,6 @@ final class ACF_Builder
                         'max' => 0,
                         'layout' => 'block',
                         'button_label' => esc_html('Add new Proposition'),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                            ),
-                        ),
                         'sub_fields' => array(
                             array(
                                 'key' => 'field_builder_section_hero_proposition_title',
@@ -1775,7 +1032,21 @@ final class ACF_Builder
                                 'placeholder' => esc_html('Proposition Title'),
                                 'type' => 'text',
                             ),
-                        )
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_propositions_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
                     ),
                     array(
                         'key' => 'field_builder_section_hero_propositions',
@@ -1788,54 +1059,6 @@ final class ACF_Builder
                         'max' => 0,
                         'layout' => 'row',
                         'button_label' => esc_html('Add new Proposition'),
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_hero_propositions_offset',
-                        'label' => esc_html('Propositions Offset'),
-                        'name' => 'option_builder_section_hero_propositions_offset',
-                        'instructions' => esc_html('Select the offset of propositions list'),
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
-                        ),
-                        'type' => 'range',
-                        'min' => '0',
-                        'max' => '100',
-                        'step' => '1',
-                        'default_value' => '30',
-                        'conditional_logic' => array(
-                            array(
-                                array(
-                                    'field' => 'field_builder_section_type',
-                                    'operator' => '==',
-                                    'value' => 'hero-section',
-                                ),
-                            ),
-                        ),
-                    ),
-                    array(
-                        'key' => 'field_builder_section_hero_propositions_max_width',
-                        'label' => esc_html('Propositions Max Width'),
-                        'name' => 'option_builder_section_hero_propositions_max_width',
-                        'instructions' => esc_html('Select the max-width of propositions list'),
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
-                        ),
-                        'type' => 'range',
-                        'min' => '0',
-                        'max' => '100',
-                        'step' => '1',
-                        'default_value' => '100',
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -2418,6 +1641,17 @@ final class ACF_Builder
                                 ),
                             ),
                             array(
+                                'key' => 'field_builder_section_buy_now_product_boxes_button_toggle',
+                                'label' => esc_html('Enable/Disable Button'),
+                                'name' => 'option_builder_section_buy_now_product_boxes_button_toggle',
+                                'instructions' => esc_html('Enable/Disable Box Button'),
+                                'type' => 'true_false',
+                                'default_value' => 0,
+                                'ui' => 1,
+                                'ui_on_text' => esc_html('Enable'),
+                                'ui_off_text' => esc_html('Disable'),
+                            ),
+                            array(
                                 'key' => 'field_builder_section_buy_now_product_boxes_button_label',
                                 'label' => esc_html('Button Label'),
                                 'name' => 'option_builder_section_buy_now_product_boxes_button_label',
@@ -2427,6 +1661,15 @@ final class ACF_Builder
                                 'wrapper' => array(
                                     'width' => '33.33333%',
                                     'class' => '',
+                                ),
+                                'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'field_builder_section_hero_propositions_toggle',
+                                            'operator' => '==',
+                                            'value' => '1',
+                                        ),
+                                    ),
                                 ),
                             ),
                             array(
@@ -2439,6 +1682,15 @@ final class ACF_Builder
                                 'wrapper' => array(
                                     'width' => '33.33333%',
                                     'class' => '',
+                                ),
+                                'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'field_builder_section_hero_propositions_toggle',
+                                            'operator' => '==',
+                                            'value' => '1',
+                                        ),
+                                    ),
                                 ),
                             ),
                             array(
@@ -2456,6 +1708,15 @@ final class ACF_Builder
                                 'wrapper' => array(
                                     'width' => '33.33333%',
                                     'class' => '',
+                                ),
+                                'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'field_builder_section_hero_propositions_toggle',
+                                            'operator' => '==',
+                                            'value' => '1',
+                                        ),
+                                    ),
                                 ),
                             ),
                         )
@@ -4701,6 +3962,889 @@ final class ACF_Builder
             ));
 
         endif;
+
+    }
+
+    public static function single_landing_template()
+    {
+
+        ?>
+
+        <div class="neo-landing-wrapper">
+
+            <?php
+
+            if (have_rows('field_repeater_builder')):
+
+                while (have_rows('field_repeater_builder')) : the_row();
+
+                    $section_type = self::get_sub_field('field_builder_section_type');
+
+                    if ($section_type === 'hero-section'):
+
+                        $field_builder_section_hero_type_of_bg = self::get_sub_field('field_builder_section_hero_type_of_bg');
+
+                        $field_builder_section_hero_bg_color = self::get_sub_field('field_builder_section_hero_bg_color');
+
+                        $field_builder_section_hero_bg_image = self::get_sub_field('field_builder_section_hero_bg_image');
+
+                        $field_builder_section_hero_bg_image_overlay = self::get_sub_field('field_builder_section_hero_bg_image_overlay');
+
+                        $field_builder_section_hero_bg_gradient_color_1 = self::get_sub_field('field_builder_section_hero_bg_gradient_color_1');
+
+                        $field_builder_section_hero_bg_gradient_color_2 = self::get_sub_field('field_builder_section_hero_bg_gradient_color_2');
+
+                        $field_builder_section_hero_main_headline = self::get_sub_field('field_builder_section_hero_main_headline');
+
+                        $field_builder_section_hero_logotype_image = self::get_sub_field('field_builder_section_hero_logotype_image');
+
+                        $field_builder_section_hero_logotype_image_toggle = self::get_sub_field('field_builder_section_hero_logotype_image_toggle');
+
+                        $field_builder_section_hero_text_shadows = self::get_sub_field('field_builder_section_hero_text_shadows');
+
+                        $field_builder_section_hero_main_headline_color = self::get_sub_field('field_builder_section_hero_main_headline_color');
+
+                        $field_builder_section_hero_sub_headline = self::get_sub_field('field_builder_section_hero_sub_headline');
+
+                        $field_builder_section_hero_sub_headline_color = self::get_sub_field('field_builder_section_hero_sub_headline_color');
+
+                        $field_builder_section_hero_secondary_headline = self::get_sub_field('field_builder_section_hero_secondary_headline');
+
+                        $field_builder_section_hero_secondary_headline_color = self::get_sub_field('field_builder_section_hero_secondary_headline_color');
+
+                        $field_builder_section_hero_more_info_box_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_toggle');
+
+                        $field_builder_section_hero_more_info_box_bg_color = self::get_sub_field('field_builder_section_hero_more_info_box_bg_color');
+
+                        $field_builder_section_hero_more_info_headline = self::get_sub_field('field_builder_section_hero_more_info_headline');
+
+                        $field_builder_section_hero_more_info_headline_color = self::get_sub_field('field_builder_section_hero_more_info_headline_color');
+
+                        $field_builder_section_hero_propositions_toggle = self::get_sub_field('field_builder_section_hero_propositions_toggle');
+
+                        $field_builder_section_hero_propositions_color = self::get_sub_field('field_builder_section_hero_propositions_color');
+
+                        $field_builder_section_hero_propositions_offset = self::get_sub_field('field_builder_section_hero_propositions_offset');
+
+                        $field_builder_section_hero_propositions_max_width = self::get_sub_field('field_builder_section_hero_propositions_max_width');
+
+                        $field_builder_section_hero_more_info_secondary_headline = self::get_sub_field('field_builder_section_hero_more_info_secondary_headline');
+
+                        $field_builder_section_hero_more_info_secondary_headline_color = self::get_sub_field('field_builder_section_hero_more_info_secondary_headline_color');
+
+                        $field_builder_section_hero_more_info_box_phone_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_phone_toggle');
+
+                        $field_builder_section_hero_more_info_button_label = self::get_sub_field('field_builder_section_hero_more_info_button_label');
+
+                        $field_builder_section_hero_more_info_button_bg = self::get_sub_field('field_builder_section_hero_more_info_button_bg');
+
+                        $field_builder_section_hero_more_info_button_color = self::get_sub_field('field_builder_section_hero_more_info_button_color');
+
+                        ?>
+
+                        <section
+                                class="neo-section hero-section <?php if (!empty($field_builder_section_hero_text_shadows)): ?>text-shadows<?php endif; ?>"
+                                style="<?php if ($field_builder_section_hero_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_hero_bg_color); ?><?php elseif ($field_builder_section_hero_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_hero_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_hero_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_hero_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_hero_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_hero_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_hero_bg_gradient_color_2); ?>);"></span>
+
+                            <?php endif; ?>
+
+                            <?php if (!empty($field_builder_section_hero_logotype_image) && $field_builder_section_hero_logotype_image_toggle): ?>
+
+                                <div class="hero-logotype neo-container">
+
+                                    <img src="<?php echo esc_url(wp_get_attachment_image_url($field_builder_section_hero_logotype_image, 'full')); ?>"
+                                         alt="<?php echo esc_attr('Logotype'); ?>">
+
+                                </div>
+
+                            <?php endif; ?>
+
+                            <div class="neo-container inner-wrapper">
+
+                                <div class="left-side">
+
+                                    <?php if (!empty($field_builder_section_hero_sub_headline)): ?>
+
+                                        <p class="sub-headline"
+                                           style="color: <?php echo esc_attr($field_builder_section_hero_sub_headline_color); ?>;">
+
+                                            <?php echo esc_html($field_builder_section_hero_sub_headline); ?>
+
+                                        </p>
+
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($field_builder_section_hero_main_headline)): ?>
+
+                                        <h1 class="hero-main-heading"
+                                            style="color: <?php echo esc_attr($field_builder_section_hero_main_headline_color); ?>;">
+
+                                            <?php echo esc_html($field_builder_section_hero_main_headline); ?>
+
+                                        </h1>
+
+                                    <?php endif; ?>
+
+                                    <?php
+
+                                    if (have_rows('field_builder_section_hero_propositions') && $field_builder_section_hero_propositions_toggle): ?>
+
+
+                                        <ul class="propositions-list"
+                                            style="margin-left: <?php echo esc_attr($field_builder_section_hero_propositions_offset); ?>px; max-width: <?php echo esc_attr($field_builder_section_hero_propositions_max_width); ?>%">
+
+                                            <?php
+
+                                            while (have_rows('field_builder_section_hero_propositions')) : the_row();
+
+                                                $field_builder_section_hero_proposition_title = self::get_sub_field('field_builder_section_hero_proposition_title');
+
+                                                if (!empty($field_builder_section_hero_proposition_title)):
+
+                                                    ?>
+
+                                                    <li style="color: <?php echo esc_attr($field_builder_section_hero_propositions_color); ?>;">
+
+                                                        <p class="proposition-title"
+                                                           style="color: <?php echo esc_attr($field_builder_section_hero_propositions_color); ?>;">
+
+                                                            <?php echo esc_html($field_builder_section_hero_proposition_title); ?>
+
+                                                        </p>
+
+                                                    </li>
+
+                                                <?php
+
+                                                endif;
+
+                                            endwhile; ?>
+
+                                        </ul>
+
+                                    <?php
+
+                                    endif;
+
+                                    ?>
+
+                                    <?php if (!empty($field_builder_section_hero_secondary_headline)): ?>
+
+                                        <p class="secondary-headline"
+                                           style="color: <?php echo esc_attr($field_builder_section_hero_secondary_headline_color); ?>;">
+
+                                            <?php echo esc_html($field_builder_section_hero_secondary_headline); ?>
+
+                                        </p>
+
+                                    <?php endif; ?>
+
+                                </div>
+
+                                <?php if ($field_builder_section_hero_more_info_box_toggle): ?>
+
+                                    <div class="right-side">
+
+                                        <div class="info-box-wrapper"
+                                             style="background-color:<?php echo esc_attr($field_builder_section_hero_more_info_box_bg_color); ?>">
+
+                                            <h2 class="info-box-title"
+                                                style="color: <?php echo esc_attr($field_builder_section_hero_more_info_headline_color); ?>;">
+
+                                                <?php echo esc_html($field_builder_section_hero_more_info_headline); ?>
+
+                                            </h2>
+
+                                            <p class="info-box-secondary-headline"
+                                               style="color: <?php echo esc_attr($field_builder_section_hero_more_info_secondary_headline_color); ?>;">
+
+                                                <?php echo esc_html($field_builder_section_hero_more_info_secondary_headline); ?>
+
+                                            </p>
+
+                                            <div class="form-wrapper">
+
+                                                <form class="hero-contact-form">
+
+                                                    <input type="name" class="input-field" name="name-field"
+                                                           placeholder="<?php echo esc_html('Name'); ?>">
+
+                                                    <input type="email" class="input-field" name="email-field"
+                                                           placeholder="<?php echo esc_html('Email'); ?>">
+
+                                                    <?php if ($field_builder_section_hero_more_info_box_phone_toggle): ?>
+
+                                                        <input type="text" class="input-field" name="phone-field"
+                                                               placeholder="<?php echo esc_html('Phone'); ?>">
+
+                                                    <?php endif; ?>
+
+                                                    <button class="submit-button"
+                                                            style="background-color: <?php echo esc_attr($field_builder_section_hero_more_info_button_bg); ?>; color: <?php echo esc_attr($field_builder_section_hero_more_info_button_color) ?>;">
+
+                                                        <?php echo esc_html($field_builder_section_hero_more_info_button_label); ?>
+
+                                                    </button>
+
+                                                </form>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                <?php endif; ?>
+
+                            </div>
+
+                        </section>
+
+                    <?php
+
+                    elseif ($section_type === 'buy-now-get-more-info-section'):
+
+                        $field_builder_section_buy_now_type_of_bg = self::get_sub_field('field_builder_section_buy_now_type_of_bg');
+
+                        $field_builder_section_buy_now_bg_color = self::get_sub_field('field_builder_section_buy_now_bg_color');
+
+                        $field_builder_section_buy_now_bg_image = self::get_sub_field('field_builder_section_buy_now_bg_image');
+
+                        $field_builder_section_buy_now_bg_image_overlay = self::get_sub_field('field_builder_section_buy_now_bg_image_overlay');
+
+                        $field_builder_section_buy_now_bg_gradient_color_1 = self::get_sub_field('field_builder_section_buy_now_gradient_color_1');
+
+                        $field_builder_section_buy_now_bg_gradient_color_2 = self::get_sub_field('field_builder_section_buy_now_gradient_color_2');
+
+                        $field_builder_section_buy_now_main_headline = self::get_sub_field('field_builder_section_buy_now_main_headline');
+
+                        $field_builder_section_buy_now_main_headline_color = self::get_sub_field('field_builder_section_buy_now_main_headline_color');
+
+                        $field_builder_section_buy_now_product_boxes_title_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_title_color');
+
+                        $field_builder_section_buy_now_product_boxes_content_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_content_color');
+
+                        ?>
+
+                        <section class="neo-section buy-now-get-more-info-section"
+                                 style="<?php if ($field_builder_section_buy_now_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_buy_now_bg_color); ?><?php elseif ($field_builder_section_buy_now_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_buy_now_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_buy_now_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_buy_now_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_buy_now_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_buy_now_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_buy_now_bg_gradient_color_2); ?>);"></span>
+
+                            <?php endif; ?>
+
+                            <div class="neo-container inner-wrapper">
+
+                                <?php if (!empty($field_builder_section_buy_now_main_headline)): ?>
+
+                                    <h2 class="section-title"
+                                        style="color:<?php echo esc_attr($field_builder_section_buy_now_main_headline_color); ?>">
+
+                                        <?php echo esc_html($field_builder_section_buy_now_main_headline); ?>
+
+                                    </h2>
+
+                                <?php endif; ?>
+
+                                <?php if (have_rows('field_builder_section_buy_now_product_boxes')): ?>
+
+                                    <div class="boxes-list">
+
+                                        <?php
+
+                                        while (have_rows('field_builder_section_buy_now_product_boxes')) : the_row();
+
+                                            $field_builder_section_buy_now_product_boxes_title = self::get_sub_field('field_builder_section_buy_now_product_boxes_title');
+
+                                            $field_builder_section_buy_now_product_boxes_image = self::get_sub_field('field_builder_section_buy_now_product_boxes_image');
+
+                                            $field_builder_section_buy_now_product_boxes_content = self::get_sub_field('field_builder_section_buy_now_product_boxes_content');
+
+                                            $field_builder_section_buy_now_product_boxes_button_toggle = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_toggle');
+
+                                            $field_builder_section_buy_now_product_boxes_button_label = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_label');
+
+                                            $field_builder_section_buy_now_product_boxes_button_url = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_url');
+
+                                            $field_builder_section_buy_now_product_boxes_button_target = self::get_sub_field('field_builder_section_buy_now_product_boxes_button_target');
+
+                                            ?>
+
+                                            <div class="box">
+
+                                                <div class="box-inner">
+
+                                                    <?php if (!empty($field_builder_section_buy_now_product_boxes_image)): ?>
+
+                                                        <div class="box-header"
+                                                             style="background-image: url(<?php echo esc_url(wp_get_attachment_image_url($field_builder_section_buy_now_product_boxes_image, 'full')); ?>)">
+
+                                                        </div>
+
+                                                    <?php endif; ?>
+
+                                                    <div class="box-body">
+
+                                                        <?php if (!empty($field_builder_section_buy_now_product_boxes_title)): ?>
+
+                                                            <h4 class="box-title"
+                                                                style="color:<?php echo esc_attr($field_builder_section_buy_now_product_boxes_title_color); ?>">
+
+                                                                <?php echo esc_html($field_builder_section_buy_now_product_boxes_title); ?>
+
+                                                            </h4>
+
+                                                        <?php endif; ?>
+
+                                                        <?php if (!empty($field_builder_section_buy_now_product_boxes_content)): ?>
+
+                                                            <p class="box-content"
+                                                               style="color: <?php echo esc_attr($field_builder_section_buy_now_product_boxes_content_color); ?>">
+
+                                                                <?php echo esc_html($field_builder_section_buy_now_product_boxes_content); ?>
+
+                                                            </p>
+
+                                                        <?php endif; ?>
+
+                                                        <?php if (!empty($field_builder_section_buy_now_product_boxes_button_label) && $field_builder_section_buy_now_product_boxes_button_toggle): ?>
+
+                                                            <div class="button-wrapper">
+
+                                                                <a class="neo-button"
+                                                                   href="<?php echo esc_url($field_builder_section_buy_now_product_boxes_button_url); ?>"
+                                                                   target="<?php echo esc_attr($field_builder_section_buy_now_product_boxes_button_target); ?>">
+
+                                                                    <?php echo esc_html($field_builder_section_buy_now_product_boxes_button_label); ?>
+
+                                                                </a>
+
+                                                            </div>
+
+                                                        <?php endif; ?>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        <?php
+
+                                        endwhile; ?>
+
+                                    </div>
+
+                                <?php
+
+                                endif;
+
+                                ?>
+
+                            </div>
+
+                        </section>
+
+                    <?php
+
+                    elseif ($section_type === 'gallery-section'):
+
+                        $field_builder_section_gallery_main_headline = self::get_sub_field('field_builder_section_gallery_main_headline');
+
+                        $field_builder_section_gallery_type_of_bg = self::get_sub_field('field_builder_section_gallery_type_of_bg');
+
+                        $field_builder_section_gallery_bg_image_overlay = self::get_sub_field('field_builder_section_gallery_bg_image_overlay');
+
+                        $field_builder_section_gallery_bg_gradient_color_1 = self::get_sub_field('field_builder_section_gallery_gradient_color_1');
+
+                        $field_builder_section_gallery_bg_gradient_color_2 = self::get_sub_field('field_builder_section_gallery_gradient_color_2');
+
+                        $field_builder_section_gallery_bg_color = self::get_sub_field('field_builder_section_gallery_bg_color');
+
+                        $field_builder_section_gallery_bg_image = self::get_sub_field('field_builder_section_gallery_bg_image');
+
+                        $field_builder_section_gallery_gallery = self::get_sub_field('field_builder_section_gallery_gallery');
+
+                        ?>
+
+                        <section class="neo-section gallery-section"
+                                 style="<?php if ($field_builder_section_gallery_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_gallery_bg_color); ?><?php elseif ($field_builder_section_gallery_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_gallery_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_gallery_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_gallery_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_gallery_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_gallery_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_gallery_bg_gradient_color_2); ?>);"></span>
+
+                            <?php endif; ?>
+
+                            <div class="neo-container inner-wrapper">
+
+                                <?php if (!empty($field_builder_section_gallery_main_headline)): ?>
+
+                                    <h2 class="section-title">
+
+                                        <?php echo esc_html($field_builder_section_gallery_main_headline); ?>
+
+                                    </h2>
+
+                                <?php endif; ?>
+
+                                <?php if (!empty($field_builder_section_gallery_gallery)): ?>
+
+                                    <div class="gallery-wrapper">
+
+                                        <?php foreach ($field_builder_section_gallery_gallery as $gallery): ?>
+
+                                            <a class="gallery-item" data-fancybox="gallery"
+                                               href="<?php echo esc_url($gallery); ?>">
+
+                                                <div class="inner-item">
+
+                                                    <div class="image-wrapper"
+                                                         style="background-image: url('<?php echo esc_url($gallery); ?>')">
+
+                                                    </div>
+
+                                                </div>
+
+                                            </a>
+
+                                        <?php endforeach; ?>
+
+                                    </div>
+
+                                <?php endif; ?>
+
+                            </div>
+
+                        </section>
+
+                    <?php
+
+                    elseif ($section_type === 'faqs-section'):
+
+                        $field_builder_section_faqs_type_of_bg = self::get_sub_field('field_builder_section_faqs_type_of_bg');
+
+                        $field_builder_section_faqs_bg_color = self::get_sub_field('field_builder_section_faqs_bg_color');
+
+                        $field_builder_section_faqs_bg_image = self::get_sub_field('field_builder_section_faqs_bg_image');
+
+                        $field_builder_section_faqs_bg_image_overlay = self::get_sub_field('field_builder_section_faqs_bg_image_overlay');
+
+                        $field_builder_section_faqs_bg_gradient_color_1 = self::get_sub_field('field_builder_section_faqs_gradient_color_1');
+
+                        $field_builder_section_faqs_bg_gradient_color_2 = self::get_sub_field('field_builder_section_faqs_gradient_color_2');
+
+                        $field_builder_section_faqs_main_headline = self::get_sub_field('field_builder_section_faqs_main_headline');
+
+                        $field_builder_section_faqs_secondary_headline = self::get_sub_field('field_builder_section_faqs_secondary_headline');
+
+                        ?>
+
+                        <section class="neo-section faqs-section"
+                                 style="<?php if ($field_builder_section_faqs_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_faqs_bg_color); ?><?php elseif ($field_builder_section_faqs_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_faqs_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_faqs_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_faqs_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_faqs_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_faqs_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_faqs_bg_gradient_color_2); ?>);"></span>
+
+                            <?php endif; ?>
+
+                            <div class="neo-container inner-wrapper">
+
+                                <?php if (!empty($field_builder_section_faqs_main_headline)): ?>
+
+                                    <h2 class="section-title">
+
+                                        <?php echo esc_html($field_builder_section_faqs_main_headline); ?>
+
+                                    </h2>
+
+                                <?php endif; ?>
+
+                                <?php if (!empty($field_builder_section_faqs_secondary_headline)): ?>
+
+                                    <p class="section-subtitle">
+
+                                        <?php echo esc_html($field_builder_section_faqs_secondary_headline); ?>
+
+                                    </p>
+
+                                <?php endif; ?>
+
+                                <?php if (have_rows('field_builder_section_faqs_builder')): ?>
+
+                                    <ul class="faqs-accordion">
+                                        <?php while (have_rows('field_builder_section_faqs_builder')) : the_row(); ?>
+                                            <?php
+
+                                            $field_builder_section_faqs_builder_category_name = self::get_sub_field('field_builder_section_faqs_builder_category_name');
+
+                                            ?>
+
+                                            <li class="faq-item">
+
+                                                <a class="toggle category-toggle"
+                                                   href="#">
+
+                                                    <h6 class="category-name">
+
+                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_name); ?>
+
+                                                    </h6>
+
+                                                </a>
+
+                                                <?php if (have_rows('field_builder_section_faqs_builder_category_questions_answers')): ?>
+
+                                                    <ul class="inner">
+
+                                                        <?php while (have_rows('field_builder_section_faqs_builder_category_questions_answers')) : the_row(); ?>
+
+                                                            <li class="inner-faq-item">
+
+                                                                <?php
+
+                                                                $field_builder_section_faqs_builder_category_question = self::get_sub_field('field_builder_section_faqs_builder_category_question');
+
+                                                                $field_builder_section_faqs_builder_category_answer = self::get_sub_field('field_builder_section_faqs_builder_category_answer');
+
+                                                                ?>
+
+
+                                                                <a href="#" class="toggle answer-toggle">
+
+                                                                    <h6 class="question">
+
+                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_question); ?>
+
+                                                                    </h6>
+
+                                                                </a>
+
+                                                                <div class="inner">
+
+                                                                    <p class="answer">
+
+                                                                        <?php echo esc_html($field_builder_section_faqs_builder_category_answer); ?>
+
+                                                                    </p>
+
+                                                                </div>
+
+                                                            </li>
+
+                                                        <?php endwhile; ?>
+
+                                                    </ul>
+
+                                                <?php endif; ?>
+
+                                            </li>
+
+                                        <?php endwhile; ?>
+
+                                    </ul>
+
+                                <?php endif; ?>
+
+                            </div>
+
+                        </section>
+
+                    <?php
+
+                    elseif ($section_type === 'rich-text-row-section'):
+
+                        $field_builder_section_rich_text_row_type_of_bg = self::get_sub_field('field_builder_section_rich_text_row_type_of_bg');
+
+                        $field_builder_section_rich_text_row_bg_color = self::get_sub_field('field_builder_section_rich_text_row_bg_color');
+
+                        $field_builder_section_rich_text_row_bg_image = self::get_sub_field('field_builder_section_rich_text_row_bg_image');
+
+                        $field_builder_section_rich_text_row_bg_image_overlay = self::get_sub_field('field_builder_section_rich_text_row_bg_image_overlay');
+
+                        $field_builder_section_rich_text_row_bg_gradient_color_1 = self::get_sub_field('field_builder_section_rich_text_row_bg_gradient_color_1');
+
+                        $field_builder_section_rich_text_row_bg_gradient_color_2 = self::get_sub_field('field_builder_section_rich_text_row_bg_gradient_color_2');
+
+                        $field_builder_section_rich_text_row_max_width = self::get_sub_field('field_builder_section_rich_text_row_max_width');
+
+                        $field_builder_section_rich_text_row_button_label = self::get_sub_field('field_builder_section_rich_text_row_button_label');
+
+                        $field_builder_section_rich_text_row_button_url = self::get_sub_field('field_builder_section_rich_text_row_button_url');
+
+                        $field_builder_section_rich_text_row_button_target = self::get_sub_field('field_builder_section_rich_text_row_button_target');
+
+                        ?>
+
+                        <section class="neo-section rich-text-row-section"
+                                 style="<?php if ($field_builder_section_rich_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_rich_text_row_bg_color); ?><?php elseif ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_rich_text_row_bg_image,'full')); ?>);<?php endif; ?>">
+
+                            <?php if ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_rich_text_row_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_rich_text_row_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_rich_text_row_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_rich_text_row_bg_gradient_color_2); ?>);"></span>
+
+                            <?php endif; ?>
+
+                            <div class="neo-container inner-wrapper">
+
+                                <div class="rich-columns"
+                                     style="max-width: <?php echo esc_attr($field_builder_section_rich_text_row_max_width); ?>%;">
+
+                                    <?php
+
+                                    $count = count(self::get_sub_field('field_builder_section_rich_text_row_columns'));
+
+                                    if (have_rows('field_builder_section_rich_text_row_columns')):
+
+                                        while (have_rows('field_builder_section_rich_text_row_columns')) : the_row();
+
+                                            ?>
+
+                                            <?php $column_content = self::get_sub_field('field_builder_section_rich_text_row_wsw_column'); ?>
+
+                                            <div class="column"
+                                                 style="max-width: <?php echo 100 / $count; ?>%;">
+
+                                                <?php echo $column_content; ?>
+
+                                            </div>
+
+                                        <?php
+
+                                        endwhile;
+
+                                    endif;
+
+                                    ?>
+
+                                </div>
+
+                                <?php if (!empty($field_builder_section_rich_text_row_button_label)): ?>
+
+                                    <div class="button-wrapper">
+
+                                        <a class="neo-button"
+                                           href="<?php echo esc_url($field_builder_section_rich_text_row_button_url); ?>"
+                                           target="<?php echo esc_attr($field_builder_section_rich_text_row_button_target); ?>">
+
+                                            <?php echo esc_html($field_builder_section_rich_text_row_button_label); ?>
+
+                                        </a>
+
+                                    </div>
+
+                                <?php endif; ?>
+
+                            </div>
+
+                        </section>
+
+                    <?php
+
+                    else:
+
+                    endif;
+
+                endwhile;
+
+            endif;
+
+            ?>
+
+            <footer class="neo-footer">
+
+                <div class="neo-container">
+
+                    <div class="left-side">
+
+                        <?php
+
+                        if (have_rows('field_footer_social_list')):
+
+                            ?>
+
+                            <ul class="social-list">
+
+                                <?php
+
+                                while (have_rows('field_footer_social_list')) : the_row();
+
+                                    $field_builder_section_footer_social_list_icon = self::get_sub_field('field_builder_section_footer_social_list_icon');
+
+                                    $field_builder_section_footer_social_list_url = self::get_sub_field('field_builder_section_footer_social_list_url');
+
+                                    ?>
+
+                                    <li>
+
+                                        <a href="<?php echo esc_url($field_builder_section_footer_social_list_url); ?>">
+
+                                            <i class="<?php echo esc_attr($field_builder_section_footer_social_list_icon); ?>"></i>
+
+                                        </a>
+
+                                    </li>
+
+                                <?php
+
+                                endwhile;
+
+                                ?>
+
+                            </ul>
+
+                        <?php
+
+                        endif;
+
+                        ?>
+
+                        <div class="terms">
+
+                            <?php
+
+                            $company_name = self::get_field('field_footer_company_name');
+
+                            ?>
+
+                            <p class="top-terms">
+
+                                <a href="https://swellstartups.com/"> LaunchPad powered by Groundswell.</a>
+
+                            </p>
+
+                            <p class="terms-general">
+
+                                Terms of use: The products/services offered on this Landing page are
+                                through <?php echo esc_html($company_name); ?>. Groundswell assumes no liability or will
+                                provide customer service for this
+                                product/service.
+
+                            </p>
+
+                            <p class="copyright">
+
+                                Privacy Policy. Copyright @ <?php echo esc_html($company_name); ?>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="right-side">
+
+                        <div class="contact-info">
+
+                            <h6 class="contact-title">
+
+                                <?php echo esc_html('Contact Us'); ?>
+
+                            </h6>
+
+                            <div class="contact-item">
+
+                                <p class="contact-item-name">
+
+                                    <?php echo esc_html('Contact'); ?>
+
+                                </p>
+
+                                <a href="#" class="contact-item-value">
+
+                                    <?php echo esc_html('email@company.com'); ?>
+
+                                </a>
+
+                            </div>
+
+                            <div class="contact-item">
+
+                                <p class="contact-item-name">
+
+                                    <?php echo esc_html('Phone'); ?>
+
+                                </p>
+
+                                <a href="#" class="contact-item-value">
+
+                                    <?php echo esc_html('123 123 123 123'); ?>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="logotype-wrapper">
+
+                            <?php
+
+                            $company_logo = self::get_field('field_footer_logotype_image') ? self::get_field('field_footer_logotype_image') : 'http://via.placeholder.com/350x350';
+
+                            ?>
+
+                            <img src="<?php echo esc_url(wp_get_attachment_url($company_logo)) ?>"
+                                 alt="<?php echo esc_attr('Logotype'); ?>">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </footer>
+
+        </div>
+
+        <?php
 
     }
 

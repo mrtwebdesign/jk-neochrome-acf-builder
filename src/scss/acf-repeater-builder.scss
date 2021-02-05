@@ -1,3 +1,33 @@
+.preview-button-wrapper {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccd0d4;
+
+  .preview-button {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: #007cba;
+    color: #fff;
+
+    &:hover {
+      background-color: #0071a1;
+    }
+  }
+}
+
 #acf-group_repeater_builder_settings {
   max-width: 1200px;
   margin-left: auto !important;
@@ -52,7 +82,7 @@
           }
 
           &.-minus {
-            top: 46px!important;
+            top: 46px !important;
           }
         }
       }
@@ -60,7 +90,6 @@
   }
 
   .acf-table > tbody > tr > td:not(.ui-sortable-handle) {
-    border-bottom-width: 10px !important;
     border-color: #f4f4f4 !important;
 
     .acf-table > tbody > tr > td:not(.ui-sortable-handle) {
@@ -84,7 +113,7 @@
   }
 
   .acf-field {
-    padding: 20px 15px !important;
+    padding: 25px 15px !important;
 
     &.acf-field-builder-section-type {
 
@@ -149,6 +178,21 @@
         align-items: center;
         justify-content: center;
       }
+    }
+  }
+
+  .acf-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    .acf-button {
+      height: 40px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
