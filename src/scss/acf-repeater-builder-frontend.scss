@@ -218,6 +218,12 @@ $xxxl: 1601px;
         }
       }
 
+      &.text-shadows {
+        .sub-headline, .secondary-headline, .hero-main-heading, li {
+          text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+        }
+      }
+
       .inner-wrapper {
         display: flex;
         flex-direction: row;

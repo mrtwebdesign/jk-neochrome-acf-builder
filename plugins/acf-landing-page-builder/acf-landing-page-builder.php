@@ -218,6 +218,8 @@ final class ACF_Builder
 
                         $field_builder_section_hero_logotype_image = self::get_sub_field('field_builder_section_hero_logotype_image');
 
+                        $field_builder_section_hero_text_shadows = self::get_sub_field('field_builder_section_hero_text_shadows');
+
                         $field_builder_section_hero_main_headline_color = self::get_sub_field('field_builder_section_hero_main_headline_color');
 
                         $field_builder_section_hero_sub_headline = self::get_sub_field('field_builder_section_hero_sub_headline');
@@ -256,7 +258,7 @@ final class ACF_Builder
 
                         ?>
 
-                        <section class="neo-section hero-section"
+                        <section class="neo-section hero-section <?php if(!empty($field_builder_section_hero_text_shadows)): ?>text-shadows<?php endif; ?>"
                                  style="<?php if ($field_builder_section_hero_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_hero_bg_color); ?><?php elseif ($field_builder_section_hero_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_hero_bg_image,'full')); ?>);<?php endif; ?>">
 
                             <?php if ($field_builder_section_hero_type_of_bg === 'image'): ?>
@@ -967,7 +969,7 @@ final class ACF_Builder
 
                             <p class="top-terms">
 
-                                LaunchPad powered by Groundswell.
+                                <a href="https://swellstartups.com/"> LaunchPad powered by Groundswell.</a>
 
                             </p>
 
@@ -1573,8 +1575,32 @@ final class ACF_Builder
                         'preview_size' => 'medium',
                         'library' => 'all',
                         'wrapper' => array(
-                            'width' => '100%',
+                            'width' => '50%',
                             'class' => '',
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_text_shadows',
+                        'label' => esc_html('Text Shadows'),
+                        'name' => 'option_builder_section_hero_text_shadows',
+                        'instructions' => esc_html('Enable/Disable Text Shadows'),
+                        'type' => 'true_false',
+                        'default_value' => 1,
+                        'ui' => 1,
+                        'ui_on_text' => esc_html('Enable'),
+                        'ui_off_text' => esc_html('Disable'),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                            ),
                         ),
                     ),
                     array(
