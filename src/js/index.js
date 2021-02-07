@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
 
     $('body').imagesLoaded({}, function () {
 
-        if($('.faqs-accordion').length){
+        if ($('.faqs-accordion').length) {
 
             $('.faqs-accordion .toggle').click(function (e) {
 
@@ -55,9 +55,9 @@ jQuery(document).ready(function ($) {
 
         }
 
-        let form = $("#contactForm");
+        let form = $("#heroform");
 
-        if(form.length){
+        if (form.length) {
 
             form.on("submit", function (event) {
 
@@ -80,6 +80,8 @@ jQuery(document).ready(function ($) {
                     contentType: false,
                     processData: false,
                     success: function (response) {
+
+                        $('#submit-ajax').css('display', 'flex');
 
                         $('#submit-ajax').append(response);
 

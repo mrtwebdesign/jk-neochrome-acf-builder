@@ -1541,6 +1541,10 @@ final class ACF_Builder
                         'instructions' => esc_html('Input the Main Headline'),
                         'type' => 'text',
                         'placeholder' => esc_html('Main Headline'),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -1559,7 +1563,49 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#161616',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_secondary_headline',
+                        'label' => esc_html('Secondary Headline'),
+                        'name' => 'option_builder_section_buy_now_secondary_headline',
+                        'instructions' => esc_html('Input the Secondary Headline'),
+                        'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'placeholder' => esc_html('Secondary Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'buy-now-get-more-info-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_secondary_headline_color',
+                        'label' => esc_html('Secondary Headline Color'),
+                        'name' => 'option_builder_section_buy_now_secondary_headline_color',
+                        'instructions' => esc_html('Select the Secondary Headline Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#565656',
+                        'wrapper' => array(
+                            'width' => '50%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1963,12 +2009,79 @@ final class ACF_Builder
                         'endpoint' => 0,
                     ),
                     array(
-                        'key' => 'field_builder_section_gallery_main_headline',
+                        'key' => 'field_builder_section_buy_now_main_headline',
                         'label' => esc_html('Main Headline'),
-                        'name' => 'option_builder_section_gallery_main_headline',
+                        'name' => 'option_builder_section_buy_now_main_headline',
                         'instructions' => esc_html('Input the Main Headline'),
                         'type' => 'text',
                         'placeholder' => esc_html('Main Headline'),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_main_headline_color',
+                        'label' => esc_html('Main Headline Color'),
+                        'name' => 'option_builder_section_buy_now_main_headline_color',
+                        'instructions' => esc_html('Select the Main Headline Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#161616',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_secondary_headline',
+                        'label' => esc_html('Secondary Headline'),
+                        'name' => 'option_builder_section_buy_now_secondary_headline',
+                        'instructions' => esc_html('Input the Secondary Headline'),
+                        'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'placeholder' => esc_html('Secondary Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'gallery-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_buy_now_secondary_headline_color',
+                        'label' => esc_html('Secondary Headline Color'),
+                        'name' => 'option_builder_section_buy_now_secondary_headline_color',
+                        'instructions' => esc_html('Select the Secondary Headline Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#565656',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -2215,11 +2328,32 @@ final class ACF_Builder
                         'name' => 'option_builder_section_faqs_main_headline',
                         'instructions' => esc_html('Input the Main Headline'),
                         'type' => 'text',
+                        'placeholder' => esc_html('Main Headline'),
                         'wrapper' => array(
                             'width' => '50%',
                             'class' => '',
                         ),
-                        'placeholder' => esc_html('Main Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_faqs_main_headline_color',
+                        'label' => esc_html('Main Headline Color'),
+                        'name' => 'option_builder_section_faqs_main_headline_color',
+                        'instructions' => esc_html('Select the Main Headline Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#161616',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -2241,6 +2375,27 @@ final class ACF_Builder
                             'class' => '',
                         ),
                         'placeholder' => esc_html('Secondary Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'faqs-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_faqs_secondary_headline_color',
+                        'label' => esc_html('Secondary Headline Color'),
+                        'name' => 'option_builder_section_faqs_secondary_headline_color',
+                        'instructions' => esc_html('Select the Secondary Headline Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#565656',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -4001,6 +4156,16 @@ final class ACF_Builder
     public static function single_landing_template()
     {
 
+        $hero_section_counter = 0;
+
+        $get_more_info_section_counter = 0;
+
+        $gallery_section_counter = 0;
+
+        $faqs_section_counter = 0;
+
+        $rich_text_section_counter = 0;
+
         ?>
 
         <div class="neo-landing-wrapper">
@@ -4079,7 +4244,10 @@ final class ACF_Builder
 
                         <section
                                 class="neo-section hero-section <?php if (!empty($field_builder_section_hero_text_shadows)): ?>text-shadows<?php endif; ?>"
-                                style="<?php if ($field_builder_section_hero_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_hero_bg_color); ?><?php elseif ($field_builder_section_hero_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_hero_bg_image,'full')); ?>);<?php endif; ?>">
+                                style="<?php if ($field_builder_section_hero_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_hero_bg_color); ?><?php elseif ($field_builder_section_hero_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_hero_bg_image,'full')); ?>);<?php endif; ?>"
+                                id="hero-section<?php if ($hero_section_counter > 0): echo esc_attr('-' . $hero_section_counter); endif; ?>">
+
+                            <?php $hero_section_counter++; ?>
 
                             <?php if ($field_builder_section_hero_type_of_bg === 'image'): ?>
 
@@ -4211,7 +4379,7 @@ final class ACF_Builder
 
                                             <div class="form-wrapper">
 
-                                                <form class="hero-contact-form" id="contactForm" method="post"
+                                                <form class="hero-contact-form" id="heroform" method="post"
                                                       data-email="<?php echo esc_attr($field_builder_section_hero_more_info_box_email); ?>">
 
                                                     <input type="name" class="input-field" name="name-field"
@@ -4275,6 +4443,10 @@ final class ACF_Builder
 
                         $field_builder_section_buy_now_main_headline_color = self::get_sub_field('field_builder_section_buy_now_main_headline_color');
 
+                        $field_builder_section_buy_now_secondary_headline = self::get_sub_field('field_builder_section_buy_now_secondary_headline');
+
+                        $field_builder_section_buy_now_secondary_headline_color = self::get_sub_field('field_builder_section_buy_now_secondary_headline_color');
+
                         $field_builder_section_buy_now_product_boxes_title_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_title_color');
 
                         $field_builder_section_buy_now_product_boxes_content_color = self::get_sub_field('field_builder_section_buy_now_product_boxes_content_color');
@@ -4282,7 +4454,10 @@ final class ACF_Builder
                         ?>
 
                         <section class="neo-section buy-now-get-more-info-section"
-                                 style="<?php if ($field_builder_section_buy_now_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_buy_now_bg_color); ?><?php elseif ($field_builder_section_buy_now_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_buy_now_bg_image,'full')); ?>);<?php endif; ?>">
+                                 style="<?php if ($field_builder_section_buy_now_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_buy_now_bg_color); ?><?php elseif ($field_builder_section_buy_now_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_buy_now_bg_image,'full')); ?>);<?php endif; ?>"
+                                 id="get-more-info-section<?php if ($get_more_info_section_counter > 0): echo esc_attr('-' . $get_more_info_section_counter); endif; ?>">
+
+                            <?php $get_more_info_section_counter++; ?>
 
                             <?php if ($field_builder_section_buy_now_type_of_bg === 'image'): ?>
 
@@ -4308,6 +4483,17 @@ final class ACF_Builder
                                         <?php echo esc_html($field_builder_section_buy_now_main_headline); ?>
 
                                     </h2>
+
+                                <?php endif; ?>
+
+                                <?php if (!empty($field_builder_section_buy_now_secondary_headline)): ?>
+
+                                    <p class="section-subtitle"
+                                       style="color:<?php echo esc_attr($field_builder_section_buy_now_secondary_headline_color); ?>">
+
+                                        <?php echo esc_html($field_builder_section_buy_now_secondary_headline); ?>
+
+                                    </p>
 
                                 <?php endif; ?>
 
@@ -4416,6 +4602,8 @@ final class ACF_Builder
 
                         $field_builder_section_gallery_main_headline = self::get_sub_field('field_builder_section_gallery_main_headline');
 
+                        $field_builder_section_gallery_secondary_headline = self::get_sub_field('field_builder_section_gallery_secondary_headline');
+
                         $field_builder_section_gallery_type_of_bg = self::get_sub_field('field_builder_section_gallery_type_of_bg');
 
                         $field_builder_section_gallery_bg_image_overlay = self::get_sub_field('field_builder_section_gallery_bg_image_overlay');
@@ -4433,7 +4621,10 @@ final class ACF_Builder
                         ?>
 
                         <section class="neo-section gallery-section"
-                                 style="<?php if ($field_builder_section_gallery_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_gallery_bg_color); ?><?php elseif ($field_builder_section_gallery_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_gallery_bg_image,'full')); ?>);<?php endif; ?>">
+                                 style="<?php if ($field_builder_section_gallery_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_gallery_bg_color); ?><?php elseif ($field_builder_section_gallery_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_gallery_bg_image,'full')); ?>);<?php endif; ?>"
+                                 id="gallery-section<?php if ($gallery_section_counter > 0): echo esc_attr('-' . $gallery_section_counter); endif; ?>">
+
+                            <?php $gallery_section_counter++; ?>
 
                             <?php if ($field_builder_section_gallery_type_of_bg === 'image'): ?>
 
@@ -4458,6 +4649,16 @@ final class ACF_Builder
                                         <?php echo esc_html($field_builder_section_gallery_main_headline); ?>
 
                                     </h2>
+
+                                <?php endif; ?>
+
+                                <?php if (!empty($field_builder_section_gallery_secondary_headline)): ?>
+
+                                    <p class="section-subtitle">
+
+                                        <?php echo esc_html($field_builder_section_gallery_secondary_headline); ?>
+
+                                    </p>
 
                                 <?php endif; ?>
 
@@ -4509,12 +4710,19 @@ final class ACF_Builder
 
                         $field_builder_section_faqs_main_headline = self::get_sub_field('field_builder_section_faqs_main_headline');
 
+                        $field_builder_section_faqs_main_headline_color = self::get_sub_field('field_builder_section_faqs_main_headline_color');
+
                         $field_builder_section_faqs_secondary_headline = self::get_sub_field('field_builder_section_faqs_secondary_headline');
+
+                        $field_builder_section_faqs_secondary_headline_color = self::get_sub_field('field_builder_section_faqs_secondary_headline_color');
 
                         ?>
 
                         <section class="neo-section faqs-section"
-                                 style="<?php if ($field_builder_section_faqs_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_faqs_bg_color); ?><?php elseif ($field_builder_section_faqs_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_faqs_bg_image,'full')); ?>);<?php endif; ?>">
+                                 style="<?php if ($field_builder_section_faqs_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_faqs_bg_color); ?><?php elseif ($field_builder_section_faqs_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_faqs_bg_image,'full')); ?>);<?php endif; ?>"
+                                 id="faqs-section<?php if ($faqs_section_counter > 0): echo esc_attr('-' . $faqs_section_counter); endif; ?>">
+
+                            <?php $faqs_section_counter++; ?>
 
                             <?php if ($field_builder_section_faqs_type_of_bg === 'image'): ?>
 
@@ -4534,7 +4742,8 @@ final class ACF_Builder
 
                                 <?php if (!empty($field_builder_section_faqs_main_headline)): ?>
 
-                                    <h2 class="section-title">
+                                    <h2 class="section-title"
+                                        style="color:<?php echo esc_attr($field_builder_section_faqs_main_headline_color); ?>">
 
                                         <?php echo esc_html($field_builder_section_faqs_main_headline); ?>
 
@@ -4544,7 +4753,8 @@ final class ACF_Builder
 
                                 <?php if (!empty($field_builder_section_faqs_secondary_headline)): ?>
 
-                                    <p class="section-subtitle">
+                                    <p class="section-subtitle"
+                                       style="color:<?php echo esc_attr($field_builder_section_faqs_secondary_headline_color); ?>">
 
                                         <?php echo esc_html($field_builder_section_faqs_secondary_headline); ?>
 
@@ -4659,7 +4869,10 @@ final class ACF_Builder
                         ?>
 
                         <section class="neo-section rich-text-row-section"
-                                 style="<?php if ($field_builder_section_rich_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_rich_text_row_bg_color); ?><?php elseif ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_rich_text_row_bg_image,'full')); ?>);<?php endif; ?>">
+                                 style="<?php if ($field_builder_section_rich_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_rich_text_row_bg_color); ?><?php elseif ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_rich_text_row_bg_image,'full')); ?>);<?php endif; ?>"
+                                 id="rich-text-section<?php if ($rich_text_section_counter > 0): echo esc_attr('-' . $rich_text_section_counter); endif; ?>">
+
+                            <?php $rich_text_section_counter++; ?>
 
                             <?php if ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>
 
