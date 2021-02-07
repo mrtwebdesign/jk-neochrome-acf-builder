@@ -183,10 +183,7 @@ $xxxl: 1601px;
       width: 100%;
       position: relative;
       z-index: 10;
-      margin-bottom: 50px;
-      @media(max-width: $lg) {
-        margin-bottom: 30px;
-      }
+      margin-bottom: 15px;
     }
 
     .section-subtitle {
@@ -348,7 +345,7 @@ $xxxl: 1601px;
                   display: none;
                   font-size: 14px;
                   font-weight: 400;
-                  padding:  8px;
+                  padding: 8px;
                   border: 1px solid rgba(152, 152, 152, 0.2);
                   width: 100%;
                   border-radius: 3px;
@@ -378,6 +375,7 @@ $xxxl: 1601px;
           display: flex;
           flex-wrap: wrap;
           margin: -15px;
+          margin-top: 50px;
 
           .box {
             padding: 15px;
@@ -431,6 +429,7 @@ $xxxl: 1601px;
         display: flex;
         margin: -15px;
         flex-wrap: wrap;
+        margin-top: 50px;
 
         .gallery-item:last-child {
           margin-bottom: 0 !important;

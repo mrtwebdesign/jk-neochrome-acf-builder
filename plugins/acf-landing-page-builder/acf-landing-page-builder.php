@@ -2009,7 +2009,7 @@ final class ACF_Builder
                         'endpoint' => 0,
                     ),
                     array(
-                        'key' => 'field_builder_section_buy_now_main_headline',
+                        'key' => 'field_builder_section_gallery_main_headline',
                         'label' => esc_html('Main Headline'),
                         'name' => 'option_builder_section_buy_now_main_headline',
                         'instructions' => esc_html('Input the Main Headline'),
@@ -2030,7 +2030,7 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_buy_now_main_headline_color',
+                        'key' => 'field_builder_section_gallery_main_headline_color',
                         'label' => esc_html('Main Headline Color'),
                         'name' => 'option_builder_section_buy_now_main_headline_color',
                         'instructions' => esc_html('Select the Main Headline Color'),
@@ -2051,7 +2051,7 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_buy_now_secondary_headline',
+                        'key' => 'field_builder_section_gallery_secondary_headline',
                         'label' => esc_html('Secondary Headline'),
                         'name' => 'option_builder_section_buy_now_secondary_headline',
                         'instructions' => esc_html('Input the Secondary Headline'),
@@ -2072,7 +2072,7 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_buy_now_secondary_headline_color',
+                        'key' => 'field_builder_section_gallery_secondary_headline_color',
                         'label' => esc_html('Secondary Headline Color'),
                         'name' => 'option_builder_section_buy_now_secondary_headline_color',
                         'instructions' => esc_html('Select the Secondary Headline Color'),
