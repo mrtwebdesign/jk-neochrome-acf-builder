@@ -3,53 +3,93 @@ jQuery(document).ready(function ($) {
 
     $('body').imagesLoaded({}, function () {
 
-        $('.faqs-accordion .toggle').click(function (e) {
+        if($('.faqs-accordion').length){
 
-            e.preventDefault();
+            $('.faqs-accordion .toggle').click(function (e) {
 
-            let $this = $(this);
+                e.preventDefault();
 
-            if ($this.next().hasClass('show')) {
+                let $this = $(this);
 
-                console.log(1);
+                if ($this.next().hasClass('show')) {
 
-                $('.inner').find('.toggle').removeClass('active');
+                    console.log(1);
 
-                $('.category-toggle').removeClass('active');
-
-                $this.removeClass('active');
-
-                $this.next().removeClass('show');
-
-                $this.next().slideUp(350);
-
-            } else {
-
-                $('.inner').find('.toggle').removeClass('active');
-
-                if ($this.hasClass('answer-toggle')) {
-
-                    $('.category-toggle').not($this.parent().parent().parent().find('.category-toggle')).removeClass('active');
-
-                } else {
+                    $('.inner').find('.toggle').removeClass('active');
 
                     $('.category-toggle').removeClass('active');
 
+                    $this.removeClass('active');
+
+                    $this.next().removeClass('show');
+
+                    $this.next().slideUp(350);
+
+                } else {
+
+                    $('.inner').find('.toggle').removeClass('active');
+
+                    if ($this.hasClass('answer-toggle')) {
+
+                        $('.category-toggle').not($this.parent().parent().parent().find('.category-toggle')).removeClass('active');
+
+                    } else {
+
+                        $('.category-toggle').removeClass('active');
+
+                    }
+
+                    $this.addClass('active');
+
+                    $this.parent().parent().find('li .inner').removeClass('show');
+
+                    $this.parent().parent().find('li .inner').slideUp(350);
+
+                    $this.next().toggleClass('show');
+
+                    $this.next().slideToggle(350);
+
                 }
 
-                $this.addClass('active');
+            });
 
-                $this.parent().parent().find('li .inner').removeClass('show');
+        }
 
-                $this.parent().parent().find('li .inner').slideUp(350);
+        let form = $("#contactForm");
 
-                $this.next().toggleClass('show');
+        if(form.length){
 
-                $this.next().slideToggle(350);
+            form.on("submit", function (event) {
 
-            }
+                event.preventDefault();
 
-        });
+                let vanilaForm = this;
+
+                let form = $(vanilaForm);
+
+                let formData = new FormData(vanilaForm);
+
+                formData.append("action", 'ajax_form');
+
+                formData.append("email", form.data('email'));
+
+                $.ajax({
+                    url: jk_ajax.ajaxurl,
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+
+                        $('#submit-ajax').append(response);
+
+                    }
+
+                });
+
+            });
+
+        }
 
     });
 

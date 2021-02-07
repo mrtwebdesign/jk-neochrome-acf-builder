@@ -157,6 +157,10 @@ final class ACF_Builder
 
             wp_enqueue_script('acf-repeater-builder-frontend-js', CORE_PLUGIN_URL . '/inc/assets/js/acf_repeater_builder_frontend.js', array('jquery', 'imagesloaded'));
 
+            wp_localize_script('acf-repeater-builder-frontend-js', 'jk_ajax', array(
+                'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php'
+            ));
+
         endif;
 
         wp_enqueue_script('fancybox-js', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery', 'imagesloaded'));
@@ -350,10 +354,13 @@ final class ACF_Builder
 
     public function init()
     {
-
         add_action('admin_head', [$this, 'theme_options']);
 
         add_action('wp_enqueue_scripts', [$this, 'theme_options']);
+
+        add_action('wp_ajax_nopriv_ajax_form', [$this, 'ajax_form']);
+
+        add_action('wp_ajax_ajax_form', [$this, 'ajax_form']);
 
     }
 
@@ -1099,7 +1106,7 @@ final class ACF_Builder
                         'ui_on_text' => esc_html('Enable'),
                         'ui_off_text' => esc_html('Disable'),
                         'wrapper' => array(
-                            'width' => '33.33333333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -1123,9 +1130,35 @@ final class ACF_Builder
                         'ui_on_text' => esc_html('Enable'),
                         'ui_off_text' => esc_html('Disable'),
                         'wrapper' => array(
-                            'width' => '33.33333333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_more_info_box_email',
+                        'label' => esc_html('E-Mail'),
+                        'name' => 'option_builder_section_hero_more_info_box_email',
+                        'instructions' => esc_html('Input the Working E-Mail'),
+                        'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'placeholder' => esc_html('example@domain.com'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -1149,7 +1182,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#ffffff',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -4034,6 +4067,8 @@ final class ACF_Builder
 
                         $field_builder_section_hero_more_info_box_phone_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_phone_toggle');
 
+                        $field_builder_section_hero_more_info_box_email = self::get_sub_field('field_builder_section_hero_more_info_box_email');
+
                         $field_builder_section_hero_more_info_button_label = self::get_sub_field('field_builder_section_hero_more_info_button_label');
 
                         $field_builder_section_hero_more_info_button_bg = self::get_sub_field('field_builder_section_hero_more_info_button_bg');
@@ -4176,17 +4211,21 @@ final class ACF_Builder
 
                                             <div class="form-wrapper">
 
-                                                <form class="hero-contact-form">
+                                                <form class="hero-contact-form" id="contactForm" method="post"
+                                                      data-email="<?php echo esc_attr($field_builder_section_hero_more_info_box_email); ?>">
 
                                                     <input type="name" class="input-field" name="name-field"
+                                                           id="name-field"
                                                            placeholder="<?php echo esc_html('Name'); ?>">
 
                                                     <input type="email" class="input-field" name="email-field"
+                                                           id="email-field"
                                                            placeholder="<?php echo esc_html('Email'); ?>">
 
                                                     <?php if ($field_builder_section_hero_more_info_box_phone_toggle): ?>
 
                                                         <input type="text" class="input-field" name="phone-field"
+                                                               id="phone-field"
                                                                placeholder="<?php echo esc_html('Phone'); ?>">
 
                                                     <?php endif; ?>
@@ -4197,6 +4236,10 @@ final class ACF_Builder
                                                         <?php echo esc_html($field_builder_section_hero_more_info_button_label); ?>
 
                                                     </button>
+
+                                                    <div id="submit-ajax">
+
+                                                    </div>
 
                                                 </form>
 
@@ -4848,6 +4891,51 @@ final class ACF_Builder
 
     }
 
+    public function ajax_form()
+    {
+
+        $name = $_REQUEST['name-field'];
+
+        $email = $_REQUEST['email-field'];
+
+        $tel = $_REQUEST['phone-field'];
+
+        $thm = 'Message Title';
+
+        $msg = "
+        
+        Name: " . $name . "<br/>
+        
+        Email: " . $email . "<br/>
+        
+        Phone: " . $tel . "<br/>";
+
+        $mail_to = 'alexander.poslushnyak@gmail.com';
+
+        $headers = 'From: launchpad.swellstartups.com' . "\r\n";
+
+        $headers .= "MIME-Version: 1.0\r\n";
+
+        $headers .= "Content-type: text/html\r\n";
+
+        if (wp_mail($mail_to, $thm, $msg)) :
+
+            $response = "Thank you, we'll be in touch message";
+
+        else:
+
+            $response = 'Error sending';
+
+        endif;
+
+        echo $response;
+
+        die();
+
+    }
+
 }
 
 ACF_Builder::instance();
+
+

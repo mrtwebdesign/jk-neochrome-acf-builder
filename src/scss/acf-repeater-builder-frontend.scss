@@ -343,6 +343,17 @@ $xxxl: 1601px;
                     border: 1px solid var(--field-builder-default-button-bg-color) !important;
                   }
                 }
+
+                #submit-ajax {
+                  font-size: 14px;
+                  font-weight: 500;
+                  padding: 8px;
+                  border-radius: 3px;
+                  background-color: rgba(0,0,0,0.2);
+                  margin-top: 15px;
+                  color: #565656;
+                  opacity: 0.8;
+                }
               }
 
             }
