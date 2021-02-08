@@ -1757,7 +1757,7 @@ final class ACF_Builder
                                 'name' => 'option_builder_section_buy_now_product_boxes_button_url',
                                 'instructions' => esc_html('Input the Button URL'),
                                 'placeholder' => esc_html('Button URL'),
-                                'type' => 'url',
+                                'type' => 'text',
                                 'wrapper' => array(
                                     'width' => '33.33333%',
                                     'class' => '',
@@ -2098,7 +2098,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_gallery_gallery',
                         'type' => 'gallery',
                         'instructions' => esc_html('Add Gallery Items'),
-                        'return_format' => 'url',
+                        'return_format' => 'text',
                         'preview_size' => 'medium',
                         'insert' => 'append',
                         'library' => 'all',
@@ -2764,7 +2764,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_rich_text_row_button_url',
                         'instructions' => esc_html('Input the Button URL'),
                         'placeholder' => esc_html('Button URL'),
-                        'type' => 'url',
+                        'type' => 'text',
                         'wrapper' => array(
                             'width' => '33.33333%',
                             'class' => '',
@@ -4109,7 +4109,7 @@ final class ACF_Builder
                         'name' => 'option_builder_section_footer_social_list_url',
                         'instructions' => esc_html('Input the Social Icon URL'),
                         'placeholder' => esc_html('Social URL'),
-                        'type' => 'url',
+                        'type' => 'text',
                         'wrapper' => array(
                             'width' => '50%',
                             'class' => '',
@@ -4135,13 +4135,16 @@ final class ACF_Builder
             ));
 
             acf_add_local_field(array(
-                'key' => 'field_footer_company_name',
-                'label' => esc_html('Company Name'),
-                'name' => 'option_footer_company_name',
-                'instructions' => esc_html('Input the Company Name'),
-                'default' => esc_html('[company name]'),
-                'type' => 'text',
-                'placeholder' => esc_html('Company Name'),
+                'key' => 'field_footer_left_side_content',
+                'label' => esc_html('Footer Left Side Content'),
+                'name' => 'option_footer_left_side_content',
+                'type' => 'wysiwyg',
+                'instructions' => esc_html('Type your left side content'),
+                'tabs' => 'all',
+                'toolbar' => 'full',
+                'media_upload' => 1,
+                'default_value' => '',
+                'delay' => 0,
                 'parent' => 'group_repeater_builder_settings',
                 'wrapper' => array(
                     'width' => '50%',
@@ -5006,30 +5009,11 @@ final class ACF_Builder
 
                             <?php
 
-                            $company_name = self::get_field('field_footer_company_name');
+                            $terms = self::get_field('field_footer_left_side_content');
+
+                            echo $terms;
 
                             ?>
-
-                            <p class="top-terms">
-
-                                <a href="https://swellstartups.com/"> LaunchPad powered by Groundswell.</a>
-
-                            </p>
-
-                            <p class="terms-general">
-
-                                Terms of use: The products/services offered on this Landing page are
-                                through <?php echo esc_html($company_name); ?>. Groundswell assumes no liability or will
-                                provide customer service for this
-                                product/service.
-
-                            </p>
-
-                            <p class="copyright">
-
-                                Privacy Policy. Copyright @ <?php echo esc_html($company_name); ?>
-
-                            </p>
 
                         </div>
 
