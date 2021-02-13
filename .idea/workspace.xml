@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69add206-d0ac-4826-8990-4f0475965bd3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/acf-landing-page-builder/inc/assets/css/acf_repeater_builder_frontend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="1754" column="59" selection-start-line="1754" selection-start-column="59" selection-end-line="1754" selection-end-column="59" />
+            <state relative-caret-position="930">
+              <caret line="4683" column="53" selection-start-line="4683" selection-start-column="53" selection-end-line="4683" selection-end-column="53" />
               <folding>
                 <element signature="n#get_sub_field#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#enqueue_styles#0;n#ACF_Builder#0;n#!!top" />
@@ -42,16 +41,6 @@
                 <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="e#43435#44478#1#PHP" />
                 <element signature="e#44500#45557#1#PHP" />
-                <element signature="e#77269#78144#1#PHP" />
-                <element signature="e#78166#79226#1#PHP" />
-                <element signature="e#80475#81532#1#PHP" />
-                <element signature="e#204378#204746#0#HTML" expanded="true" />
-                <element signature="e#205801#205890#0#HTML" expanded="true" />
-                <element signature="e#210967#210999#0#HTML" expanded="true" />
-                <element signature="e#212624#215414#0#HTML" />
-                <element signature="e#216714#217070#0#HTML" expanded="true" />
-                <element signature="e#228686#228713#0#HTML" expanded="true" />
-                <element signature="e#229083#229110#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,16 +49,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
+            <state relative-caret-position="20956">
               <caret line="708" column="29" selection-start-line="708" selection-start-column="29" selection-end-line="708" selection-end-column="29" />
               <folding>
                 <element signature="e#2686#2738#0" />
                 <element signature="e#2770#3294#0" />
                 <element signature="e#3313#3586#0" />
-                <element signature="e#7615#8311#0" />
-                <element signature="e#10313#10363#0" />
-                <element signature="e#10387#11087#0" />
-                <element signature="e#15476#15928#0" />
               </folding>
             </state>
           </provider>
@@ -79,8 +64,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$field_builder_section_gallery_main_headline</find>
-      <find>secondary_hea</find>
       <find>field_builder_section_gallery_main_headline</find>
       <find>&lt;form</find>
       <find>contactForm</find>
@@ -109,6 +92,8 @@
       <find>field_footer_logotype_image</find>
       <find>footer</find>
       <find>'url'</find>
+      <find>class=&quot;ga</find>
+      <find>wp_</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -245,18 +230,20 @@
       <workItem from="1612364470690" duration="2123000" />
       <workItem from="1612383724731" duration="601000" />
       <workItem from="1612526062242" duration="24050000" />
-      <workItem from="1612712436009" duration="11285000" />
+      <workItem from="1612712436009" duration="11868000" />
+      <workItem from="1612834114581" duration="775000" />
+      <workItem from="1613079841357" duration="765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78069000" />
+    <option name="totallyTimeSpent" value="80192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18403909" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18648209" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -401,26 +388,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="708" column="29" selection-start-line="708" selection-start-column="29" selection-end-line="708" selection-end-column="29" />
-          <folding>
-            <element signature="e#2686#2738#0" />
-            <element signature="e#2770#3294#0" />
-            <element signature="e#3313#3586#0" />
-            <element signature="e#7615#8311#0" />
-            <element signature="e#10313#10363#0" />
-            <element signature="e#10387#11087#0" />
-            <element signature="e#15476#15928#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="1754" column="59" selection-start-line="1754" selection-start-column="59" selection-end-line="1754" selection-end-column="59" />
+        <state relative-caret-position="930">
+          <caret line="4683" column="53" selection-start-line="4683" selection-start-column="53" selection-end-line="4683" selection-end-column="53" />
           <folding>
             <element signature="n#get_sub_field#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#enqueue_styles#0;n#ACF_Builder#0;n#!!top" />
@@ -430,16 +401,18 @@
             <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
             <element signature="e#43435#44478#1#PHP" />
             <element signature="e#44500#45557#1#PHP" />
-            <element signature="e#77269#78144#1#PHP" />
-            <element signature="e#78166#79226#1#PHP" />
-            <element signature="e#80475#81532#1#PHP" />
-            <element signature="e#204378#204746#0#HTML" expanded="true" />
-            <element signature="e#205801#205890#0#HTML" expanded="true" />
-            <element signature="e#210967#210999#0#HTML" expanded="true" />
-            <element signature="e#212624#215414#0#HTML" />
-            <element signature="e#216714#217070#0#HTML" expanded="true" />
-            <element signature="e#228686#228713#0#HTML" expanded="true" />
-            <element signature="e#229083#229110#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20956">
+          <caret line="708" column="29" selection-start-line="708" selection-start-column="29" selection-end-line="708" selection-end-column="29" />
+          <folding>
+            <element signature="e#2686#2738#0" />
+            <element signature="e#2770#3294#0" />
+            <element signature="e#3313#3586#0" />
           </folding>
         </state>
       </provider>

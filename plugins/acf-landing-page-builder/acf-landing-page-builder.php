@@ -4672,12 +4672,12 @@ final class ACF_Builder
                                         <?php foreach ($field_builder_section_gallery_gallery as $gallery): ?>
 
                                             <a class="gallery-item" data-fancybox="gallery"
-                                               href="<?php echo esc_url($gallery); ?>">
+                                               href="<?php echo esc_url(wp_get_attachment_image_url($gallery, 'large')); ?>">
 
                                                 <div class="inner-item">
 
                                                     <div class="image-wrapper"
-                                                         style="background-image: url('<?php echo esc_url($gallery); ?>')">
+                                                         style="background-image: url('<?php echo esc_url(wp_get_attachment_image_url($gallery, 'large')); ?>')">
 
                                                     </div>
 
