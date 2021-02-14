@@ -1152,7 +1152,7 @@ final class ACF_Builder
                         'key' => 'field_builder_section_hero_more_info_box_email',
                         'label' => esc_html('E-Mail'),
                         'name' => 'option_builder_section_hero_more_info_box_email',
-                        'instructions' => esc_html('Input the Working E-Mail'),
+                        'instructions' => esc_html('Enter the destination email address where results are sent'),
                         'type' => 'text',
                         'wrapper' => array(
                             'width' => '25%',
@@ -4051,106 +4051,110 @@ final class ACF_Builder
 
             // Footer Tab
 
-            acf_add_local_field(array(
-                'key' => 'field_repeater_builder_custom_settings_footer_tab',
-                'label' => esc_html('Footer'),
-                'name' => 'option_repeater_builder_custom_settings_footer_tab',
-                'type' => 'tab',
-                'instructions' => '',
-                'required' => 0,
-                'parent' => 'group_repeater_builder_settings',
-                'placement' => 'top',
-                'endpoint' => 0,
-            ));
+            if (current_user_can('administrator')):
 
-            acf_add_local_field(array(
-                'key' => 'field_footer_social_list',
-                'label' => esc_html('Footer Social List'),
-                'name' => 'option_footer_social_list',
-                'type' => 'repeater',
-                'label_placement' => 'top',
-                'instructions' => esc_html('Add Social Media Items'),
-                'min' => 1,
-                'max' => 0,
-                'layout' => 'block',
-                'button_label' => esc_html('Add new Social'),
-                'parent' => 'group_repeater_builder_settings',
-                'conditional_logic' => array(),
-                'sub_fields' => array(
-                    array(
-                        'key' => 'field_builder_section_footer_social_list_icon',
-                        'label' => esc_html('Social Icon'),
-                        'name' => 'option_builder_section_footer_social_list_icon',
-                        'type' => 'font-awesome',
-                        'instructions' => '',
-                        'required' => 0,
-                        'icon_sets' => array(
-                            0 => 'fas',
-                            1 => 'far',
-                            2 => 'fab',
+                acf_add_local_field(array(
+                    'key' => 'field_repeater_builder_custom_settings_footer_tab',
+                    'label' => esc_html('Footer'),
+                    'name' => 'option_repeater_builder_custom_settings_footer_tab',
+                    'type' => 'tab',
+                    'instructions' => '',
+                    'required' => 0,
+                    'parent' => 'group_repeater_builder_settings',
+                    'placement' => 'top',
+                    'endpoint' => 0,
+                ));
+
+                acf_add_local_field(array(
+                    'key' => 'field_footer_social_list',
+                    'label' => esc_html('Footer Social List'),
+                    'name' => 'option_footer_social_list',
+                    'type' => 'repeater',
+                    'label_placement' => 'top',
+                    'instructions' => esc_html('Add Social Media Items'),
+                    'min' => 1,
+                    'max' => 0,
+                    'layout' => 'block',
+                    'button_label' => esc_html('Add new Social'),
+                    'parent' => 'group_repeater_builder_settings',
+                    'conditional_logic' => array(),
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_builder_section_footer_social_list_icon',
+                            'label' => esc_html('Social Icon'),
+                            'name' => 'option_builder_section_footer_social_list_icon',
+                            'type' => 'font-awesome',
+                            'instructions' => '',
+                            'required' => 0,
+                            'icon_sets' => array(
+                                0 => 'fas',
+                                1 => 'far',
+                                2 => 'fab',
+                            ),
+                            'custom_icon_set' => '',
+                            'default_label' => '',
+                            'default_value' => '',
+                            'save_format' => 'class',
+                            'allow_null' => 0,
+                            'show_preview' => 1,
+                            'enqueue_fa' => 0,
+                            'fa_live_preview' => '',
+                            'choices' => array(),
+                            'wrapper' => array(
+                                'width' => '50%',
+                                'class' => '',
+                            ),
                         ),
-                        'custom_icon_set' => '',
-                        'default_label' => '',
-                        'default_value' => '',
-                        'save_format' => 'class',
-                        'allow_null' => 0,
-                        'show_preview' => 1,
-                        'enqueue_fa' => 0,
-                        'fa_live_preview' => '',
-                        'choices' => array(),
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
+                        array(
+                            'key' => 'field_builder_section_footer_social_list_url',
+                            'label' => esc_html('Social URL'),
+                            'name' => 'option_builder_section_footer_social_list_url',
+                            'instructions' => esc_html('Input the Social Icon URL'),
+                            'placeholder' => esc_html('Social URL'),
+                            'type' => 'text',
+                            'wrapper' => array(
+                                'width' => '50%',
+                                'class' => '',
+                            ),
                         ),
                     ),
-                    array(
-                        'key' => 'field_builder_section_footer_social_list_url',
-                        'label' => esc_html('Social URL'),
-                        'name' => 'option_builder_section_footer_social_list_url',
-                        'instructions' => esc_html('Input the Social Icon URL'),
-                        'placeholder' => esc_html('Social URL'),
-                        'type' => 'text',
-                        'wrapper' => array(
-                            'width' => '50%',
-                            'class' => '',
-                        ),
+                ));
+
+                acf_add_local_field(array(
+                    'key' => 'field_footer_logotype_image',
+                    'label' => esc_html('Logotype Image'),
+                    'name' => 'option_footer_logotype_image',
+                    'instructions' => esc_html('Select the Logotype Image'),
+                    'type' => 'image',
+                    'return_format' => 'id',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                    'parent' => 'group_repeater_builder_settings',
+                    'wrapper' => array(
+                        'width' => '50%',
+                        'class' => '',
                     ),
-                ),
-            ));
+                ));
 
-            acf_add_local_field(array(
-                'key' => 'field_footer_logotype_image',
-                'label' => esc_html('Logotype Image'),
-                'name' => 'option_footer_logotype_image',
-                'instructions' => esc_html('Select the Logotype Image'),
-                'type' => 'image',
-                'return_format' => 'id',
-                'preview_size' => 'medium',
-                'library' => 'all',
-                'parent' => 'group_repeater_builder_settings',
-                'wrapper' => array(
-                    'width' => '50%',
-                    'class' => '',
-                ),
-            ));
+                acf_add_local_field(array(
+                    'key' => 'field_footer_left_side_content',
+                    'label' => esc_html('Footer Left Side Content'),
+                    'name' => 'option_footer_left_side_content',
+                    'type' => 'wysiwyg',
+                    'instructions' => esc_html('Type your left side content'),
+                    'tabs' => 'all',
+                    'toolbar' => 'full',
+                    'media_upload' => 1,
+                    'default_value' => '',
+                    'delay' => 0,
+                    'parent' => 'group_repeater_builder_settings',
+                    'wrapper' => array(
+                        'width' => '50%',
+                        'class' => '',
+                    ),
+                ));
 
-            acf_add_local_field(array(
-                'key' => 'field_footer_left_side_content',
-                'label' => esc_html('Footer Left Side Content'),
-                'name' => 'option_footer_left_side_content',
-                'type' => 'wysiwyg',
-                'instructions' => esc_html('Type your left side content'),
-                'tabs' => 'all',
-                'toolbar' => 'full',
-                'media_upload' => 1,
-                'default_value' => '',
-                'delay' => 0,
-                'parent' => 'group_repeater_builder_settings',
-                'wrapper' => array(
-                    'width' => '50%',
-                    'class' => '',
-                ),
-            ));
+            endif;
 
         endif;
 

@@ -6,14 +6,15 @@
   justify-content: center;
   box-sizing: border-box;
   border-bottom: 1px solid #ccd0d4;
+  position: relative;
 
   .preview-button {
-    height: 50px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 10px 25px;
+    padding: 10px 30px;
     font-size: 14px;
     font-weight: 500;
     line-height: 1;
@@ -26,6 +27,28 @@
       background-color: #0071a1;
     }
   }
+
+  .help-button {
+    position: absolute;
+    right: 30px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: lightslategray;
+    color: white;
+
+    &:hover {
+      background-color: darken(lightslategray, 0.1);
+    }
+  }
 }
 
 #acf-group_repeater_builder_settings {
@@ -34,6 +57,38 @@
   margin-right: auto !important;
   margin-top: 30px !important;
   margin-bottom: 30px !important;
+
+  .acf-field-repeater-builder {
+    .acf-table {
+      tbody {
+        counter-reset: line-number;
+
+        .acf-row {
+          counter-increment: line-number;
+
+          .acf-field-builder-section-type {
+            &:before {
+              content: "Row: " counter(line-number);
+              display: flex;
+              position: relative;
+              justify-content: center;
+              align-items: center;
+              font-size: 12px;
+              font-weight: 700;
+              border-radius: 5px;
+              padding: 5px 15px;
+              background-color: #007cba;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              width: 40px;
+              color: white;
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
 
   .acf-row-handle {
     .acf-icon {
