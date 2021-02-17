@@ -500,6 +500,7 @@ final class ACF_Builder
                             'gallery-section' => esc_html('Gallery'),
                             'faqs-section' => esc_html('FAQs'),
                             'rich-text-row-section' => esc_html('Rich Text Row'),
+                            'newsletter' => esc_html('Newsletter'),
                         ),
                         'default_value' => 'rich-text-row-section',
                         'layout' => 'horizontal',
@@ -1105,10 +1106,6 @@ final class ACF_Builder
                         'ui' => 1,
                         'ui_on_text' => esc_html('Enable'),
                         'ui_off_text' => esc_html('Disable'),
-                        'wrapper' => array(
-                            'width' => '25%',
-                            'class' => '',
-                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -1124,6 +1121,35 @@ final class ACF_Builder
                         'label' => esc_html('Phone Field'),
                         'name' => 'option_builder_section_hero_more_info_box_phone_toggle',
                         'instructions' => esc_html('Enable/Disable More Info Phone Field'),
+                        'type' => 'true_false',
+                        'default_value' => 1,
+                        'ui' => 1,
+                        'ui_on_text' => esc_html('Enable'),
+                        'ui_off_text' => esc_html('Disable'),
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_more_info_box_subject_toggle',
+                        'label' => esc_html('Subject Field'),
+                        'name' => 'option_builder_section_hero_more_info_box_subject_toggle',
+                        'instructions' => esc_html('Enable/Disable More Info Subject Field'),
                         'type' => 'true_false',
                         'default_value' => 1,
                         'ui' => 1,
@@ -4239,6 +4265,8 @@ final class ACF_Builder
 
                         $field_builder_section_hero_more_info_box_phone_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_phone_toggle');
 
+                        $field_builder_section_hero_more_info_box_subject_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_subject_toggle');
+
                         $field_builder_section_hero_more_info_box_email = self::get_sub_field('field_builder_section_hero_more_info_box_email');
 
                         $field_builder_section_hero_more_info_button_label = self::get_sub_field('field_builder_section_hero_more_info_button_label');
@@ -4402,6 +4430,14 @@ final class ACF_Builder
                                                         <input type="text" class="input-field" name="phone-field"
                                                                id="phone-field"
                                                                placeholder="<?php echo esc_html('Phone'); ?>">
+
+                                                    <?php endif; ?>
+
+                                                    <?php if ($field_builder_section_hero_more_info_box_phone_toggle): ?>
+
+                                                        <input type="text" class="input-field" name="subject-field"
+                                                               id="subject-field"
+                                                               placeholder="<?php echo esc_html('Subject'); ?>">
 
                                                     <?php endif; ?>
 
@@ -4949,9 +4985,19 @@ final class ACF_Builder
 
                         </section>
 
-                    <?php
+                    <?php elseif ($section_type === 'newsletter-section'):
 
-                    else:
+
+
+                        ?>
+
+                        <section class="neo-section newsletter-section"
+                                 style=""
+                                 id="newsletter-section">
+
+                        </section>
+
+                    <?php else:
 
                     endif;
 
@@ -5099,6 +5145,8 @@ final class ACF_Builder
 
         $email = $_REQUEST['email-field'];
 
+        $subject = $_REQUEST['subject-field'];
+
         $tel = $_REQUEST['phone-field'];
 
         $thm = 'Message Title';
@@ -5109,9 +5157,11 @@ final class ACF_Builder
         
         Email: " . $email . "<br/>
         
+        Subject: " . $subject . "<br/>
+        
         Phone: " . $tel . "<br/>";
 
-        $mail_to = 'alexander.poslushnyak@gmail.com';
+        $mail_to = $_POST['email'];
 
         $headers = 'From: launchpad.swellstartups.com' . "\r\n";
 

@@ -24,7 +24,7 @@
     color: #fff;
 
     &:hover {
-      background-color: #0071a1;
+      opacity: 0.7;
     }
   }
 
@@ -46,7 +46,38 @@
     color: white;
 
     &:hover {
-      background-color: darken(lightslategray, 0.1);
+      opacity: 0.7;
+    }
+  }
+}
+
+.save-button-wrapper {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid #ccd0d4;
+  position: relative;
+
+  .save-button {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: yellowgreen;
+    color: #fff;
+
+    &:hover {
+      opacity: 0.7;
     }
   }
 }
@@ -80,7 +111,7 @@
               background-color: #007cba;
               text-transform: uppercase;
               letter-spacing: 0.5px;
-              width: 40px;
+              width: 55px;
               color: white;
               margin-bottom: 15px;
             }

@@ -34,36 +34,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="4156" column="18" selection-start-line="4156" selection-start-column="18" selection-end-line="4156" selection-end-column="18" />
+            <state relative-caret-position="469">
+              <caret line="5159" column="38" lean-forward="true" selection-start-line="5159" selection-start-column="38" selection-end-line="5159" selection-end-column="38" />
               <folding>
+                <element signature="n#the_sub_field#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#get_sub_field#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#enqueue_styles#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#enqueue_scripts#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#enqueue_admin_styles#0;n#ACF_Builder#0;n#!!top" />
-                <element signature="n#theme_options#0;n#ACF_Builder#0;n#!!top" />
+                <element signature="n#enqueue_admin_scripts#0;n#ACF_Builder#0;n#!!top" />
+                <element signature="n#instance#0;n#ACF_Builder#0;n#!!top" />
                 <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
-                <element signature="e#43435#44478#1#PHP" />
-                <element signature="e#44500#45557#1#PHP" />
+                <element signature="n#init#0;n#ACF_Builder#0;n#!!top" />
+                <element signature="e#57658#58995#1#PHP" />
+                <element signature="e#59017#60338#1#PHP" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/admin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="7" column="245" selection-start-line="7" selection-start-column="245" selection-end-line="7" selection-end-column="245" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -72,14 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main_</find>
-      <find>gallery</find>
-      <find>field_builder_section_gallery_secondary_headline</find>
-      <find>section back</find>
-      <find>rich</find>
-      <find>tab_content</find>
-      <find>_content</find>
-      <find>prior</find>
       <find>secondary</find>
       <find>\</find>
       <find>field_builder_section_buy_now_main_headline</find>
@@ -102,6 +79,14 @@
       <find>acf-field-repeater-builder</find>
       <find>email</find>
       <find>foot</find>
+      <find>nee</find>
+      <find>field_container_offset</find>
+      <find>section typ</find>
+      <find>rich-text-row-section</find>
+      <find>Phone</find>
+      <find>field_builder_section_hero_more_info_box_phone_toggle</find>
+      <find>$field_builder_section_hero_more_info_box_phone_toggle</find>
+      <find>mail</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -126,8 +111,8 @@
         <option value="$PROJECT_DIR$/themes/astra/functions.php" />
         <option value="$PROJECT_DIR$/src/js/index.js" />
         <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss" />
-        <option value="$PROJECT_DIR$/src/js/admin.js" />
         <option value="$PROJECT_DIR$/src/scss/acf-repeater-builder.scss" />
+        <option value="$PROJECT_DIR$/src/js/admin.js" />
         <option value="$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php" />
       </list>
     </option>
@@ -242,18 +227,20 @@
       <workItem from="1612834114581" duration="775000" />
       <workItem from="1613079841357" duration="765000" />
       <workItem from="1613251096931" duration="3286000" />
-      <workItem from="1613344398997" duration="58000" />
+      <workItem from="1613344398997" duration="672000" />
+      <workItem from="1613516853909" duration="3255000" />
+      <workItem from="1613564662097" duration="6793000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83536000" />
+    <option name="totallyTimeSpent" value="94198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="2514" height="1456" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15228014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15472312" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -374,13 +361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder-frontend.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
@@ -393,33 +373,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="7" column="245" selection-start-line="7" selection-start-column="245" selection-end-line="7" selection-end-column="245" />
+        <state relative-caret-position="372">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/acf-repeater-builder.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+        <state relative-caret-position="1023">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/acf-landing-page-builder/acf-landing-page-builder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="4156" column="18" selection-start-line="4156" selection-start-column="18" selection-end-line="4156" selection-end-column="18" />
+        <state relative-caret-position="469">
+          <caret line="5159" column="38" lean-forward="true" selection-start-line="5159" selection-start-column="38" selection-end-line="5159" selection-end-column="38" />
           <folding>
+            <element signature="n#the_sub_field#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#get_sub_field#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#enqueue_styles#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#enqueue_scripts#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#enqueue_admin_styles#0;n#ACF_Builder#0;n#!!top" />
-            <element signature="n#theme_options#0;n#ACF_Builder#0;n#!!top" />
+            <element signature="n#enqueue_admin_scripts#0;n#ACF_Builder#0;n#!!top" />
+            <element signature="n#instance#0;n#ACF_Builder#0;n#!!top" />
             <element signature="n#load_google_font#0;n#ACF_Builder#0;n#!!top" />
-            <element signature="e#43435#44478#1#PHP" />
-            <element signature="e#44500#45557#1#PHP" />
+            <element signature="n#init#0;n#ACF_Builder#0;n#!!top" />
+            <element signature="e#57658#58995#1#PHP" />
+            <element signature="e#59017#60338#1#PHP" />
           </folding>
         </state>
       </provider>
