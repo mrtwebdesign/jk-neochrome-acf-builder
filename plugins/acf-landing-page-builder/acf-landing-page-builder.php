@@ -500,7 +500,7 @@ final class ACF_Builder
                             'gallery-section' => esc_html('Gallery'),
                             'faqs-section' => esc_html('FAQs'),
                             'rich-text-row-section' => esc_html('Rich Text Row'),
-                            'newsletter' => esc_html('Newsletter'),
+                            'simple-text-row-section' => esc_html('Simple Text Row'),
                         ),
                         'default_value' => 'rich-text-row-section',
                         'layout' => 'horizontal',
@@ -2836,6 +2836,434 @@ final class ACF_Builder
 
                     /* **************************************** */
 
+                    /* SIMPLE TEXT ROW SECTION START */
+
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_tab_bg',
+                        'label' => esc_html('Background'),
+                        'name' => 'option_builder_section_simple_text_row_tab_bg',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                        'wrapper' => array(
+                            'class' => 'text-row-tab',
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 1,
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_type_of_bg',
+                        'label' => esc_html('Section Background Style'),
+                        'name' => 'option_builder_section_simple_text_row_type_of_bg',
+                        'instructions' => esc_html('Select the style of Section Background'),
+                        'type' => 'button_group',
+                        'choices' => array(
+                            'color' => esc_html('Color'),
+                            'image' => esc_html('Image'),
+                            'gradient' => esc_html('Gradient'),
+                        ),
+                        'default_value' => 'color',
+                        'layout' => 'horizontal',
+                        'return_format' => 'value',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_bg_color',
+                        'label' => esc_html('Background Color'),
+                        'name' => 'option_builder_section_simple_text_row_bg_color',
+                        'instructions' => esc_html('Select the Section Background Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '66.66666%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_simple_text_row_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'color',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_bg_image',
+                        'label' => esc_html('Background Image'),
+                        'name' => 'option_builder_section_simple_text_row_bg_image',
+                        'instructions' => esc_html('Select the Background Image'),
+                        'type' => 'image',
+                        'return_format' => 'id',
+                        'preview_size' => 'medium',
+                        'library' => 'all',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_simple_text_row_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_bg_image_overlay',
+                        'label' => esc_html('Background Image Overlay'),
+                        'name' => 'option_builder_section_simple_text_row_bg_image_overlay',
+                        'instructions' => esc_html('Select the depth of Overlay'),
+                        'type' => 'range',
+                        'min' => '0',
+                        'max' => '1',
+                        'step' => '0.1',
+                        'default_value' => '0.5',
+                        'wrapper' => array(
+                            'width' => '33.3333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_simple_text_row_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_bg_gradient_color_1',
+                        'label' => esc_html('Gradient Color 1'),
+                        'name' => 'option_builder_section_simple_text_row_bg_gradient_color_1',
+                        'instructions' => esc_html('Select the Section Gradient Color 1'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '33.3333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_simple_text_row_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'gradient',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_bg_gradient_color_2',
+                        'label' => esc_html('Gradient Color 2'),
+                        'name' => 'option_builder_section_simple_text_row_bg_gradient_color_2',
+                        'instructions' => esc_html('Select the Section Gradient Color 2'),
+                        'type' => 'color_picker',
+                        'default_value' => '#ffffff',
+                        'wrapper' => array(
+                            'width' => '33.3333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_simple_text_row_type_of_bg',
+                                    'operator' => '==',
+                                    'value' => 'gradient',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_tab_content',
+                        'label' => esc_html('Content'),
+                        'name' => 'option_builder_section_simple_text_row_tab_content',
+                        'type' => 'tab',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                        'placement' => 'top',
+                        'endpoint' => 0,
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_main_headline',
+                        'label' => esc_html('Main Headline'),
+                        'name' => 'option_builder_section_simple_text_row_main_headline',
+                        'instructions' => esc_html('Input the Hero Main Headline'),
+                        'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '66.66666%',
+                            'class' => '',
+                        ),
+                        'placeholder' => esc_html('Main Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_main_headline_color',
+                        'label' => esc_html('Main Headline Color'),
+                        'name' => 'option_builder_section_simple_text_row_main_headline_color',
+                        'instructions' => esc_html('Select the Main Headline Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#161616',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_sub_headline',
+                        'label' => esc_html('Sub-Headline'),
+                        'name' => 'option_builder_section_simple_text_row_sub_headline',
+                        'instructions' => esc_html('Input the Sub-Headline'),
+                        'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '66.66666%',
+                            'class' => '',
+                        ),
+                        'placeholder' => esc_html('Sub-Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_sub_headline_color',
+                        'label' => esc_html('Sub Headline Color'),
+                        'name' => 'option_builder_section_simple_text_row_sub_headline_color',
+                        'instructions' => esc_html('Select the Sub Headline Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#161616',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_body',
+                        'label' => esc_html('Content'),
+                        'name' => 'option_builder_section_simple_text_row_body',
+                        'instructions' => esc_html('Input the Body Content'),
+                        'placeholder' => esc_html('Body Content'),
+                        'type' => 'textarea',
+                        'wrapper' => array(
+                            'width' => '66.66666%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_body_color',
+                        'label' => esc_html('Body Color'),
+                        'name' => 'option_builder_section_simple_text_row_body_color',
+                        'instructions' => esc_html('Select the Body Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#565656',
+                        'wrapper' => array(
+                            'width' => '33.33333%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_content_rows',
+                        'label' => esc_html('Content Rows'),
+                        'name' => 'option_builder_section_simple_text_row_content_rows',
+                        'type' => 'repeater',
+                        'label_placement' => 'top',
+                        'instructions' => esc_html('Add Row'),
+                        'min' => 1,
+                        'max' => 0,
+                        'layout' => 'row',
+                        'button_label' => esc_html('Add new Content Row'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_builder_section_content_rows_simple_text_row_heading',
+                                'label' => esc_html('Heading'),
+                                'name' => 'option_builder_section_content_rows_simple_text_row_heading',
+                                'instructions' => esc_html('Input the Heading'),
+                                'placeholder' => esc_html('Heading'),
+                                'type' => 'text',
+                                'wrapper' => array(
+                                    'width' => '66.66666%',
+                                    'class' => '',
+                                ),
+                            ),
+                            array(
+                                'key' => 'field_builder_section_content_rows_simple_text_row_heading_color',
+                                'label' => esc_html('Headline Color'),
+                                'name' => 'option_builder_section_content_rows_simple_text_row_heading_color',
+                                'instructions' => esc_html('Select the Heading Color'),
+                                'type' => 'color_picker',
+                                'default_value' => '#161616',
+                                'wrapper' => array(
+                                    'width' => '33.33333%',
+                                    'class' => '',
+                                ),
+                            ),
+                            array(
+                                'key' => 'field_builder_section_content_rows_simple_text_row_box_content',
+                                'label' => esc_html('Body'),
+                                'name' => 'field_builder_section_content_rows_simple_text_row_box_content',
+                                'instructions' => esc_html('Input the Body'),
+                                'placeholder' => esc_html('Body'),
+                                'type' => 'textarea',
+                                'wrapper' => array(
+                                    'width' => '66.66666%',
+                                    'class' => '',
+                                ),
+                            ),
+                            array(
+                                'key' => 'field_builder_section_content_rows_simple_text_row_body_color',
+                                'label' => esc_html('Body Color'),
+                                'name' => 'option_builder_section_content_rows_simple_text_row_body_color',
+                                'instructions' => esc_html('Select the Body Color'),
+                                'type' => 'color_picker',
+                                'default_value' => '#565656',
+                                'wrapper' => array(
+                                    'width' => '33.33333%',
+                                    'class' => '',
+                                ),
+                            ),
+                        )
+                    ),
+                    array(
+                        'key' => 'field_repeater_builder_simple_text_row_toggle',
+                        'label' => esc_html('Enable/Disable Newsletter Section'),
+                        'name' => 'option_repeater_builder_simple_text_row_toggle',
+                        'instructions' => esc_html('Enable/Disable Newsletter Section'),
+                        'type' => 'true_false',
+                        'default_value' => 0,
+                        'ui' => 1,
+                        'ui_on_text' => esc_html('Enable'),
+                        'ui_off_text' => esc_html('Disable'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+
+                    /* SIMPLE TEXT ROW SECTION END */
+
+                    /* **************************************** */
+
                 ),
             ));
 
@@ -4077,110 +4505,326 @@ final class ACF_Builder
 
             // Footer Tab
 
-            if (current_user_can('administrator')):
+            // if (current_user_can('administrator')):
 
-                acf_add_local_field(array(
-                    'key' => 'field_repeater_builder_custom_settings_footer_tab',
-                    'label' => esc_html('Footer'),
-                    'name' => 'option_repeater_builder_custom_settings_footer_tab',
-                    'type' => 'tab',
-                    'instructions' => '',
-                    'required' => 0,
-                    'parent' => 'group_repeater_builder_settings',
-                    'placement' => 'top',
-                    'endpoint' => 0,
-                ));
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_custom_settings_footer_tab',
+                'label' => esc_html('Footer'),
+                'name' => 'option_repeater_builder_custom_settings_footer_tab',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'parent' => 'group_repeater_builder_settings',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ));
 
-                acf_add_local_field(array(
-                    'key' => 'field_footer_social_list',
-                    'label' => esc_html('Footer Social List'),
-                    'name' => 'option_footer_social_list',
-                    'type' => 'repeater',
-                    'label_placement' => 'top',
-                    'instructions' => esc_html('Add Social Media Items'),
-                    'min' => 1,
-                    'max' => 0,
-                    'layout' => 'block',
-                    'button_label' => esc_html('Add new Social'),
-                    'parent' => 'group_repeater_builder_settings',
-                    'conditional_logic' => array(),
-                    'sub_fields' => array(
-                        array(
-                            'key' => 'field_builder_section_footer_social_list_icon',
-                            'label' => esc_html('Social Icon'),
-                            'name' => 'option_builder_section_footer_social_list_icon',
-                            'type' => 'font-awesome',
-                            'instructions' => '',
-                            'required' => 0,
-                            'icon_sets' => array(
-                                0 => 'fas',
-                                1 => 'far',
-                                2 => 'fab',
-                            ),
-                            'custom_icon_set' => '',
-                            'default_label' => '',
-                            'default_value' => '',
-                            'save_format' => 'class',
-                            'allow_null' => 0,
-                            'show_preview' => 1,
-                            'enqueue_fa' => 0,
-                            'fa_live_preview' => '',
-                            'choices' => array(),
-                            'wrapper' => array(
-                                'width' => '50%',
-                                'class' => '',
-                            ),
+            acf_add_local_field(array(
+                'key' => 'field_footer_social_list',
+                'label' => esc_html('Footer Social List'),
+                'name' => 'option_footer_social_list',
+                'type' => 'repeater',
+                'label_placement' => 'top',
+                'instructions' => esc_html('Add Social Media Items'),
+                'min' => 1,
+                'max' => 0,
+                'layout' => 'block',
+                'button_label' => esc_html('Add new Social'),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(),
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_builder_section_footer_social_list_icon',
+                        'label' => esc_html('Social Icon'),
+                        'name' => 'option_builder_section_footer_social_list_icon',
+                        'type' => 'font-awesome',
+                        'instructions' => '',
+                        'required' => 0,
+                        'icon_sets' => array(
+                            0 => 'fas',
+                            1 => 'far',
+                            2 => 'fab',
                         ),
-                        array(
-                            'key' => 'field_builder_section_footer_social_list_url',
-                            'label' => esc_html('Social URL'),
-                            'name' => 'option_builder_section_footer_social_list_url',
-                            'instructions' => esc_html('Input the Social Icon URL'),
-                            'placeholder' => esc_html('Social URL'),
-                            'type' => 'text',
-                            'wrapper' => array(
-                                'width' => '50%',
-                                'class' => '',
-                            ),
+                        'custom_icon_set' => '',
+                        'default_label' => '',
+                        'default_value' => '',
+                        'save_format' => 'class',
+                        'allow_null' => 0,
+                        'show_preview' => 1,
+                        'enqueue_fa' => 0,
+                        'fa_live_preview' => '',
+                        'choices' => array(),
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
                         ),
                     ),
-                ));
-
-                acf_add_local_field(array(
-                    'key' => 'field_footer_logotype_image',
-                    'label' => esc_html('Logotype Image'),
-                    'name' => 'option_footer_logotype_image',
-                    'instructions' => esc_html('Select the Logotype Image'),
-                    'type' => 'image',
-                    'return_format' => 'id',
-                    'preview_size' => 'medium',
-                    'library' => 'all',
-                    'parent' => 'group_repeater_builder_settings',
-                    'wrapper' => array(
-                        'width' => '50%',
-                        'class' => '',
+                    array(
+                        'key' => 'field_builder_section_footer_social_list_url',
+                        'label' => esc_html('Social URL'),
+                        'name' => 'option_builder_section_footer_social_list_url',
+                        'instructions' => esc_html('Input the Social Icon URL'),
+                        'placeholder' => esc_html('Social URL'),
+                        'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
                     ),
-                ));
+                ),
+            ));
 
-                acf_add_local_field(array(
-                    'key' => 'field_footer_left_side_content',
-                    'label' => esc_html('Footer Left Side Content'),
-                    'name' => 'option_footer_left_side_content',
-                    'type' => 'wysiwyg',
-                    'instructions' => esc_html('Type your left side content'),
-                    'tabs' => 'all',
-                    'toolbar' => 'full',
-                    'media_upload' => 1,
-                    'default_value' => '',
-                    'delay' => 0,
-                    'parent' => 'group_repeater_builder_settings',
-                    'wrapper' => array(
-                        'width' => '50%',
-                        'class' => '',
+            acf_add_local_field(array(
+                'key' => 'field_footer_logotype_image',
+                'label' => esc_html('Logotype Image'),
+                'name' => 'option_footer_logotype_image',
+                'instructions' => esc_html('Select the Logotype Image'),
+                'type' => 'image',
+                'return_format' => 'id',
+                'preview_size' => 'medium',
+                'library' => 'all',
+                'parent' => 'group_repeater_builder_settings',
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_footer_company_name',
+                'label' => esc_html('Company Name'),
+                'name' => 'option_footer_company_name',
+                'instructions' => esc_html('Input the Company Name'),
+                'type' => 'text',
+                'parent' => 'group_repeater_builder_settings',
+                'placeholder' => esc_html('Company Name'),
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
+                ),
+            ));
+
+            //   endif;
+
+            // Sharing Tab
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_share_buttons_tab',
+                'label' => esc_html('Share Buttons'),
+                'name' => 'option_repeater_builder_share_buttons_tab',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
                     ),
-                ));
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ));
 
-            endif;
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_share_buttons_toggle',
+                'label' => esc_html('Enable/Disable Share Buttons'),
+                'name' => 'option_repeater_builder_share_buttons_toggle',
+                'instructions' => esc_html('Enable/Disable Share Buttons'),
+                'type' => 'true_false',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => esc_html('Enable'),
+                'ui_off_text' => esc_html('Disable'),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_share_buttons_facebook_toggle',
+                'label' => esc_html('Facebook'),
+                'name' => 'option_repeater_builder_share_buttons_facebook_toggle',
+                'instructions' => esc_html('Facebook'),
+                'type' => 'true_false',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => esc_html('Enable'),
+                'ui_off_text' => esc_html('Disable'),
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_share_buttons_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_share_buttons_twitter_toggle',
+                'label' => esc_html('Twitter'),
+                'name' => 'option_repeater_builder_share_buttons_twitter_toggle',
+                'instructions' => esc_html('Twitter'),
+                'type' => 'true_false',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => esc_html('Enable'),
+                'ui_off_text' => esc_html('Disable'),
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_share_buttons_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_share_buttons_alignment',
+                'label' => esc_html('Section Background Style'),
+                'name' => 'option_repeater_builder_share_buttons_alignment',
+                'instructions' => esc_html('Select the alignment of share buttons'),
+                'type' => 'button_group',
+                'choices' => array(
+                    'top-left' => esc_html('Top Left'),
+                    'top-right' => esc_html('Top Right'),
+                    'bottom-left' => esc_html('Bottom Left'),
+                    'bottom-right' => esc_html('Bottom Right'),
+                ),
+                'default_value' => 'bottom-right',
+                'layout' => 'horizontal',
+                'return_format' => 'value',
+                'wrapper' => array(
+                    'width' => '33.33333%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_share_buttons_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            // Offer Modal
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_offer_modal_tab',
+                'label' => esc_html('Offer Modal'),
+                'name' => 'option_repeater_builder_offer_modal_tab',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'placement' => 'top',
+                'endpoint' => 0,
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_offer_modal_toggle',
+                'label' => esc_html('Enable/Disable Offer Modal'),
+                'name' => 'option_repeater_builder_offer_modal_toggle',
+                'instructions' => esc_html('Enable/Disable Offer Modal'),
+                'type' => 'true_false',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => esc_html('Enable'),
+                'ui_off_text' => esc_html('Disable'),
+                'parent' => 'group_repeater_builder_settings',
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
+                ),
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
+
+            acf_add_local_field(array(
+                'key' => 'field_repeater_builder_offer_modal_delay',
+                'label' => esc_html('Delay'),
+                'name' => 'option_repeater_builder_offer_modal_delay',
+                'type' => 'number',
+                'placeholder' => esc_html('Delay (s)'),
+                'instructions' => esc_html('Input the Delay (s)'),
+                'append' => 'px',
+                'min' => '0',
+                'max' => '120',
+                'step' => '1',
+                'default_value' => '8',
+                'wrapper' => array(
+                    'width' => '50%',
+                    'class' => '',
+                ),
+                'parent' => 'group_repeater_builder_settings',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_repeater_builder_toggle',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ));
 
         endif;
 
@@ -4199,9 +4843,65 @@ final class ACF_Builder
 
         $rich_text_section_counter = 0;
 
+        $simple_text_row_section_counter = 0;
+
         ?>
 
         <div class="neo-landing-wrapper">
+
+            <?php
+
+            $field_repeater_builder_share_buttons_toggle = self::get_field('field_repeater_builder_share_buttons_toggle');
+
+            $field_repeater_builder_share_buttons_facebook_toggle = self::get_field('field_repeater_builder_share_buttons_facebook_toggle');
+
+            $field_repeater_builder_share_buttons_twitter_toggle = self::get_field('field_repeater_builder_share_buttons_twitter_toggle');
+
+            $field_repeater_builder_share_buttons_alignment = self::get_field('field_repeater_builder_share_buttons_alignment');
+
+            ?>
+
+            <?php if ($field_repeater_builder_share_buttons_toggle): ?>
+
+                <div class="share-wrapper <?php echo esc_attr($field_repeater_builder_share_buttons_alignment); ?>">
+
+                    <?php if ($field_repeater_builder_share_buttons_facebook_toggle): ?>
+
+                        <?php
+
+                        $url = self::get_social_sharing_url(get_the_ID());
+
+                        ?>
+
+                        <a href="<?php echo esc_url(self::get_facebook_share_link('', $url, '', '')); ?>"
+                           class="share-button share-button-facebook" style="background-color: #3b5998;">
+
+                            <i class="fab fa-facebook-f"></i>
+
+                        </a>
+
+                    <?php endif; ?>
+
+                    <?php if ($field_repeater_builder_share_buttons_twitter_toggle): ?>
+
+                        <?php
+
+                        $url = self::get_social_sharing_url(get_the_ID());
+
+                        ?>
+
+                        <a href="<?php echo esc_url(self::get_twitter_share_link('', $url, '', wp_trim_words(get_the_content(get_the_ID()), 10, ''))); ?>"
+                           class="share-button share-button-twitter" style="background-color: #1DA1F2;">
+
+                            <i class="fab fa-twitter"></i>
+
+                        </a>
+
+                    <?php endif; ?>
+
+                </div>
+
+            <?php endif; ?>
 
             <?php
 
@@ -4433,7 +5133,7 @@ final class ACF_Builder
 
                                                     <?php endif; ?>
 
-                                                    <?php if ($field_builder_section_hero_more_info_box_phone_toggle): ?>
+                                                    <?php if ($field_builder_section_hero_more_info_box_subject_toggle): ?>
 
                                                         <input type="text" class="input-field" name="subject-field"
                                                                id="subject-field"
@@ -4985,21 +5685,135 @@ final class ACF_Builder
 
                         </section>
 
-                    <?php elseif ($section_type === 'newsletter-section'):
+                    <?php elseif ($section_type === 'simple-text-row-section'):
 
+                        $field_builder_section_simple_text_row_type_of_bg = self::get_sub_field('field_builder_section_simple_text_row_type_of_bg');
 
+                        $field_builder_section_simple_text_row_bg_color = self::get_sub_field('field_builder_section_simple_text_row_bg_color');
+
+                        $field_builder_section_simple_text_row_bg_image = self::get_sub_field('field_builder_section_simple_text_row_bg_image');
+
+                        $field_builder_section_simple_text_row_bg_image_overlay = self::get_sub_field('field_builder_section_simple_text_row_bg_image_overlay');
+
+                        $field_builder_section_simple_text_row_bg_gradient_color_1 = self::get_sub_field('field_builder_section_simple_text_row_bg_gradient_color_1');
+
+                        $field_builder_section_simple_text_row_bg_gradient_color_2 = self::get_sub_field('field_builder_section_simple_text_row_bg_gradient_color_2');
+
+                        $field_builder_section_simple_text_row_main_headline = self::get_sub_field('field_builder_section_simple_text_row_main_headline');
+
+                        $field_builder_section_simple_text_row_main_headline_color = self::get_sub_field('field_builder_section_simple_text_row_main_headline_color');
+
+                        $field_builder_section_simple_text_row_sub_headline = self::get_sub_field('field_builder_section_simple_text_row_sub_headline');
+
+                        $field_builder_section_simple_text_row_sub_headline_color = self::get_sub_field('field_builder_section_simple_text_row_sub_headline_color');
+
+                        $field_builder_section_simple_text_row_body = self::get_sub_field('field_builder_section_simple_text_row_body');
+
+                        $field_builder_section_simple_text_row_body_color = self::get_sub_field('field_builder_section_simple_text_row_body_color');
+
+                        $field_repeater_builder_simple_text_row_toggle = self::get_sub_field('field_repeater_builder_simple_text_row_toggle');
 
                         ?>
 
-                        <section class="neo-section newsletter-section"
-                                 style=""
-                                 id="newsletter-section">
+                        <section class="neo-section simple-text-row-section"
+                                 style="<?php if ($field_builder_section_simple_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_simple_text_row_bg_color); ?><?php elseif ($field_builder_section_simple_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_simple_text_row_bg_image,'full')); ?>);<?php endif; ?>"
+                                 id="simple-text-row-section<?php if ($simple_text_row_section_counter > 0): echo esc_attr('-' . $simple_text_row_section_counter); endif; ?>">
+
+                            <?php if ($field_builder_section_simple_text_row_type_of_bg === 'image'): ?>
+
+                                <span class="overlay"
+                                      style="opacity: <?php echo esc_attr($field_builder_section_simple_text_row_bg_image_overlay); ?>"></span>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_builder_section_simple_text_row_type_of_bg === 'gradient'): ?>
+
+                                <span class="overlay"
+                                      style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_simple_text_row_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_simple_text_row_bg_gradient_color_2); ?>);"></span>
+
+                            <?php endif; ?>
+
+                            <?php $simple_text_row_section_counter++; ?>
+
+                            <div class="neo-container inner-wrapper">
+
+                                <h5 class="section-sub-headline"
+                                    style="color: <?php echo esc_attr($field_builder_section_simple_text_row_sub_headline_color); ?>">
+
+                                    <?php echo esc_html($field_builder_section_simple_text_row_sub_headline); ?>
+
+                                </h5>
+
+                                <h2 class="section-simple-title"
+                                    style="color: <?php echo esc_attr($field_builder_section_simple_text_row_main_headline_color); ?>">
+
+                                    <?php echo esc_html($field_builder_section_simple_text_row_main_headline); ?>
+
+                                </h2>
+
+                                <p class="section-body-main"
+                                   style="color: <?php echo esc_attr($field_builder_section_simple_text_row_body_color); ?>;">
+
+                                    <?php echo esc_html($field_builder_section_simple_text_row_body); ?>
+
+                                </p>
+
+                                <?php if (have_rows('field_builder_section_simple_text_row_content_rows')): ?>
+
+                                    <?php while (have_rows('field_builder_section_simple_text_row_content_rows')) : the_row(); ?>
+
+                                        <?php
+
+                                        $field_builder_section_content_rows_simple_text_row_heading = self::get_sub_field('field_builder_section_content_rows_simple_text_row_heading');
+
+                                        $field_builder_section_content_rows_simple_text_row_heading_color = self::get_sub_field('field_builder_section_content_rows_simple_text_row_heading_color');
+
+                                        $field_builder_section_content_rows_simple_text_row_box_content = self::get_sub_field('field_builder_section_content_rows_simple_text_row_box_content');
+
+                                        $field_builder_section_content_rows_simple_text_row_body_color = self::get_sub_field('field_builder_section_content_rows_simple_text_row_body_color');
+
+                                        ?>
+
+                                        <h5 class="section-sub-headline"
+                                            style="color: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_heading_color); ?>">
+
+                                            <?php echo esc_html($field_builder_section_content_rows_simple_text_row_heading); ?>
+
+                                        </h5>
+
+                                        <p class="section-body"
+                                           style="color: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_body_color); ?>;">
+
+                                            <?php echo esc_html($field_builder_section_content_rows_simple_text_row_box_content); ?>
+
+                                        </p>
+
+                                    <?php endwhile; ?>
+
+                                <?php endif; ?>
+
+                                <?php if ($field_repeater_builder_simple_text_row_toggle): ?>
+
+                                    <form class="newsletter-form">
+
+                                        <input type="email" class="email-field"
+                                               placeholder="<?php echo esc_attr('E-Mail Address'); ?>">
+
+                                        <button type="submit" class="submit-button button">
+
+                                            <?php echo esc_html('Submit'); ?>
+
+                                        </button>
+
+                                    </form>
+
+                                <?php endif; ?>
+
+                            </div>
 
                         </section>
 
-                    <?php else:
-
-                    endif;
+                    <?php endif;
 
                 endwhile;
 
@@ -5059,11 +5873,25 @@ final class ACF_Builder
 
                             <?php
 
-                            $terms = self::get_field('field_footer_left_side_content');
-
-                            echo $terms;
+                            $company_name = self::get_field('field_footer_company_name') ? self::get_field('field_footer_company_name') : 'Lorem Company';
 
                             ?>
+
+                            <a href="https://swellstartups.com/">
+
+                                LaunchPad powered by Groundswell.
+
+                            </a>
+
+                            Terms of use: The products/services offered on this Landing page are
+                            through <?php echo esc_attr($company_name); ?>. Groundswell assumes no liability or will
+                            provide customer service for this product/service.
+
+                            <p class="copyright">
+
+                                Privacy Policy. Copyright @<?php echo esc_attr($company_name); ?>
+
+                            </p>
 
                         </div>
 
@@ -5182,6 +6010,56 @@ final class ACF_Builder
         echo $response;
 
         die();
+
+    }
+
+    public static function get_social_sharing_url($post_id)
+    {
+
+        return urlencode(get_permalink($post_id));
+
+    }
+
+    public static function get_social_sharing_title($post_id)
+    {
+
+        return htmlspecialchars(urlencode(html_entity_decode(get_the_title($post_id), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+
+    }
+
+    public static function get_social_sharing_excerpt($post_id)
+    {
+
+        if (empty(get_the_excerpt($post_id))):
+
+            return htmlspecialchars(urlencode(html_entity_decode(wp_trim_words(get_the_content($post_id), 10, ''), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+
+        else:
+
+            return htmlspecialchars(urlencode(html_entity_decode(get_the_excerpt($post_id), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
+
+        endif;
+
+    }
+
+    public static function get_social_sharing_thumbnail($post_id)
+    {
+
+        return wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'full');
+
+    }
+
+    public static function get_twitter_share_link($post_title, $post_url, $post_thumb, $post_excerpt)
+    {
+
+        return esc_url('https://twitter.com/intent/tweet?text=' . $post_excerpt . '\x20' . $post_url);
+
+    }
+
+    public static function get_facebook_share_link($post_title, $post_url, $post_thumb, $post_excerpt)
+    {
+
+        return esc_url('https://www.facebook.com/sharer.php?u=' . $post_url);
 
     }
 
