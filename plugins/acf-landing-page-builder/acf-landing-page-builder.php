@@ -40,6 +40,50 @@ final class ACF_Builder
 
         add_filter('the_content', [$this, 'insert_in_post']);
 
+        function my_login_redirect($redirect_to, $request, $user)
+        {
+
+            global $user;
+
+            if (isset($user->roles) && is_array($user->roles)) {
+
+                if (in_array('author', $user->roles) && !empty(get_option('acf_builder_last_post_user_' . $user->ID))) {
+
+                    $data_login = get_option('acf_builder_last_post_user_' . $user->ID);
+
+                    print_r($user->ID);
+
+                    return get_permalink($data_login);
+
+                } else {
+
+                    return home_url();
+
+                }
+
+            } else {
+
+                return $redirect_to;
+
+            }
+
+        }
+
+        add_action('save_post', 'save_post_handler', 10, 3);
+
+        function save_post_handler($post_ID, $post, $update)
+        {
+
+            if (ACF_Builder::get_field('field_repeater_builder_toggle', $post_ID)):
+
+                update_option('acf_builder_last_post_user_' . get_current_user_id(), $post_ID);
+
+            endif;
+
+        }
+
+        add_filter('login_redirect', 'my_login_redirect', 10, 3);
+
     }
 
     public function insert_in_post($content)
@@ -1311,6 +1355,32 @@ final class ACF_Builder
                         'instructions' => esc_html('Select the More Info Secondary Headline Color'),
                         'type' => 'color_picker',
                         'default_value' => '#565656',
+                        'wrapper' => array(
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'hero-section',
+                                ),
+                                array(
+                                    'field' => 'field_builder_section_hero_more_info_box_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_hero_more_info_placeholder_color',
+                        'label' => esc_html('More Info Placeholder Color'),
+                        'name' => 'field_builder_section_hero_more_info_placeholder_color',
+                        'instructions' => esc_html('Select the More Info Placeholder Color'),
+                        'type' => 'color_picker',
+                        'default_value' => '#666666',
                         'wrapper' => array(
                             'width' => '50%',
                             'class' => '',
@@ -4833,17 +4903,17 @@ final class ACF_Builder
     public static function single_landing_template()
     {
 
-        $hero_section_counter = 0;
+        $hero_section_counter = 1;
 
-        $get_more_info_section_counter = 0;
+        $get_more_info_section_counter = 1;
 
-        $gallery_section_counter = 0;
+        $gallery_section_counter = 1;
 
-        $faqs_section_counter = 0;
+        $faqs_section_counter = 1;
 
-        $rich_text_section_counter = 0;
+        $rich_text_section_counter = 1;
 
-        $simple_text_row_section_counter = 0;
+        $simple_text_row_section_counter = 1;
 
         ?>
 
@@ -4860,6 +4930,147 @@ final class ACF_Builder
             $field_repeater_builder_share_buttons_alignment = self::get_field('field_repeater_builder_share_buttons_alignment');
 
             ?>
+
+            <?php if (get_the_ID() === 171): ?>
+
+                <div class="modal-window-wrapper">
+
+                    <?php
+
+                    $field_builder_modal_window_type_of_bg = self::get_sub_field('field_builder_modal_window_type_of_bg');
+
+                    $field_builder_modal_window_bg_color = self::get_sub_field('field_builder_modal_window_bg_color');
+
+                    $field_builder_modal_window_bg_image = self::get_sub_field('field_builder_modal_window_bg_image');
+
+                    $field_builder_modal_window_bg_image_overlay = self::get_sub_field('field_builder_modal_window_bg_image_overlay');
+
+                    $field_builder_modal_window_bg_gradient_color_1 = self::get_sub_field('field_builder_modal_window_bg_gradient_color_1');
+
+                    $field_builder_modal_window_bg_gradient_color_2 = self::get_sub_field('field_builder_modal_window_bg_gradient_color_2');
+
+                    $field_builder_modal_window_main_headline = self::get_sub_field('field_builder_modal_window_main_headline');
+
+                    $field_builder_modal_window_main_headline_color = self::get_sub_field('field_builder_modal_window_main_headline_color');
+
+                    $field_builder_modal_window_sub_headline = self::get_sub_field('field_builder_modal_window_sub_headline');
+
+                    $field_builder_modal_window_sub_headline_color = self::get_sub_field('field_builder_modal_window_sub_headline_color');
+
+                    $field_builder_modal_window_body = self::get_sub_field('field_builder_modal_window_body');
+
+                    $field_builder_modal_window_body_color = self::get_sub_field('field_builder_modal_window_body_color');
+
+                    $field_repeater_modal_window_email_form_toggle = self::get_sub_field('field_repeater_builder_modal_window_email_form_toggle');
+
+                    ?>
+
+                    <div class="modal-window"
+                         style="<?php if ($field_builder_section_simple_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_simple_text_row_bg_color); ?><?php elseif ($field_builder_section_simple_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_simple_text_row_bg_image,'full')); ?>);<?php endif; ?>">
+
+                        <?php if ($field_builder_section_simple_text_row_type_of_bg === 'image'): ?>
+
+                            <span class="overlay"
+                                  style="opacity: <?php echo esc_attr($field_builder_section_simple_text_row_bg_image_overlay); ?>"></span>
+
+                        <?php endif; ?>
+
+                        <?php if ($field_builder_section_simple_text_row_type_of_bg === 'gradient'): ?>
+
+                            <span class="overlay"
+                                  style="background:linear-gradient(45deg, <?php echo esc_attr($field_builder_section_simple_text_row_bg_gradient_color_1); ?>, <?php echo esc_attr($field_builder_section_simple_text_row_bg_gradient_color_2); ?>);"></span>
+
+                        <?php endif; ?>
+
+                        <?php $simple_text_row_section_counter++; ?>
+
+                        <div class="inner-wrapper">
+
+                            <h5 class="section-sub-headline"
+                                style="color: <?php echo esc_attr($field_builder_section_simple_text_row_sub_headline_color); ?>">
+
+                                <?php echo esc_html($field_builder_section_simple_text_row_sub_headline); ?>
+
+                            </h5>
+
+                            <h2 class="section-simple-title"
+                                style="color: <?php echo esc_attr($field_builder_section_simple_text_row_main_headline_color); ?>">
+
+                                <?php echo esc_html($field_builder_section_simple_text_row_main_headline); ?>
+
+                            </h2>
+
+                            <p class="section-body-main"
+                               style="color: <?php echo esc_attr($field_builder_section_simple_text_row_body_color); ?>;">
+
+                                <?php echo esc_html($field_builder_section_simple_text_row_body); ?>
+
+                            </p>
+
+                            <?php if (have_rows('field_builder_section_simple_text_row_content_rows')): ?>
+
+                                <?php while (have_rows('field_builder_section_simple_text_row_content_rows')) : the_row(); ?>
+
+                                    <?php
+
+                                    $field_builder_section_content_rows_simple_text_row_heading = self::get_sub_field('field_builder_section_content_rows_simple_text_row_heading');
+
+                                    $field_builder_section_content_rows_simple_text_row_heading_color = self::get_sub_field('field_builder_section_content_rows_simple_text_row_heading_color');
+
+                                    $field_builder_section_content_rows_simple_text_row_box_content = self::get_sub_field('field_builder_section_content_rows_simple_text_row_box_content');
+
+                                    $field_builder_section_content_rows_simple_text_row_body_color = self::get_sub_field('field_builder_section_content_rows_simple_text_row_body_color');
+
+                                    ?>
+
+                                    <h5 class="section-sub-headline"
+                                        style="color: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_heading_color); ?>">
+
+                                        <?php echo esc_html($field_builder_section_content_rows_simple_text_row_heading); ?>
+
+                                    </h5>
+
+                                    <p class="section-body"
+                                       style="color: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_body_color); ?>;">
+
+                                        <?php echo esc_html($field_builder_section_content_rows_simple_text_row_box_content); ?>
+
+                                    </p>
+
+                                <?php endwhile; ?>
+
+                            <?php endif; ?>
+
+                            <?php if ($field_repeater_builder_simple_text_row_toggle): ?>
+
+                                <form class="newsletter-form">
+
+                                    <input type="email" class="email-field"
+                                           placeholder="<?php echo esc_attr('E-Mail Address'); ?>">
+
+                                    <button type="submit" class="submit-button button">
+
+                                        <?php echo esc_html('Submit'); ?>
+
+                                    </button>
+
+                                </form>
+
+                            <?php endif; ?>
+
+                        </div>
+
+                    </div>
+
+                    <div class="close-modal-window-button">
+
+                        <i class="fas fa-times"></i>
+
+                    </div>
+
+                </div>
+
+            <?php endif; ?>
 
             <?php if ($field_repeater_builder_share_buttons_toggle): ?>
 
@@ -4971,16 +5182,14 @@ final class ACF_Builder
 
                         $field_builder_section_hero_more_info_button_label = self::get_sub_field('field_builder_section_hero_more_info_button_label');
 
-                        $field_builder_section_hero_more_info_button_bg = self::get_sub_field('field_builder_section_hero_more_info_button_bg');
-
-                        $field_builder_section_hero_more_info_button_color = self::get_sub_field('field_builder_section_hero_more_info_button_color');
+                        $field_builder_section_hero_more_info_placeholder_color = self::get_sub_field('field_builder_section_hero_more_info_placeholder_color');
 
                         ?>
 
                         <section
                                 class="neo-section hero-section <?php if (!empty($field_builder_section_hero_text_shadows)): ?>text-shadows<?php endif; ?>"
                                 style="<?php if ($field_builder_section_hero_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_hero_bg_color); ?><?php elseif ($field_builder_section_hero_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_hero_bg_image,'full')); ?>);<?php endif; ?>"
-                                id="hero-section<?php if ($hero_section_counter > 0): echo esc_attr('-' . $hero_section_counter); endif; ?>">
+                                id="hero<?php if ($hero_section_counter > 0): echo esc_attr('-' . $hero_section_counter); endif; ?>">
 
                             <?php $hero_section_counter++; ?>
 
@@ -5114,8 +5323,22 @@ final class ACF_Builder
 
                                             <div class="form-wrapper">
 
+                                                <style>
+
+                                                    .hero-contact-form input::placeholder {
+                                                        color: <?php echo esc_attr($field_builder_section_hero_more_info_placeholder_color);?> !important;
+                                                    }
+
+                                                    .hero-contact-form #submit-ajax{
+                                                        color: <?php echo esc_attr($field_builder_section_hero_more_info_placeholder_color);?> !important;
+                                                    }
+
+                                                </style>
+
                                                 <form class="hero-contact-form" id="heroform" method="post"
+                                                      data-post-url="<?php echo get_the_permalink(); ?>"
                                                       data-email="<?php echo esc_attr($field_builder_section_hero_more_info_box_email); ?>">
+
 
                                                     <input type="name" class="input-field" name="name-field"
                                                            id="name-field"
@@ -5141,8 +5364,7 @@ final class ACF_Builder
 
                                                     <?php endif; ?>
 
-                                                    <button class="submit-button"
-                                                            style="background-color: <?php echo esc_attr($field_builder_section_hero_more_info_button_bg); ?>; color: <?php echo esc_attr($field_builder_section_hero_more_info_button_color) ?>;">
+                                                    <button class="submit-button">
 
                                                         <?php echo esc_html($field_builder_section_hero_more_info_button_label); ?>
 
@@ -5198,7 +5420,7 @@ final class ACF_Builder
 
                         <section class="neo-section buy-now-get-more-info-section"
                                  style="<?php if ($field_builder_section_buy_now_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_buy_now_bg_color); ?><?php elseif ($field_builder_section_buy_now_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_buy_now_bg_image,'full')); ?>);<?php endif; ?>"
-                                 id="get-more-info-section<?php if ($get_more_info_section_counter > 0): echo esc_attr('-' . $get_more_info_section_counter); endif; ?>">
+                                 id="info<?php if ($get_more_info_section_counter > 0): echo esc_attr('-' . $get_more_info_section_counter); endif; ?>">
 
                             <?php $get_more_info_section_counter++; ?>
 
@@ -5365,7 +5587,7 @@ final class ACF_Builder
 
                         <section class="neo-section gallery-section"
                                  style="<?php if ($field_builder_section_gallery_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_gallery_bg_color); ?><?php elseif ($field_builder_section_gallery_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_gallery_bg_image,'full')); ?>);<?php endif; ?>"
-                                 id="gallery-section<?php if ($gallery_section_counter > 0): echo esc_attr('-' . $gallery_section_counter); endif; ?>">
+                                 id="gallery<?php if ($gallery_section_counter > 0): echo esc_attr('-' . $gallery_section_counter); endif; ?>">
 
                             <?php $gallery_section_counter++; ?>
 
@@ -5463,7 +5685,7 @@ final class ACF_Builder
 
                         <section class="neo-section faqs-section"
                                  style="<?php if ($field_builder_section_faqs_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_faqs_bg_color); ?><?php elseif ($field_builder_section_faqs_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_faqs_bg_image,'full')); ?>);<?php endif; ?>"
-                                 id="faqs-section<?php if ($faqs_section_counter > 0): echo esc_attr('-' . $faqs_section_counter); endif; ?>">
+                                 id="faqs<?php if ($faqs_section_counter > 0): echo esc_attr('-' . $faqs_section_counter); endif; ?>">
 
                             <?php $faqs_section_counter++; ?>
 
@@ -5613,7 +5835,7 @@ final class ACF_Builder
 
                         <section class="neo-section rich-text-row-section"
                                  style="<?php if ($field_builder_section_rich_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_rich_text_row_bg_color); ?><?php elseif ($field_builder_section_rich_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_rich_text_row_bg_image,'full')); ?>);<?php endif; ?>"
-                                 id="rich-text-section<?php if ($rich_text_section_counter > 0): echo esc_attr('-' . $rich_text_section_counter); endif; ?>">
+                                 id="rich-text<?php if ($rich_text_section_counter > 0): echo esc_attr('-' . $rich_text_section_counter); endif; ?>">
 
                             <?php $rich_text_section_counter++; ?>
 
@@ -5717,7 +5939,7 @@ final class ACF_Builder
 
                         <section class="neo-section simple-text-row-section"
                                  style="<?php if ($field_builder_section_simple_text_row_type_of_bg === 'color'): ?> background-color:<?php echo esc_attr($field_builder_section_simple_text_row_bg_color); ?><?php elseif ($field_builder_section_simple_text_row_type_of_bg === 'image'): ?>background-image:url(<?php echo esc_attr(wp_get_attachment_image_url($field_builder_section_simple_text_row_bg_image,'full')); ?>);<?php endif; ?>"
-                                 id="simple-text-row-section<?php if ($simple_text_row_section_counter > 0): echo esc_attr('-' . $simple_text_row_section_counter); endif; ?>">
+                                 id="simple-text<?php if ($simple_text_row_section_counter > 0): echo esc_attr('-' . $simple_text_row_section_counter); endif; ?>">
 
                             <?php if ($field_builder_section_simple_text_row_type_of_bg === 'image'): ?>
 
@@ -5821,7 +6043,7 @@ final class ACF_Builder
 
             ?>
 
-            <footer class="neo-footer">
+            <footer class="neo-footer" id="footer">
 
                 <div class="neo-container">
 
@@ -5979,17 +6201,21 @@ final class ACF_Builder
 
         $thm = 'Message Title';
 
+        $mail_to = $_POST['email'];
+
+        $post_url = $_POST['post_url'];
+
         $msg = "
         
-        Name: " . $name . "<br/>
+        Name: " . $name . "
         
-        Email: " . $email . "<br/>
+        Email: " . $email . "
         
-        Subject: " . $subject . "<br/>
+        Subject: " . $subject . "
         
-        Phone: " . $tel . "<br/>";
-
-        $mail_to = $_POST['email'];
+        Phone: " . $tel . "
+        
+        Note this email came from your web page:" . $post_url;
 
         $headers = 'From: launchpad.swellstartups.com' . "\r\n";
 
