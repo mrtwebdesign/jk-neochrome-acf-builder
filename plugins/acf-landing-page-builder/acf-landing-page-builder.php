@@ -26,6 +26,15 @@ final class ACF_Builder
     public function __construct()
     {
 
+        add_filter('wp_mail_from_name', 'custom_wpse_mail_from_name');
+
+        function custom_wpse_mail_from_name($original_email_from)
+        {
+
+            return 'Launchpad';
+
+        }
+
         add_action('init', [$this, 'init']);
 
         add_action('init', [$this, 'acf_init']);
@@ -1190,19 +1199,16 @@ final class ACF_Builder
                         ),
                     ),
                     array(
-                        'key' => 'field_builder_section_hero_more_info_box_subject_toggle',
-                        'label' => esc_html('Subject Field'),
-                        'name' => 'option_builder_section_hero_more_info_box_subject_toggle',
-                        'instructions' => esc_html('Enable/Disable More Info Subject Field'),
-                        'type' => 'true_false',
-                        'default_value' => 1,
-                        'ui' => 1,
-                        'ui_on_text' => esc_html('Enable'),
-                        'ui_off_text' => esc_html('Disable'),
+                        'key' => 'field_builder_section_hero_more_info_box_subject',
+                        'label' => esc_html('Subject Line'),
+                        'name' => 'option_builder_section_hero_more_info_box_subject',
+                        'instructions' => esc_html('Enter Subject Line'),
+                        'type' => 'text',
                         'wrapper' => array(
                             'width' => '25%',
                             'class' => '',
                         ),
+                        'placeholder' => esc_html('Subject Line'),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -3119,10 +3125,38 @@ final class ACF_Builder
                         'instructions' => esc_html('Input the Hero Main Headline'),
                         'type' => 'text',
                         'wrapper' => array(
-                            'width' => '66.66666%',
+                            'width' => '50%',
                             'class' => '',
                         ),
                         'placeholder' => esc_html('Main Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_main_headline_alignment',
+                        'label' => esc_html('Main Headline Alignment'),
+                        'name' => 'option_builder_section_simple_text_row_main_headline_alignment',
+                        'instructions' => esc_html('Select the alignment of Main Headline'),
+                        'type' => 'button_group',
+                        'choices' => array(
+                            'left' => esc_html('Left'),
+                            'center' => esc_html('Center'),
+                            'right' => esc_html('Right'),
+                        ),
+                        'default_value' => 'left',
+                        'layout' => 'horizontal',
+                        'return_format' => 'value',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -3141,7 +3175,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#161616',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3161,10 +3195,38 @@ final class ACF_Builder
                         'instructions' => esc_html('Input the Sub-Headline'),
                         'type' => 'text',
                         'wrapper' => array(
-                            'width' => '66.66666%',
+                            'width' => '50%',
                             'class' => '',
                         ),
                         'placeholder' => esc_html('Sub-Headline'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_sub_headline_alignment',
+                        'label' => esc_html('Sub Headline Alignment'),
+                        'name' => 'option_builder_section_simple_text_row_sub_headline_alignment',
+                        'instructions' => esc_html('Select the alignment of Sub Headline'),
+                        'type' => 'button_group',
+                        'choices' => array(
+                            'left' => esc_html('Left'),
+                            'center' => esc_html('Center'),
+                            'right' => esc_html('Right'),
+                        ),
+                        'default_value' => 'left',
+                        'layout' => 'horizontal',
+                        'return_format' => 'value',
+                        'wrapper' => array(
+                            'width' => '25%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
@@ -3183,7 +3245,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#161616',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3204,7 +3266,35 @@ final class ACF_Builder
                         'placeholder' => esc_html('Body Content'),
                         'type' => 'textarea',
                         'wrapper' => array(
-                            'width' => '66.66666%',
+                            'width' => '50%',
+                            'class' => '',
+                        ),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_builder_section_simple_text_row_body_alignment',
+                        'label' => esc_html('Text Row Body Alignment'),
+                        'name' => 'option_builder_section_simple_text_row_body_alignment',
+                        'instructions' => esc_html('Select the alignment of Text Row Body'),
+                        'type' => 'button_group',
+                        'choices' => array(
+                            'left' => esc_html('Left'),
+                            'center' => esc_html('Center'),
+                            'right' => esc_html('Right'),
+                        ),
+                        'default_value' => 'left',
+                        'layout' => 'horizontal',
+                        'return_format' => 'value',
+                        'wrapper' => array(
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3225,7 +3315,7 @@ final class ACF_Builder
                         'type' => 'color_picker',
                         'default_value' => '#565656',
                         'wrapper' => array(
-                            'width' => '33.33333%',
+                            'width' => '25%',
                             'class' => '',
                         ),
                         'conditional_logic' => array(
@@ -3267,7 +3357,26 @@ final class ACF_Builder
                                 'placeholder' => esc_html('Heading'),
                                 'type' => 'text',
                                 'wrapper' => array(
-                                    'width' => '66.66666%',
+                                    'width' => '50%',
+                                    'class' => '',
+                                ),
+                            ),
+                            array(
+                                'key' => 'field_builder_section_content_rows_simple_text_row_heading_alignment',
+                                'label' => esc_html('Heading Alignment'),
+                                'name' => 'option_builder_section_content_rows_simple_text_row_heading_alignment',
+                                'instructions' => esc_html('Select the alignment of Heading'),
+                                'type' => 'button_group',
+                                'choices' => array(
+                                    'left' => esc_html('Left'),
+                                    'center' => esc_html('Center'),
+                                    'right' => esc_html('Right'),
+                                ),
+                                'default_value' => 'left',
+                                'layout' => 'horizontal',
+                                'return_format' => 'value',
+                                'wrapper' => array(
+                                    'width' => '25%',
                                     'class' => '',
                                 ),
                             ),
@@ -3279,7 +3388,7 @@ final class ACF_Builder
                                 'type' => 'color_picker',
                                 'default_value' => '#161616',
                                 'wrapper' => array(
-                                    'width' => '33.33333%',
+                                    'width' => '25%',
                                     'class' => '',
                                 ),
                             ),
@@ -3296,6 +3405,25 @@ final class ACF_Builder
                                 ),
                             ),
                             array(
+                                'key' => 'field_builder_section_content_rows_simple_text_row_box_content_alignment',
+                                'label' => esc_html('Content Alignment'),
+                                'name' => 'field_builder_section_content_rows_simple_text_row_box_content_alignment',
+                                'instructions' => esc_html('Select the alignment of Content'),
+                                'type' => 'button_group',
+                                'choices' => array(
+                                    'left' => esc_html('Left'),
+                                    'center' => esc_html('Center'),
+                                    'right' => esc_html('Right'),
+                                ),
+                                'default_value' => 'left',
+                                'layout' => 'horizontal',
+                                'return_format' => 'value',
+                                'wrapper' => array(
+                                    'width' => '25%',
+                                    'class' => '',
+                                ),
+                            ),
+                            array(
                                 'key' => 'field_builder_section_content_rows_simple_text_row_body_color',
                                 'label' => esc_html('Body Color'),
                                 'name' => 'option_builder_section_content_rows_simple_text_row_body_color',
@@ -3303,7 +3431,7 @@ final class ACF_Builder
                                 'type' => 'color_picker',
                                 'default_value' => '#565656',
                                 'wrapper' => array(
-                                    'width' => '33.33333%',
+                                    'width' => '25%',
                                     'class' => '',
                                 ),
                             ),
@@ -4937,31 +5065,6 @@ final class ACF_Builder
 
                     <?php
 
-                    $field_builder_modal_window_type_of_bg = self::get_sub_field('field_builder_modal_window_type_of_bg');
-
-                    $field_builder_modal_window_bg_color = self::get_sub_field('field_builder_modal_window_bg_color');
-
-                    $field_builder_modal_window_bg_image = self::get_sub_field('field_builder_modal_window_bg_image');
-
-                    $field_builder_modal_window_bg_image_overlay = self::get_sub_field('field_builder_modal_window_bg_image_overlay');
-
-                    $field_builder_modal_window_bg_gradient_color_1 = self::get_sub_field('field_builder_modal_window_bg_gradient_color_1');
-
-                    $field_builder_modal_window_bg_gradient_color_2 = self::get_sub_field('field_builder_modal_window_bg_gradient_color_2');
-
-                    $field_builder_modal_window_main_headline = self::get_sub_field('field_builder_modal_window_main_headline');
-
-                    $field_builder_modal_window_main_headline_color = self::get_sub_field('field_builder_modal_window_main_headline_color');
-
-                    $field_builder_modal_window_sub_headline = self::get_sub_field('field_builder_modal_window_sub_headline');
-
-                    $field_builder_modal_window_sub_headline_color = self::get_sub_field('field_builder_modal_window_sub_headline_color');
-
-                    $field_builder_modal_window_body = self::get_sub_field('field_builder_modal_window_body');
-
-                    $field_builder_modal_window_body_color = self::get_sub_field('field_builder_modal_window_body_color');
-
-                    $field_repeater_modal_window_email_form_toggle = self::get_sub_field('field_repeater_builder_modal_window_email_form_toggle');
 
                     ?>
 
@@ -4982,81 +5085,8 @@ final class ACF_Builder
 
                         <?php endif; ?>
 
-                        <?php $simple_text_row_section_counter++; ?>
-
                         <div class="inner-wrapper">
 
-                            <h5 class="section-sub-headline"
-                                style="color: <?php echo esc_attr($field_builder_modal_window_sub_headline_color); ?>">
-
-                                <?php echo esc_html($field_builder_modal_window_sub_headline); ?>
-
-                            </h5>
-
-                            <h2 class="section-simple-title"
-                                style="color: <?php echo esc_attr($field_builder_modal_window_main_headline_color); ?>">
-
-                                <?php echo esc_html($field_builder_modal_window_main_headline); ?>
-
-                            </h2>
-
-                            <p class="section-body-main"
-                               style="color: <?php echo esc_attr($field_builder_modal_window_body_color); ?>;">
-
-                                <?php echo esc_html($field_builder_modal_window_body); ?>
-
-                            </p>
-
-                            <?php if (have_rows('field_builder_section_simple_text_row_content_rows')): ?>
-
-                                <?php while (have_rows('field_builder_section_simple_text_row_content_rows')) : the_row(); ?>
-
-                                    <?php
-
-                                    $field_builder_modal_window_heading = self::get_sub_field('field_builder_modal_window_heading');
-
-                                    $field_builder_modal_window_heading_color = self::get_sub_field('field_builder_modal_window_heading_color');
-
-                                    $field_builder_modal_window_box_content = self::get_sub_field('field_builder_modal_window_box_content');
-
-                                    $field_builder_modal_window_body_color = self::get_sub_field('field_builder_modal_window_body_color');
-
-                                    ?>
-
-                                    <h5 class="section-sub-headline"
-                                        style="color: <?php echo esc_attr($field_builder_modal_window_heading_color); ?>">
-
-                                        <?php echo esc_html($field_builder_modal_window_heading); ?>
-
-                                    </h5>
-
-                                    <p class="section-body"
-                                       style="color: <?php echo esc_attr($field_builder_modal_window_body_color); ?>;">
-
-                                        <?php echo esc_html($field_builder_modal_window_box_content); ?>
-
-                                    </p>
-
-                                <?php endwhile; ?>
-
-                            <?php endif; ?>
-
-                            <?php if ($field_repeater_modal_window_email_form_toggle): ?>
-
-                                <form class="newsletter-form">
-
-                                    <input type="email" class="email-field"
-                                           placeholder="<?php echo esc_attr('E-Mail Address'); ?>">
-
-                                    <button type="submit" class="submit-button button">
-
-                                        <?php echo esc_html('Submit'); ?>
-
-                                    </button>
-
-                                </form>
-
-                            <?php endif; ?>
 
                         </div>
 
@@ -5176,7 +5206,7 @@ final class ACF_Builder
 
                         $field_builder_section_hero_more_info_box_phone_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_phone_toggle');
 
-                        $field_builder_section_hero_more_info_box_subject_toggle = self::get_sub_field('field_builder_section_hero_more_info_box_subject_toggle');
+                        $field_builder_section_hero_more_info_box_subject = self::get_sub_field('field_builder_section_hero_more_info_box_subject');
 
                         $field_builder_section_hero_more_info_box_email = self::get_sub_field('field_builder_section_hero_more_info_box_email');
 
@@ -5337,8 +5367,8 @@ final class ACF_Builder
 
                                                 <form class="hero-contact-form" id="heroform" method="post"
                                                       data-post-url="<?php echo get_the_permalink(); ?>"
+                                                      data-subject="<?php echo esc_attr($field_builder_section_hero_more_info_box_subject); ?>"
                                                       data-email="<?php echo esc_attr($field_builder_section_hero_more_info_box_email); ?>">
-
 
                                                     <input type="name" class="input-field" name="name-field"
                                                            id="name-field"
@@ -5353,14 +5383,6 @@ final class ACF_Builder
                                                         <input type="text" class="input-field" name="phone-field"
                                                                id="phone-field"
                                                                placeholder="<?php echo esc_html('Phone'); ?>">
-
-                                                    <?php endif; ?>
-
-                                                    <?php if ($field_builder_section_hero_more_info_box_subject_toggle): ?>
-
-                                                        <input type="text" class="input-field" name="subject-field"
-                                                               id="subject-field"
-                                                               placeholder="<?php echo esc_html('Subject'); ?>">
 
                                                     <?php endif; ?>
 
@@ -5935,6 +5957,12 @@ final class ACF_Builder
 
                         $field_repeater_builder_simple_text_row_toggle = self::get_sub_field('field_repeater_builder_simple_text_row_toggle');
 
+                        $field_builder_section_simple_text_row_main_headline_alignment = self::get_sub_field('field_builder_section_simple_text_row_main_headline_alignment');
+
+                        $field_builder_section_simple_text_row_sub_headline_alignment = self::get_sub_field('field_builder_section_simple_text_row_sub_headline_alignment');
+
+                        $field_builder_section_simple_text_row_body_alignment = self::get_sub_field('field_builder_section_simple_text_row_body_alignment');
+
                         ?>
 
                         <section class="neo-section simple-text-row-section"
@@ -5960,21 +5988,21 @@ final class ACF_Builder
                             <div class="neo-container inner-wrapper">
 
                                 <h5 class="section-sub-headline"
-                                    style="color: <?php echo esc_attr($field_builder_section_simple_text_row_sub_headline_color); ?>">
+                                    style="color: <?php echo esc_attr($field_builder_section_simple_text_row_sub_headline_color); ?>; text-align: <?php echo esc_attr($field_builder_section_simple_text_row_sub_headline_alignment); ?>">
 
                                     <?php echo esc_html($field_builder_section_simple_text_row_sub_headline); ?>
 
                                 </h5>
 
                                 <h2 class="section-simple-title"
-                                    style="color: <?php echo esc_attr($field_builder_section_simple_text_row_main_headline_color); ?>">
+                                    style="color: <?php echo esc_attr($field_builder_section_simple_text_row_main_headline_color); ?>; text-align: <?php echo esc_attr($field_builder_section_simple_text_row_main_headline_alignment); ?>">
 
                                     <?php echo esc_html($field_builder_section_simple_text_row_main_headline); ?>
 
                                 </h2>
 
                                 <p class="section-body-main"
-                                   style="color: <?php echo esc_attr($field_builder_section_simple_text_row_body_color); ?>;">
+                                   style="color: <?php echo esc_attr($field_builder_section_simple_text_row_body_color); ?>; text-align: <?php echo esc_attr($field_builder_section_simple_text_row_body_alignment); ?>">
 
                                     <?php echo esc_html($field_builder_section_simple_text_row_body); ?>
 
@@ -5994,17 +6022,21 @@ final class ACF_Builder
 
                                         $field_builder_section_content_rows_simple_text_row_body_color = self::get_sub_field('field_builder_section_content_rows_simple_text_row_body_color');
 
+                                        $field_builder_section_content_rows_simple_text_row_heading_alignment = self::get_sub_field('field_builder_section_content_rows_simple_text_row_heading_alignment');
+
+                                        $field_builder_section_content_rows_simple_text_row_box_content_alignment = self::get_sub_field('field_builder_section_content_rows_simple_text_row_box_content_alignment');
+
                                         ?>
 
                                         <h5 class="section-sub-headline"
-                                            style="color: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_heading_color); ?>">
+                                            style="color: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_heading_color); ?>; text-align: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_heading_alignment); ?>">
 
                                             <?php echo esc_html($field_builder_section_content_rows_simple_text_row_heading); ?>
 
                                         </h5>
 
                                         <p class="section-body"
-                                           style="color: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_body_color); ?>;">
+                                           style="color: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_body_color); ?>; text-align: <?php echo esc_attr($field_builder_section_content_rows_simple_text_row_box_content_alignment); ?>">
 
                                             <?php echo esc_html($field_builder_section_content_rows_simple_text_row_box_content); ?>
 
@@ -6195,11 +6227,9 @@ final class ACF_Builder
 
         $email = $_REQUEST['email-field'];
 
-        $subject = $_REQUEST['subject-field'];
-
         $tel = $_REQUEST['phone-field'];
 
-        $thm = 'Message Title';
+        $thm = $_POST['subject'];
 
         $mail_to = $_POST['email'];
 
@@ -6210,8 +6240,6 @@ final class ACF_Builder
         Name: " . $name . "
         
         Email: " . $email . "
-        
-        Subject: " . $subject . "
         
         Phone: " . $tel . "
         

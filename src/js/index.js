@@ -75,6 +75,8 @@ jQuery(document).ready(function ($) {
 
                 formData.append("post_url", form.data('post-url'));
 
+                formData.append("subject", form.data('subject'));
+
                 $.ajax({
                     url: jk_ajax.ajaxurl,
                     type: 'POST',
