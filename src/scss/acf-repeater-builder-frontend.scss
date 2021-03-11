@@ -764,6 +764,19 @@ $xxxl: 1601px;
               border: 1px solid var(--field-builder-default-button-bg-color) !important;
             }
           }
+
+          #submit-ajax-news {
+            display: none;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 8px;
+            border: 1px solid rgba(152, 152, 152, 0.2);
+            width: 100%;
+            border-radius: 3px;
+            background-color: rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+            color: #666666;
+          }
         }
       }
     }

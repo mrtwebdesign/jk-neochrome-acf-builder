@@ -97,6 +97,50 @@ jQuery(document).ready(function ($) {
 
         }
 
+        /**/
+
+        let form_news = $("#newsform");
+
+        if (form_news.length) {
+
+            form_news.on("submit", function (event) {
+
+                event.preventDefault();
+
+                let vanilaForm = this;
+
+                let form = $(vanilaForm);
+
+                let formData = new FormData(vanilaForm);
+
+                formData.append("action", 'ajax_news_form');
+
+                formData.append("email", form.data('email'));
+
+                formData.append("subject", form.data('subject'));
+
+                formData.append("post_url", form.data('post-url'));
+
+                $.ajax({
+                    url: jk_ajax.ajaxurl,
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+
+                        $('#submit-ajax-news').css('display', 'flex');
+
+                        $('#submit-ajax-news').append(response);
+
+                    }
+
+                });
+
+            });
+
+        }
+
     });
 
 });

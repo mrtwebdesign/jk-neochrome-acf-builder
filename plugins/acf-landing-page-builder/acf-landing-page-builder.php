@@ -415,6 +415,10 @@ final class ACF_Builder
 
         add_action('wp_ajax_ajax_form', [$this, 'ajax_form']);
 
+        add_action('wp_ajax_nopriv_ajax_news_form', [$this, 'ajax_news_form']);
+
+        add_action('wp_ajax_ajax_news_form', [$this, 'ajax_news_form']);
+
     }
 
     public function acf_init()
@@ -3438,21 +3442,77 @@ final class ACF_Builder
                         )
                     ),
                     array(
-                        'key' => 'field_repeater_builder_simple_text_row_toggle',
+                        'key' => 'field_repeater_builder_simple_text_row_email_form_toggle',
                         'label' => esc_html('Enable/Disable Newsletter Section'),
-                        'name' => 'option_repeater_builder_simple_text_row_toggle',
+                        'name' => 'option_repeater_builder_simple_text_row_email_form_toggle',
                         'instructions' => esc_html('Enable/Disable Newsletter Section'),
                         'type' => 'true_false',
                         'default_value' => 0,
                         'ui' => 1,
                         'ui_on_text' => esc_html('Enable'),
                         'ui_off_text' => esc_html('Disable'),
+                        'wrapper' => array(
+                            'width' => '33.3333333%',
+                            'class' => '',
+                        ),
                         'conditional_logic' => array(
                             array(
                                 array(
                                     'field' => 'field_builder_section_type',
                                     'operator' => '==',
                                     'value' => 'simple-text-row-section',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_repeater_builder_simple_text_row_email_form',
+                        'label' => esc_html('E-Mail'),
+                        'name' => 'option_repeater_builder_simple_text_row_email_form',
+                        'instructions' => esc_html('Enter the destination email address where results are sent'),
+                        'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '33.3333333%',
+                            'class' => '',
+                        ),
+                        'placeholder' => esc_html('example@domain.com'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                                array(
+                                    'field' => 'field_repeater_builder_simple_text_row_email_form_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ),
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'field_repeater_builder_simple_text_row_email_form_subject_line',
+                        'label' => esc_html('Subject Line'),
+                        'name' => 'option_repeater_builder_simple_text_row_email_form_subject_line',
+                        'instructions' => esc_html('Enter Subject Line'),
+                        'type' => 'text',
+                        'wrapper' => array(
+                            'width' => '33.3333333%',
+                            'class' => '',
+                        ),
+                        'placeholder' => esc_html('Subject Line'),
+                        'conditional_logic' => array(
+                            array(
+                                array(
+                                    'field' => 'field_builder_section_type',
+                                    'operator' => '==',
+                                    'value' => 'simple-text-row-section',
+                                ),
+                                array(
+                                    'field' => 'field_repeater_builder_simple_text_row_email_form_toggle',
+                                    'operator' => '==',
+                                    'value' => '1',
                                 ),
                             ),
                         ),
@@ -5955,13 +6015,17 @@ final class ACF_Builder
 
                         $field_builder_section_simple_text_row_body_color = self::get_sub_field('field_builder_section_simple_text_row_body_color');
 
-                        $field_repeater_builder_simple_text_row_toggle = self::get_sub_field('field_repeater_builder_simple_text_row_toggle');
+                        $field_repeater_builder_simple_text_row_email_form_toggle = self::get_sub_field('field_repeater_builder_simple_text_row_email_form_toggle');
 
                         $field_builder_section_simple_text_row_main_headline_alignment = self::get_sub_field('field_builder_section_simple_text_row_main_headline_alignment');
 
                         $field_builder_section_simple_text_row_sub_headline_alignment = self::get_sub_field('field_builder_section_simple_text_row_sub_headline_alignment');
 
                         $field_builder_section_simple_text_row_body_alignment = self::get_sub_field('field_builder_section_simple_text_row_body_alignment');
+
+                        $field_repeater_builder_simple_text_row_email_form = self::get_sub_field('field_repeater_builder_simple_text_row_email_form');
+
+                        $field_repeater_builder_simple_text_row_email_form_subject_line = self::get_sub_field('field_repeater_builder_simple_text_row_email_form_subject_line');
 
                         ?>
 
@@ -6046,11 +6110,14 @@ final class ACF_Builder
 
                                 <?php endif; ?>
 
-                                <?php if ($field_repeater_builder_simple_text_row_toggle): ?>
+                                <?php if ($field_repeater_builder_simple_text_row_email_form_toggle): ?>
 
-                                    <form class="newsletter-form">
+                                    <form class="newsletter-form" id="newsform"
+                                          data-subject="<?php echo esc_attr($field_repeater_builder_simple_text_row_email_form_subject_line); ?>"
+                                          data-post-url="<?php echo get_the_permalink(); ?>"
+                                          data-email="<?php echo esc_attr($field_repeater_builder_simple_text_row_email_form); ?>">
 
-                                        <input type="email" class="email-field"
+                                        <input type="email" class="email-field" name="email-field"
                                                placeholder="<?php echo esc_attr('E-Mail Address'); ?>">
 
                                         <button type="submit" class="submit-button button">
@@ -6058,6 +6125,10 @@ final class ACF_Builder
                                             <?php echo esc_html('Submit'); ?>
 
                                         </button>
+
+                                        <div id="submit-ajax-news">
+
+                                        </div>
 
                                     </form>
 
@@ -6253,6 +6324,45 @@ final class ACF_Builder
 
         if (wp_mail($mail_to, $thm, $msg)) :
 
+            $response = "Thank you, we'll be in touch message";
+
+        else:
+
+            $response = 'Error sending';
+
+        endif;
+
+        echo $response;
+
+        die();
+
+    }
+
+    public function ajax_news_form()
+    {
+
+        $email = $_REQUEST['email-field'];
+
+        $thm = $_POST['subject'];
+
+        $mail_to = $_POST['email'];
+
+        $post_url = $_POST['post_url'];
+
+        $msg = "
+        
+        Email: " . $email . "
+        
+        Note this email came from your web page:" . $post_url;
+
+        $headers = 'From: launchpad.swellstartups.com' . "\r\n";
+
+        $headers .= "MIME-Version: 1.0\r\n";
+
+        $headers .= "Content-type: text/html\r\n";
+
+        if (wp_mail($mail_to, $thm, $msg)) :
+            
             $response = "Thank you, we'll be in touch message";
 
         else:
