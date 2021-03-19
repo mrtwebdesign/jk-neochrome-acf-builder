@@ -12,17 +12,35 @@ if (!defined('ABSPATH')) :
     exit;
 endif;
 
+/**
+ *
+ */
 DEFINE('CORE_PLUGIN_VERSION', '1.0.0');
 
+/**
+ *
+ */
 define("CORE_PLUGIN_PATH", plugin_dir_path(__FILE__));
 
+/**
+ *
+ */
 define("CORE_PLUGIN_URL", plugin_dir_url(__FILE__));
 
+/**
+ * Class ACF_Builder
+ */
 final class ACF_Builder
 {
 
+    /**
+     * @var null
+     */
     private static $_instance = null;
 
+    /**
+     * ACF_Builder constructor.
+     */
     public function __construct()
     {
 
@@ -95,6 +113,11 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $content
+     *
+     * @return mixed
+     */
     public function insert_in_post($content)
     {
 
@@ -110,6 +133,11 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $param
+     *
+     * @return mixed
+     */
     public static function the_option($param)
     {
 
@@ -121,6 +149,11 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $param
+     *
+     * @return mixed
+     */
     public static function get_option($param)
     {
 
@@ -132,6 +165,12 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $param
+     * @param null $id
+     *
+     * @return mixed
+     */
     public static function the_field($param, $id = null)
     {
 
@@ -149,6 +188,12 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $param
+     * @param null $id
+     *
+     * @return mixed
+     */
     public static function get_field($param, $id = null)
     {
 
@@ -166,6 +211,11 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $param
+     *
+     * @return mixed
+     */
     public static function the_sub_field($param)
     {
 
@@ -177,6 +227,11 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $param
+     *
+     * @return mixed
+     */
     public static function get_sub_field($param)
     {
 
@@ -188,6 +243,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public function enqueue_styles()
     {
 
@@ -204,6 +262,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public function enqueue_scripts()
     {
         if (!wp_script_is('acf-repeater-builder-frontend-js')):
@@ -220,6 +281,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public function enqueue_admin_styles()
     {
 
@@ -231,6 +295,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public function enqueue_admin_scripts()
     {
 
@@ -242,6 +309,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @return ACF_Builder|null
+     */
     public static function instance()
     {
 
@@ -255,6 +325,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public function theme_options()
     {
 
@@ -370,6 +443,10 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param array $fontsArr
+     * @param array $fontsSubset
+     */
     public function load_google_font($fontsArr = array('Poppins', 'Roboto'), $fontsSubset = array('latin', 'latin-ext'))
     {
 
@@ -405,6 +482,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public function init()
     {
         add_action('admin_head', [$this, 'theme_options']);
@@ -421,6 +501,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public function acf_init()
     {
 
@@ -5088,6 +5171,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public static function single_landing_template()
     {
 
@@ -5297,18 +5383,18 @@ final class ACF_Builder
 
                             <?php endif; ?>
 
-                            <?php if (!empty($field_builder_section_hero_logotype_image) && $field_builder_section_hero_logotype_image_toggle): ?>
-
-                                <div class="hero-logotype neo-container">
-
-                                    <img src="<?php echo esc_url(wp_get_attachment_image_url($field_builder_section_hero_logotype_image, 'full')); ?>"
-                                         alt="<?php echo esc_attr('Logotype'); ?>">
-
-                                </div>
-
-                            <?php endif; ?>
-
                             <div class="neo-container inner-wrapper">
+
+                                <?php if (!empty($field_builder_section_hero_logotype_image) && $field_builder_section_hero_logotype_image_toggle): ?>
+
+                                    <div class="hero-logotype">
+
+                                        <img src="<?php echo esc_url(wp_get_attachment_image_url($field_builder_section_hero_logotype_image, 'full')); ?>"
+                                             alt="<?php echo esc_attr('Logotype'); ?>">
+
+                                    </div>
+
+                                <?php endif; ?>
 
                                 <div class="left-side">
 
@@ -6291,6 +6377,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public function ajax_form()
     {
 
@@ -6338,6 +6427,9 @@ final class ACF_Builder
 
     }
 
+    /**
+     *
+     */
     public function ajax_news_form()
     {
 
@@ -6362,7 +6454,7 @@ final class ACF_Builder
         $headers .= "Content-type: text/html\r\n";
 
         if (wp_mail($mail_to, $thm, $msg)) :
-            
+
             $response = "Thank you, we'll be in touch message";
 
         else:
@@ -6377,6 +6469,11 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $post_id
+     *
+     * @return string
+     */
     public static function get_social_sharing_url($post_id)
     {
 
@@ -6384,6 +6481,11 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $post_id
+     *
+     * @return string
+     */
     public static function get_social_sharing_title($post_id)
     {
 
@@ -6391,6 +6493,11 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $post_id
+     *
+     * @return string
+     */
     public static function get_social_sharing_excerpt($post_id)
     {
 
@@ -6406,6 +6513,11 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $post_id
+     *
+     * @return mixed
+     */
     public static function get_social_sharing_thumbnail($post_id)
     {
 
@@ -6413,6 +6525,14 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $post_title
+     * @param $post_url
+     * @param $post_thumb
+     * @param $post_excerpt
+     *
+     * @return mixed
+     */
     public static function get_twitter_share_link($post_title, $post_url, $post_thumb, $post_excerpt)
     {
 
@@ -6420,6 +6540,14 @@ final class ACF_Builder
 
     }
 
+    /**
+     * @param $post_title
+     * @param $post_url
+     * @param $post_thumb
+     * @param $post_excerpt
+     *
+     * @return mixed
+     */
     public static function get_facebook_share_link($post_title, $post_url, $post_thumb, $post_excerpt)
     {
 

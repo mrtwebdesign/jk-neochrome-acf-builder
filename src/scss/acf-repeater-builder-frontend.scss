@@ -265,26 +265,13 @@ $xxxl: 1601px;
     }
 
     &.hero-section {
-      position: relative;
       height: 100vh;
       display: flex;
       align-items: center;
+      position: relative;
       @media(max-width: $md) {
         height: auto;
         padding: 75px 0;
-      }
-
-      .hero-logotype {
-        position: absolute;
-        top: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-
-        img {
-          max-width: 150px;
-          width: 100%;
-          height: auto;
-        }
       }
 
       &.text-shadows {
@@ -297,10 +284,45 @@ $xxxl: 1601px;
         display: flex;
         flex-direction: row;
         width: 100%;
+        height: 100%;
+        align-items: center;
+        position: relative;
         @media(max-width: $lg) {
           flex-direction: column;
           align-items: center;
           justify-content: center;
+        }
+
+        .hero-logotype {
+          position: absolute;
+          top: 30px;
+          left: 15px;
+          max-width: 150px !important;
+          width: 100% !important;
+          max-height: 85px !important;
+
+          @media(max-width: $lg) {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 200px !important;
+            max-height: 135px !important;
+          }
+
+          img {
+            max-width: 150px !important;
+            width: 100% !important;
+            height: auto !important;
+            max-height: 85px !important;
+            @media(max-width: $lg) {
+              max-width: 200px !important;
+              max-height: 135px !important;
+            }
+          }
         }
 
         .left-side, .right-side {
@@ -743,8 +765,8 @@ $xxxl: 1601px;
           align-items: flex-start;
 
           .submit-button {
-            padding: 5px 35px!important;
-            height: 35px!important;
+            padding: 5px 35px !important;
+            height: 35px !important;
           }
 
           .email-field {
